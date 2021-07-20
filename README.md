@@ -26,5 +26,5 @@ These are the currently present blocks in this pack:
 Install the Fleximple Blocks by uploading the files to your server at wp-content/plugins.
 
 ## Changelog
-### 0.5.0
+### 1.0.0
 - Initial release
