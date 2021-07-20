@@ -1,0 +1,239 @@
+/**
+ * Button Extended Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-button {
+	display: flex;
+
+	&.block-align-h-left {
+		justify-content: flex-start;
+	}
+
+	&.block-align-h-center {
+		justify-content: center;
+	}
+
+	&.block-align-h-right {
+		justify-content: flex-end;
+	}
+
+	& &__link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+		text-decoration: none;
+		transition: color 0.2s ease, background-color 0.2s ease,
+			border-color 0.2s ease, border-radius 0.2s ease,
+			box-shadow 0.2s ease;
+		-webkit-appearance: none;
+		cursor: pointer;
+		vertical-align: middle; // Remove blank space under custom icon
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:active,
+		&:focus {
+			text-decoration: none;
+			outline: none;
+		}
+
+		svg {
+			fill: var(--gray-600);
+			transition: fill 0.2s ease;
+		}
+	}
+
+	& &__icon,
+	& &__custom-icon {
+		font-style: normal;
+		text-align: center;
+		margin: 0 auto;
+
+		&::before {
+			font-style: normal;
+		}
+
+		&.position-left {
+			margin-right: 8px;
+		}
+
+		&.position-right {
+			margin-left: 8px;
+		}
+	}
+
+	& &__custom-icon {
+		svg,
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+
+	& .width-auto {
+		width: auto;
+	}
+
+	& .width-full {
+		width: 100%;
+	}
+
+	&.is-style-fill {
+		.fleximple-block-button__link {
+			border-width: 1px;
+			border-style: solid;
+			padding: 16px 20px;
+
+			&:focus {
+				box-shadow: 0 0 0 0.2rem rgba(0, 160, 210, 0.5),
+					0 3px 8px 0 rgba(0, 0, 0, 0.2) inset,
+					0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+			}
+
+			&:active {
+				@include box-shadow(2, inset);
+			}
+
+			&:not(.has-text-color) {
+				color: var(--white-rich);
+
+				svg {
+					fill: var(--white-rich);
+				}
+
+				&:hover {
+					color: var(--white-rich);
+
+					svg {
+						fill: var(--white-rich);
+					}
+				}
+
+				&:active,
+				&:focus {
+					color: var(--white-rich);
+
+					svg {
+						fill: var(--white-rich);
+					}
+				}
+			}
+
+			&:not(.has-background) {
+				background-color: var(--gray-800);
+				border-color: var(--gray-800);
+
+				&:hover {
+					background-color: var(--color-primary, #0080ff);
+					border-color: var(--color-primary, #0080ff);
+				}
+
+				&:active,
+				&:focus {
+					background-color: var(--color-primary--dark, #0066cc);
+					border-color: var(--color-primary--dark, #0066cc);
+				}
+			}
+		}
+	}
+
+	&.is-style-outline {
+		.fleximple-block-button__link {
+			border-width: 1px;
+			border-style: solid;
+			padding: 16px 20px;
+
+			&:focus {
+				box-shadow: 0 0 0 0.2rem rgba(0, 160, 210, 0.5),
+					0 3px 8px 0 rgba(0, 0, 0, 0.2) inset,
+					0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+			}
+
+			&:active {
+				@include box-shadow(2, inset);
+			}
+
+			&:not(.has-text-color) {
+				color: var(--gray-800);
+
+				svg {
+					fill: var(--gray-800);
+				}
+
+				&:hover {
+					color: var(--white-rich);
+
+					svg {
+						fill: var(--white-rich);
+					}
+				}
+
+				&:active,
+				&:focus {
+					color: var(--white-rich);
+
+					svg {
+						fill: var(--white-rich);
+					}
+				}
+			}
+
+			&:not(.has-background) {
+				background-color: transparent;
+				border-color: var(--gray-800);
+
+				&:hover {
+					background-color: var(--gray-800);
+					border-color: var(--gray-800);
+				}
+
+				&:active,
+				&:focus {
+					background-color: var(--gray-900);
+					border-color: var(--gray-900);
+				}
+			}
+		}
+	}
+
+	&.is-style-clear {
+		.fleximple-block-button__link {
+			&:not(.has-text-color) {
+				color: var(--gray-800);
+
+				svg {
+					fill: var(--gray-800);
+				}
+
+				&:hover {
+					color: var(--color-primary, #0080ff);
+
+					svg {
+						fill: var(--color-primary, #0080ff);
+					}
+				}
+
+				&:active,
+				&:focus {
+					color: var(--color-primary--dark, #0066cc);
+					box-shadow: none;
+
+					svg {
+						fill: var(--color-primary--dark, #0066cc);
+					}
+				}
+			}
+
+			&:not(.has-background) {
+				background-color: transparent;
+				border-color: transparent;
+			}
+		}
+	}
+}

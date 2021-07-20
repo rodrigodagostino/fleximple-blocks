@@ -1,0 +1,54 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/map",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"position": {
+			"type": "object",
+			"default": {
+				"lat": "-53.7854636",
+				"lng": "-67.7014736"
+			}
+		},
+		"zoom": {
+			"type": "number",
+			"default": 14
+		},
+        "height": {
+            "type": "object",
+            "default": {
+                "small": {
+                    "value": 360,
+                    "unit": "px"
+                },
+                "medium": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "large": {
+                    "value": 0,
+                    "unit": "px"
+                }
+            }
+        },
+		"layer": {
+			"type": "string",
+			"default": "standard"
+		},
+		"popup": {
+			"type": "string"
+		},
+		"displayPopup": {
+			"type": "boolean",
+			"default": false
+		},
+		"displayZoomControl": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAttributionControl": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

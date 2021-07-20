@@ -1,0 +1,19 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.detectIndentation": true,
+	"editor.fontLigatures": true,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"files.eol": "\n",
+	"eslint.alwaysShowStatus": true,
+	"eslint.lintTask.enable": true,
+	"eslint.validate": [
+		"javascript"
+	],
+	"eslint.format.enable": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+}

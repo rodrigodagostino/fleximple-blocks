@@ -1,0 +1,44 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/contact-info",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"items": {
+			"type": "number",
+			"default": 3
+		},
+		"direction": {
+			"type": "object",
+			"default": {
+				"small": "row",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"alignmentHorizontal": {
+			"type": "object",
+			"default": {
+				"small": "center",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"gap": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		}
+	}
+}

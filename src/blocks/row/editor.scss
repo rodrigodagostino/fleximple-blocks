@@ -1,0 +1,22 @@
+/**
+ * Container Block Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.fleximple-block-row {
+	&[class*="block-align-v-"]
+		> [class$="__inner"]
+		> [class$="__content"]
+		> .block-editor-inner-blocks
+		> .block-editor-block-list__layout {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		& > * {
+			margin: 0;
+		}
+	}
+}

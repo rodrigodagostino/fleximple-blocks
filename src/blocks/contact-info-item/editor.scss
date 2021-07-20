@@ -1,0 +1,22 @@
+/**
+ * contact-info-item Block Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.fleximple-block-contact-info-item {
+	display: inherit !important;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			white-space: nowrap !important;
+		}
+	}
+}

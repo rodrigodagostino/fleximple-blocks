@@ -1,0 +1,33 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/date-and-time",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"dateFormat": {
+			"type": "string",
+			"default": ""
+		},
+		"timeFormat": {
+			"type": "string",
+			"default": "g:i a"
+		},
+		"customDateFormat": {
+			"type": "string"
+		},
+		"customTimeFormat": {
+			"type": "string"
+		},
+		"separator": {
+			"type": "string",
+			"default": "|"
+		},
+		"displayDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTime": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

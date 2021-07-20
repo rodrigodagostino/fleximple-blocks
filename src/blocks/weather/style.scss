@@ -1,0 +1,38 @@
+/**
+ * Weather Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+$default-class-name: "fleximple-block-weather";
+
+.fleximple-block-weather {
+	font-size: rem(18px);
+	display: grid;
+	grid-template: auto auto / min-content auto;
+	column-gap: rem(10px);
+
+	.#{$default-class-name}__icon {
+		font-size: rem(60px);
+		grid-column: 1/2;
+		grid-row: 1/3;
+	}
+
+	.#{$default-class-name}__temperature {
+		font-size: rem(32px);
+		line-height: 1;
+		grid-column: 2/3;
+		grid-row: 1/2;
+
+		span {
+			display: inline-block;
+		}
+	}
+
+	.#{$default-class-name}__short-name,
+	.#{$default-class-name}__city-name {
+		line-height: 1;
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+}

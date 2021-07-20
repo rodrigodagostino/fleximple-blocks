@@ -1,0 +1,32 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/icon",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"iconId": {
+			"type": "string",
+			"default": "fas fa-star"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 60
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"customIconColor": {
+			"type": "string"
+		},
+		"hasCustomIcon": {
+			"type": "boolean",
+			"default": false
+		},
+		"customIcon": {
+			"type": "string"
+		},
+		"alignmentHorizontal": {
+			"type": "string",
+			"default": "center"
+		}
+	}
+}

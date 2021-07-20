@@ -1,0 +1,136 @@
+/*-----------------------------------------------
+
+ # Stylesheet: Editor Stylesheet
+
+ ----------------------------------------------*/
+
+.block-editor {
+	.components-focal-point-picker-control {
+		.focal-point-picker__controls-position-unit-control {
+			width: auto;
+		}
+	}
+}
+
+.fleximple-components-control {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 8px;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		& > div {
+			flex: 1;
+			margin-right: 12px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		
+		& > .components-base-control {
+			margin-bottom: 0;
+		}
+
+		&.gap-h-small > div:first-child {
+			margin-right: 6px;
+		}
+
+		&.gap-h-none > div {
+			margin-right: 0;
+		}
+
+		&.gap-v-small {
+			margin-bottom: 8px;
+		}
+
+		&.width-50-50 > div {
+			max-width: calc(50% - 6px);
+
+			input {
+				max-width: 100%;
+			}
+		}
+
+		&.width-80-20 > div {
+			&:first-child {
+				flex: 4;
+
+				.components-range-control__root {
+					vertical-align: bottom;
+				}
+			}
+		}
+
+		&.flex-end {
+			align-items: flex-end;
+		}
+	}
+
+	&__label {
+		margin-bottom: 4px;
+	}
+}
+
+.fleximple-components-placeholder {
+	flex-direction: column;
+
+	.components-placeholder__fieldset {
+		align-items: center;
+	}
+
+	&__input {
+		width: 100%;
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+
+	.components-placeholder__label {
+	}
+
+	.components-placeholder__fieldset {
+		flex-direction: column;
+
+		p {
+			margin: 1em 0 0 !important;
+		}
+	}
+}
+
+.width-full {
+	width: 100%;
+}
+
+.components-panel__body {
+	&.is-opened > .components-panel__body-title {
+		margin-bottom: 12px;
+	}
+
+	.components-base-control {
+		.components-base-control__label {
+			display: block;
+		}
+
+		&.gap-v-small {
+			margin-bottom: 14px !important;
+		}
+	}
+
+	.components-toolbar .components-button {
+		z-index: 0;
+	}
+
+	* + .components-focal-point-picker-control {
+		margin-top: 12px;
+	}
+}
+
+.components-icon-button .flexicon {
+	display: inline-block;
+}

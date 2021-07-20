@@ -1,0 +1,62 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+
+/**
+ * Mixins
+ */
+@import "./mixins/mixins";
+
+/**
+ * Abstracts
+ */
+@import "./abstracts/color";
+@import "./abstracts/spacing";
+
+/**
+ * Block styles
+ */
+@import "../blocks/ad/style";
+@import "../blocks/button/style";
+@import "../blocks/buttons/style";
+@import "../blocks/contact-info/style";
+@import "../blocks/contact-info-item/style";
+@import "../blocks/date-and-time/style";
+@import "../blocks/feature/style";
+@import "../blocks/header/style";
+@import "../blocks/icon/style";
+@import "../blocks/iframe/style";
+@import "../blocks/map/style";
+@import "../blocks/post/style";
+@import "../blocks/post-carousel/style";
+@import "../blocks/profile/style";
+@import "../blocks/recent-posts/style";
+@import "../blocks/row/style";
+@import "../blocks/tab-panel/style";
+@import "../blocks/tabs/style";
+@import "../blocks/testimonial/style";
+@import "../blocks/weather/style";
+
+/**
+ * Modules styles
+ */
+@import "./modules/accesibility";
+@import "./modules/ie";
+
+/**
+ * Components styles
+ */
+@import "../../node_modules/fleximple-components/scss/animation";
+@import "../../node_modules/fleximple-components/scss/text-alignment";
+
+/**
+ * Vendor styles
+ */
+// @import "../../node_modules/animate.css/animate.css";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../../node_modules/leaflet/dist/leaflet.css";
+// @import "../../node_modules/swiper/swiper";
+@import "./vendor/customization";

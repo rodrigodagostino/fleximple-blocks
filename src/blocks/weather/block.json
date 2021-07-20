@@ -1,0 +1,26 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/weather",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"cityName": {
+			"type": "string",
+			"default": "Río Grande,AR"
+		},
+		"shortName": {
+			"type": "string",
+			"default": "RG"
+		},
+		"displayUnits": {
+			"type": "boolean",
+			"default": true
+		},
+		"units": {
+			"type": "string",
+			"default": "metric"
+		},
+		"language": {
+			"type": "string"
+		}
+	}
+}

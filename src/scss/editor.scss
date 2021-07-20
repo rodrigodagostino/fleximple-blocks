@@ -1,0 +1,68 @@
+/*-----------------------------------------------
+
+ # Stylesheet: Main Editor Stylesheet
+
+ ----------------------------------------------*/
+
+/**
+ * Mixins
+ */
+@import "./mixins/mixins";
+
+/**
+ * Abstracts
+ */
+@import "./abstracts/color";
+@import "./abstracts/spacing";
+
+/**
+ * Block styles
+ */
+@import "../blocks/ad/editor";
+@import "../blocks/button/editor";
+@import "../blocks/buttons/editor";
+@import "../blocks/contact-info/editor";
+@import "../blocks/contact-info-item/editor";
+@import "../blocks/date-and-time/editor";
+@import "../blocks/feature/editor";
+@import "../blocks/header/editor";
+@import "../blocks/icon/editor";
+@import "../blocks/iframe/editor";
+@import "../blocks/map/editor";
+@import "../blocks/post/editor";
+@import "../blocks/post-carousel/editor";
+@import "../blocks/profile/editor";
+@import "../blocks/recent-posts/editor";
+@import "../blocks/row/editor";
+@import "../blocks/tab-panel/editor";
+@import "../blocks/tabs/editor";
+@import "../blocks/testimonial/editor";
+@import "../blocks/weather/editor";
+
+/**
+ * Components styles
+ */
+@import "../../node_modules/fleximple-components/scss/style";
+
+/**
+ * Modules styles
+ */
+@import "./modules/accesibility";
+@import "./modules/editor";
+@import "./modules/ie";
+
+/**
+ * Vendor styles
+ */
+// @import "../../node_modules/animate.css/animate.css";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../../node_modules/leaflet/dist/leaflet.css";
+// @import "../../node_modules/swiper/swiper";
+@import "../../node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css";
+@import "../../node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css";
+@import "./vendor/customization";
+
+/**
+ * Admin styles
+ */
+@import "./admin.scss";

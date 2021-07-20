@@ -1,0 +1,17 @@
+/**
+ * Button Extended Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-buttons {
+	display: flex;
+
+	&[class*="direction-h"] {
+		flex-direction: row;
+	}
+
+	&[class*="direction-v"] {
+		flex-direction: column;
+	}
+}

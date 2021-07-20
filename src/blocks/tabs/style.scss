@@ -1,0 +1,88 @@
+/**
+ * Tabs Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+$default-class-name: "fleximple-block-tabs";
+
+.fleximple-block-tabs {
+	& &__tab-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		&.block-align-left {
+			justify-content: flex-start;
+		}
+
+		&.block-align-center {
+			justify-content: center;
+		}
+
+		&.block-align-right {
+			justify-content: flex-end;
+		}
+
+		&.block-align-space-evenly {
+			justify-content: space-evenly;
+		}
+
+		&.block-align-space-around {
+			justify-content: space-around;
+		}
+
+		&.block-align-space-between {
+			justify-content: space-between;
+		}
+	}
+
+	& &__panel-list {
+		padding: 20px;
+	}
+
+	& &__tab {
+		color: var(--gray-300);
+		background-color: transparent;
+		border-color: transparent;
+		padding: 10px 16px;
+		line-height: inherit;
+		border-bottom: 0;
+		margin-right: 5px;
+		display: flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		transition: color 0.2s ease, background-color 0.2s ease,
+			border-color 0.2s ease;
+
+		&:focus,
+		&:hover {
+			color: var(--gray-500);
+		}
+
+		&.is-active {
+			color: var(--gray-600);
+		}
+	}
+
+	&.is-style-standard {
+		.#{$default-class-name}__panel-list {
+			background-color: var(--white-rich);
+			border-radius: 0 4px 4px 4px;
+		}
+
+		.#{$default-class-name}__tab {
+			background-color: var(--gray-50);
+			border-radius: 4px 4px 0 0;
+
+			&:focus,
+			&:hover {
+				background-color: var(--gray-100);
+			}
+
+			&.is-active {
+				background-color: var(--white-rich);
+			}
+		}
+	}
+}

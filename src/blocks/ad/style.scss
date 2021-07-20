@@ -1,0 +1,21 @@
+/**
+ * Container Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+$default-class-name: "fleximple-block-ad";
+
+.fleximple-block-ad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& &__image {
+		max-width: 100%;
+	}
+
+	&:empty {
+		display: none;
+	}
+}

@@ -1,0 +1,18 @@
+/**
+ * contact-info-itemr Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-contact-info-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.fleximple-block-icon,
+	p {
+		white-space: nowrap;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}

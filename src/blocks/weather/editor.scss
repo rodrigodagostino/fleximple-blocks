@@ -1,0 +1,12 @@
+/**
+ * Weather Block Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.fleximple-block-weather {
+	.fleximple-components-placeholder {
+		min-height: 120px;
+	}
+}

@@ -1,0 +1,38 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-map {
+	.leaflet-container {
+		height: 100%;
+
+		.leaflet-control-container {
+			.leaflet-top {
+				a {
+					color: inherit;
+					text-decoration: inherit;
+
+					&:hover {
+						color: inherit;
+						text-decoration: inherit;
+					}
+				}
+			}
+		}
+
+		.leaflet-popup a {
+			color: inherit;
+			text-decoration: inherit;
+
+			&:hover {
+				color: inherit;
+				text-decoration: inherit;
+			}
+		}
+	}
+
+	.leaflet-marker-icon {
+	}
+}

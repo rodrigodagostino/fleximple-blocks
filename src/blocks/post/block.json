@@ -1,0 +1,159 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/post",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"postId": {
+			"type": "number"
+		},
+		"postType": {
+			"type": "string",
+			"default": "posts"
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"excerptLength": {
+			"type": "number",
+			"default": 40
+		},
+		"extraArticles": {
+			"type": "number",
+			"default": 3
+		},
+		"noFollow": {
+			"type": "boolean",
+			"default": false
+		},
+		"noReferrer": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageSize": {
+			"type": "object",
+			"default": {
+				"small": "medium",
+				"medium": "medium_large",
+				"large": "none"
+			}
+		},
+		"aspectRatio": {
+			"type": "object",
+			"default": {
+				"small": "3-2",
+				"medium": "16-10",
+				"large": "none"
+			}
+		},
+		"focalPoint": {
+			"type": "object",
+			"default": {
+				"small": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"medium": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"large": {
+					"x": 0.5,
+					"y": 0.5
+				}
+			}
+		},
+		"orderArticle": {
+			"type": "array",
+			"default": [
+				"media",
+				"content",
+				"extraArticles"
+			]
+		},
+		"orderMedia": {
+			"type": "array",
+			"default": [
+				"featuredImage",
+				"audio"
+			]
+		},
+		"orderContent": {
+			"type": "array",
+			"default": [
+				"categories",
+				"title",
+				"meta",
+				"excerpt",
+				"readMore"
+			]
+		},
+		"orderMeta": {
+			"type": "array",
+			"default": [
+				"author",
+				"date",
+				"comments"
+			]
+		},
+		"displayMedia": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAudio": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayContent": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayCategories": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayMeta": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAuthor": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayComments": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayReadMore": {
+			"type": "boolean",
+			"default": false
+		},
+		"displayExtraArticles": {
+			"type": "boolean",
+			"default": false
+		},
+		"readMore": {
+			"type": "string",
+			"default": "Read more"
+		}
+	},
+	"supports": {
+		"align": [ "wide", "full" ]
+	}
+}

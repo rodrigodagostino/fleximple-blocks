@@ -1,0 +1,673 @@
+/**
+ * 
+ * React FontIconPicker (MODIFIED FROM THE ORIGINAL)
+ * 
+ * React Component to show a picker element to pick font-icons & svg
+ * 
+ * @author Swashata Ghosh <swashata@wpquark.com>
+ * @version 1.2.0
+ * @link https://github.com/fontIconPicker/react-fonticonpicker
+ * @license MIT
+ * 
+ * Copyright (c) 2018 Swashata Ghosh <swashata@wpquark.com>
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ * 
+ */
+
+[class*=" fipicon-"],
+[class*="fipicon-"] {
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font--smoothing: antialiased;
+	-moz-osx-font--smoothing: grayscale
+}
+
+i.fipicon-angle-left:before {
+	content: "\f341";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-right:before {
+	content: "\f345";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-up:before {
+	content: "\f343";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-down:before {
+	content: "\f347";
+	font-family: dashicons;
+}
+
+.rfipbtn,
+.rfipdropdown {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	line-height: 1.71429;
+	vertical-align: baseline
+}
+
+.rfipbtn,
+.rfipbtn *,
+.rfipdropdown,
+.rfipdropdown * {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.rfipbtn input,
+.rfipbtn select,
+.rfipdropdown input,
+.rfipdropdown select {
+	font-size: 14px;
+}
+
+.rfip {
+	width: 100%;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.rfipbtn {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	border-radius: 2px;
+	cursor: pointer;
+	-webkit-transition: border-color .25s, -webkit-box-shadow .25s;
+	transition: border-color .25s, -webkit-box-shadow .25s;
+	transition: box-shadow .25s, border-color .25s;
+	transition: box-shadow .25s, border-color .25s, -webkit-box-shadow .25s;
+	outline: 0 none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.rfipbtn--open {
+	border-radius: 2px 2px 0 0
+}
+
+.rfipbtn__button {
+	width: 20px;
+	margin-left: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: auto;
+	-webkit-transition: background .25s, -webkit-box-shadow .25s;
+	transition: background .25s, -webkit-box-shadow .25s;
+	transition: background .25s, box-shadow .25s;
+	transition: background .25s, box-shadow .25s, -webkit-box-shadow .25s
+}
+
+.rfipbtn__button i {
+	font-size: 16px;
+	-webkit-transition: -webkit-transform .25s;
+	transition: -webkit-transform .25s;
+	transition: transform .25s;
+	transition: transform .25s, -webkit-transform .25s
+}
+
+.rfipbtn__button--open i {
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg)
+}
+
+.rfipbtn__current {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 2px
+}
+
+.rfipbtn--multi {
+	width: 258px
+}
+
+.rfipbtn--multi .rfipbtn__current {
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-preferred-size: 212px;
+	flex-basis: 212px;
+	-ms-flex-line-pack: center;
+	align-content: center
+}
+
+.rfipbtn--multi .rfipbtn__current,
+.rfipbtn__icon {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal
+}
+
+.rfipbtn__icon {
+	margin: 2px;
+	padding: 0;
+	height: 28px;
+	width: 48px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	border-radius: 2px
+}
+
+.rfipbtn__icon--empty {}
+
+.rfipbtn__elm {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 28px;
+	width: 28px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	font-size: 18px
+}
+
+.rfipbtn__elm img,
+.rfipbtn__elm svg {
+	height: 18px;
+	width: auto
+}
+
+.rfipbtn__del {
+	width: 18px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 18px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-transition: background-color .25s;
+	transition: background-color .25s;
+	cursor: pointer;
+}
+
+.rfipcategory {
+	width: 100%;
+	margin: 0 0 8px;
+	position: relative
+}
+
+.rfipcategory select {
+	width: 100%;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-transition: border .25s, -webkit-box-shadow .25s;
+	transition: border .25s, -webkit-box-shadow .25s;
+	transition: border .25s, box-shadow .25s;
+	transition: border .25s, box-shadow .25s, -webkit-box-shadow .25s;
+	background-color: transparent !important
+}
+
+.rfipcategory i {
+	position: absolute;
+	right: 2px;
+	top: 0;
+	font-size: 16px;
+	line-height: 32px;
+	z-index: -1
+}
+
+.rfipdropdown {
+	width: 300px;
+	position: absolute;
+	left: 0;
+	z-index: 100000001;
+	border-radius: 4px;
+}
+
+.rfipdropdown__selector {
+	overflow: hidden;
+	padding: 16px
+}
+
+.rfipdropdown.fipappear-enter-active .rfipdropdown__selector,
+.rfipdropdown.fipappear-exit-active .rfipdropdown__selector {
+	-webkit-transition: max-height .3s ease-out, padding .3s ease-out;
+	transition: max-height .3s ease-out, padding .3s ease-out;
+	padding: 16px
+}
+
+.rfipicons__pager {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	height: 24px;
+	line-height: 24px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 8px
+}
+
+.rfipicons__num {
+	width: 100px;
+	margin-right: auto
+}
+
+.rfipicons__cp {
+	width: 32px;
+	height: 24px;
+	line-height: 24px;
+	text-align: right
+}
+
+.rfipicons__cp,
+.rfipicons__sp,
+.rfipicons__tp {
+	margin-right: 8px
+}
+
+.rfipicons__arrow {
+	margin-left: auto;
+	width: 54px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 24px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.rfipicons__right {
+	margin-left: auto
+}
+
+.rfipicons__left,
+.rfipicons__right {
+	cursor: pointer;
+	width: 24px;
+	height: 20px;
+	position: relative;
+	-webkit-transition: background-color .25s, border .25s;
+	transition: background-color .25s, border .25s;
+	outline: 0 none;
+	border-radius: 2px;
+	font-size: 16px
+}
+
+.rfipicons__label {
+	height: 20px;
+	width: 24px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.rfipicons__label img {
+	height: 18px;
+	width: 18px
+}
+
+.rfipicons__selector {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 20%;
+	flex: 1 1 20%;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start
+}
+
+.rfipicons__ibox,
+.rfipicons__selector {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex
+}
+
+.rfipicons__ibox {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	-webkit-transition: background-color .25s, border .25s;
+	transition: background-color .25s, border .25s;
+	border-radius: 2px;
+	outline: 0 none;
+	font-size: 20px
+}
+
+.rfipicons__ibox img,
+.rfipicons__ibox svg {
+	max-height: 24px;
+	width: auto
+}
+
+.rfipicons__ibox > * {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: -webkit-transform .25s;
+	transition: -webkit-transform .25s;
+	transition: transform .25s;
+	transition: transform .25s, -webkit-transform .25s;
+	-webkit-transform-origin: center;
+	transform-origin: center
+}
+
+.rfipicons__ibox:hover > * {
+	-webkit-transform: scale(1.8);
+	transform: scale(1.8)
+}
+
+.rfipicons__ibox--error {
+	// text-transform: lowercase;
+	font-style: italic
+}
+
+.rfipicons__icon {
+	width: 20%;
+	height: 64px;
+	padding: 1px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	cursor: pointer
+}
+
+.rfipicons__icon--error {
+	display: block;
+	padding: 16px;
+	text-align: center;
+	font-size: 24px;
+	width: 100%;
+	line-height: 1
+}
+
+.rfipsearch {
+	width: 100%;
+	margin: 0 0 8px
+}
+
+.rfipsearch input {
+	width: 100%;
+	display: block;
+	height: 32px;
+	line-height: 32px
+}
+
+/*# sourceMappingURL=fonticonpicker.base-theme.react.css.map*/
+
+/*!
+ * 
+ * React FontIconPicker
+ * 
+ * React Component to show a picker element to pick font-icons & svg
+ * 
+ * @author Swashata Ghosh <swashata@wpquark.com>
+ * @version 1.2.0
+ * @link https://github.com/fontIconPicker/react-fonticonpicker
+ * @license MIT
+ * 
+ * Copyright (c) 2018 Swashata Ghosh <swashata@wpquark.com>
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ * 
+ */
+.rfipbtn--default {
+	box-shadow: 0 0 0 transparent;
+	transition: box-shadow .1s linear;
+	border: 1px solid var(--wp-gray-70);
+	background-color: #fff;
+	border-radius: 4px;
+	width: 100%;
+	height: 40px;
+
+	&:focus,
+	&:active {
+		color: var(--wp-gray-90);
+		border-color: var(--wp-blue-50);
+		box-shadow: 0 0 0 1px var(--wp-blue-50);
+		outline: 2px solid transparent;
+		outline-offset: -2px;
+	}
+}
+
+.rfipbtn--default .rfipbtn__button {
+	width: 20px;
+	border: 0 none transparent;
+	border-radius: 0 4px 4px 0;
+	background-color: #f5f5f5;
+	color: #424242
+}
+
+.rfipbtn--default .rfipbtn__button:hover {
+	background-color: #bdbdbd
+}
+
+.rfipbtn--default .rfipbtn__button:active {
+	-webkit-box-shadow: inset 0 0 10px 0 #e0e0e0;
+	box-shadow: inset 0 0 10px 0 #e0e0e0
+}
+
+.rfipbtn--default .rfipbtn__icon {
+	color: #424242
+}
+
+.rfipbtn--default .rfipbtn__icon--empty {}
+
+.rfipbtn--default .rfipbtn__del {
+	background-color: #eee
+}
+
+.rfipbtn--default .rfipbtn__del:hover {
+	background-color: #e0e0e0
+}
+
+.rfipbtn--default .rfipbtn__del:active,
+.rfipbtn--default .rfipbtn__del:focus {
+	outline: 1px solid #e0e0e0
+}
+
+.rfipdropdown--default {
+	-webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+	color: #424242;
+	background-color: #fff;
+	// border: 1px solid #e0e0e0;
+}
+
+.rfipdropdown--default input,
+.rfipdropdown--default select {
+	color: #424242
+}
+
+.rfipdropdown--default .rfipcategory select {
+	background-color: #fff;
+	border: 0 none;
+	border-bottom: 1px solid #bdbdbd;
+	-webkit-transition: border .25s, -webkit-box-shadow .25s;
+	transition: border .25s, -webkit-box-shadow .25s;
+	transition: box-shadow .25s, border .25s;
+	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+}
+
+.rfipdropdown--default .rfipcategory select:active,
+.rfipdropdown--default .rfipcategory select:focus {
+	border-bottom-color: #9e9e9e;
+	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
+	box-shadow: 0 1px 0 0 #9e9e9e;
+	outline: 0 none
+}
+
+.rfipdropdown--default .rfipicons__cp {
+	border: 0 none;
+	border-bottom: 1px solid #bdbdbd;
+	-webkit-transition: border .25s, -webkit-box-shadow .25s;
+	transition: border .25s, -webkit-box-shadow .25s;
+	transition: box-shadow .25s, border .25s;
+	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+}
+
+.rfipdropdown--default .rfipicons__cp:active,
+.rfipdropdown--default .rfipicons__cp:focus {
+	border-bottom-color: #9e9e9e;
+	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
+	box-shadow: 0 1px 0 0 #9e9e9e;
+	outline: 0 none
+}
+
+.rfipdropdown--default .rfipicons__left,
+.rfipdropdown--default .rfipicons__right {
+	background-color: #eee;
+	border: 1px solid #eee;
+	color: #424242
+}
+
+.rfipdropdown--default .rfipicons__left:hover,
+.rfipdropdown--default .rfipicons__right:hover {
+	background-color: #bdbdbd;
+	border: 1px solid #bdbdbd
+}
+
+.rfipdropdown--default .rfipicons__left:active,
+.rfipdropdown--default .rfipicons__left:focus,
+.rfipdropdown--default .rfipicons__right:active,
+.rfipdropdown--default .rfipicons__right:focus {
+	border: 1px solid #bdbdbd
+}
+
+.rfipdropdown--default .rfipicons__ibox {
+	background-color: #f5f5f5;
+	border: 1px solid #f5f5f5;
+	color: #424242
+}
+
+.rfipdropdown--default .rfipicons__ibox:hover {
+	background-color: #bdbdbd;
+	border: 1px solid #bdbdbd
+}
+
+.rfipdropdown--default .rfipicons__ibox:active,
+.rfipdropdown--default .rfipicons__ibox:focus {
+	border: 1px solid #bdbdbd
+}
+
+.rfipdropdown--default .rfipicons__ibox--error {
+	color: #ef9a9a
+}
+
+.rfipdropdown--default .rfipicons__icon--selected .rfipicons__ibox {
+	background-color: #eee
+}
+
+.rfipdropdown--default .rfipsearch input {
+	border: 0 none;
+	border-bottom: 1px solid #bdbdbd;
+	-webkit-transition: border .25s, -webkit-box-shadow .25s;
+	transition: border .25s, -webkit-box-shadow .25s;
+	transition: box-shadow .25s, border .25s;
+	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+}
+
+.rfipdropdown--default .rfipsearch input:active,
+.rfipdropdown--default .rfipsearch input:focus {
+	border-bottom-color: #9e9e9e;
+	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
+	box-shadow: 0 1px 0 0 #9e9e9e;
+	outline: 0 none
+}
+
+/*# sourceMappingURL=fonticonpicker.material-theme.react.css.map*/

@@ -1,0 +1,18 @@
+/**
+ * Slider Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-tab-panel {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+
+	&.is-active {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		transition: opacity .2s;
+	}
+}

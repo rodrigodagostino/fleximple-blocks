@@ -1,0 +1,179 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+$default-class-name: "fleximple-block-recent-posts";
+
+.fleximple-block-recent-posts {
+	&--grid {
+		display: grid;
+
+		.#{$default-class-name}__entry-media + .#{$default-class-name}__entry-content {
+			margin-top: rem(8px);
+		}
+	}
+
+	&--list {
+		display: flex;
+		flex-direction: column;
+
+		.#{$default-class-name}__entry {
+			display: flex;
+		}
+
+		.#{$default-class-name}__entry-media + .#{$default-class-name}__entry-content {
+			margin-left: rem(20px);
+		}
+	}
+
+	@for $i from 1 through 6 {
+		&.col-#{$i}--sm {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+
+	@media only screen and (min-width: 600px) {
+		@for $i from 1 through 6 {
+			&.col-#{$i}--md {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media only screen and (min-width: 910px) {
+		@for $i from 1 through 6 {
+			&.col-#{$i}--lg {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	& &__entry {
+		position: relative;
+		z-index: 1;
+	}
+
+	& &__entry-media + &__entry-content {
+		margin-top: rem(16px);
+	}
+
+	& &__entry-content + &__entry-media {
+		margin-top: rem(16px);
+	}
+
+	& &__entry-media {
+		position: relative;
+		z-index: -1;
+	}
+
+	& &__entry-picture {
+		height: 0;
+		margin: 0 !important;
+		overflow: hidden;
+		display: block;
+	}
+	
+	& &__entry-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100% !important;
+		object-fit: cover;
+		vertical-align: middle; // Removes blank space below.
+		margin-bottom: 0;
+	}
+
+	& &__entry-content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		& > * {
+			margin-top: 2px !important;
+			margin-bottom: 2px !important;
+
+			&:first-child {
+				margin-top: 0 !important;
+			}
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+
+	& &__entry-categories {
+		font-size: 13px;
+	}
+
+	& &__entry-category {
+		margin-right: 8px;
+		position: relative;
+		z-index: 1;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	& &__entry-title {
+		line-height: 1.25;
+
+		.#{$default-class-name}__entry-kicker {
+			color: var(--color-primary, #0080ff);
+
+			&::after {
+				content: "\00A0\002F\00A0";
+				color: var(--gray-200);
+				display: inline-block;
+			}
+		}
+
+		a {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	& &__entry-meta {
+		font-size: 13px;
+		z-index: 1;
+
+		& > * {
+			display: inline-block;
+		}
+
+		& > * + * {
+			&::before {
+				content: "\a0\b7\a0";
+			}
+		}
+	}
+
+	& &__entry-excerpt {
+		font-size: 15px;
+		line-height: 1.5;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	& &__entry-read-more {
+		font-size: 15px;
+		display: inline-block;
+		z-index: 1;
+	}
+
+	& &__entry-link-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		opacity: 0;
+	}
+}

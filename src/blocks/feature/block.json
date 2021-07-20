@@ -1,0 +1,56 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/feature",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"textAlignment": {
+			"type": "object",
+			"default": {
+				"small": "center",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"contentGap": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"url": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"linkTitle": {
+			"type": "string",
+			"default": null
+		},
+		"linkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
+		},
+		"noFollow": {
+			"type": "boolean",
+			"default": false
+		},
+		"noReferrer": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

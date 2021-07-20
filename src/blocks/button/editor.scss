@@ -1,0 +1,18 @@
+/**
+ * Button Extended Block Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.fleximple-block-button {
+	position: relative;
+}
+
+.components-range-control {
+
+	.components-range-control__slider + .dashicon {
+		width: 30px;
+		height: 30px;
+	}
+}

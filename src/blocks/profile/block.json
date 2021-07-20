@@ -1,0 +1,140 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/profile",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"contentAlignment": {
+			"type": "object",
+			"default": {
+				"small": "center",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"textAlignment": {
+			"type": "object",
+			"default": {
+				"small": "center",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"mediaGap": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 28,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"contentGap": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 8,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"direction": {
+			"type": "object",
+			"default": {
+				"small": "column",
+				"medium": "",
+				"large": ""
+			}
+		},
+		"isReversed": {
+			"type": "object",
+			"default": {
+				"small": false,
+				"medium": null,
+				"large": null
+			}
+		},
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"mediaAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "alt",
+			"default": ""
+		},
+		"mediaWidth": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 200,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"mediaHeight": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 200,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"mediaBorderRadius": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 40,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+/**
+ * Feature Block Styles
+ *
+ * CSS for both frontend + backend.
+ */
+
+.fleximple-block-icon {
+	text-align: center;
+	line-height: 1;
+	position: relative;
+
+	&::before {
+		font-style: normal;
+	}
+
+	&--custom {
+
+		svg,
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+}

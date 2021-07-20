@@ -1,0 +1,166 @@
+{
+	"apiVersion": 2,
+	"name": "fleximple-blocks/header",
+	"category": "fleximple-blocks",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".fleximple-block-header__heading",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 2
+		},
+		"subhead": {
+			"type": "string",
+			"source": "html",
+			"selector": ".fleximple-block-header__subhead",
+			"default": ""
+		},
+		"textAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"gap": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 12,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"marginTop": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 0,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"marginBottom": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 0,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingTop": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingLeft": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 0,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingRight": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 0,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingBottom": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"order": {
+			"type": "array",
+			"default": [
+				"heading",
+				"subhead",
+				"additional"
+			]
+		},
+		"displayHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"displaySubhead": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAdditional": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

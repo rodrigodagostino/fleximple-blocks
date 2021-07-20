@@ -1,0 +1,268 @@
+/************************************************
+
+Stylesheet: Vendor Customization Stylesheet
+
+*************************************************/
+
+/*----------------------
+ # Font Awesome
+ ---------------------*/
+@font-face {
+	font-family: "Font Awesome 5 Brands";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.eot");
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fab {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: 400;
+	font-display: block;
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.eot");
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+.far {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: 900;
+	font-display: block;
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.eot");
+	src: url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.14.0/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+.fa,
+.fas {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+/*----------------------
+ # Font Icon Picker
+ ---------------------*/
+i.fipicon-angle-left:before {
+	content: "\f341";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-right:before {
+	content: "\f345";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-up:before {
+	content: "\f343";
+	font-family: dashicons;
+}
+
+i.fipicon-angle-down:before {
+	content: "\f347";
+	font-family: dashicons;
+}
+
+.rfip {
+	width: 100%;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.rfipbtn__button i {
+	font-size: 16px;
+	display: flex;
+}
+
+.rfipbtn--default {
+	box-shadow: 0 0 0 transparent;
+	transition: box-shadow 0.1s linear;
+	border: 1px solid var(--wp-gray-40);
+	background-color: var(--white-rich);
+	border-radius: 3px;
+	width: 100%;
+	height: 40px;
+
+	&:focus,
+	&:active {
+		color: var(--wp-gray-90);
+		border-color: var(--wp-blue-50);
+		box-shadow: 0 0 0 1px var(--wp-blue-50);
+		outline: 2px solid transparent;
+		outline-offset: -2px;
+	}
+}
+
+.rfipbtn--default .rfipbtn__button {
+	width: 20px;
+	border: 0 none transparent;
+	border-radius: 0 3px 3px 0;
+	background-color: transparent;
+	color: var(--wp-gray-70);
+
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.rfipbtn--default .rfipbtn__icon {
+	border: none;
+}
+
+.rfipbtn__del {
+	height: 18px;
+	border-radius: 8px;
+}
+
+/*----------------------
+ # Leaflet
+ ---------------------*/
+.leaflet-marker-pane .leaflet-div-icon {
+	background: transparent;
+	border: none;
+}
+
+/*----------------------
+ # Swiper
+ ---------------------*/
+.swiper-container {
+	padding-bottom: 44px !important;
+
+	&:hover {
+		.swiper-button-prev,
+		.swiper-button-next {
+			opacity: 1;
+		}
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-color: transparent;
+	border: none;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: 1;
+	width: auto;
+	height: auto;
+	z-index: 10;
+	opacity: 0.8;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		border: none;
+	}
+
+	i {
+		transition: color 0.2s ease;
+	}
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+	background-image: none;
+	left: 12px !important;
+	padding-left: 18px;
+	padding-right: 22px;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+	background-image: none;
+	right: 12px !important;
+	padding-left: 22px;
+	padding-right: 18px;
+}
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+	content: none !important;
+}
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+	content: none !important;
+}
+
+.swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	background-color: var(--black-rich);
+
+	&-active {
+		background-color: var(--color-accent);
+	}
+}
+
+/*----------------------
+ # React Select
+ ---------------------*/
+.react-select-container {
+	.react-select__control {
+		color: var(--wp-gray-70);
+		border-color: var(--wp-gray-40);
+		border-radius: 3px;
+		cursor: pointer;
+
+		&:hover {
+			border-color: var(--wp-gray-40);
+		}
+	}
+
+	.react-select__indicator-separator {
+		display: none;
+	}
+
+	.react-select__dropdown-indicator {
+		padding: 8px 4px;
+
+		svg {
+			fill: var(--wp-gray-60);
+		}
+	}
+
+	.react-select__menu {
+		margin-top: 0;
+		border-radius: 0 0 2px 2px;
+		box-shadow: 0 0 0 1px var(--wp-gray-20), 0 4px 11px hsla(0, 0%, 0%, 0.1);
+		z-index: 100;
+
+		.react-select__option {
+			cursor: pointer;
+
+			&.react-select__option--is-focused {
+				color: var(--white-rich);
+				background-color: var(--wp-blue-60);
+			}
+		}
+	}
+}
