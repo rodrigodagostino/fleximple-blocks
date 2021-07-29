@@ -4,11 +4,11 @@
 import { __ } from '@wordpress/i18n'
 import { TextControl } from '@wordpress/components'
 import { useDispatch, useSelect } from '@wordpress/data'
-import { PluginDocumentSettingPanel } from '@wordpress/editPost'
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post'
 import { useEffect, useState } from '@wordpress/element'
 import { registerPlugin } from '@wordpress/plugins'
 
-const PostMetaBox = () => {
+const PostKickerMetaBox = () => {
 	const {
 		meta,
 		meta: { kicker },
@@ -31,7 +31,7 @@ const PostMetaBox = () => {
 
 	return (
 		<PluginDocumentSettingPanel
-			name="post-meta-box"
+			name="post-kicker-meta-box"
 			title={ __( 'Kicker', 'fleximpleblocks' ) }
 		>
 			<TextControl
@@ -45,7 +45,7 @@ const PostMetaBox = () => {
 
 if ( window.pagenow === 'post' ) {
 	registerPlugin( 'kicker', {
-		render: PostMetaBox,
+		render: PostKickerMetaBox,
 		icon: null,
 	} )
 }
