@@ -3,6 +3,7 @@
  *
  * CSS for both frontend + backend.
  */
+@use 'sass:math';
 
 $default-class-name: "fleximple-block-row";
 
@@ -36,7 +37,7 @@ $default-class-name: "fleximple-block-row";
 
 		@each $step in $steps {
 			&.opacity-#{ $step } {
-				opacity: $step / 100;
+				opacity: math.div($step, 100);
 			}
 		}
 	}
