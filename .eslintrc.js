@@ -4,13 +4,11 @@ module.exports = {
 		es6: true,
 		node: true,
 		mocha: true,
-		'jest/globals': true,
 	},
 	extends: [
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:jsx-a11y/recommended',
-		'plugin:jest/recommended',
 	],
 	globals: {
 		wp: true,
@@ -31,7 +29,6 @@ module.exports = {
 	plugins: [
 		'react',
 		'jsx-a11y',
-		'jest',
 	],
 	settings: {
 		react: {
@@ -63,8 +60,8 @@ module.exports = {
 		'func-call-spacing': 'error',
 		indent: [ 'error', 'tab', { SwitchCase: 1 } ],
 		'key-spacing': [ 'error', { afterColon: true } ],
-		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-console': [ 'error', { allow: [ 'warn' ] } ],
+		'no-debugger': [ 'error' ],
 		'no-duplicate-imports': 'error',
 		'no-else-return': 'error',
 		'no-extra-parens': 'error',
