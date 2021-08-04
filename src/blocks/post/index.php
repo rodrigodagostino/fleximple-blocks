@@ -82,10 +82,10 @@ function fleximpleblocks_render_post_block( $attributes, $content ) {
 			foreach ( $image_sizes as $size ) {
 				if ( $image_size[ $size ] !== 'none' ) {
 					$picture_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post ), $image_size[ $size ], false );
-					if ( $size !== 'small' ) {
+					if ( $picture_data && $size !== 'small' ) {
 						$picture_sources[] =
 							'<source class="'. $default_class_name .'__image" media="(min-width: '. get_option( 'fleximpleblocks_'. $image_sizes[ $i + 1 ] .'_breakpoint_value' ) .'px)" srcset="'. $picture_data[0] .'">';
-					} else {
+					} else if ( $picture_data ) {
 						$picture_sources[] =
 							'<source class="'. $default_class_name .'__image" srcset="'. $picture_data[0] .'">';
 					}
