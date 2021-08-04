@@ -72,11 +72,6 @@ registerFleximpleBlocks()
 // import './block-variations'
 
 /**
- * Custom Fields
- */
-import './custom-fields/post-kicker'
-
-/**
  * Hooks
  */
 import './hooks/animation'

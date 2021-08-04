@@ -447,7 +447,7 @@ function get_image_sizes() {
 			$sizes[ $_size ]['width']  = get_option( "{$_size}_size_w" );
 			$sizes[ $_size ]['height'] = get_option( "{$_size}_size_h" );
 			$sizes[ $_size ]['crop']   = (bool) get_option( "{$_size}_crop" );
-		} elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+		} else if ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
 			$sizes[ $_size ] = array(
 				'width'  => $_wp_additional_image_sizes[ $_size ]['width'],
 				'height' => $_wp_additional_image_sizes[ $_size ]['height'],
@@ -537,25 +537,4 @@ if ( ! function_exists( 'fleximpleblocks_categories_data' ) ) {
 
 		return $categories_data;
 	}
-}
-
-/**
- * Register custom fields.
- */
-if ( ! function_exists( 'fleximpleblocks_register_custom_fields' ) ) {
-	function fleximpleblocks_register_custom_fields() {
-		register_post_meta(
-			'post',
-			'kicker',
-			[
-				'show_in_rest'  => true,
-				'single'        => true,
-				'type'          => 'string',
-				'auth_callback' => function() {
-					return current_user_can( 'edit_posts' );
-				}
-			]
-		);
-	}
-	add_action( 'init', 'fleximpleblocks_register_custom_fields' );
 }
