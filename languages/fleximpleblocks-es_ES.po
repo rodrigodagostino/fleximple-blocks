@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fleximple Blocks 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks\n"
-"POT-Creation-Date: 2021-06-26T03:12:56+02:00\n"
-"PO-Revision-Date: 2021-06-25 22:15-0300\n"
+"POT-Creation-Date: 2021-08-02T21:15:41+02:00\n"
+"PO-Revision-Date: 2021-08-02 16:16-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -36,10 +36,8 @@ msgstr ""
 msgid "https://www.rodrigodagostino.com/"
 msgstr ""
 
-#. translators: block keyword
 #: src/blocks/post-carousel/index.php:131 src/blocks/post/index.php:142
-#: src/blocks/recent-posts/index.php:120 dist/index.js:56 dist/index.js:65
-#: dist/index.js:81
+#: src/blocks/recent-posts/index.php:120 dist/index.js:2
 msgid "Category:"
 msgstr "Categoría:"
 
@@ -49,14 +47,12 @@ msgid "(no title)"
 msgstr "(sin título)"
 
 #: src/blocks/post-carousel/index.php:173 src/blocks/post/index.php:185
-#: src/blocks/recent-posts/index.php:163 dist/index.js:56 dist/index.js:65
-#: dist/index.js:81
+#: src/blocks/recent-posts/index.php:163 dist/index.js:2
 msgid "Published by:"
 msgstr "Publicado por:"
 
 #: src/blocks/post-carousel/index.php:185 src/blocks/post/index.php:197
-#: src/blocks/recent-posts/index.php:175 dist/index.js:56 dist/index.js:65
-#: dist/index.js:81
+#: src/blocks/recent-posts/index.php:175 dist/index.js:2
 msgid "Published on:"
 msgstr "Publicado en:"
 
@@ -69,12 +65,12 @@ msgstr[0] "%d comentario"
 msgstr[1] "%d comentarios"
 
 #: src/blocks/post-carousel/index.php:281
-#: src/blocks/post-carousel/index.php:282 dist/index.js:65
+#: src/blocks/post-carousel/index.php:282 dist/index.js:2
 msgid "Previous slide"
 msgstr "Diapositiva anterior"
 
 #: src/blocks/post-carousel/index.php:289
-#: src/blocks/post-carousel/index.php:290 dist/index.js:65
+#: src/blocks/post-carousel/index.php:290 dist/index.js:2
 msgid "Next slide"
 msgstr "Diapositiva siguiente"
 
@@ -114,51 +110,51 @@ msgstr "Cargar Swiper."
 msgid "Open Weather API key."
 msgstr "Clave de la API de Open Weather."
 
-#: dist/admin-script.js:1 src/js/admin.js:90
+#: dist/admin-script.js:2 src/js/admin.js:90
 msgid "Breakpoints"
 msgstr "Puntos de quiebre"
 
-#: dist/admin-script.js:1 src/js/admin.js:92
+#: dist/admin-script.js:2 src/js/admin.js:92
 msgid "Define the breakpoint values that will be used by the Fleximple Blocks."
 msgstr ""
 "Define los valores para los puntos de quiebre que serán usados por los "
 "Fleximple Blocks."
 
-#: dist/admin-script.js:1 src/js/admin.js:100
+#: dist/admin-script.js:2 src/js/admin.js:100
 msgid "Small breakpoint"
 msgstr "Punto de quiebre pequeño"
 
-#: dist/admin-script.js:1 dist/index.js:69 src/blocks/post-carousel/edit.js:229
-#: src/blocks/_slider/edit.js:152 src/js/admin.js:101 src/js/admin.js:111
-#: src/js/admin.js:121 src/js/admin.js:131
+#: dist/admin-script.js:2 dist/index.js:2 src/blocks/post-carousel/edit.js:229
+#: src/js/admin.js:101 src/js/admin.js:111 src/js/admin.js:121
+#: src/js/admin.js:131
 msgid "In pixels."
 msgstr "En píxeles."
 
-#: dist/admin-script.js:1 src/js/admin.js:110
+#: dist/admin-script.js:2 src/js/admin.js:110
 msgid "Medium breakpoint"
 msgstr "Punto de quiebre medio"
 
-#: dist/admin-script.js:1 src/js/admin.js:120
+#: dist/admin-script.js:2 src/js/admin.js:120
 msgid "Large breakpoint"
 msgstr "Punto de quiebre grande"
 
-#: dist/admin-script.js:1 src/js/admin.js:130
+#: dist/admin-script.js:2 src/js/admin.js:130
 msgid "Extra large breakpoint"
 msgstr "Punto de quiebre extra grande"
 
-#: dist/admin-script.js:1 src/js/admin.js:163 src/js/admin.js:240
+#: dist/admin-script.js:2 src/js/admin.js:163 src/js/admin.js:240
 msgid "Save changes"
 msgstr "Guardar cambios"
 
-#: dist/admin-script.js:1 src/js/admin.js:168
+#: dist/admin-script.js:2 src/js/admin.js:168
 msgid "Third Parties"
 msgstr "Terceros"
 
-#: dist/admin-script.js:1 src/js/admin.js:171
+#: dist/admin-script.js:2 src/js/admin.js:171
 msgid "Load Font Awesome"
 msgstr "Cargar Font Awesome"
 
-#: dist/admin-script.js:1 src/js/admin.js:176
+#: dist/admin-script.js:2 src/js/admin.js:176
 msgid ""
 "It’s only necessary for icons to work. Deactivate it if you won’t be using "
 "them."
@@ -166,11 +162,11 @@ msgstr ""
 "Sólo es necesario para que los íconos funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:1 src/js/admin.js:182
+#: dist/admin-script.js:2 src/js/admin.js:182
 msgid "Load Leaflet"
 msgstr "Cargar Leaflet"
 
-#: dist/admin-script.js:1 src/js/admin.js:187
+#: dist/admin-script.js:2 src/js/admin.js:187
 msgid ""
 "It’s only necessary for maps to work. Deactivate it if you won’t be using "
 "them."
@@ -178,11 +174,11 @@ msgstr ""
 "Sólo es necesario para que los mapas funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:1 src/js/admin.js:193
+#: dist/admin-script.js:2 src/js/admin.js:193
 msgid "Load Swiper"
 msgstr "Cargar Swiper"
 
-#: dist/admin-script.js:1 src/js/admin.js:198
+#: dist/admin-script.js:2 src/js/admin.js:198
 msgid ""
 "It’s only necessary for carousels to work. Deactivate it if you won’t be "
 "using them."
@@ -190,17 +186,16 @@ msgstr ""
 "Sólo es necesario para que los carruseles funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:1 src/js/admin.js:204
+#: dist/admin-script.js:2 src/js/admin.js:204
 msgid "Open Weather API key"
 msgstr "Clave de la API de Open Weather"
 
 #. translators: block keyword
-#: dist/index.js:1 dist/index.js:3 dist/index.js:7 src/blocks/ad/index.js:25
-#: src/blocks/ad/index.js:30
+#: dist/index.js:2 src/blocks/ad/index.js:25 src/blocks/ad/index.js:30
 msgid "Ad"
 msgstr "Anuncio"
 
-#: dist/index.js:1 src/blocks/ad/index.js:26
+#: dist/index.js:2 src/blocks/ad/index.js:26
 msgid ""
 "Display an ad that can switch to different versions depending on the screen "
 "size."
@@ -209,331 +204,303 @@ msgstr ""
 "de la pantalla."
 
 #. translators: block keyword
-#: dist/index.js:5 src/blocks/ad/index.js:32
+#: dist/index.js:2 src/blocks/ad/index.js:32
 msgid "advertisement"
 msgstr "publicidad"
 
 #. translators: block keyword
-#: dist/index.js:7 dist/index.js:11 dist/index.js:21 dist/index.js:25
-#: dist/index.js:29 dist/index.js:33 dist/index.js:44 dist/index.js:48
-#: dist/index.js:52 dist/index.js:56 dist/index.js:61 dist/index.js:73
-#: dist/index.js:81 dist/index.js:86 dist/index.js:94 dist/index.js:98
-#: dist/index.js:108 dist/index.js:112 src/blocks/ad/index.js:34
-#: src/blocks/button/index.js:32 src/blocks/buttons/index.js:33
-#: src/blocks/contact-info/index.js:32 src/blocks/date-and-time/index.js:31
-#: src/blocks/feature/index.js:33 src/blocks/header/index.js:38
-#: src/blocks/icon/index.js:32 src/blocks/iframe/index.js:32
-#: src/blocks/map/index.js:32 src/blocks/post-carousel/index.js:32
-#: src/blocks/post/index.js:32 src/blocks/profile/index.js:33
-#: src/blocks/recent-posts/index.js:32 src/blocks/row/index.js:33
-#: src/blocks/tabs/index.js:32 src/blocks/testimonial/index.js:33
-#: src/blocks/weather/index.js:32 src/blocks/_slider/index.js:33
+#: dist/index.js:2 src/blocks/ad/index.js:34 src/blocks/button/index.js:32
+#: src/blocks/buttons/index.js:33 src/blocks/contact-info/index.js:32
+#: src/blocks/date-and-time/index.js:31 src/blocks/feature/index.js:33
+#: src/blocks/header/index.js:38 src/blocks/icon/index.js:32
+#: src/blocks/iframe/index.js:32 src/blocks/map/index.js:32
+#: src/blocks/post-carousel/index.js:32 src/blocks/post/index.js:32
+#: src/blocks/profile/index.js:33 src/blocks/recent-posts/index.js:32
+#: src/blocks/row/index.js:33 src/blocks/tabs/index.js:32
+#: src/blocks/testimonial/index.js:33 src/blocks/weather/index.js:32
 msgid "fleximple block"
 msgstr "bloque fleximple"
 
-#. translators: block keyword
-#. translators: %s: heading level e.g: "1", "2", "3"
-#. translators: label for ordering posts by title in descending order
-#: dist/index.js:7 dist/index.js:17 dist/index.js:21 dist/index.js:25
-#: dist/index.js:29 dist/index.js:36 dist/index.js:44 dist/index.js:48
-#: dist/index.js:56 dist/index.js:57 dist/index.js:69 dist/index.js:77
-#: dist/index.js:82 dist/index.js:90 dist/index.js:94 dist/index.js:104
-#: dist/index.js:112 src/blocks/button/edit.js:253
-#: src/blocks/buttons/edit.js:68 src/blocks/contact-info-item/edit.js:69
-#: src/blocks/contact-info/edit.js:85 src/blocks/date-and-time/edit.js:63
-#: src/blocks/feature/edit.js:180 src/blocks/header/edit.js:104
-#: src/blocks/icon/edit.js:78 src/blocks/iframe/edit.js:66
-#: src/blocks/map/edit.js:120 src/blocks/post-carousel/edit.js:160
-#: src/blocks/post/edit.js:156 src/blocks/profile/edit.js:133
-#: src/blocks/recent-posts/edit.js:146 src/blocks/row/edit.js:199
-#: src/blocks/testimonial/edit.js:110 src/blocks/weather/edit.js:91
-#: src/blocks/_slider/edit.js:83
+#: dist/index.js:2 src/blocks/button/edit.js:253 src/blocks/buttons/edit.js:68
+#: src/blocks/contact-info-item/edit.js:69 src/blocks/contact-info/edit.js:85
+#: src/blocks/date-and-time/edit.js:63 src/blocks/feature/edit.js:180
+#: src/blocks/header/edit.js:104 src/blocks/icon/edit.js:78
+#: src/blocks/iframe/edit.js:66 src/blocks/map/edit.js:120
+#: src/blocks/post-carousel/edit.js:160 src/blocks/post/edit.js:156
+#: src/blocks/profile/edit.js:133 src/blocks/recent-posts/edit.js:146
+#: src/blocks/row/edit.js:199 src/blocks/testimonial/edit.js:110
+#: src/blocks/weather/edit.js:91
 msgid "Main"
 msgstr "Principal"
 
-#: dist/index.js:7 dist/index.js:77 dist/index.js:90
-#: src/blocks/profile/edit.js:262 src/blocks/row/edit.js:285
+#: dist/index.js:2 src/blocks/profile/edit.js:262 src/blocks/row/edit.js:285
 msgid "Image"
 msgstr "Imagen"
 
-#: dist/index.js:7 dist/index.js:77 dist/index.js:90
-#: src/blocks/profile/edit.js:277 src/blocks/profile/edit.js:285
-#: src/blocks/row/edit.js:323 src/blocks/row/edit.js:335
+#: dist/index.js:2 src/blocks/profile/edit.js:277
+#: src/blocks/profile/edit.js:285 src/blocks/row/edit.js:323
+#: src/blocks/row/edit.js:335
 msgid "Replace image"
 msgstr "Reemplazar imagen"
 
-#: dist/index.js:7 dist/index.js:90 src/blocks/row/edit.js:334
+#: dist/index.js:2 src/blocks/row/edit.js:334
 msgid "Choose image"
 msgstr "Elegir imagen"
 
-#: dist/index.js:7 dist/index.js:77 dist/index.js:90
-#: src/blocks/profile/edit.js:294 src/blocks/row/edit.js:364
+#: dist/index.js:2 src/blocks/profile/edit.js:294 src/blocks/row/edit.js:364
 msgid "Remove image"
 msgstr "Quitar imagen"
 
-#: dist/index.js:7 dist/index.js:90 src/blocks/row/edit.js:425
+#: dist/index.js:2 src/blocks/row/edit.js:425
 msgid "Size"
 msgstr "Tamaño"
 
-#: dist/index.js:7 dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: dist/index.js:112 src/blocks/post-carousel/edit.js:351
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:351
 #: src/blocks/post/edit.js:243 src/blocks/recent-posts/edit.js:300
 msgid "None"
 msgstr "Ninguna"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Link URL"
 msgstr "URL del enlace"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Type the link URL…"
 msgstr "Ingresa la URL del enlace…"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Link target"
 msgstr "Destino del enlace"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Open in current tab"
 msgstr "Abrir en pestaña actual"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Open in new tab"
 msgstr "Abrir en pestaña nueva"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Select an image to start with."
 msgstr "Selecciona una imagen con la cual comenzar."
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Align start"
 msgstr "Alinear al inicio"
 
-#: dist/index.js:7 dist/index.js:86
+#: dist/index.js:2
 msgid "Align center"
 msgstr "Alinear al centro"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Align end"
 msgstr "Alinear al final"
 
-#: dist/index.js:7 dist/index.js:86
+#: dist/index.js:2
 msgid "Align space evenly"
 msgstr "Alinear espacio uniforme"
 
-#: dist/index.js:7 dist/index.js:86
+#: dist/index.js:2
 msgid "Align space around"
 msgstr "Alinear espacio alrededor"
 
-#: dist/index.js:7 dist/index.js:86
+#: dist/index.js:2
 msgid "Align space between"
 msgstr "Alinear espacio en medio"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Change horizontal alignment"
 msgstr "Cambiar alineación horizontal"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Type the icon name…"
 msgstr "Ingresa el nombre de ícono…"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "No icons found."
 msgstr "No se encontraron íconos."
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Select icon"
 msgstr "Elegir ícono"
 
-#: dist/index.js:7 dist/index.js:17 dist/index.js:21 dist/index.js:25
-#: dist/index.js:104 src/blocks/buttons/edit.js:113
+#: dist/index.js:2 src/blocks/buttons/edit.js:113
 #: src/blocks/contact-info-item/edit.js:92 src/blocks/contact-info/edit.js:138
 #: src/blocks/testimonial/edit.js:135
 msgid "Gap size"
 msgstr "Tamaño de separación"
 
-#: dist/index.js:7 dist/index.js:17 dist/index.js:21 dist/index.js:25
-#: dist/index.js:104 src/blocks/buttons/edit.js:114
+#: dist/index.js:2 src/blocks/buttons/edit.js:114
 #: src/blocks/contact-info-item/edit.js:93 src/blocks/contact-info/edit.js:139
 #: src/blocks/testimonial/edit.js:136
 msgid "Gap size unit"
 msgstr "Unidad de tamaño de separación"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Minimum height"
 msgstr "Alto mínimo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Minimum height unit"
 msgstr "Unidad de alto mínimo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Content width"
 msgstr "Ancho de contenido"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Content width unit"
 msgstr "Unidad de ancho de contenido"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Margin"
 msgstr "Margen"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Margin unit"
 msgstr "Unidad de margen"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Top margin"
 msgstr "Margen superior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Top margin unit"
 msgstr "Unidad de margen superior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Left margin"
 msgstr "Margen izquierdo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Left margin unit"
 msgstr "Unidad de margen izquierdo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Right margin"
 msgstr "Margen derecho"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Right margin unit"
 msgstr "Unidad de margen derecho"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Bottom margin"
 msgstr "Margen inferior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Bottom margin unit"
 msgstr "Unidad de margen inferior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Padding"
 msgstr "Relleno"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Padding unit"
 msgstr "Unidad de relleno"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Top padding"
 msgstr "Relleno superior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Top padding unit"
 msgstr "Unidad de relleno superior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Left padding"
 msgstr "Relleno izquierdo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Left padding unit"
 msgstr "Unidad de relleno izquierdo"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Right padding"
 msgstr "Relleno derecho"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Right padding unit"
 msgstr "Unidad de relleno derecho"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Bottom padding"
 msgstr "Relleno inferior"
 
-#: dist/index.js:7
+#: dist/index.js:2
 msgid "Bottom padding unit"
 msgstr "Unidad de relleno inferior"
 
-#: dist/index.js:7 dist/index.js:17 dist/index.js:21 dist/index.js:69
-#: dist/index.js:77 dist/index.js:90 dist/index.js:94
-#: src/blocks/button/edit.js:255 src/blocks/buttons/edit.js:92
+#: dist/index.js:2 src/blocks/button/edit.js:255 src/blocks/buttons/edit.js:92
 #: src/blocks/contact-info/edit.js:116 src/blocks/post-carousel/edit.js:299
 #: src/blocks/profile/edit.js:138 src/blocks/row/edit.js:228
 msgid "Horizontal alignment"
 msgstr "Alineación horizontal"
 
-#: dist/index.js:7 dist/index.js:77 dist/index.js:104
-#: src/blocks/button/edit.js:265 src/blocks/profile/edit.js:331
+#: dist/index.js:2 src/blocks/button/edit.js:265 src/blocks/profile/edit.js:331
 #: src/blocks/testimonial/edit.js:166
 msgid "Border radius"
 msgstr "Radio de esquinas"
 
-#: dist/index.js:7 dist/index.js:77 dist/index.js:104
-#: src/blocks/button/edit.js:266 src/blocks/profile/edit.js:332
+#: dist/index.js:2 src/blocks/button/edit.js:266 src/blocks/profile/edit.js:332
 #: src/blocks/testimonial/edit.js:167
 msgid "Border radius unit"
 msgstr "Unidad de radio de esquinas"
 
-#: dist/index.js:7 src/blocks/button/edit.js:276
+#: dist/index.js:2 src/blocks/button/edit.js:276
 msgid "Button width"
 msgstr "Ancho del botón"
 
-#: dist/index.js:7 src/blocks/button/edit.js:279
+#: dist/index.js:2 src/blocks/button/edit.js:279
 msgid "Automatic"
 msgstr "Automático"
 
-#: dist/index.js:7 dist/index.js:69 dist/index.js:82
-#: src/blocks/button/edit.js:280 src/blocks/post-carousel/edit.js:353
-#: src/blocks/recent-posts/edit.js:302
+#: dist/index.js:2 src/blocks/button/edit.js:280
+#: src/blocks/post-carousel/edit.js:353 src/blocks/recent-posts/edit.js:302
 msgid "Full"
 msgstr "Completo"
 
-#: dist/index.js:7 src/blocks/button/edit.js:286
+#: dist/index.js:2 src/blocks/button/edit.js:286
 msgid "Button title"
 msgstr "Título de botón"
 
-#: dist/index.js:7 src/blocks/button/edit.js:288
+#: dist/index.js:2 src/blocks/button/edit.js:288
 msgid "Type the button title…"
 msgstr "Ingresa el título del botón…"
 
-#: dist/index.js:7 src/blocks/button/edit.js:290
+#: dist/index.js:2 src/blocks/button/edit.js:290
 msgid "It will show to the user as a tooltip."
 msgstr "Se mostrará al usuario en forma de descripción emergente."
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57 dist/index.js:69
-#: dist/index.js:82 src/blocks/button/edit.js:294
-#: src/blocks/feature/edit.js:229 src/blocks/post-carousel/edit.js:320
-#: src/blocks/post/edit.js:200 src/blocks/recent-posts/edit.js:232
+#: dist/index.js:2 src/blocks/button/edit.js:294 src/blocks/feature/edit.js:229
+#: src/blocks/post-carousel/edit.js:320 src/blocks/post/edit.js:200
+#: src/blocks/recent-posts/edit.js:232
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57
-#: src/blocks/button/edit.js:303 src/blocks/feature/edit.js:235
+#: dist/index.js:2 src/blocks/button/edit.js:303 src/blocks/feature/edit.js:235
 #: src/blocks/post/edit.js:209
 msgid "Google search spider should not follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57
-#: src/blocks/button/edit.js:299 src/blocks/feature/edit.js:234
+#: dist/index.js:2 src/blocks/button/edit.js:299 src/blocks/feature/edit.js:234
 #: src/blocks/post/edit.js:205
 msgid "Google search spider should follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57 dist/index.js:69
-#: dist/index.js:82 src/blocks/button/edit.js:311
-#: src/blocks/feature/edit.js:240 src/blocks/post-carousel/edit.js:331
-#: src/blocks/post/edit.js:217 src/blocks/recent-posts/edit.js:243
+#: dist/index.js:2 src/blocks/button/edit.js:311 src/blocks/feature/edit.js:240
+#: src/blocks/post-carousel/edit.js:331 src/blocks/post/edit.js:217
+#: src/blocks/recent-posts/edit.js:243
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57 dist/index.js:69
-#: dist/index.js:82 src/blocks/button/edit.js:320
-#: src/blocks/feature/edit.js:246 src/blocks/post-carousel/edit.js:337
-#: src/blocks/post/edit.js:226 src/blocks/recent-posts/edit.js:249
+#: dist/index.js:2 src/blocks/button/edit.js:320 src/blocks/feature/edit.js:246
+#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:226
+#: src/blocks/recent-posts/edit.js:249
 msgid ""
 "The browser should not send an HTTP referer header if the user follows the "
 "hyperlink."
@@ -541,10 +508,9 @@ msgstr ""
 "El navegador no debe enviar un encabezado de referencia HTTP si el usuario "
 "sigue el hipervínculo."
 
-#: dist/index.js:7 dist/index.js:29 dist/index.js:57 dist/index.js:69
-#: dist/index.js:82 src/blocks/button/edit.js:316
-#: src/blocks/feature/edit.js:245 src/blocks/post-carousel/edit.js:336
-#: src/blocks/post/edit.js:222 src/blocks/recent-posts/edit.js:248
+#: dist/index.js:2 src/blocks/button/edit.js:316 src/blocks/feature/edit.js:245
+#: src/blocks/post-carousel/edit.js:336 src/blocks/post/edit.js:222
+#: src/blocks/recent-posts/edit.js:248
 msgid ""
 "The browser should send an HTTP referer header if the user follows the "
 "hyperlink."
@@ -553,127 +519,119 @@ msgstr ""
 "sigue el hipervínculo."
 
 #. translators: block keyword
-#: dist/index.js:7 dist/index.js:44 dist/index.js:46 dist/index.js:104
-#: src/blocks/button/edit.js:328 src/blocks/button/edit.js:332
+#: dist/index.js:2 src/blocks/button/edit.js:328 src/blocks/button/edit.js:332
 #: src/blocks/icon/edit.js:82 src/blocks/icon/index.js:25
 #: src/blocks/icon/index.js:30 src/blocks/testimonial/edit.js:181
 #: src/blocks/testimonial/edit.js:185
 msgid "Icon"
 msgstr "Ícono"
 
-#: dist/index.js:7 dist/index.js:44 dist/index.js:104
-#: src/blocks/button/edit.js:339 src/blocks/icon/edit.js:89
+#: dist/index.js:2 src/blocks/button/edit.js:339 src/blocks/icon/edit.js:89
 #: src/blocks/testimonial/edit.js:192
 msgid "Icon size"
 msgstr "Tamaño de ícono"
 
-#: dist/index.js:7 src/blocks/button/edit.js:351 src/blocks/button/edit.js:352
+#: dist/index.js:2 src/blocks/button/edit.js:351 src/blocks/button/edit.js:352
 msgid "Icon position"
 msgstr "Posición de ícono"
 
-#: dist/index.js:7 src/blocks/button/edit.js:371
+#: dist/index.js:2 src/blocks/button/edit.js:371
 msgid "Display icon only"
 msgstr "Mostrar sólo el ícono"
 
-#: dist/index.js:7 dist/index.js:44 src/blocks/button/edit.js:384
-#: src/blocks/icon/edit.js:100
+#: dist/index.js:2 src/blocks/button/edit.js:384 src/blocks/icon/edit.js:100
 msgid "Use custom icon"
 msgstr "Utilizar ícono personalizado"
 
-#: dist/index.js:7 src/blocks/button/edit.js:391
+#: dist/index.js:2 src/blocks/button/edit.js:391
 msgid "Custom icon"
 msgstr "Ícono personalizado"
 
-#: dist/index.js:7 src/blocks/button/edit.js:393
+#: dist/index.js:2 src/blocks/button/edit.js:393
 msgid "Insert the HTML code for your custom icon."
 msgstr "Ingresa el código HTML para tu ícono personalizado."
 
-#: dist/index.js:7 dist/index.js:44 dist/index.js:69 dist/index.js:104
-#: src/blocks/button/edit.js:401 src/blocks/icon/edit.js:117
+#: dist/index.js:2 src/blocks/button/edit.js:401 src/blocks/icon/edit.js:117
 #: src/blocks/post-carousel/edit.js:424 src/blocks/testimonial/edit.js:204
-#: src/blocks/_slider/edit.js:208
 msgid "Color"
 msgstr "Color"
 
-#: dist/index.js:7 dist/index.js:36 dist/index.js:90
-#: src/blocks/button/edit.js:418 src/blocks/header/edit.js:133
+#: dist/index.js:2 src/blocks/button/edit.js:418 src/blocks/header/edit.js:133
 #: src/blocks/row/edit.js:271
 msgid "Spacing"
 msgstr "Espaciado"
 
-#: dist/index.js:7 src/blocks/button/edit.js:440
+#: dist/index.js:2 src/blocks/button/edit.js:440
 msgid "Write text…"
 msgstr "Escribe el texto…"
 
 #. translators: block keyword
-#: dist/index.js:7 dist/index.js:9 src/blocks/button/index.js:25
-#: src/blocks/button/index.js:30
+#: dist/index.js:2 src/blocks/button/index.js:25 src/blocks/button/index.js:30
 msgid "Button"
 msgstr "Botón"
 
-#: dist/index.js:7 src/blocks/button/index.js:26
+#: dist/index.js:2 src/blocks/button/index.js:26
 msgid "Prompt visitors to take action with a button-style link."
 msgstr ""
 "Anima a los visitantes a realizar una acción a través de un grupo de enlaces "
 "estilo botón."
 
 #. translators: block style
-#: dist/index.js:13 src/blocks/button/index.js:38
+#: dist/index.js:2 src/blocks/button/index.js:38
 msgid "Fill"
 msgstr "Relleno"
 
 #. translators: block style
-#: dist/index.js:15 src/blocks/button/index.js:44
+#: dist/index.js:2 src/blocks/button/index.js:44
 msgid "Outline"
 msgstr "Contorno"
 
 #. translators: block style
-#: dist/index.js:17 src/blocks/button/index.js:49
+#: dist/index.js:2 src/blocks/button/index.js:49
 msgid "Clear"
 msgstr "Vacío"
 
-#: dist/index.js:17 dist/index.js:21 dist/index.js:25 dist/index.js:77
-#: src/blocks/buttons/edit.js:73 src/blocks/contact-info-item/edit.js:74
-#: src/blocks/contact-info/edit.js:98 src/blocks/profile/edit.js:200
+#: dist/index.js:2 src/blocks/buttons/edit.js:73
+#: src/blocks/contact-info-item/edit.js:74 src/blocks/contact-info/edit.js:98
+#: src/blocks/profile/edit.js:200
 msgid "Direction"
 msgstr "Dirección"
 
-#: dist/index.js:17 dist/index.js:21 dist/index.js:25 dist/index.js:77
-#: src/blocks/buttons/edit.js:76 src/blocks/contact-info-item/edit.js:77
-#: src/blocks/contact-info/edit.js:101 src/blocks/profile/edit.js:203
+#: dist/index.js:2 src/blocks/buttons/edit.js:76
+#: src/blocks/contact-info-item/edit.js:77 src/blocks/contact-info/edit.js:101
+#: src/blocks/profile/edit.js:203
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: dist/index.js:17 dist/index.js:21 dist/index.js:25 dist/index.js:77
-#: src/blocks/buttons/edit.js:77 src/blocks/contact-info-item/edit.js:78
-#: src/blocks/contact-info/edit.js:102 src/blocks/profile/edit.js:204
+#: dist/index.js:2 src/blocks/buttons/edit.js:77
+#: src/blocks/contact-info-item/edit.js:78 src/blocks/contact-info/edit.js:102
+#: src/blocks/profile/edit.js:204
 msgid "Vertical"
 msgstr "Vertical"
 
 #. translators: block keyword
-#: dist/index.js:17 dist/index.js:19 src/blocks/buttons/index.js:26
+#: dist/index.js:2 src/blocks/buttons/index.js:26
 #: src/blocks/buttons/index.js:31
 msgid "Buttons"
 msgstr "Botones"
 
-#: dist/index.js:17 src/blocks/buttons/index.js:27
+#: dist/index.js:2 src/blocks/buttons/index.js:27
 msgid "Prompt visitors to take action with a group of button-style links."
 msgstr ""
 "Anima a los visitantes a realizar una acción a través de un grupo de enlaces "
 "estilo botón."
 
-#: dist/index.js:21 src/blocks/contact-info/edit.js:87
+#: dist/index.js:2 src/blocks/contact-info/edit.js:87
 msgid "Items"
 msgstr "Elementos"
 
 #. translators: block keyword
-#: dist/index.js:21 dist/index.js:23 src/blocks/contact-info/index.js:25
+#: dist/index.js:2 src/blocks/contact-info/index.js:25
 #: src/blocks/contact-info/index.js:30
 msgid "Contact Info"
 msgstr "Información de contacto"
 
-#: dist/index.js:21 src/blocks/contact-info/index.js:26
-#: src/blocks/_slider/index.js:27
+#: dist/index.js:2 src/blocks/contact-info/index.js:26
 msgid ""
 "Display any blocks of your choosing separated in multiple slides, and "
 "sequentially shown in a sliding motion."
@@ -681,7 +639,7 @@ msgstr ""
 "Muestra cualquier bloque de tu elección separados en múltiples diapositivas, "
 "y mostrados secuencialmente en un movimiento deslizante."
 
-#: dist/index.js:25 src/blocks/contact-info-item/index.js:26
+#: dist/index.js:2 src/blocks/contact-info-item/index.js:26
 msgid ""
 "The single unit that works as the main structural component for the contact "
 "information block."
@@ -690,83 +648,81 @@ msgstr ""
 "para el bloque de información de contacto."
 
 #. translators: block keyword
-#: dist/index.js:25 dist/index.js:27 src/blocks/date-and-time/index.js:24
+#: dist/index.js:2 src/blocks/date-and-time/index.js:24
 #: src/blocks/date-and-time/index.js:29
 msgid "Date & Time"
 msgstr "Fecha y hora"
 
-#: dist/index.js:25 src/blocks/date-and-time/index.js:25
+#: dist/index.js:2 src/blocks/date-and-time/index.js:25
 msgid "Displays the current date and/or time based on your chosen settings."
 msgstr "Muestra la fecha y/o la hora actual según la configuración elegida."
 
-#: dist/index.js:29 dist/index.js:57 dist/index.js:65
-#: src/blocks/date-and-time/edit.js:65
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:65
 #: src/blocks/post/components/post-sortable-control.js:161
 msgid "Display date"
 msgstr "Mostrar fecha"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:73
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:73
 msgid "Date format"
 msgstr "Formato de fecha"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:97
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:97
 #: src/blocks/date-and-time/edit.js:152
 msgid "Custom"
 msgstr "Personalizado"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:111
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:111
 msgid "Custom date format"
 msgstr "Formato personalizado de fecha"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:117
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:117
 msgid "Documentation on date and time formatting."
 msgstr "Documentación sobre formato de fecha y hora."
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:128
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:128
 msgid "Display time"
 msgstr "Mostrar hora"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:136
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:136
 msgid "Time format"
 msgstr "Formato de hora"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:166
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:166
 msgid "Custom time format"
 msgstr "Formato personalizado de hora"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:184
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:184
 msgid "Separator"
 msgstr "Separador"
 
-#: dist/index.js:29 src/blocks/date-and-time/edit.js:186
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:186
 msgid "Type in the date/time separator…"
 msgstr "Ingresa el separador de fecha/hora…"
 
-#: dist/index.js:29 dist/index.js:36 dist/index.js:77 dist/index.js:104
-#: src/blocks/feature/edit.js:185 src/blocks/header/edit.js:120
+#: dist/index.js:2 src/blocks/feature/edit.js:185 src/blocks/header/edit.js:120
 #: src/blocks/profile/edit.js:158 src/blocks/testimonial/edit.js:115
 msgid "Text alignment"
 msgstr "Alineación de texto"
 
-#: dist/index.js:29 dist/index.js:77 src/blocks/feature/edit.js:205
+#: dist/index.js:2 src/blocks/feature/edit.js:205
 #: src/blocks/profile/edit.js:189
 msgid "Content gap size"
 msgstr "Tamaño de separación de contenido"
 
-#: dist/index.js:29 dist/index.js:77 src/blocks/feature/edit.js:206
+#: dist/index.js:2 src/blocks/feature/edit.js:206
 #: src/blocks/profile/edit.js:190
 msgid "Content gap size unit"
 msgstr "Unidad de tamaño de separación de contenido"
 
-#: dist/index.js:29 src/blocks/feature/edit.js:221
+#: dist/index.js:2 src/blocks/feature/edit.js:221
 msgid "Link title"
 msgstr "Título del enlace"
 
-#: dist/index.js:29 src/blocks/feature/edit.js:223
+#: dist/index.js:2 src/blocks/feature/edit.js:223
 msgid "Type the link title…"
 msgstr "Ingresa el título del enlace…"
 
-#: dist/index.js:29 src/blocks/feature/edit.js:225
+#: dist/index.js:2 src/blocks/feature/edit.js:225
 msgid ""
 "Here you can provide a brief explanation about the link’s destination, which "
 "is meant to be used by screen readers."
@@ -775,76 +731,72 @@ msgstr ""
 "cual será utilizada por los lectores de pantalla."
 
 #. translators: block keyword
-#: dist/index.js:29 dist/index.js:31 src/blocks/feature/index.js:26
+#: dist/index.js:2 src/blocks/feature/index.js:26
 #: src/blocks/feature/index.js:31
 msgid "Feature"
 msgstr "Característica"
 
-#: dist/index.js:29 src/blocks/feature/index.js:27
+#: dist/index.js:2 src/blocks/feature/index.js:27
 msgid "Display an icon along with complementary text elements."
 msgstr "Muestra un ícono justo a elementos de texto complementarios."
 
-#. translators: block keyword
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:45
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:45
 msgid "Display heading"
 msgstr "Mostrar título"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:47
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:47
 msgid "Hide heading"
 msgstr "Ocultar encabezado"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:51
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:51
 msgid "Display subhead"
 msgstr "Mostrar subtítulo"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:53
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:53
 msgid "Hide subhead"
 msgstr "Ocultar subtítulo"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:57
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:57
 msgid "Display additional content"
 msgstr "Mostrar contenido adicional"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:59
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:59
 msgid "Hide additional content"
 msgstr "Ocultar contenido adicional"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:32
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:32
 msgid "Heading"
 msgstr "Encabezado"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:35
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:35
 msgid "Subhead"
 msgstr "Subtítulo"
 
-#: dist/index.js:33 src/blocks/header/components/header-sortable-control.js:38
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:38
 msgid "Additional content"
 msgstr "Contenido adicional"
 
-#: dist/index.js:36 dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: dist/index.js:104 src/blocks/header/edit.js:139
+#: dist/index.js:2 src/blocks/header/edit.js:139
 #: src/blocks/post-carousel/edit.js:435 src/blocks/post/edit.js:301
 #: src/blocks/recent-posts/edit.js:345 src/blocks/testimonial/edit.js:215
 msgid "Display"
 msgstr "Mostrar"
 
 #. translators: content placeholder
-#: dist/index.js:36 dist/index.js:88 src/blocks/header/edit.js:252
-#: src/blocks/row/edit.js:57
+#: dist/index.js:2 src/blocks/header/edit.js:252 src/blocks/row/edit.js:57
 msgid "Write heading…"
 msgstr "Escribe el encabezado…"
 
-#: dist/index.js:36 src/blocks/header/edit.js:266
+#: dist/index.js:2 src/blocks/header/edit.js:266
 msgid "Write subhead…"
 msgstr "Escribe el subtítulo…"
 
 #. translators: block keyword
-#: dist/index.js:36 dist/index.js:38 src/blocks/header/index.js:27
-#: src/blocks/header/index.js:32
+#: dist/index.js:2 src/blocks/header/index.js:27 src/blocks/header/index.js:32
 msgid "Header"
 msgstr "Cabecera"
 
-#: dist/index.js:36 src/blocks/header/index.js:28
+#: dist/index.js:2 src/blocks/header/index.js:28
 msgid ""
 "Introduce new sections and organize content to help visitors (and search "
 "engines) better understand the structure of your site."
@@ -853,68 +805,65 @@ msgstr ""
 "(y a los motores de búsqueda) a comprender mejor la estructura de su sitio."
 
 #. translators: block keyword
-#: dist/index.js:40 src/blocks/header/index.js:34
+#: dist/index.js:2 src/blocks/header/index.js:34
 msgid "heading"
 msgstr "encabezado"
 
 #. translators: block keyword
-#: dist/index.js:42 src/blocks/header/index.js:36
+#: dist/index.js:2 src/blocks/header/index.js:36
 msgid "title"
 msgstr "título"
 
-#: dist/index.js:44 src/blocks/icon/edit.js:107
+#: dist/index.js:2 src/blocks/icon/edit.js:107
 msgid "Custom Icon"
 msgstr "Ícono personalizado"
 
-#: dist/index.js:44 src/blocks/icon/edit.js:109
+#: dist/index.js:2 src/blocks/icon/edit.js:109
 msgid "Paste the code for your custom icon in here…"
 msgstr "Pega aquí el código para tu ícono personalizado…"
 
-#: dist/index.js:44 src/blocks/icon/index.js:26
+#: dist/index.js:2 src/blocks/icon/index.js:26
 msgid "Display an icon of your choosing."
 msgstr "Muestra un ícono de tu elección."
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:68
+#: dist/index.js:2 src/blocks/iframe/edit.js:68
 msgid "URL"
 msgstr "URL"
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:70
+#: dist/index.js:2 src/blocks/iframe/edit.js:70
 msgid "Type the Iframe URL…"
 msgstr "Ingresa la URL del Iframe…"
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:75
+#: dist/index.js:2 src/blocks/iframe/edit.js:75
 msgid "Width"
 msgstr "Ancho"
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:76
+#: dist/index.js:2 src/blocks/iframe/edit.js:76
 msgid "Width unit"
 msgstr "Unidad de ancho"
 
-#: dist/index.js:48 dist/index.js:56 src/blocks/iframe/edit.js:87
-#: src/blocks/map/edit.js:135
+#: dist/index.js:2 src/blocks/iframe/edit.js:87 src/blocks/map/edit.js:135
 msgid "Height"
 msgstr "Alto"
 
-#: dist/index.js:48 dist/index.js:56 src/blocks/iframe/edit.js:88
-#: src/blocks/map/edit.js:136
+#: dist/index.js:2 src/blocks/iframe/edit.js:88 src/blocks/map/edit.js:136
 msgid "Height unit"
 msgstr "Unidad de alto"
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:99
+#: dist/index.js:2 src/blocks/iframe/edit.js:99
 msgid "Adjust height automatically"
 msgstr "Ajustar altura automáticamente"
 
-#: dist/index.js:48 dist/index.js:57 dist/index.js:65
-#: src/blocks/iframe/edit.js:105
+#: dist/index.js:2 src/blocks/iframe/edit.js:105
 #: src/blocks/post/components/post-sortable-control.js:85
 msgid "Title"
 msgstr "Título"
 
-#: dist/index.js:48 src/blocks/iframe/edit.js:107
+#: dist/index.js:2 src/blocks/iframe/edit.js:107
 msgid "Type the Iframe title…"
 msgstr "Ingresa el título del Iframe…"
 
-#: dist/index.js:48 src/blocks/iframe/index.js:26
+#: dist/index.js:2 src/blocks/iframe/index.js:26
 msgid ""
 "An inline frame used to embed another document within the current document."
 msgstr ""
@@ -922,26 +871,21 @@ msgstr ""
 "documento actual."
 
 #. translators: block keyword
-#: dist/index.js:50 src/blocks/iframe/index.js:30
+#: dist/index.js:2 src/blocks/iframe/index.js:30
 msgid "Iframe"
 msgstr "Iframe"
 
-#. translators: block keyword
-#: dist/index.js:52 dist/index.js:108
-#: src/blocks/map/components/location-select-control.js:50
+#: dist/index.js:2 src/blocks/map/components/location-select-control.js:50
 #: src/blocks/weather/components/location-select-control.js:44
 msgid "Location"
 msgstr "Ubicación"
 
-#: dist/index.js:52 dist/index.js:108
-#: src/blocks/map/components/location-select-control.js:62
+#: dist/index.js:2 src/blocks/map/components/location-select-control.js:62
 #: src/blocks/weather/components/location-select-control.js:56
 msgid "Search for a location…"
 msgstr "Busca una ubicación…"
 
-#: dist/index.js:52 dist/index.js:57 dist/index.js:65 dist/index.js:69
-#: dist/index.js:82 dist/index.js:108 dist/index.js:112
-#: src/blocks/map/components/location-select-control.js:64
+#: dist/index.js:2 src/blocks/map/components/location-select-control.js:64
 #: src/blocks/post-carousel/edit.js:458
 #: src/blocks/post/components/post-select-control.js:99
 #: src/blocks/post/edit.js:319 src/blocks/recent-posts/edit.js:368
@@ -950,679 +894,614 @@ msgstr "Busca una ubicación…"
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: dist/index.js:52 dist/index.js:108
-#: src/blocks/map/components/location-select-control.js:65
+#: dist/index.js:2 src/blocks/map/components/location-select-control.js:65
 #: src/blocks/weather/components/location-select-control.js:59
 msgid "No results found."
 msgstr "No se encontraron resultados."
 
 #. translators: block keyword
-#: dist/index.js:52 dist/index.js:54 src/blocks/map/index.js:25
-#: src/blocks/map/index.js:30
+#: dist/index.js:2 src/blocks/map/index.js:25 src/blocks/map/index.js:30
 msgid "Map"
 msgstr "Mapa"
 
-#: dist/index.js:52 src/blocks/map/index.js:26
+#: dist/index.js:2 src/blocks/map/index.js:26
 msgid "Embed a simple map with a location of your choosing."
 msgstr "Incrusta un mapa sencillo con una ubicación de su elección."
 
-#: dist/index.js:56 src/blocks/map/edit.js:124
+#: dist/index.js:2 src/blocks/map/edit.js:124
 msgid "Zoom"
 msgstr "Zoom"
 
-#: dist/index.js:56 src/blocks/map/edit.js:148
+#: dist/index.js:2 src/blocks/map/edit.js:148
 msgid "Layer"
 msgstr "Capa"
 
 #. translators: block style
-#: dist/index.js:56 dist/index.js:63 dist/index.js:75 dist/index.js:100
-#: src/blocks/map/edit.js:151 src/blocks/post-carousel/index.js:38
-#: src/blocks/post/index.js:38 src/blocks/tabs/index.js:38
+#: dist/index.js:2 src/blocks/map/edit.js:151
+#: src/blocks/post-carousel/index.js:38 src/blocks/post/index.js:38
+#: src/blocks/tabs/index.js:38
 msgid "Standard"
 msgstr "Estándar"
 
-#: dist/index.js:56 src/blocks/map/edit.js:152
+#: dist/index.js:2 src/blocks/map/edit.js:152
 msgid "Black and white"
 msgstr "Blanco y negro"
 
-#: dist/index.js:56 src/blocks/map/edit.js:153
+#: dist/index.js:2 src/blocks/map/edit.js:153
 msgid "Humanitarian"
 msgstr "Humanitaria"
 
-#: dist/index.js:56 src/blocks/map/edit.js:154
+#: dist/index.js:2 src/blocks/map/edit.js:154
 msgid "Watercolor"
 msgstr "Acuarela"
 
-#: dist/index.js:56 src/blocks/map/edit.js:160
+#: dist/index.js:2 src/blocks/map/edit.js:160
 msgid "Display popup"
 msgstr "Mostrar ventana emergente"
 
-#: dist/index.js:56 src/blocks/map/edit.js:170
+#: dist/index.js:2 src/blocks/map/edit.js:170
 msgid "Click on the marker to display the popup."
 msgstr "Has clic en el marcador para mostrar la ventana emergente."
 
-#: dist/index.js:56 src/blocks/map/edit.js:175
+#: dist/index.js:2 src/blocks/map/edit.js:175
 msgid "Display zoom control"
 msgstr "Mostrar control de zoom"
 
-#: dist/index.js:56 src/blocks/map/edit.js:181
+#: dist/index.js:2 src/blocks/map/edit.js:181
 msgid "Display attribution control"
 msgstr "Mostrar control de atribución"
 
-#: dist/index.js:57 dist/index.js:82
+#: dist/index.js:2
 msgid "Edit"
 msgstr "Editar"
 
 #. translators: block keyword
-#: dist/index.js:57 dist/index.js:59
-#: src/blocks/post/components/post-select-control.js:85
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:85
 #: src/blocks/post/index.js:25 src/blocks/post/index.js:30
 msgid "Post"
 msgstr "Entrada"
 
-#: dist/index.js:57 dist/index.js:65 dist/index.js:82
-#: src/blocks/post/components/post-select-control.js:97
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:97
 msgid "Search a post…"
 msgstr "Busca una entrada…"
 
-#: dist/index.js:57 dist/index.js:65 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:459
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:459
 #: src/blocks/post/components/post-select-control.js:100
 #: src/blocks/recent-posts/edit.js:369
 msgid "No posts found."
 msgstr "No se encontraron entradas."
 
-#: dist/index.js:57 src/blocks/post/components/post-select-control.js:105
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:105
 msgid "Post type"
 msgstr "Tipo de entrada"
 
-#: dist/index.js:57 dist/index.js:65 dist/index.js:104
-#: src/blocks/post/components/post-sortable-control.js:113
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:113
 msgid "Display media"
 msgstr "Mostrar multimedia"
 
-#: dist/index.js:57 dist/index.js:65 dist/index.js:104
-#: src/blocks/post/components/post-sortable-control.js:115
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:115
 msgid "Hide media"
 msgstr "Ocultar multimedia"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:119
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:119
 msgid "Display featured image"
 msgstr "Mostrar imagen destacada"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:121
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:121
 msgid "Hide featured image"
 msgstr "Ocultar imagen destacada"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:125
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:125
 msgid "Display audio"
 msgstr "Mostrar audio"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:127
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:127
 msgid "Hide audio"
 msgstr "Ocultar audio"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:131
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:131
 msgid "Display content"
 msgstr "Mostrar contenido"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:133
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:133
 msgid "Hide content"
 msgstr "Ocultar contenido"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:137
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:137
 msgid "Display categories"
 msgstr "Mostrar categorías"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:139
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:139
 msgid "Hide categories"
 msgstr "Ocultar categorías"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:143
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:143
 msgid "Display title"
 msgstr "Mostrar título"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:145
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:145
 msgid "Hide title"
 msgstr "Ocultar título"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:149
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:149
 msgid "Display meta"
 msgstr "Mostrar metadatos"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:151
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:151
 msgid "Hide meta"
 msgstr "Ocultar metadatos"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:155
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:155
 msgid "Display author"
 msgstr "Mostrar autor"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:157
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:157
 msgid "Hide author"
 msgstr "Ocultar autor"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:163
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:163
 msgid "Hide date"
 msgstr "Ocultar fecha"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:167
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:167
 msgid "Display comments"
 msgstr "Mostrar comentarios"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:169
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:169
 msgid "Hide comments"
 msgstr "Ocultar comentarios"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:173
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:173
 msgid "Display excerpt"
 msgstr "Mostrar extracto"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:175
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:175
 msgid "Hide excerpt"
 msgstr "Ocultar extracto"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:179
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:179
 msgid "Display read more"
 msgstr "Mostrar leer más"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:181
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:181
 msgid "Hide read more"
 msgstr "Ocultar leer más"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:185
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:185
 #: src/blocks/post/edit.js:184
 msgid "Display extra articles"
 msgstr "Mostrar artículos extra"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:187
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:187
 msgid "Hide extra articles"
 msgstr "Ocultar artículos extra"
 
-#: dist/index.js:57 dist/index.js:65 dist/index.js:69 dist/index.js:77
-#: dist/index.js:82 dist/index.js:104 src/blocks/post-carousel/edit.js:343
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:343
 #: src/blocks/post/components/post-sortable-control.js:70
 #: src/blocks/post/edit.js:235 src/blocks/profile/edit.js:260
 #: src/blocks/recent-posts/edit.js:281 src/blocks/testimonial/edit.js:150
 msgid "Media"
 msgstr "Multimedia"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:73
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:73
 msgid "Featured image"
 msgstr "Imagen destacada"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:76
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:76
 msgid "Audio"
 msgstr "Audio"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:79
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:79
 msgid "Content"
 msgstr "Contenido"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:82
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:82
 msgid "Categories"
 msgstr "Categorías"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:88
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:88
 msgid "Meta"
 msgstr "Metadatos"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:91
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:91
 msgid "Author"
 msgstr "Autor"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:94
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:94
 msgid "Date"
 msgstr "Fecha"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:97
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:97
 msgid "Comments"
 msgstr "Comentarios"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:100
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:100
 msgid "Excerpt"
 msgstr "Extracto"
 
-#: dist/index.js:57 dist/index.js:65
-#: src/blocks/post/components/post-sortable-control.js:103
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:103
 msgid "Read more"
 msgstr "Leer más"
 
-#: dist/index.js:57 src/blocks/post/components/post-sortable-control.js:106
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:106
 #: src/blocks/post/edit.js:190
 msgid "Extra articles"
 msgstr "Artículos extra"
 
-#: dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:285 src/blocks/post/edit.js:160
-#: src/blocks/recent-posts/edit.js:208
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:285
+#: src/blocks/post/edit.js:160 src/blocks/recent-posts/edit.js:208
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
-#: dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:311 src/blocks/post/edit.js:175
-#: src/blocks/recent-posts/edit.js:223
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:311
+#: src/blocks/post/edit.js:175 src/blocks/recent-posts/edit.js:223
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
-#: dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:348 src/blocks/post/edit.js:240
-#: src/blocks/recent-posts/edit.js:297
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:348
+#: src/blocks/post/edit.js:240 src/blocks/recent-posts/edit.js:297
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
-#: dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:367 src/blocks/post/edit.js:258
-#: src/blocks/recent-posts/edit.js:316
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:367
+#: src/blocks/post/edit.js:258 src/blocks/recent-posts/edit.js:316
 msgid "Aspect ratio"
 msgstr "Relación de aspecto"
 
-#: dist/index.js:57 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:440 src/blocks/post/edit.js:306
-#: src/blocks/recent-posts/edit.js:350
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:440
+#: src/blocks/post/edit.js:306 src/blocks/recent-posts/edit.js:350
 msgid "Read more text"
 msgstr "Texto leer más"
 
-#: dist/index.js:57 src/blocks/post/index.js:26
+#: dist/index.js:2 src/blocks/post/index.js:26
 msgid "Display a specific post or page."
 msgstr "Muestra una entrada o página específica."
 
 #. translators: block style
-#: dist/index.js:65 dist/index.js:77 src/blocks/post-carousel/index.js:44
+#: dist/index.js:2 src/blocks/post-carousel/index.js:44
 #: src/blocks/post/index.js:44
 msgid "Stacked"
 msgstr "Apilado"
 
-#: dist/index.js:65 dist/index.js:69 dist/index.js:82
-#: src/blocks/post-carousel/edit.js:283
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:283
 msgid "Posts"
 msgstr "Entradas"
 
-#: dist/index.js:65
+#: dist/index.js:2
 msgid "Offset"
 msgstr "Deducción"
 
-#: dist/index.js:65
+#: dist/index.js:2
 msgid "Include category…"
 msgstr "Incluir categoría…"
 
-#: dist/index.js:65
+#: dist/index.js:2
 msgid "Excluded categories"
 msgstr "Excluir categorías"
 
-#: dist/index.js:65
+#: dist/index.js:2
 msgid "Exclude category…"
 msgstr "Excluir categoría…"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:162
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:162
 msgid "Number of posts"
 msgstr "Número de entradas"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:172
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:172
 msgid "Posts per view"
 msgstr "Entradas por diapositiva"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:180
-#: src/blocks/_slider/edit.js:102
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:180
 msgid "Autoplay"
 msgstr "Reproducción automática"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:186
-#: src/blocks/_slider/edit.js:108
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:186
 msgid "Loop"
 msgstr "Bucle"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:193
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:193
 msgid "Speed"
 msgstr "Velocidad"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:194
-#: src/blocks/post-carousel/edit.js:209 src/blocks/_slider/edit.js:117
-#: src/blocks/_slider/edit.js:133
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:194
+#: src/blocks/post-carousel/edit.js:209
 msgid "In milliseconds."
 msgstr "En milisegundos."
 
-#: dist/index.js:69 dist/index.js:112 src/blocks/post-carousel/edit.js:208
-#: src/blocks/_slider/edit.js:131
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:208
 msgid "Delay"
 msgstr "Demora"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:224
-#: src/blocks/_slider/edit.js:147
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:224
 msgid "Distance between slides"
 msgstr "Distancia entre diapositivas"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:233
-#: src/blocks/_slider/edit.js:156
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:233
 msgid "Effect"
 msgstr "Efecto"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:236
-#: src/blocks/_slider/edit.js:159
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:236
 msgid "Slide"
 msgstr "Deslizar"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:237
-#: src/blocks/_slider/edit.js:160
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:237
 msgid "Fade"
 msgstr "Desvanecer"
 
-#: dist/index.js:69 dist/index.js:112 src/blocks/post-carousel/edit.js:238
-#: src/blocks/_slider/edit.js:161
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:238
 msgid "Flip"
 msgstr "Voltear"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:239
-#: src/blocks/_slider/edit.js:162
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:239
 #, fuzzy
 msgid "Coverflow"
 msgstr "Flujo de portada"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:240
-#: src/blocks/_slider/edit.js:163
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:240
 msgid "Cube"
 msgstr "Cubo"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:246
-#: src/blocks/_slider/edit.js:169
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:246
 msgid "Pagination"
 msgstr "Paginación"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:249
-#: src/blocks/_slider/edit.js:172
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:249
 msgid "Bullets"
 msgstr "Viñetas"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:250
-#: src/blocks/_slider/edit.js:173
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:250
 msgid "Fraction"
 msgstr "Fracción"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:251
-#: src/blocks/_slider/edit.js:174
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:251
 msgid "Progress bar"
 msgstr "Barra de progreso"
 
-#: dist/index.js:69 dist/index.js:82 src/blocks/post-carousel/edit.js:257
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:257
 #: src/blocks/recent-posts/edit.js:254
 msgid "Sorting and filtering"
 msgstr "Orden y filtrado"
 
-#: dist/index.js:69 dist/index.js:82 src/blocks/post-carousel/edit.js:273
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:273
 #: src/blocks/recent-posts/edit.js:270
 msgid "Manually select posts"
 msgstr "Elegir entradas manualmente"
 
-#: dist/index.js:69 dist/index.js:82 src/blocks/post-carousel/edit.js:326
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:326
 #: src/blocks/recent-posts/edit.js:238
 msgid "Google search spider should not follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: dist/index.js:69 dist/index.js:82 src/blocks/post-carousel/edit.js:325
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:325
 #: src/blocks/recent-posts/edit.js:237
 msgid "Google search spider should follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:396
-#: src/blocks/_slider/edit.js:180
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:396
 msgid "Icons"
 msgstr "Íconos"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:400
-#: src/blocks/_slider/edit.js:184 src/blocks/_slider/edit.js:211
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:400
 msgid "Previous button"
 msgstr "Botón anterior"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:405
-#: src/blocks/_slider/edit.js:189 src/blocks/_slider/edit.js:216
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:405
 msgid "Next button"
 msgstr "Botón siguiente"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:412
-#: src/blocks/_slider/edit.js:196
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:412
 msgid "Button icon size"
 msgstr "Tamaño de ícono de botón"
 
-#: dist/index.js:69 src/blocks/post-carousel/edit.js:427
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:427
 msgid "Button icon"
 msgstr "Ícono de botón"
 
 #. translators: block keyword
-#: dist/index.js:69 dist/index.js:71 src/blocks/post-carousel/index.js:25
+#: dist/index.js:2 src/blocks/post-carousel/index.js:25
 #: src/blocks/post-carousel/index.js:30
 msgid "Post Carousel"
 msgstr "Carrusel de Entradas"
 
-#: dist/index.js:69 dist/index.js:82 src/blocks/post-carousel/index.js:26
+#: dist/index.js:2 src/blocks/post-carousel/index.js:26
 #: src/blocks/recent-posts/index.js:26
 msgid "Display a list of your most recent posts."
 msgstr "Muestra una lista de tus entradas más recientes."
 
-#: dist/index.js:77 src/blocks/profile/edit.js:49
+#: dist/index.js:2 src/blocks/profile/edit.js:49
 msgid "Write name…"
 msgstr "Escribe el nombre…"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:53
+#: dist/index.js:2 src/blocks/profile/edit.js:53
 msgid "Write title…"
 msgstr "Escribe el título…"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:56
+#: dist/index.js:2 src/blocks/profile/edit.js:56
 msgid "Write description…"
 msgstr "Escribe la descripción…"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:178
+#: dist/index.js:2 src/blocks/profile/edit.js:178
 msgid "Media gap size"
 msgstr "Tamaño de separación de multimedia"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:179
+#: dist/index.js:2 src/blocks/profile/edit.js:179
 msgid "Media gap size unit"
 msgstr "Unidad de tamaño de separación de multimedia"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:218
+#: dist/index.js:2 src/blocks/profile/edit.js:218
 msgid "Reverse order"
 msgstr "Orden inverso"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:285
+#: dist/index.js:2 src/blocks/profile/edit.js:285
 #: src/blocks/profile/edit.js:464
 msgid "Choose profile image"
 msgstr "Elegir imagen de perfil"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:308
+#: dist/index.js:2 src/blocks/profile/edit.js:308
 msgid "Media width"
 msgstr "Ancho de multimedia"
 
-#: dist/index.js:77 src/blocks/profile/edit.js:309
+#: dist/index.js:2 src/blocks/profile/edit.js:309
 msgid "Media width unit"
 msgstr "Unidad de ancho de multimedia"
 
-#: dist/index.js:77 dist/index.js:104 src/blocks/profile/edit.js:320
+#: dist/index.js:2 src/blocks/profile/edit.js:320
 #: src/blocks/testimonial/edit.js:155
 msgid "Media height"
 msgstr "Alto de multimedia"
 
-#: dist/index.js:77 dist/index.js:104 src/blocks/profile/edit.js:321
+#: dist/index.js:2 src/blocks/profile/edit.js:321
 #: src/blocks/testimonial/edit.js:156
 msgid "Media height unit"
 msgstr "Unidad de alto de multimedia"
 
 #. translators: block keyword
-#: dist/index.js:77 dist/index.js:79 src/blocks/profile/index.js:26
+#: dist/index.js:2 src/blocks/profile/index.js:26
 #: src/blocks/profile/index.js:31
 msgid "Profile"
 msgstr "Perfil"
 
-#: dist/index.js:77 src/blocks/profile/index.js:27
+#: dist/index.js:2 src/blocks/profile/index.js:27
 msgid "Introduce your staff members to your visitors."
 msgstr "Presenta a los miembros de tu personal a tus visitantes."
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:148
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:148
 msgid "Number of items"
 msgstr "Número de elementos"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:161
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:161
 msgid "Columns"
 msgstr "Columnas"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:180
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:180
 msgid "Row gap"
 msgstr "Separación de filas"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:181
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:181
 msgid "Row gap unit"
 msgstr "Unidad de separación de filas"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:193
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:193
 msgid "Column gap"
 msgstr "Separación de columnas"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:194
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:194
 msgid "Column gap unit"
 msgstr "Unidad de separación de columnas"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:284
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:284
 msgid "Image width"
 msgstr "Ancho de imagen"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:389
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:389
 msgid "List view"
 msgstr "Vista de lista"
 
-#: dist/index.js:82 src/blocks/recent-posts/edit.js:395
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:395
 msgid "Grid view"
 msgstr "Vista de grilla"
 
 #. translators: block keyword
-#: dist/index.js:82 dist/index.js:84 src/blocks/recent-posts/index.js:25
+#: dist/index.js:2 src/blocks/recent-posts/index.js:25
 #: src/blocks/recent-posts/index.js:30
 msgid "Recent Posts"
 msgstr "Entradas Recientes"
 
-#. translators: block keyword
-#: dist/index.js:86
+#: dist/index.js:2
 msgid "Align top"
 msgstr "Alinear a la parte superior"
 
-#: dist/index.js:86
+#: dist/index.js:2
 msgid "Align bottom"
 msgstr "Alinear a la parte inferior"
 
-#: dist/index.js:86
+#: dist/index.js:2
 msgid "Change vertical alignment"
 msgstr "Cambiar alineación vertical"
 
 #. translators: content placeholder
-#: dist/index.js:90 dist/index.js:94 src/blocks/row/edit.js:62
+#: dist/index.js:2 src/blocks/row/edit.js:62
 msgid "Write content…"
 msgstr "Escribe el contenido…"
 
-#: dist/index.js:90 src/blocks/row/edit.js:201
+#: dist/index.js:2 src/blocks/row/edit.js:201
 msgid "Row ID"
 msgstr "ID de fila"
 
-#: dist/index.js:90 src/blocks/row/edit.js:203
+#: dist/index.js:2 src/blocks/row/edit.js:203
 msgid "Type the row ID…"
 msgstr "Ingresa el ID de fila…"
 
-#: dist/index.js:90 src/blocks/row/edit.js:210
+#: dist/index.js:2 src/blocks/row/edit.js:210
 msgid "HTML Tag"
 msgstr "Etiqueta HTML"
 
-#: dist/index.js:90 src/blocks/row/edit.js:247
+#: dist/index.js:2 src/blocks/row/edit.js:247
 msgid "Vertical alignment"
 msgstr "Alineación vertical"
 
-#: dist/index.js:90 src/blocks/row/edit.js:278
+#: dist/index.js:2 src/blocks/row/edit.js:278
 msgid "Background"
 msgstr "Fondo"
 
-#: dist/index.js:90 src/blocks/row/edit.js:376
+#: dist/index.js:2 src/blocks/row/edit.js:376
 msgid "Media Size"
 msgstr "Tamaño de multimedia"
 
-#: dist/index.js:90 src/blocks/row/edit.js:428
+#: dist/index.js:2 src/blocks/row/edit.js:428
 msgid "Auto"
 msgstr "Automático"
 
-#: dist/index.js:90 src/blocks/row/edit.js:429
+#: dist/index.js:2 src/blocks/row/edit.js:429
 msgid "Cover"
 msgstr "Cubrir"
 
-#: dist/index.js:90 src/blocks/row/edit.js:430
+#: dist/index.js:2 src/blocks/row/edit.js:430
 msgid "Contain"
 msgstr "Contener"
 
-#: dist/index.js:90 dist/index.js:112 src/blocks/row/edit.js:444
-#: src/blocks/row/edit.js:447
+#: dist/index.js:2 src/blocks/row/edit.js:444 src/blocks/row/edit.js:447
 msgid "Repeat"
 msgstr "Repetir"
 
-#: dist/index.js:90 src/blocks/row/edit.js:448
+#: dist/index.js:2 src/blocks/row/edit.js:448
 msgid "Repeat X"
 msgstr "Repetir X"
 
-#: dist/index.js:90 src/blocks/row/edit.js:449
+#: dist/index.js:2 src/blocks/row/edit.js:449
 msgid "Repeat Y"
 msgstr "Repetir Y"
 
-#: dist/index.js:90 src/blocks/row/edit.js:450
+#: dist/index.js:2 src/blocks/row/edit.js:450
 msgid "No repeat"
 msgstr "No repetir"
 
-#: dist/index.js:90 src/blocks/row/edit.js:470
+#: dist/index.js:2 src/blocks/row/edit.js:470
 msgid "Fixed background"
 msgstr "Fondo fijo"
 
-#: dist/index.js:90 src/blocks/row/edit.js:477
+#: dist/index.js:2 src/blocks/row/edit.js:477
 msgid "Overlay"
 msgstr "Capa superpuesta"
 
-#: dist/index.js:90 src/blocks/row/edit.js:487
+#: dist/index.js:2 src/blocks/row/edit.js:487
 msgid "Overlay opacity"
 msgstr "Opacidad de capa superpuesta"
 
 #. translators: block keyword
-#: dist/index.js:90 dist/index.js:92 src/blocks/row/index.js:26
-#: src/blocks/row/index.js:31
+#: dist/index.js:2 src/blocks/row/index.js:26 src/blocks/row/index.js:31
 msgid "Row"
 msgstr "Fila"
 
-#: dist/index.js:90 src/blocks/row/index.js:27
+#: dist/index.js:2 src/blocks/row/index.js:27
 msgid "Organize and structure your content within this feature-rich block."
 msgstr ""
 "Organiza y estructura tu contenido dentro de este bloque rico en funciones."
 
-#. translators: block keyword
-#: dist/index.js:94 src/blocks/tab-panel/index.js:31
+#: dist/index.js:2 src/blocks/tab-panel/index.js:31
 msgid ""
 "The single unit that works as the main structural component for the tabs "
 "block."
@@ -1630,888 +1509,879 @@ msgstr ""
 "La unidad individual que funciona como el componente estructural principal "
 "para el bloque de pestañas."
 
-#: dist/index.js:94 src/blocks/tab-panel/index.js:44
+#: dist/index.js:2 src/blocks/tab-panel/index.js:44
 msgid "Add content…"
 msgstr "Añade el contenido…"
 
-#: dist/index.js:94
+#: dist/index.js:2
 msgid "Tab"
 msgstr "Pestaña"
 
-#: dist/index.js:94
+#: dist/index.js:2
 msgid "Sort tab"
 msgstr "Ordenar pestaña"
 
-#: dist/index.js:94
+#: dist/index.js:2
 msgid "Write tab title…"
 msgstr "Escribe el título de la pestaña…"
 
-#: dist/index.js:94
+#: dist/index.js:2
 msgid "Remove tab"
 msgstr "Quitar pestaña"
 
-#: dist/index.js:94
+#: dist/index.js:2
 msgid "Add tab"
 msgstr "Añadir pestaña"
 
 #. translators: block keyword
-#: dist/index.js:94 dist/index.js:96 src/blocks/tabs/index.js:25
-#: src/blocks/tabs/index.js:30
+#: dist/index.js:2 src/blocks/tabs/index.js:25 src/blocks/tabs/index.js:30
 msgid "Tabs"
 msgstr "Pestañas"
 
-#: dist/index.js:94 src/blocks/tabs/index.js:26
+#: dist/index.js:2 src/blocks/tabs/index.js:26
 msgid "Divide and organize your content through tabs."
 msgstr "Divide y organiza tu contenido a través de pestañas."
 
 #. translators: block style
-#: dist/index.js:102 src/blocks/tabs/index.js:44
+#: dist/index.js:2 src/blocks/tabs/index.js:44
 msgid "Underlined"
 msgstr "Subrayado"
 
 #. translators: block style
-#: dist/index.js:104 src/blocks/tabs/index.js:49
+#: dist/index.js:2 src/blocks/tabs/index.js:49
 msgid "Pills"
 msgstr "Pastillas"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Quote"
 msgstr "Cita"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Reference"
 msgstr "Referencia"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Display icon"
 msgstr "Mostrar ícono"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Hide icon"
 msgstr "Ocultar ícono"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Display quote"
 msgstr "Mostrar cita"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Hide quote"
 msgstr "Ocultar cita"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Display reference"
 msgstr "Mostrar referencia"
 
-#: dist/index.js:104
+#: dist/index.js:2
 msgid "Hide reference"
 msgstr "Ocultar referencia"
 
-#: dist/index.js:104 src/blocks/testimonial/edit.js:289
+#: dist/index.js:2 src/blocks/testimonial/edit.js:289
 msgid "Write quote…"
 msgstr "Escribe la cita…"
 
-#: dist/index.js:104 src/blocks/testimonial/edit.js:311
+#: dist/index.js:2 src/blocks/testimonial/edit.js:311
 msgid "Choose testimonial image"
 msgstr "Elegir imagen de testimonio"
 
-#: dist/index.js:104 src/blocks/testimonial/edit.js:331
+#: dist/index.js:2 src/blocks/testimonial/edit.js:331
 msgid "Write reference…"
 msgstr "Escribe la referencia…"
 
 #. translators: block keyword
-#: dist/index.js:104 dist/index.js:106 src/blocks/testimonial/index.js:26
+#: dist/index.js:2 src/blocks/testimonial/index.js:26
 #: src/blocks/testimonial/index.js:31
 msgid "Testimonial"
 msgstr "Testimonio"
 
-#: dist/index.js:104 src/blocks/testimonial/index.js:27
+#: dist/index.js:2 src/blocks/testimonial/index.js:27
 msgid "Present your customers thoughts of your products and/or services."
 msgstr ""
 "Muestra la opinión de tus clientes acerca de tus productos y/o servicios."
 
-#. translators: block keyword
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:8
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:8
 msgid "Afrikaans"
 msgstr "Africaans"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:12
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:12
 msgid "Albanian"
 msgstr "Albanés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:16
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:16
 msgid "Arabic"
 msgstr "Árabe"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:20
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:20
 msgid "Azerbaijani"
 msgstr "Azerbaiyano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:24
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:24
 msgid "Bulgarian"
 msgstr "Búlgaro"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:28
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:28
 msgid "Catalan"
 msgstr "Catalán"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:32
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:32
 msgid "Czech"
 msgstr "Checo"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:36
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:36
 msgid "Danish"
 msgstr "Danés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:40
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:40
 msgid "German"
 msgstr "Alemán"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:44
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:44
 msgid "Greek"
 msgstr "Griego"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:48
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:48
 msgid "English"
 msgstr "Inglés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:52
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:52
 msgid "Basque"
 msgstr "Basco"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:56
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:56
 msgid "Persian (Farsi)"
 msgstr "Persa (farsi)"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:60
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:60
 msgid "Finnish"
 msgstr "Finlandés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:64
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:64
 msgid "French"
 msgstr "Francés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:68
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:68
 msgid "Galician"
 msgstr "Gallego"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:72
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:72
 msgid "Hebrew"
 msgstr "Hebreo"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:76
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:76
 msgid "Hindi"
 msgstr "Hindi"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:80
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:80
 msgid "Croatian"
 msgstr "Croata"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:84
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:84
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:88
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:88
 msgid "Indonesian"
 msgstr "Indonés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:92
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:92
 msgid "Italian"
 msgstr "Italiano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:96
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:96
 msgid "Japanese"
 msgstr "Japonés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:100
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:100
 msgid "Korean"
 msgstr "Coreano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:104
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:104
 msgid "Latvian"
 msgstr "Letón"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:108
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:108
 msgid "Lithuanian"
 msgstr "Lituano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:112
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:112
 msgid "Macedonian"
 msgstr "Macedonio"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:116
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:116
 msgid "Norwegian"
 msgstr "Noruego"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:120
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:120
 msgid "Dutch"
 msgstr "Holandés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:124
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:124
 msgid "Polish"
 msgstr "Polaco"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:128
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:128
 msgid "Portuguese"
 msgstr "Portugués"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:132
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:132
 msgid "Portuguese (Brasil)"
 msgstr "Portugués (Brasil)"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:136
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:136
 msgid "Romanian"
 msgstr "Rumano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:140
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:140
 msgid "Russian"
 msgstr "Ruso"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:144
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:144
 msgid "Swedish"
 msgstr "Sueco"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:148
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:148
 msgid "Slovak"
 msgstr "Eslovaco"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:152
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:152
 msgid "Slovenian"
 msgstr "Esloveno"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:156
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:156
 msgid "Spanish"
 msgstr "Español"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:160
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:160
 msgid "Serbian"
 msgstr "Serbio"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:164
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:164
 msgid "Thai"
 msgstr "Tailandés"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:168
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:168
 msgid "Turkish"
 msgstr "Turco"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:172
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:172
 msgid "Ukrainian"
 msgstr "Ucraniano"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:176
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:176
 msgid "Vietnamese"
 msgstr "Vietnamita"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:180
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:180
 msgid "Chinese Simplified"
 msgstr "Chino simplificado"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:184
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:184
 msgid "Chinese Traditional"
 msgstr "Chino tradicional"
 
-#: dist/index.js:108 src/blocks/weather/components/definitions.js:188
+#: dist/index.js:2 src/blocks/weather/components/definitions.js:188
 msgid "Zulu"
 msgstr "Zulú"
 
 #. translators: block keyword
-#: dist/index.js:108 dist/index.js:110 src/blocks/weather/index.js:25
+#: dist/index.js:2 src/blocks/weather/index.js:25
 #: src/blocks/weather/index.js:30
 msgid "Weather"
 msgstr "Clima"
 
-#: dist/index.js:108 src/blocks/weather/index.js:26
+#: dist/index.js:2 src/blocks/weather/index.js:26
 msgid "Display the weather conditions for a chosen location."
 msgstr "Muestra las condiciones meteorológicas de una ubicación elegida."
 
-#: dist/index.js:112 src/blocks/weather/edit.js:95
+#: dist/index.js:2 src/blocks/weather/edit.js:95
 msgid "Short name"
 msgstr "Nombre corto"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:96
+#: dist/index.js:2 src/blocks/weather/edit.js:96
 msgid ""
 "The short name will be used in replacement of the name in small devices."
 msgstr ""
 "El nombre corto se usará en reemplazo del nombre en dispositivos pequeños."
 
-#: dist/index.js:112 src/blocks/weather/edit.js:102
+#: dist/index.js:2 src/blocks/weather/edit.js:102
 msgid "Display units"
 msgstr "Mostrar unidades"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:108
+#: dist/index.js:2 src/blocks/weather/edit.js:108
 msgid "Units"
 msgstr "Unidades"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:113
+#: dist/index.js:2 src/blocks/weather/edit.js:113
 msgid "Metric"
 msgstr "Métricas"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:117
+#: dist/index.js:2 src/blocks/weather/edit.js:117
 msgid "Imperial"
 msgstr "Imperiales"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:121
+#: dist/index.js:2 src/blocks/weather/edit.js:121
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:129
+#: dist/index.js:2 src/blocks/weather/edit.js:129
 msgid "Language"
 msgstr "Idioma"
 
-#: dist/index.js:112 src/blocks/weather/edit.js:141
+#: dist/index.js:2 src/blocks/weather/edit.js:141
 msgid ""
 "To make use of this block, you first need to set an OpenWeatherMap API key "
 "in the Fleximple Blocks settings page."
 msgstr ""
 
-#: dist/index.js:112 src/custom-fields/post-kicker.js:35
-msgid "Kicker"
-msgstr "Volanta"
-
-#: dist/index.js:112 src/custom-fields/post-kicker.js:38
-msgid "Write a kicker (optional)"
-msgstr "Escribe una volanta (opcional)"
-
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "On scroll animation"
 msgstr "Animación en desplazamiento"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Attention seekers —"
 msgstr "— Buscadores de atención —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce"
 msgstr "Rebote"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Flash"
 msgstr "Destello"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Head shake"
 msgstr "Sacudida de cabeza"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Heartbeat"
 msgstr "Latido"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Jello"
 msgstr "Gelatina"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Pulse"
 msgstr "Pulso"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rubber band"
 msgstr "Banda elástica"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Shake"
 msgstr "Sacudida"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Shake X"
 msgstr "Sacudida en X"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Shake Y"
 msgstr "Sacudida en Y"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Swing"
 msgstr "Balanceo"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Ta-da"
 msgstr "Ta-ran"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Wobble"
 msgstr "Tambaleo"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Back entrances —"
 msgstr "— Entradas traseras —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back in down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back in up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Back exits —"
 msgstr "— Salidas traseras —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back out down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Back out up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Bouncing entrances —"
 msgstr "— Entradas rebotantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce in"
 msgstr "Entrar rebotando"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce in down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce in up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Bouncing exits —"
 msgstr "— Salidas rebotantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce out"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce out down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Bounce out up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Fading entrances —"
 msgstr "— Entradas desvanecientes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in bottom left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in bottom right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in down big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in left big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in right big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in top left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in top right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade in up big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Fading exits —"
 msgstr "— Salidas desvanecientes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out bottom left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out bottom right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out down big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out left big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out right big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out top left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out top right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fade out up big"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Flippers —"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Flip in X"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Flip in Y"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Flip out X"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Flip out Y"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Light speed —"
 msgstr "— A la velocidad de la luz —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Light speed in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Light speed in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Light speed out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Light speed out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Rotating entrances —"
 msgstr "— Entradas rotantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate in"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate in down left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate in down right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate in up left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate in up right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Rotating exits —"
 msgstr "— Salidas rotantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate out"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate out down left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate out down right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate out up left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Rotate out up right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Sliding entrances —"
 msgstr "— Entradas deslizantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide in down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide in up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Sliding exits —"
 msgstr "— Salidas deslizantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide out down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slide out up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Specials —"
 msgstr "— Especiales —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Hinge"
 msgstr "Bisagra"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Jack in the box"
 msgstr "Caja sorpresa"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Roll in"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Roll out"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Zooming entrances —"
 msgstr "— Entradas acercantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom in"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom in down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom in left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom in right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom in up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "— Zooming exits —"
 msgstr "— Salidas distanciantes —"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom out"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom out down"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom out left"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom out right"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Zoom out up"
 msgstr ""
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "1 second"
 msgstr "1 segundo"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "2 seconds"
 msgstr "2 segundos"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "3 seconds"
 msgstr "3 segundos"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "4 seconds"
 msgstr "4 segundos"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "5 seconds"
 msgstr "5 segundos"
 
-#: dist/index.js:112 src/blocks/_slider/edit.js:115
+#: dist/index.js:2
 msgid "Duration"
 msgstr "Duración"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Faster"
 msgstr "Más rápido"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Fast"
 msgstr "Rápido"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Default"
 msgstr "Por defecto"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slow"
 msgstr "Lento"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Slower"
 msgstr "Más lento"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "1 time"
 msgstr "1 vez"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "2 times"
 msgstr "2 veces"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "3 times"
 msgstr "3 veces"
 
-#: dist/index.js:112
+#: dist/index.js:2
 msgid "Infinitely"
 msgstr "Indefinidamente"
 
-#: dist/index.js:112 src/hooks/animation.js:37
+#: dist/index.js:2 src/hooks/animation.js:37
 msgid "Animation"
 msgstr "Animación"
 
-#: src/blocks/_slide/index.js:32
-msgid ""
-"The single unit that works as the main structural component for the slider "
-"block."
-msgstr ""
-"La unidad única que funciona como el componente estructural principal para "
-"el bloque deslizador."
+#~ msgid "Kicker"
+#~ msgstr "Volanta"
 
-#: src/blocks/_slider/edit.js:85
-msgid "Slides"
-msgstr "Diapositivas"
+#~ msgid "Write a kicker (optional)"
+#~ msgstr "Escribe una volanta (opcional)"
 
-#: src/blocks/_slider/edit.js:93
-msgid "Slides per view"
-msgstr "Diapositivas por vista"
+#~ msgid ""
+#~ "The single unit that works as the main structural component for the "
+#~ "slider block."
+#~ msgstr ""
+#~ "La unidad única que funciona como el componente estructural principal "
+#~ "para el bloque deslizador."
 
-#. translators: block keyword
-#: src/blocks/_slider/index.js:26 src/blocks/_slider/index.js:31
-msgid "Slider"
-msgstr "Deslizador"
+#~ msgid "Slides"
+#~ msgstr "Diapositivas"
+
+#~ msgid "Slides per view"
+#~ msgstr "Diapositivas por vista"
+
+#~ msgid "Slider"
+#~ msgstr "Deslizador"
 
 #~ msgid "Align left"
 #~ msgstr "Alinear a la izquierda"
