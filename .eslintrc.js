@@ -64,7 +64,7 @@ module.exports = {
 		'no-debugger': [ 'error' ],
 		'no-duplicate-imports': 'error',
 		'no-else-return': 'error',
-		'no-extra-parens': 'error',
+		'no-extra-parens': [ 'error', 'functions' ],
 		'no-extra-semi': 'error',
 		'no-mixed-spaces-and-tabs': 'error',
 		'no-multi-spaces': 'error',
