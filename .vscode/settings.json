@@ -13,7 +13,4 @@
 		"javascript"
 	],
 	"eslint.format.enable": true,
-	"[javascript]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
-	},
 }
