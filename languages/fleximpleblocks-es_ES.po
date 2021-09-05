@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fleximple Blocks 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks\n"
-"POT-Creation-Date: 2021-08-02T21:15:41+02:00\n"
-"PO-Revision-Date: 2021-08-02 16:16-0300\n"
+"POT-Creation-Date: 2021-09-05T02:43:08+02:00\n"
+"PO-Revision-Date: 2021-09-04 21:44-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -36,41 +36,43 @@ msgstr ""
 msgid "https://www.rodrigodagostino.com/"
 msgstr ""
 
-#: src/blocks/post-carousel/index.php:131 src/blocks/post/index.php:142
+#: src/blocks/post-carousel/index.php:133 src/blocks/post/index.php:142
 #: src/blocks/recent-posts/index.php:120 dist/index.js:2
 msgid "Category:"
 msgstr "Categoría:"
 
-#: src/blocks/post-carousel/index.php:148 src/blocks/post/index.php:159
+#: src/blocks/post-carousel/index.php:150 src/blocks/post/index.php:159
 #: src/blocks/recent-posts/index.php:137
 msgid "(no title)"
 msgstr "(sin título)"
 
-#: src/blocks/post-carousel/index.php:173 src/blocks/post/index.php:185
+#: src/blocks/post-carousel/index.php:175 src/blocks/post/index.php:185
 #: src/blocks/recent-posts/index.php:163 dist/index.js:2
 msgid "Published by:"
 msgstr "Publicado por:"
 
-#: src/blocks/post-carousel/index.php:185 src/blocks/post/index.php:197
+#: src/blocks/post-carousel/index.php:187 src/blocks/post/index.php:197
 #: src/blocks/recent-posts/index.php:175 dist/index.js:2
 msgid "Published on:"
 msgstr "Publicado en:"
 
 #. translators: %d: comment count number
-#: src/blocks/post-carousel/index.php:194 src/blocks/post/index.php:206
+#: src/blocks/post-carousel/index.php:196 src/blocks/post/index.php:206
 #: src/blocks/recent-posts/index.php:184 src/init.php:513
 msgid "%d comment"
 msgid_plural "%d comments"
 msgstr[0] "%d comentario"
 msgstr[1] "%d comentarios"
 
-#: src/blocks/post-carousel/index.php:281
-#: src/blocks/post-carousel/index.php:282 dist/index.js:2
+#: src/blocks/post-carousel/index.php:283
+#: src/blocks/post-carousel/index.php:284 dist/index.js:2
+#: src/blocks/post-carousel/components/post-carousel-preview.js:133
 msgid "Previous slide"
 msgstr "Diapositiva anterior"
 
-#: src/blocks/post-carousel/index.php:289
-#: src/blocks/post-carousel/index.php:290 dist/index.js:2
+#: src/blocks/post-carousel/index.php:291
+#: src/blocks/post-carousel/index.php:292 dist/index.js:2
+#: src/blocks/post-carousel/components/post-carousel-preview.js:139
 msgid "Next slide"
 msgstr "Diapositiva siguiente"
 
@@ -124,7 +126,7 @@ msgstr ""
 msgid "Small breakpoint"
 msgstr "Punto de quiebre pequeño"
 
-#: dist/admin-script.js:2 dist/index.js:2 src/blocks/post-carousel/edit.js:229
+#: dist/admin-script.js:2 dist/index.js:2 src/blocks/post-carousel/edit.js:256
 #: src/js/admin.js:101 src/js/admin.js:111 src/js/admin.js:121
 #: src/js/admin.js:131
 msgid "In pixels."
@@ -226,7 +228,7 @@ msgstr "bloque fleximple"
 #: src/blocks/date-and-time/edit.js:63 src/blocks/feature/edit.js:180
 #: src/blocks/header/edit.js:104 src/blocks/icon/edit.js:78
 #: src/blocks/iframe/edit.js:66 src/blocks/map/edit.js:120
-#: src/blocks/post-carousel/edit.js:160 src/blocks/post/edit.js:156
+#: src/blocks/post-carousel/edit.js:164 src/blocks/post/edit.js:156
 #: src/blocks/profile/edit.js:133 src/blocks/recent-posts/edit.js:146
 #: src/blocks/row/edit.js:199 src/blocks/testimonial/edit.js:110
 #: src/blocks/weather/edit.js:91
@@ -255,7 +257,7 @@ msgstr "Quitar imagen"
 msgid "Size"
 msgstr "Tamaño"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:351
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:368
 #: src/blocks/post/edit.js:243 src/blocks/recent-posts/edit.js:300
 msgid "None"
 msgstr "Ninguna"
@@ -433,7 +435,7 @@ msgid "Bottom padding unit"
 msgstr "Unidad de relleno inferior"
 
 #: dist/index.js:2 src/blocks/button/edit.js:255 src/blocks/buttons/edit.js:92
-#: src/blocks/contact-info/edit.js:116 src/blocks/post-carousel/edit.js:299
+#: src/blocks/contact-info/edit.js:116 src/blocks/post-carousel/edit.js:316
 #: src/blocks/profile/edit.js:138 src/blocks/row/edit.js:228
 msgid "Horizontal alignment"
 msgstr "Alineación horizontal"
@@ -457,7 +459,7 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: dist/index.js:2 src/blocks/button/edit.js:280
-#: src/blocks/post-carousel/edit.js:353 src/blocks/recent-posts/edit.js:302
+#: src/blocks/post-carousel/edit.js:370 src/blocks/recent-posts/edit.js:302
 msgid "Full"
 msgstr "Completo"
 
@@ -474,7 +476,7 @@ msgid "It will show to the user as a tooltip."
 msgstr "Se mostrará al usuario en forma de descripción emergente."
 
 #: dist/index.js:2 src/blocks/button/edit.js:294 src/blocks/feature/edit.js:229
-#: src/blocks/post-carousel/edit.js:320 src/blocks/post/edit.js:200
+#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:200
 #: src/blocks/recent-posts/edit.js:232
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
@@ -493,13 +495,13 @@ msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
 #: dist/index.js:2 src/blocks/button/edit.js:311 src/blocks/feature/edit.js:240
-#: src/blocks/post-carousel/edit.js:331 src/blocks/post/edit.js:217
+#: src/blocks/post-carousel/edit.js:348 src/blocks/post/edit.js:217
 #: src/blocks/recent-posts/edit.js:243
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
 #: dist/index.js:2 src/blocks/button/edit.js:320 src/blocks/feature/edit.js:246
-#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:226
+#: src/blocks/post-carousel/edit.js:354 src/blocks/post/edit.js:226
 #: src/blocks/recent-posts/edit.js:249
 msgid ""
 "The browser should not send an HTTP referer header if the user follows the "
@@ -509,7 +511,7 @@ msgstr ""
 "sigue el hipervínculo."
 
 #: dist/index.js:2 src/blocks/button/edit.js:316 src/blocks/feature/edit.js:245
-#: src/blocks/post-carousel/edit.js:336 src/blocks/post/edit.js:222
+#: src/blocks/post-carousel/edit.js:353 src/blocks/post/edit.js:222
 #: src/blocks/recent-posts/edit.js:248
 msgid ""
 "The browser should send an HTTP referer header if the user follows the "
@@ -552,7 +554,7 @@ msgid "Insert the HTML code for your custom icon."
 msgstr "Ingresa el código HTML para tu ícono personalizado."
 
 #: dist/index.js:2 src/blocks/button/edit.js:401 src/blocks/icon/edit.js:117
-#: src/blocks/post-carousel/edit.js:424 src/blocks/testimonial/edit.js:204
+#: src/blocks/post-carousel/edit.js:441 src/blocks/testimonial/edit.js:204
 msgid "Color"
 msgstr "Color"
 
@@ -777,7 +779,7 @@ msgid "Additional content"
 msgstr "Contenido adicional"
 
 #: dist/index.js:2 src/blocks/header/edit.js:139
-#: src/blocks/post-carousel/edit.js:435 src/blocks/post/edit.js:301
+#: src/blocks/post-carousel/edit.js:452 src/blocks/post/edit.js:301
 #: src/blocks/recent-posts/edit.js:345 src/blocks/testimonial/edit.js:215
 msgid "Display"
 msgstr "Mostrar"
@@ -886,7 +888,7 @@ msgid "Search for a location…"
 msgstr "Busca una ubicación…"
 
 #: dist/index.js:2 src/blocks/map/components/location-select-control.js:64
-#: src/blocks/post-carousel/edit.js:458
+#: src/blocks/post-carousel/edit.js:473
 #: src/blocks/post/components/post-select-control.js:99
 #: src/blocks/post/edit.js:319 src/blocks/recent-posts/edit.js:368
 #: src/blocks/weather/components/location-select-control.js:58
@@ -965,7 +967,7 @@ msgstr "Entrada"
 msgid "Search a post…"
 msgstr "Busca una entrada…"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:459
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:474
 #: src/blocks/post/components/post-select-control.js:100
 #: src/blocks/recent-posts/edit.js:369
 msgid "No posts found."
@@ -1076,7 +1078,7 @@ msgstr "Mostrar artículos extra"
 msgid "Hide extra articles"
 msgstr "Ocultar artículos extra"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:343
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:360
 #: src/blocks/post/components/post-sortable-control.js:70
 #: src/blocks/post/edit.js:235 src/blocks/profile/edit.js:260
 #: src/blocks/recent-posts/edit.js:281 src/blocks/testimonial/edit.js:150
@@ -1128,27 +1130,27 @@ msgstr "Leer más"
 msgid "Extra articles"
 msgstr "Artículos extra"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:285
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:302
 #: src/blocks/post/edit.js:160 src/blocks/recent-posts/edit.js:208
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:311
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:328
 #: src/blocks/post/edit.js:175 src/blocks/recent-posts/edit.js:223
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:348
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:365
 #: src/blocks/post/edit.js:240 src/blocks/recent-posts/edit.js:297
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:367
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:384
 #: src/blocks/post/edit.js:258 src/blocks/recent-posts/edit.js:316
 msgid "Aspect ratio"
 msgstr "Relación de aspecto"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:440
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:457
 #: src/blocks/post/edit.js:306 src/blocks/recent-posts/edit.js:350
 msgid "Read more text"
 msgstr "Texto leer más"
@@ -1163,7 +1165,7 @@ msgstr "Muestra una entrada o página específica."
 msgid "Stacked"
 msgstr "Apilado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:283
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:300
 msgid "Posts"
 msgstr "Entradas"
 
@@ -1183,120 +1185,131 @@ msgstr "Excluir categorías"
 msgid "Exclude category…"
 msgstr "Excluir categoría…"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:162
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:166
 msgid "Number of posts"
 msgstr "Número de entradas"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:172
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:176
 msgid "Posts per view"
 msgstr "Entradas por diapositiva"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:180
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:184
 msgid "Autoplay"
 msgstr "Reproducción automática"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:186
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:190
 msgid "Loop"
 msgstr "Bucle"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:193
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:197
 msgid "Speed"
 msgstr "Velocidad"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:194
-#: src/blocks/post-carousel/edit.js:209
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:198
+#: src/blocks/post-carousel/edit.js:213
 msgid "In milliseconds."
 msgstr "En milisegundos."
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:208
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:212
 msgid "Delay"
 msgstr "Demora"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:224
-msgid "Distance between slides"
-msgstr "Distancia entre diapositivas"
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:228
+msgid "Navigation"
+msgstr "Navegación"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:233
-msgid "Effect"
-msgstr "Efecto"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:236
-msgid "Slide"
-msgstr "Deslizar"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:237
-msgid "Fade"
-msgstr "Desvanecer"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:238
-msgid "Flip"
-msgstr "Voltear"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:239
-#, fuzzy
-msgid "Coverflow"
-msgstr "Flujo de portada"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:240
-msgid "Cube"
-msgstr "Cubo"
-
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:246
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:234
 msgid "Pagination"
 msgstr "Paginación"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:249
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:240
+msgid "Pagination type"
+msgstr "Tipo de paginación"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:243
 msgid "Bullets"
 msgstr "Viñetas"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:250
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:244
 msgid "Fraction"
 msgstr "Fracción"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:251
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:245
 msgid "Progress bar"
 msgstr "Barra de progreso"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:257
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:251
+msgid "Distance between slides"
+msgstr "Distancia entre diapositivas"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:260
+msgid "Effect"
+msgstr "Efecto"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:263
+msgid "Slide"
+msgstr "Deslizar"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:264
+msgid "Fade"
+msgstr "Desvanecer"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:265
+msgid "Flip"
+msgstr "Voltear"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:266
+msgid "Coverflow"
+msgstr "Flujo de portada"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:267
+msgid "Cube"
+msgstr "Cubo"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:268
+msgid "Cards"
+msgstr "Tarjetas"
+
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:274
 #: src/blocks/recent-posts/edit.js:254
 msgid "Sorting and filtering"
 msgstr "Orden y filtrado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:273
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:290
 #: src/blocks/recent-posts/edit.js:270
 msgid "Manually select posts"
 msgstr "Elegir entradas manualmente"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:326
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:343
 #: src/blocks/recent-posts/edit.js:238
 msgid "Google search spider should not follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:325
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:342
 #: src/blocks/recent-posts/edit.js:237
 msgid "Google search spider should follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:396
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:413
 msgid "Icons"
 msgstr "Íconos"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:400
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:417
 msgid "Previous button"
 msgstr "Botón anterior"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:405
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:422
 msgid "Next button"
 msgstr "Botón siguiente"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:412
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:429
 msgid "Button icon size"
 msgstr "Tamaño de ícono de botón"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:427
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:444
 msgid "Button icon"
 msgstr "Ícono de botón"
 
@@ -1840,6 +1853,8 @@ msgid ""
 "To make use of this block, you first need to set an OpenWeatherMap API key "
 "in the Fleximple Blocks settings page."
 msgstr ""
+"Para hacer uso de este bloque, primero debe establecer una clave de API "
+"openWeatherMap en la página de configuración de Fleximple Blocks."
 
 #: dist/index.js:2
 msgid "On scroll animation"
