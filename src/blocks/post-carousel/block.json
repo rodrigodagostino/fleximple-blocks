@@ -23,6 +23,18 @@
 			"type": "number",
 			"default": 3000
 		},
+		"hasNavigation": {
+			"type": "boolean",
+			"default": true
+		},
+		"hasPagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"paginationType": {
+			"type": "string",
+			"default": "bullets"
+		},
 		"spaceBetween": {
 			"type": "number",
 			"default": 0
@@ -30,10 +42,6 @@
 		"effect": {
 			"type": "string",
 			"default": "slide"
-		},
-		"pagination": {
-			"type": "string",
-			"default": "bullets"
 		},
 		"postsToShow": {
 			"type": "number",
@@ -120,35 +128,19 @@
 		},
 		"orderArticle": {
 			"type": "array",
-			"default": [
-				"media",
-				"content"
-			]
+			"default": ["media", "content"]
 		},
 		"orderMedia": {
 			"type": "array",
-			"default": [
-				"featuredImage",
-				"audio"
-			]
+			"default": ["featuredImage", "audio"]
 		},
 		"orderContent": {
 			"type": "array",
-			"default": [
-				"categories",
-				"title",
-				"meta",
-				"excerpt",
-				"readMore"
-			]
+			"default": ["categories", "title", "meta", "excerpt", "readMore"]
 		},
 		"orderMeta": {
 			"type": "array",
-			"default": [
-				"author",
-				"date",
-				"comments"
-			]
+			"default": ["author", "date", "comments"]
 		},
 		"displayMedia": {
 			"type": "boolean",
@@ -200,6 +192,6 @@
 		}
 	},
 	"supports": {
-		"align": [ "wide", "full" ]
+		"align": ["wide", "full"]
 	}
 }

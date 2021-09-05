@@ -149,7 +149,7 @@ i.fipicon-angle-down:before {
 /*----------------------
  # Swiper
  ---------------------*/
-.swiper-container {
+.swiper {
 	padding-bottom: 44px !important;
 
 	&:hover {
@@ -162,6 +162,8 @@ i.fipicon-angle-down:before {
 
 .swiper-button-prev,
 .swiper-button-next {
+	display: flex !important;
+	padding: 0.75rem 1.25rem 0.875rem!important;
 	background-color: transparent;
 	border: none;
 	padding-top: 12px;
@@ -170,8 +172,8 @@ i.fipicon-angle-down:before {
 	top: 50%;
 	transform: translateY(-50%);
 	line-height: 1;
-	width: auto;
-	height: auto;
+	width: auto !important;
+	height: auto !important;
 	z-index: 10;
 	opacity: 0.8;
 	transition: opacity 0.2s ease;

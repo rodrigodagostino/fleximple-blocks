@@ -50,16 +50,18 @@ function fleximpleblocks_render_post_carousel_block( $attributes ) {
 	$swiper_params .= $attributes['autoplay'] ? '\'autoplay\': true,' : '\'autoplay\': false,';
 	$swiper_params .= $attributes['delay'] ? '\'delay\': '. $attributes['delay'] .',' : '';
 	$swiper_params .= $attributes['speed'] ? '\'speed\': '. $attributes['speed'] .',' : '';
+	$swiper_params .= $attributes['hasNavigation'] ? '\'navigation\': true,' : '\'navigation\': false,';
+	$swiper_params .= $attributes['hasPagination'] ? '\'pagination\': true,' : '\'pagination\': false,';
+	$swiper_params .= $attributes['paginationType'] ? '\'paginationType\': \''. $attributes['paginationType'] .'\',' : '';
 	$swiper_params .= $attributes['spaceBetween'] ? '\'spaceBetween\': '. $attributes['spaceBetween'] .',' : '';
-	$swiper_params .= $attributes['effect'] ? '\'effect\': \''. $attributes['effect'] .'\',' : '';
-	$swiper_params .= $attributes['pagination'] ? '\'pagination\': \''. $attributes['pagination'] .'\'' : '';
+	$swiper_params .= $attributes['effect'] ? '\'effect\': \''. $attributes['effect'] .'\'' : '';
 	$swiper_params .= '}';
 
 
 	/**
 	 * Post Carousel Markup
 	 */
-	$post_carousel_markup = '<div class="swiper-container" data-swiper="'. $swiper_params .'">';
+	$post_carousel_markup = '<div class="swiper" data-swiper="'. $swiper_params .'">';
 	$post_carousel_markup .= '<div class="swiper-wrapper">';
 
 	foreach ( $post_carousel as $post ) {

@@ -222,17 +222,17 @@ function fleximpleblocks_enqueue_styles() {
 		// Swiper Styles.
 		wp_enqueue_style(
 			'fleximpleblocks-swiper-styles',
-			'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css',
+			'https://cdn.jsdelivr.net/npm/swiper@7.0.3/swiper-bundle.min.css',
 			false,
-			'5.4.5',
+			'7.0.3',
 			'all'
 		);
 		// Swiper Scripts
 		wp_enqueue_script(
 			'fleximpleblocks-swiper-scripts',
-			'https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js',
+			'https://cdn.jsdelivr.net/npm/swiper@7.0.3/swiper-bundle.js',
 			array(),
-			'5.4.5',
+			'7.0.3',
 			true
 		);
 	}

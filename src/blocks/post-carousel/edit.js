@@ -59,9 +59,11 @@ function PostCarouselEdit( {
 		loop,
 		speed,
 		delay,
+		hasNavigation,
+		hasPagination,
+		paginationType,
 		spaceBetween,
 		effect,
-		pagination,
 		headingLevel,
 		contentAlignment,
 		excerptLength,
@@ -155,6 +157,8 @@ function PostCarouselEdit( {
 		)
 	} )
 
+	const hasPosts = Array.isArray( recentPosts ) && recentPosts.length
+
 	const inspectorControls = 
 		<InspectorControls>
 			<PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
@@ -220,6 +224,29 @@ function PostCarouselEdit( {
 					</BaseControl>
 				</div>
 
+				<ToggleControl
+					label={ __( 'Navigation', 'fleximpleblocks' ) }
+					checked={ hasNavigation }
+					onChange={ () => setAttributes( { hasNavigation: !hasNavigation } ) }
+				/>
+
+				<ToggleControl
+					label={ __( 'Pagination', 'fleximpleblocks' ) }
+					checked={ hasPagination }
+					onChange={ () => setAttributes( { hasPagination: !hasPagination } ) }
+				/>
+
+				<SelectControl
+					label={ __( 'Pagination type', 'fleximpleblocks' ) }
+					value={ paginationType }
+					options={ [
+						{ label: __( 'Bullets', 'fleximpleblocks' ), value: 'bullets' },
+						{ label: __( 'Fraction', 'fleximpleblocks' ), value: 'fraction' },
+						{ label: __( 'Progress bar', 'fleximpleblocks' ), value: 'progressbar' },
+					] }
+					onChange={ value => setAttributes( { paginationType: value } ) }
+				/>
+
 				<RangeControl
 					label={ __( 'Distance between slides', 'fleximpleblocks' ) }
 					min={ 0 }
@@ -238,19 +265,9 @@ function PostCarouselEdit( {
 						{ label: __( 'Flip', 'fleximpleblocks' ), value: 'flip' },
 						{ label: __( 'Coverflow', 'fleximpleblocks' ), value: 'coverflow' },
 						{ label: __( 'Cube', 'fleximpleblocks' ), value: 'cube' },
+						{ label: __( 'Cards', 'fleximpleblocks' ), value: 'cards' },
 					] }
 					onChange={ value => setAttributes( { effect: value } ) }
-				/>
-
-				<SelectControl
-					label={ __( 'Pagination', 'fleximpleblocks' ) }
-					value={ pagination }
-					options={ [
-						{ label: __( 'Bullets', 'fleximpleblocks' ), value: 'bullets' },
-						{ label: __( 'Fraction', 'fleximpleblocks' ), value: 'fraction' },
-						{ label: __( 'Progress bar', 'fleximpleblocks' ), value: 'progressbar' },
-					] }
-					onChange={ value => setAttributes( { pagination: value } ) }
 				/>
 			</PanelBody>
 
@@ -445,8 +462,6 @@ function PostCarouselEdit( {
 			</PanelBody>
 		</InspectorControls>
 	
-
-	const hasPosts = Array.isArray( recentPosts ) && recentPosts.length
 	if ( !hasPosts ) {
 		return (
 			<>
