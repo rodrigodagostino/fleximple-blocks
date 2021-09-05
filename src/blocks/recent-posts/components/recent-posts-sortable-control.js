@@ -6,7 +6,7 @@
  * External dependencies
  */
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
-import arrayMove from 'array-move'
+import { arrayMoveImmutable } from 'array-move'
 
 /**
  * WordPress dependencies
@@ -43,25 +43,25 @@ class RecentPostsSortableControl extends Component {
 
 	onSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const orderArticle = arrayMove( this.props.attributes.orderArticle, oldIndex, newIndex )
+		const orderArticle = arrayMoveImmutable( this.props.attributes.orderArticle, oldIndex, newIndex )
 		this.props.setAttributes( { orderArticle } )
 	}
 
 	onMediaSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const orderMedia = arrayMove( this.props.attributes.orderMedia, oldIndex, newIndex )
+		const orderMedia = arrayMoveImmutable( this.props.attributes.orderMedia, oldIndex, newIndex )
 		this.props.setAttributes( { orderMedia } )
 	}
 
 	onContentSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const orderContent = arrayMove( this.props.attributes.orderContent, oldIndex, newIndex )
+		const orderContent = arrayMoveImmutable( this.props.attributes.orderContent, oldIndex, newIndex )
 		this.props.setAttributes( { orderContent } )
 	}
 
 	onMetaSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const orderMeta = arrayMove( this.props.attributes.orderMeta, oldIndex, newIndex )
+		const orderMeta = arrayMoveImmutable( this.props.attributes.orderMeta, oldIndex, newIndex )
 		this.props.setAttributes( { orderMeta } )
 	}
 
@@ -208,37 +208,37 @@ class RecentPostsSortableControl extends Component {
 
 	toggleAttribute( attribute ) {
 		if ( 'media' === attribute ) {
-			this.props.setAttributes( { displayMedia: ! this.props.attributes.displayMedia } )
+			this.props.setAttributes( { displayMedia: !this.props.attributes.displayMedia } )
 		}
 		if ( 'featuredImage' === attribute ) {
-			this.props.setAttributes( { displayFeaturedImage: ! this.props.attributes.displayFeaturedImage } )
+			this.props.setAttributes( { displayFeaturedImage: !this.props.attributes.displayFeaturedImage } )
 		}
 		if ( 'content' === attribute ) {
-			this.props.setAttributes( { displayContent: ! this.props.attributes.displayContent } )
+			this.props.setAttributes( { displayContent: !this.props.attributes.displayContent } )
 		}
 		if ( 'categories' === attribute ) {
-			this.props.setAttributes( { displayCategories: ! this.props.attributes.displayCategories } )
+			this.props.setAttributes( { displayCategories: !this.props.attributes.displayCategories } )
 		}
 		if ( 'title' === attribute ) {
-			this.props.setAttributes( { displayTitle: ! this.props.attributes.displayTitle } )
+			this.props.setAttributes( { displayTitle: !this.props.attributes.displayTitle } )
 		}
 		if ( 'meta' === attribute ) {
-			this.props.setAttributes( { displayMeta: ! this.props.attributes.displayMeta } )
+			this.props.setAttributes( { displayMeta: !this.props.attributes.displayMeta } )
 		}
 		if ( 'author' === attribute ) {
-			this.props.setAttributes( { displayAuthor: ! this.props.attributes.displayAuthor } )
+			this.props.setAttributes( { displayAuthor: !this.props.attributes.displayAuthor } )
 		}
 		if ( 'date' === attribute ) {
-			this.props.setAttributes( { displayDate: ! this.props.attributes.displayDate } )
+			this.props.setAttributes( { displayDate: !this.props.attributes.displayDate } )
 		}
 		if ( 'comments' === attribute ) {
-			this.props.setAttributes( { displayComments: ! this.props.attributes.displayComments } )
+			this.props.setAttributes( { displayComments: !this.props.attributes.displayComments } )
 		}
 		if ( 'excerpt' === attribute ) {
-			this.props.setAttributes( { displayExcerpt: ! this.props.attributes.displayExcerpt } )
+			this.props.setAttributes( { displayExcerpt: !this.props.attributes.displayExcerpt } )
 		}
 		if ( 'readMore' === attribute ) {
-			this.props.setAttributes( { displayReadMore: ! this.props.attributes.displayReadMore } )
+			this.props.setAttributes( { displayReadMore: !this.props.attributes.displayReadMore } )
 		}
 	}
 

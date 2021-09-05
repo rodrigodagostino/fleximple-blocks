@@ -6,7 +6,7 @@
  * External dependencies
  */
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
-import arrayMove from 'array-move'
+import { arrayMoveImmutable } from 'array-move'
 
 /**
  * WordPress dependencies
@@ -47,22 +47,22 @@ function PostSortableControl( {
 
 	const onSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		setAttributes( { orderArticle: arrayMove( orderArticle, oldIndex, newIndex ) } )
+		setAttributes( { orderArticle: arrayMoveImmutable( orderArticle, oldIndex, newIndex ) } )
 	}
 
 	const onMediaSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		setAttributes( { orderMedia: arrayMove( orderMedia, oldIndex, newIndex ) } )
+		setAttributes( { orderMedia: arrayMoveImmutable( orderMedia, oldIndex, newIndex ) } )
 	}
 
 	const onContentSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		setAttributes( { orderContent: arrayMove( orderContent, oldIndex, newIndex ) } )
+		setAttributes( { orderContent: arrayMoveImmutable( orderContent, oldIndex, newIndex ) } )
 	}
 
 	const onMetaSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		setAttributes( { orderMeta: arrayMove( orderMeta, oldIndex, newIndex ) } )
+		setAttributes( { orderMeta: arrayMoveImmutable( orderMeta, oldIndex, newIndex ) } )
 	}
 
 	const getLabel = attribute => {

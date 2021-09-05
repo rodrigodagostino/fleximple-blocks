@@ -5,7 +5,7 @@
 /**
  * External dependencies
  */
-import arrayMove from 'array-move'
+import { arrayMoveImmutable } from 'array-move'
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
 
 /**
@@ -24,10 +24,10 @@ function HeaderSortableControl( {
 
 	const onSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		setAttributes( { order: arrayMove( order, oldIndex, newIndex ) } )
+		setAttributes( { order: arrayMoveImmutable( order, oldIndex, newIndex ) } )
 	}
 
-	const getLabel = ( attribute ) => {
+	const getLabel = attribute => {
 		if ( 'heading' === attribute ) {
 			return __( 'Heading', 'fleximpleblocks' )
 		}
@@ -60,7 +60,7 @@ function HeaderSortableControl( {
 		}
 	}
 
-	const getState = ( attribute ) => {
+	const getState = attribute => {
 		if ( 'heading' === attribute ) {
 			return displayHeading
 		}
@@ -72,15 +72,15 @@ function HeaderSortableControl( {
 		}
 	}
 
-	const toggleAttribute = ( attribute ) => {
+	const toggleAttribute = attribute => {
 		if ( 'heading' === attribute ) {
-			setAttributes( { displayHeading: ! displayHeading } )
+			setAttributes( { displayHeading: !displayHeading } )
 		}
 		if ( 'subhead' === attribute ) {
-			setAttributes( { displaySubhead: ! displaySubhead } )
+			setAttributes( { displaySubhead: !displaySubhead } )
 		}
 		if ( 'additional' === attribute ) {
-			setAttributes( { displayAdditional: ! displayAdditional } )
+			setAttributes( { displayAdditional: !displayAdditional } )
 		}
 	}
 

@@ -6,7 +6,7 @@
  * External dependencies
  */
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
-import arrayMove from 'array-move'
+import { arrayMoveImmutable } from 'array-move'
 
 /**
  * WordPress dependencies
@@ -36,13 +36,13 @@ class TestimonialSortableControl extends Component {
 
 	onContentSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const order = arrayMove( this.props.attributes.order, oldIndex, newIndex )
+		const order = arrayMoveImmutable( this.props.attributes.order, oldIndex, newIndex )
 		this.props.setAttributes( { order } )
 	}
 
 	onMetaSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const orderMeta = arrayMove( this.props.attributes.orderMeta, oldIndex, newIndex )
+		const orderMeta = arrayMoveImmutable( this.props.attributes.orderMeta, oldIndex, newIndex )
 		this.props.setAttributes( { orderMeta } )
 	}
 
@@ -105,16 +105,16 @@ class TestimonialSortableControl extends Component {
 
 	toggleAttribute( attribute ) {
 		if ( 'icon' === attribute ) {
-			this.props.setAttributes( { displayIcon: ! this.props.attributes.displayIcon } )
+			this.props.setAttributes( { displayIcon: !this.props.attributes.displayIcon } )
 		}
 		if ( 'quote' === attribute ) {
-			this.props.setAttributes( { displayQuote: ! this.props.attributes.displayQuote } )
+			this.props.setAttributes( { displayQuote: !this.props.attributes.displayQuote } )
 		}
 		if ( 'media' === attribute ) {
-			this.props.setAttributes( { displayMedia: ! this.props.attributes.displayMedia } )
+			this.props.setAttributes( { displayMedia: !this.props.attributes.displayMedia } )
 		}
 		if ( 'reference' === attribute ) {
-			this.props.setAttributes( { displayReference: ! this.props.attributes.displayReference } )
+			this.props.setAttributes( { displayReference: !this.props.attributes.displayReference } )
 		}
 	}
 

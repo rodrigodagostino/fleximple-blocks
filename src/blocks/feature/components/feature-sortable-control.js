@@ -6,7 +6,7 @@
  * External dependencies
  */
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
-import arrayMove from 'array-move'
+import { arrayMoveImmutable } from 'array-move'
 
 /**
  * WordPress dependencies
@@ -36,7 +36,7 @@ class FeatureSortableControl extends Component {
 
 	onSortEnd = ( { oldIndex, newIndex } ) => {
 		document.body.removeAttribute( 'style' )
-		const order = arrayMove( this.props.attributes.order, oldIndex, newIndex )
+		const order = arrayMoveImmutable( this.props.attributes.order, oldIndex, newIndex )
 		this.props.setAttributes( { order } )
 	}
 
