@@ -52,17 +52,12 @@ function PostEdit( {
 	setAttributes,
 	instanceId,
 } ) {
-	/**
-	 * TO-DO: Fix repeated loop (unsuccessful fetch) on initial render
-	 * when component is inserted for the first time.
-	 */
 	const [ postData, setPostData ] = useState( null )
 	const [ isFetching, setIsFetching ] = useState( true )
 	const [ imageSizeOptions, setImageSizeOptions ] = useState( [] )
 
-	const prevPostId = useRef( null )
+	const prevPostId = useRef( postId || null )
 
-	// componentWillMount equivalent
 	useEffect( () => {
 		if ( !attributes.className ) {
 			setAttributes( { className: 'is-style-standard' } )
@@ -103,12 +98,13 @@ function PostEdit( {
 		apiFetch( { path: '/wp/v2/posts/' } )
 			.then( results => {
 				const randomIndex = Math.floor( Math.random() * results.length )
-				const lastPostData = results[ randomIndex ]
-				setPostData( lastPostData )
+				const randomPostData = results[ randomIndex ]
+				setPostData( randomPostData )
+				prevPostId.current = randomPostData.id
 				setAttributes( {
-					postId: lastPostData.id,
+					postId: randomPostData.id,
 				} )
-				filterImageSizeOptions( lastPostData )
+				filterImageSizeOptions( randomPostData )
 				setIsFetching( false )
 			} )
 			.catch( error => console.error( error ) )
