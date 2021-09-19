@@ -9,7 +9,8 @@
 		"build": "webpack --mode=production",
 		"makejson": "wp i18n make-json languages/fleximpleblocks-es_ES.po --no-purge",
 		"makepot": "wp i18n make-pot ./ languages/fleximpleblocks.pot",
-		"start": "webpack --mode=development --watch"
+		"start": "webpack --mode=development --watch",
+		"stats": "webpack --json > stats.json"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.8",
