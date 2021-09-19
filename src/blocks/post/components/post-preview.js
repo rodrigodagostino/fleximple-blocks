@@ -81,11 +81,12 @@ function PostPreview( {
 
 	const defaultClassName = getBlockDefaultClassName( name )
 
-	const featMediaData = {
-		small: { ...postData.featured_media_data[ imageSize.small ] },
-		medium: { ...postData.featured_media_data[ imageSize.medium ] },
-		large: { ...postData.featured_media_data[ imageSize.large ] },
-	}
+	const featMediaData = postData.featured_media_data
+		? {
+			small: { ...postData.featured_media_data[ imageSize?.small ] },
+			medium: { ...postData.featured_media_data[ imageSize?.medium ] },
+			large: { ...postData.featured_media_data[ imageSize?.large ] },
+		} : null
 
 	const pictureClasses = classnames(
 		`${ defaultClassName }__picture`, {
