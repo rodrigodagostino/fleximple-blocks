@@ -6,7 +6,13 @@
 import { __ } from '@wordpress/i18n'
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor'
-import { PanelBody, Placeholder, SelectControl, TextControl, ToggleControl } from '@wordpress/components'
+import {
+	PanelBody,
+	Placeholder,
+	SelectControl,
+	TextControl,
+	ToggleControl,
+} from '@wordpress/components'
 import { useEffect, useRef, useState } from '@wordpress/element'
 
 /**
@@ -41,7 +47,7 @@ function WeatherEdit( {
 		if ( !fleximpleblocksPluginData.settings.openWeatherApiKey ) return
 		setApiKey( fleximpleblocksPluginData.settings.openWeatherApiKey )
 	}, [] )
-	
+
 	useEffect( () => {
 		if ( apiKey ) {
 			fetchWeatherData()
@@ -49,7 +55,7 @@ function WeatherEdit( {
 	}, [ apiKey ] )
 
 	useEffect( () => {
-		if ( prevCityName.current !== cityName || prevUnits.current !== units ) {
+		if ( apiKey && prevCityName.current !== cityName || prevUnits.current !== units ) {
 			fetchWeatherData()
 		}
 	}, [ cityName, units ] )
@@ -93,20 +99,27 @@ function WeatherEdit( {
 
 					<TextControl
 						label={ __( 'Short name', 'fleximpleblocks' ) }
-						help={ __( 'The short name will be used in replacement of the name in small devices.', 'fleximpleblocks' ) }
+						help={ __(
+							'The short name will be used in replacement of the name in small devices.',
+							'fleximpleblocks',
+						) }
 						value={ shortName }
-						onChange={ value => setAttributes( { shortName: value } ) }
+						onChange={ value =>
+							setAttributes( { shortName: value } )
+						}
 					/>
 
 					<ToggleControl
 						label={ __( 'Display units', 'fleximpleblocks' ) }
 						checked={ displayUnits }
-						onChange={ () => setAttributes( { displayUnits: !displayUnits } ) }
+						onChange={ () =>
+							setAttributes( { displayUnits: !displayUnits } )
+						}
 					/>
 
 					<SelectControl
 						label={ __( 'Units', 'fleximpleblocks' ) }
-						labelPosition="top"
+						labelPosition='top'
 						value={ units }
 						options={ [
 							{
@@ -127,7 +140,7 @@ function WeatherEdit( {
 
 					<SelectControl
 						label={ __( 'Language', 'fleximpleblocks' ) }
-						labelPosition="top"
+						labelPosition='top'
 						value={ language }
 						options={ languages }
 						onChange={ value => setAttributes( { language: value } ) }
@@ -136,25 +149,32 @@ function WeatherEdit( {
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				{ !apiKey &&
-					<Placeholder className="fleximple-components-placeholder">
-						<p>{ __( 'To make use of this block, you first need to set an OpenWeatherMap API key in the Fleximple Blocks settings page.', 'fleximpleblocks' ) }</p>
-						<a href={ `${ fleximpleblocksPluginData.homeUrl }/wp-admin/admin.php?page=fleximpleblocks-settings` }>
+				{ !apiKey && (
+					<Placeholder className='fleximple-components-placeholder'>
+						<p>
+							{ __(
+								'To make use of this block, you first need to set an OpenWeatherMap API key in the Fleximple Blocks settings page.',
+								'fleximpleblocks',
+							) }
+						</p>
+						<a
+							href={ `${ fleximpleblocksPluginData.homeUrl }/wp-admin/admin.php?page=fleximpleblocks-settings` }
+						>
 							{ __( 'Take me there.' ) }
 						</a>
 					</Placeholder>
-				}
+				) }
 
-				{ !!apiKey && !!isFetching &&
-					<Placeholder className="fleximple-components-placeholder">
+				{ !!apiKey && !!isFetching && (
+					<Placeholder className='fleximple-components-placeholder'>
 						<Spinner />
 						<p>{ __( 'Loading…', 'fleximpleblocks' ) }</p>
 					</Placeholder>
-				}
+				) }
 
-				{ !!apiKey && !isFetching && !!weatherData &&
+				{ !!apiKey && !isFetching && !!weatherData && (
 					<>
-						{ !!shortName && 
+						{ !!shortName && (
 							<style>
 								{ `.${ defaultClassName }__city-name { display: none }
 							@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.xlargeBreakpointValue }px) {
@@ -162,33 +182,55 @@ function WeatherEdit( {
 								.${ defaultClassName }__city-name { display: inline-block }
 							}` }
 							</style>
-						}
+						) }
 
 						<i
 							className={ `${ defaultClassName }__icon wi wi-owm-${ timeOfDay }-${ weatherData.weather[ 0 ].id }` }
 							alt={ weatherData.description }
 						></i>
 						<div className={ `${ defaultClassName }__temperature` }>
-							<span className={ `${ defaultClassName }__temperature-number` }>
+							<span
+								className={ `${ defaultClassName }__temperature-number` }
+							>
 								{ Math.round( weatherData.main.temp ) }
 							</span>
-							{ ( units === 'metric' || units === 'imperial' ) &&
-								<span className={ `${ defaultClassName }__temperature-degree-symbol` }>&deg;</span>
-							}
-							{ displayUnits && units === 'metric' &&
-								<span className={ `${ defaultClassName }__temperature-units` }>C</span>
-							}
-							{ displayUnits && units === 'imperial' &&
-								<span className={ `${ defaultClassName }__temperature-units` }>F</span>
-							}
-							{ displayUnits && units === 'kelvin' &&
-								<span className={ `${ defaultClassName }__temperature-units` }>K</span>
-							}
+							{ ( units === 'metric' || units === 'imperial' ) && (
+								<span
+									className={ `${ defaultClassName }__temperature-degree-symbol` }
+								>
+									&deg;
+								</span>
+							) }
+							{ displayUnits && units === 'metric' && (
+								<span
+									className={ `${ defaultClassName }__temperature-units` }
+								>
+									C
+								</span>
+							) }
+							{ displayUnits && units === 'imperial' && (
+								<span
+									className={ `${ defaultClassName }__temperature-units` }
+								>
+									F
+								</span>
+							) }
+							{ displayUnits && units === 'kelvin' && (
+								<span
+									className={ `${ defaultClassName }__temperature-units` }
+								>
+									K
+								</span>
+							) }
 						</div>
-						<span className={ `${ defaultClassName }__short-name` }>{ shortName }</span>
-						<span className={ `${ defaultClassName }__city-name` }>{ weatherData.name }</span>
+						<span className={ `${ defaultClassName }__short-name` }>
+							{ shortName }
+						</span>
+						<span className={ `${ defaultClassName }__city-name` }>
+							{ weatherData.name }
+						</span>
 					</>
-				}
+				) }
 			</div>
 		</>
 	)
