@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fleximple Blocks 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks\n"
-"POT-Creation-Date: 2021-09-05T02:43:08+02:00\n"
-"PO-Revision-Date: 2021-09-04 21:44-0300\n"
+"POT-Creation-Date: 2021-09-20T00:34:20+02:00\n"
+"PO-Revision-Date: 2021-09-19 19:36-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -228,10 +228,10 @@ msgstr "bloque fleximple"
 #: src/blocks/date-and-time/edit.js:63 src/blocks/feature/edit.js:180
 #: src/blocks/header/edit.js:104 src/blocks/icon/edit.js:78
 #: src/blocks/iframe/edit.js:66 src/blocks/map/edit.js:120
-#: src/blocks/post-carousel/edit.js:164 src/blocks/post/edit.js:156
+#: src/blocks/post-carousel/edit.js:164 src/blocks/post/edit.js:152
 #: src/blocks/profile/edit.js:133 src/blocks/recent-posts/edit.js:146
 #: src/blocks/row/edit.js:199 src/blocks/testimonial/edit.js:110
-#: src/blocks/weather/edit.js:91
+#: src/blocks/weather/edit.js:97
 msgid "Main"
 msgstr "Principal"
 
@@ -258,7 +258,7 @@ msgid "Size"
 msgstr "Tamaño"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:368
-#: src/blocks/post/edit.js:243 src/blocks/recent-posts/edit.js:300
+#: src/blocks/post/edit.js:239 src/blocks/recent-posts/edit.js:300
 msgid "None"
 msgstr "Ninguna"
 
@@ -476,32 +476,32 @@ msgid "It will show to the user as a tooltip."
 msgstr "Se mostrará al usuario en forma de descripción emergente."
 
 #: dist/index.js:2 src/blocks/button/edit.js:294 src/blocks/feature/edit.js:229
-#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:200
+#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:196
 #: src/blocks/recent-posts/edit.js:232
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
 
 #: dist/index.js:2 src/blocks/button/edit.js:303 src/blocks/feature/edit.js:235
-#: src/blocks/post/edit.js:209
+#: src/blocks/post/edit.js:205
 msgid "Google search spider should not follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
 #: dist/index.js:2 src/blocks/button/edit.js:299 src/blocks/feature/edit.js:234
-#: src/blocks/post/edit.js:205
+#: src/blocks/post/edit.js:201
 msgid "Google search spider should follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
 #: dist/index.js:2 src/blocks/button/edit.js:311 src/blocks/feature/edit.js:240
-#: src/blocks/post-carousel/edit.js:348 src/blocks/post/edit.js:217
+#: src/blocks/post-carousel/edit.js:348 src/blocks/post/edit.js:213
 #: src/blocks/recent-posts/edit.js:243
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
 #: dist/index.js:2 src/blocks/button/edit.js:320 src/blocks/feature/edit.js:246
-#: src/blocks/post-carousel/edit.js:354 src/blocks/post/edit.js:226
+#: src/blocks/post-carousel/edit.js:354 src/blocks/post/edit.js:222
 #: src/blocks/recent-posts/edit.js:249
 msgid ""
 "The browser should not send an HTTP referer header if the user follows the "
@@ -511,7 +511,7 @@ msgstr ""
 "sigue el hipervínculo."
 
 #: dist/index.js:2 src/blocks/button/edit.js:316 src/blocks/feature/edit.js:245
-#: src/blocks/post-carousel/edit.js:353 src/blocks/post/edit.js:222
+#: src/blocks/post-carousel/edit.js:353 src/blocks/post/edit.js:218
 #: src/blocks/recent-posts/edit.js:248
 msgid ""
 "The browser should send an HTTP referer header if the user follows the "
@@ -779,7 +779,7 @@ msgid "Additional content"
 msgstr "Contenido adicional"
 
 #: dist/index.js:2 src/blocks/header/edit.js:139
-#: src/blocks/post-carousel/edit.js:452 src/blocks/post/edit.js:301
+#: src/blocks/post-carousel/edit.js:452 src/blocks/post/edit.js:297
 #: src/blocks/recent-posts/edit.js:345 src/blocks/testimonial/edit.js:215
 msgid "Display"
 msgstr "Mostrar"
@@ -890,9 +890,9 @@ msgstr "Busca una ubicación…"
 #: dist/index.js:2 src/blocks/map/components/location-select-control.js:64
 #: src/blocks/post-carousel/edit.js:473
 #: src/blocks/post/components/post-select-control.js:99
-#: src/blocks/post/edit.js:319 src/blocks/recent-posts/edit.js:368
+#: src/blocks/post/edit.js:315 src/blocks/recent-posts/edit.js:368
 #: src/blocks/weather/components/location-select-control.js:58
-#: src/blocks/weather/edit.js:151
+#: src/blocks/weather/edit.js:171
 msgid "Loading…"
 msgstr "Cargando…"
 
@@ -1070,7 +1070,7 @@ msgid "Hide read more"
 msgstr "Ocultar leer más"
 
 #: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:185
-#: src/blocks/post/edit.js:184
+#: src/blocks/post/edit.js:180
 msgid "Display extra articles"
 msgstr "Mostrar artículos extra"
 
@@ -1080,7 +1080,7 @@ msgstr "Ocultar artículos extra"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:360
 #: src/blocks/post/components/post-sortable-control.js:70
-#: src/blocks/post/edit.js:235 src/blocks/profile/edit.js:260
+#: src/blocks/post/edit.js:231 src/blocks/profile/edit.js:260
 #: src/blocks/recent-posts/edit.js:281 src/blocks/testimonial/edit.js:150
 msgid "Media"
 msgstr "Multimedia"
@@ -1126,32 +1126,32 @@ msgid "Read more"
 msgstr "Leer más"
 
 #: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:106
-#: src/blocks/post/edit.js:190
+#: src/blocks/post/edit.js:186
 msgid "Extra articles"
 msgstr "Artículos extra"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:302
-#: src/blocks/post/edit.js:160 src/blocks/recent-posts/edit.js:208
+#: src/blocks/post/edit.js:156 src/blocks/recent-posts/edit.js:208
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:328
-#: src/blocks/post/edit.js:175 src/blocks/recent-posts/edit.js:223
+#: src/blocks/post/edit.js:171 src/blocks/recent-posts/edit.js:223
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:365
-#: src/blocks/post/edit.js:240 src/blocks/recent-posts/edit.js:297
+#: src/blocks/post/edit.js:236 src/blocks/recent-posts/edit.js:297
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:384
-#: src/blocks/post/edit.js:258 src/blocks/recent-posts/edit.js:316
+#: src/blocks/post/edit.js:254 src/blocks/recent-posts/edit.js:316
 msgid "Aspect ratio"
 msgstr "Relación de aspecto"
 
 #: dist/index.js:2 src/blocks/post-carousel/edit.js:457
-#: src/blocks/post/edit.js:306 src/blocks/recent-posts/edit.js:350
+#: src/blocks/post/edit.js:302 src/blocks/recent-posts/edit.js:350
 msgid "Read more text"
 msgstr "Texto leer más"
 
@@ -1814,47 +1814,51 @@ msgstr "Clima"
 msgid "Display the weather conditions for a chosen location."
 msgstr "Muestra las condiciones meteorológicas de una ubicación elegida."
 
-#: dist/index.js:2 src/blocks/weather/edit.js:95
+#: dist/index.js:2 src/blocks/weather/edit.js:101
 msgid "Short name"
 msgstr "Nombre corto"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:96
+#: dist/index.js:2 src/blocks/weather/edit.js:102
 msgid ""
 "The short name will be used in replacement of the name in small devices."
 msgstr ""
 "El nombre corto se usará en reemplazo del nombre en dispositivos pequeños."
 
-#: dist/index.js:2 src/blocks/weather/edit.js:102
+#: dist/index.js:2 src/blocks/weather/edit.js:113
 msgid "Display units"
 msgstr "Mostrar unidades"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:108
+#: dist/index.js:2 src/blocks/weather/edit.js:121
 msgid "Units"
 msgstr "Unidades"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:113
+#: dist/index.js:2 src/blocks/weather/edit.js:126
 msgid "Metric"
 msgstr "Métricas"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:117
+#: dist/index.js:2 src/blocks/weather/edit.js:130
 msgid "Imperial"
 msgstr "Imperiales"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:121
+#: dist/index.js:2 src/blocks/weather/edit.js:134
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:129
+#: dist/index.js:2 src/blocks/weather/edit.js:142
 msgid "Language"
 msgstr "Idioma"
 
-#: dist/index.js:2 src/blocks/weather/edit.js:141
+#: dist/index.js:2 src/blocks/weather/edit.js:155
 msgid ""
 "To make use of this block, you first need to set an OpenWeatherMap API key "
 "in the Fleximple Blocks settings page."
 msgstr ""
 "Para hacer uso de este bloque, primero debe establecer una clave de API "
 "openWeatherMap en la página de configuración de Fleximple Blocks."
+
+#: dist/index.js:2 src/blocks/weather/edit.js:163
+msgid "Take me there."
+msgstr "Llévame allí."
 
 #: dist/index.js:2
 msgid "On scroll animation"
