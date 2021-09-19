@@ -160,7 +160,7 @@ function WeatherEdit( {
 						<a
 							href={ `${ fleximpleblocksPluginData.homeUrl }/wp-admin/admin.php?page=fleximpleblocks-settings` }
 						>
-							{ __( 'Take me there.' ) }
+							{ __( 'Take me there.', 'fleximpleblocks' ) }
 						</a>
 					</Placeholder>
 				) }
