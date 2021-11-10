@@ -6,17 +6,17 @@
  */
 
 .fleximple-block-contact-info-item {
-	display: inherit !important;
-	margin-top: 0;
-	margin-bottom: 0;
+  display: inherit !important;
+  margin-top: 0;
+  margin-bottom: 0;
 
-	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+  & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-		p {
-			white-space: nowrap !important;
-		}
-	}
+    p {
+      white-space: nowrap !important;
+    }
+  }
 }

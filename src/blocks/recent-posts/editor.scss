@@ -6,24 +6,24 @@
  */
 
 .wp-block[data-type="fleximple-blocks/recent-posts"] {
-	// Allows for the block to be selected
-	&:not(.is-selected)::before {
-		content: "";
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 10;
-	}
+  // Allows for the block to be selected
+  &:not(.is-selected)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+  }
 }
 
 .fleximple-block-recent-posts {
-	.fleximple-components-placeholder {
-		min-height: 120px;
-	}
+  .fleximple-components-placeholder {
+    min-height: 120px;
+  }
 
-	& &__entry-link-overlay {
-		display: none;
-	}
+  & &__entry-link-overlay {
+    display: none;
+  }
 }

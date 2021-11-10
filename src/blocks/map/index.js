@@ -22,27 +22,30 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-	title: __( 'Map', 'fleximpleblocks' ),
-	description: __( 'Embed a simple map with a location of your choosing.', 'fleximpleblocks' ),
-	icon,
-	keywords: [
-		/* translators: block keyword */
-		__( 'Map', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'fleximple block', 'fleximpleblocks' ),
-	],
+  title: __( 'Map', 'fleximpleblocks' ),
+  description: __(
+    'Embed a simple map with a location of your choosing.',
+    'fleximpleblocks',
+  ),
+  icon,
+  keywords: [
+    /* translators: block keyword */
+    __( 'Map', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'fleximple block', 'fleximpleblocks' ),
+  ],
 
-	edit,
-	save,
+  edit,
+  save,
 }
 
 // Provide a custom block class
 function setBlockCustomClassName( className, blockName ) {
-	return blockName === name ? 'fleximple-block-map' : className
+  return blockName === name ? 'fleximple-block-map' : className
 }
 
 wp.hooks.addFilter(
-	'blocks.getBlockDefaultClassName',
-	'fleximple-blocks/fleximple-block-map',
-	setBlockCustomClassName,
+  'blocks.getBlockDefaultClassName',
+  'fleximple-blocks/fleximple-block-map',
+  setBlockCustomClassName,
 )

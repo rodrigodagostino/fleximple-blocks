@@ -16,7 +16,7 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
 
 define( 'FLEXIMPLEBLOCKS_ID', 'fleximpleblocks' );

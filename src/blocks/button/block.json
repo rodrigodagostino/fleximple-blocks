@@ -72,74 +72,74 @@
 		"customIcon": {
 			"type": "string"
 		},
-        "paddingTop": {
-            "type": "object",
-            "default": {
-                "small": {
-                    "value": 16,
-                    "unit": "px"
-                },
-                "medium": {
-                    "value": 0,
-                    "unit": "px"
-                },
-                "large": {
-                    "value": 0,
-                    "unit": "px"
-                }
-            }
-        },
-        "paddingLeft": {
-            "type": "object",
-            "default": {
-                "small": {
-                    "value": 20,
-                    "unit": "px"
-                },
-                "medium": {
-                    "value": 0,
-                    "unit": "px"
-                },
-                "large": {
-                    "value": 0,
-                    "unit": "px"
-                }
-            }
-        },
-        "paddingRight": {
-            "type": "object",
-            "default": {
-                "small": {
-                    "value": 20,
-                    "unit": "px"
-                },
-                "medium": {
-                    "value": 0,
-                    "unit": "px"
-                },
-                "large": {
-                    "value": 0,
-                    "unit": "px"
-                }
-            }
-        },
-        "paddingBottom": {
-            "type": "object",
-            "default": {
-                "small": {
-                    "value": 16,
-                    "unit": "px"
-                },
-                "medium": {
-                    "value": 0,
-                    "unit": "px"
-                },
-                "large": {
-                    "value": 0,
-                    "unit": "px"
-                }
-            }
-        },
+		"paddingTop": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 16,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingLeft": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingRight": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 20,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
+		"paddingBottom": {
+			"type": "object",
+			"default": {
+				"small": {
+					"value": 16,
+					"unit": "px"
+				},
+				"medium": {
+					"value": 0,
+					"unit": "px"
+				},
+				"large": {
+					"value": 0,
+					"unit": "px"
+				}
+			}
+		},
 		"backgroundColor": {
 			"type": "string"
 		},

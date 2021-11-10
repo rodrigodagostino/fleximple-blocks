@@ -6,34 +6,34 @@
  */
 
 .fleximple-block-buttons {
-	display: block !important;
+  display: block !important;
 
-	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
-		display: flex;
-	}
+  & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: flex;
+  }
 
-	.fleximple-block-button {
-		margin: 0;
-	}
+  .fleximple-block-button {
+    margin: 0;
+  }
 
-	&[class*="direction-h"] {
-		& > .block-editor-inner-blocks > .block-editor-block-list__layout {
-			flex-direction: row;
+  &[class*="direction-h"] {
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+      flex-direction: row;
 
-			& > .block-list-appender {
-				margin-left: 20px;
-				margin-right: 0;
-			}
-		}
-	}
+      & > .block-list-appender {
+        margin-left: 20px;
+        margin-right: 0;
+      }
+    }
+  }
 
-	&[class*="direction-v"] {
-		& > .block-editor-inner-blocks > .block-editor-block-list__layout {
-			flex-direction: column;
+  &[class*="direction-v"] {
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+      flex-direction: column;
 
-			& > .block-list-appender {
-				margin-top: 20px;
-			}
-		}
-	}
+      & > .block-list-appender {
+        margin-top: 20px;
+      }
+    }
+  }
 }

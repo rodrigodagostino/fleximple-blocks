@@ -5,39 +5,42 @@
  */
 
 .fleximple-block-profile {
+  & &__inner {
+  }
 
-	& &__inner {}
+  & &__content > * {
+    margin: 0;
+  }
 
-	& &__content > * {
-		margin: 0;
-	}
+  & &__content > *:last-child {
+    margin-bottom: 0 !important;
+  }
 
-	& &__content > *:last-child {
-		margin-bottom: 0 !important;
-	}
+  & &__media {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include box-shadow(4);
+  }
 
-	& &__media {
-		background-size: cover;
-		background-position: center center;
-		background-repeat: no-repeat;
-		@include box-shadow(4);
-	}
+  & &__image {
+    width: 100%;
+    vertical-align: middle; // Removes blank space below.
+    opacity: 0;
+  }
 
-	& &__image {
-		width: 100%;
-		vertical-align: middle; // Removes blank space below.
-		opacity: 0;
-	}
+  & &__name {
+  }
 
-	& &__name {}
+  & &__title,
+  & &__description {
+  }
 
-	& &__title,
-	& &__description {}
+  & &__title {
+    font-size: 18px;
+    font-weight: 600;
+  }
 
-	& &__title {
-		font-size: 18px;
-		font-weight: 600;
-	}
-
-	& &__description {}
+  & &__description {
+  }
 }

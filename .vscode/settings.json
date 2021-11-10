@@ -1,16 +1,18 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
-	},
-	"editor.detectIndentation": true,
-	"editor.fontLigatures": true,
-	"editor.insertSpaces": false,
-	"editor.tabSize": 4,
-	"files.eol": "\n",
-	"eslint.alwaysShowStatus": true,
-	"eslint.lintTask.enable": true,
-	"eslint.validate": [
-		"javascript"
-	],
-	"eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.fontLigatures": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": ["javascript"],
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

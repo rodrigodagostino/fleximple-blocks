@@ -1,38 +1,38 @@
 {
-	"apiVersion": 2,
-	"name": "fleximple-blocks/iframe",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"url": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "iframe",
-			"attribute": "src",
-			"default": "https://www.example.org"
-		},
-		"width": {
-			"type": "object",
-			"default": {
-				"value": 100,
-				"unit": "%"
-			}
-		},
-		"height": {
-			"type": "object",
-			"default": {
-				"value": 400,
-				"unit": "px"
-			}
-		},
-		"hasAutoHeight": {
-			"type": "boolean",
-			"default": false
-		},
-		"title": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "iframe",
-			"attribute": "title"
-		}
-	}
+  "apiVersion": 2,
+  "name": "fleximple-blocks/iframe",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "url": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "iframe",
+      "attribute": "src",
+      "default": "https://www.example.org"
+    },
+    "width": {
+      "type": "object",
+      "default": {
+        "value": 100,
+        "unit": "%"
+      }
+    },
+    "height": {
+      "type": "object",
+      "default": {
+        "value": 400,
+        "unit": "px"
+      }
+    },
+    "hasAutoHeight": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "iframe",
+      "attribute": "title"
+    }
+  }
 }

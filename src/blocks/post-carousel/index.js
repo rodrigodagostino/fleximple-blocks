@@ -16,55 +16,60 @@ import edit from './edit'
 import icon from './icon'
 import metadata from './block.json'
 
-
 const { name } = metadata
 
 export { metadata, name }
 
 export const settings = {
-	title: __( 'Post Carousel', 'fleximpleblocks' ),
-	description: __( 'Display a list of your most recent posts.', 'fleximpleblocks' ),
-	icon,
-	keywords: [
-		/* translators: block keyword */
-		__( 'Post Carousel', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'fleximple block', 'fleximpleblocks' ),
-	],
-	styles: [
-		{
-			name: 'standard',
-			/* translators: block style */
-			label: __( 'Standard', 'fleximpleblocks' ),
-			isDefault: true,
-		},
-		{
-			name: 'stacked',
-			/* translators: block style */
-			label: __( 'Stacked', 'fleximpleblocks' ),
-		},
-	],
+  title: __( 'Post Carousel', 'fleximpleblocks' ),
+  description: __(
+    'Display a list of your most recent posts.',
+    'fleximpleblocks',
+  ),
+  icon,
+  keywords: [
+    /* translators: block keyword */
+    __( 'Post Carousel', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'fleximple block', 'fleximpleblocks' ),
+  ],
+  styles: [
+    {
+      name: 'standard',
+      /* translators: block style */
+      label: __( 'Standard', 'fleximpleblocks' ),
+      isDefault: true,
+    },
+    {
+      name: 'stacked',
+      /* translators: block style */
+      label: __( 'Stacked', 'fleximpleblocks' ),
+    },
+  ],
 
-	getEditWrapperProps( attributes ) {
-		const { alignment } = attributes
-		if ( 'left' === alignment || 'center' === alignment || 'right' === alignment || 'wide' === alignment || 'full' === alignment ) {
-			return { 'data-align': alignment }
-		}
-	},
+  getEditWrapperProps( attributes ) {
+    const { alignment } = attributes
+    if (
+      'left' === alignment ||
+      'center' === alignment ||
+      'right' === alignment ||
+      'wide' === alignment ||
+      'full' === alignment
+    ) {
+      return { 'data-align': alignment }
+    }
+  },
 
-	edit,
+  edit,
 }
-
 
 // Provide a custom block class
 function setBlockCustomClassName( className, blockName ) {
-	return blockName === name ?
-		'fleximple-block-post-carousel' :
-		className
+  return blockName === name ? 'fleximple-block-post-carousel' : className
 }
 
 wp.hooks.addFilter(
-	'blocks.getBlockDefaultClassName',
-	'fleximple-blocks/fleximple-block-post-carousel',
-	setBlockCustomClassName,
+  'blocks.getBlockDefaultClassName',
+  'fleximple-blocks/fleximple-block-post-carousel',
+  setBlockCustomClassName,
 )

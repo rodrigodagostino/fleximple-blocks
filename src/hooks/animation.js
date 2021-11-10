@@ -26,29 +26,32 @@ import AnimationControls from 'fleximple-components/components/animation-control
  *
  * @return {WPComponent} Wrapped component.
  */
-export const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
-	return ( props ) => {
-		const hasAnimationSupport = hasBlockSupport( props.name, 'animation', true )
-		if ( hasAnimationSupport && props.isSelected ) {
-			return (
-				<>
-					<BlockEdit { ...props } />
-					<InspectorControls>
-						<PanelBody title={ __( 'Animation', 'fleximpleblocks' ) } initialOpen={ false }>
-							<AnimationControls { ... props } />
-						</PanelBody>
-					</InspectorControls>
-				</>
-			)
-		}
+export const withInspectorControls = createHigherOrderComponent( BlockEdit => {
+  return props => {
+    const hasAnimationSupport = hasBlockSupport( props.name, 'animation', true )
+    if ( hasAnimationSupport && props.isSelected ) {
+      return (
+        <>
+          <BlockEdit { ...props } />
+          <InspectorControls>
+            <PanelBody
+              title={ __( 'Animation', 'fleximpleblocks' ) }
+              initialOpen={ false }
+            >
+              <AnimationControls { ... props } />
+            </PanelBody>
+          </InspectorControls>
+        </>
+      )
+    }
 
-		return <BlockEdit { ...props } />
-	}
+    return <BlockEdit { ...props } />
+  }
 }, 'withInspectorControl' )
 
 
 wp.hooks.addFilter(
-	'editor.BlockEdit',
-	'fleximple-blocks/animation/with-inspector-control',
-	withInspectorControls,
+  'editor.BlockEdit',
+  'fleximple-blocks/animation/with-inspector-control',
+  withInspectorControls,
 )

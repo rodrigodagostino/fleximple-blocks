@@ -21,26 +21,29 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-	title: __( 'Date & Time', 'fleximpleblocks' ),
-	description: __( 'Displays the current date and/or time based on your chosen settings.', 'fleximpleblocks' ),
-	icon,
-	keywords: [
-		/* translators: block keyword */
-		__( 'Date & Time', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'fleximple block', 'fleximpleblocks' ),
-	],
+  title: __( 'Date & Time', 'fleximpleblocks' ),
+  description: __(
+    'Displays the current date and/or time based on your chosen settings.',
+    'fleximpleblocks',
+  ),
+  icon,
+  keywords: [
+    /* translators: block keyword */
+    __( 'Date & Time', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'fleximple block', 'fleximpleblocks' ),
+  ],
 
-	edit,
+  edit,
 }
 
 // Provide a custom block class
 function setBlockCustomClassName( className, blockName ) {
-	return blockName === name ? 'fleximple-block-date-and-time' : className
+  return blockName === name ? 'fleximple-block-date-and-time' : className
 }
 
 wp.hooks.addFilter(
-	'blocks.getBlockDefaultClassName',
-	'fleximple-blocks/fleximple-block-date-and-time',
-	setBlockCustomClassName,
+  'blocks.getBlockDefaultClassName',
+  'fleximple-blocks/fleximple-block-date-and-time',
+  setBlockCustomClassName,
 )

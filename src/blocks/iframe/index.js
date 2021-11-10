@@ -22,29 +22,30 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-	title: __( 'Iframe' ),
-	description: __( 'An inline frame used to embed another document within the current document.', 'fleximpleblocks' ),
-	icon,
-	keywords: [
-		/* translators: block keyword */
-		__( 'Iframe', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'fleximple block', 'fleximpleblocks' ),
-	],
+  title: __( 'Iframe' ),
+  description: __(
+    'An inline frame used to embed another document within the current document.',
+    'fleximpleblocks',
+  ),
+  icon,
+  keywords: [
+    /* translators: block keyword */
+    __( 'Iframe', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'fleximple block', 'fleximpleblocks' ),
+  ],
 
-	edit,
-	save,
+  edit,
+  save,
 }
 
 // Provide a custom block class
 function setBlockCustomClassName( className, blockName ) {
-	return blockName === name ?
-		'fleximple-block-iframe' :
-		className
+  return blockName === name ? 'fleximple-block-iframe' : className
 }
 
 wp.hooks.addFilter(
-	'blocks.getBlockDefaultClassName',
-	'fleximple-blocks/fleximple-block-iframe',
-	setBlockCustomClassName,
+  'blocks.getBlockDefaultClassName',
+  'fleximple-blocks/fleximple-block-iframe',
+  setBlockCustomClassName,
 )

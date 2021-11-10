@@ -5,13 +5,13 @@
  */
 
 .fleximple-block-buttons {
-	display: flex;
+  display: flex;
 
-	&[class*="direction-h"] {
-		flex-direction: row;
-	}
+  &[class*="direction-h"] {
+    flex-direction: row;
+  }
 
-	&[class*="direction-v"] {
-		flex-direction: column;
-	}
+  &[class*="direction-v"] {
+    flex-direction: column;
+  }
 }

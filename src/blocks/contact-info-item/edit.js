@@ -10,10 +10,10 @@ import classnames from 'classnames'
  */
 import { __ } from '@wordpress/i18n'
 import {
-	InnerBlocks,
-	InspectorControls,
-	useBlockProps,
-	withColors,
+  InnerBlocks,
+  InspectorControls,
+  useBlockProps,
+  withColors,
 } from '@wordpress/block-editor'
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { PanelBody, RadioControl } from '@wordpress/components'
@@ -33,94 +33,100 @@ const { name } = metadata
  * Block constants
  */
 const TEMPLATE = [
-	[ 'fleximple-blocks/icon', { iconSize: 24 } ],
-	[ 'core/paragraph', { placeholder: 'Write your contact info…' } ],
+  [ 'fleximple-blocks/icon', { iconSize: 24 } ],
+  [ 'core/paragraph', { placeholder: 'Write your contact info…' } ],
 ]
 
-function ContactInfoEdit( {
-	attributes,
-	attributes: {
-		direction,
-		gap,
-	},
-	setAttributes,
-} ) {
-	const defaultClassName = getBlockDefaultClassName( name )
+function ContactInfoEdit({
+  attributes,
+  attributes: {
+    direction,
+    gap,
+  },
+  setAttributes,
+}) {
+  const defaultClassName = getBlockDefaultClassName( name )
 
-	const classes = classnames( {
-		[ `direction-${ direction.small === 'row' ? 'h' : 'v' }--sm` ]: direction.small,
-		[ `direction-${ direction.medium === 'row' ? 'h' : 'v' }--md` ]: direction.medium && direction.medium !== direction.small,
-		[ `direction-${ direction.large === 'row' ? 'h' : 'v' }--lg` ]: direction.large && direction.large !== direction.medium,
-		[ `gap-h-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm` ]: direction.small === 'row',
-		[ `gap-h-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md` ]: direction.medium === 'row',
-		[ `gap-h-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg` ]: direction.large === 'row',
-		[ `gap-v-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm` ]: direction.small === 'column',
-		[ `gap-v-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md` ]: direction.medium === 'column',
-		[ `gap-v-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg` ]: direction.large === 'column',
-	} )
+  const classes = classnames({
+    [ `direction-${ direction.small === 'row' ? 'h' : 'v' }--sm` ]: direction.small,
+    [ `direction-${ direction.medium === 'row' ? 'h' : 'v' }--md` ]: direction.medium && direction.medium !== direction.small,
+    [ `direction-${ direction.large === 'row' ? 'h' : 'v' }--lg` ]: direction.large && direction.large !== direction.medium,
+    [ `gap-h-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm` ]: direction.small === 'row',
+    [ `gap-h-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md` ]: direction.medium === 'row',
+    [ `gap-h-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg` ]: direction.large === 'row',
+    [ `gap-v-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm` ]: direction.small === 'column',
+    [ `gap-v-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md` ]: direction.medium === 'column',
+    [ `gap-v-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg` ]: direction.large === 'column',
+  })
 
-	const blockProps = useBlockProps( {
-		className: classes,
-	} )
+  const blockProps = useBlockProps({
+    className: classes,
+  })
 
-	return (
-		<>
-			<InspectorControls>
-				<PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
-					<ResponsiveSettingsTabPanel initialTabName="small">
-						{ tab =>
-							<>
-								<RadioControl
-									label={ __( 'Direction', 'fleximpleblocks' ) }
-									selected={ direction[ tab.name ] }
-									options={ [
-										{ label: __( 'Horizontal', 'fleximpleblocks' ), value: 'row' },
-										{ label: __( 'Vertical', 'fleximpleblocks' ), value: 'column' },
-									] }
-									onChange={ option => {
-										setResponsiveAttribute(
-											attributes,
-											setAttributes,
-											'direction',
-											tab.name,
-											option,
-										)
-									} }
-								/>
+  return (
+    <>
+      <InspectorControls>
+        <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
+          <ResponsiveSettingsTabPanel initialTabName="small">
+            { tab =>
+              <>
+                <RadioControl
+                  label={ __( 'Direction', 'fleximpleblocks' ) }
+                  selected={ direction[ tab.name ] }
+                  options={ [
+                    {
+                      label: __( 'Horizontal', 'fleximpleblocks' ),
+                      value: 'row',
+                    },
+                    {
+                      label: __( 'Vertical', 'fleximpleblocks' ),
+                      value: 'column',
+                    },
+                  ] }
+                  onChange={ option => {
+                    setResponsiveAttribute(
+                      attributes,
+                      setAttributes,
+                      'direction',
+                      tab.name,
+                      option,
+                    )
+                  } }
+                />
 
-								<SpacingControls
-									valueLabel={ __( 'Gap size', 'fleximpleblocks' ) }
-									unitLabel={ __( 'Gap size unit', 'fleximpleblocks' ) }
-									initialPosition={ 0 }
-									min={ 0 }
-									max={ 200 }
-									attribute={ gap }
-									target={ tab.name }
-									onChange={ value => setAttributes( { gap: value } ) }
-								/>
-							</>
-						}
-					</ResponsiveSettingsTabPanel>
-				</PanelBody>
-			</InspectorControls>
+                <SpacingControls
+                  valueLabel={ __( 'Gap size', 'fleximpleblocks' ) }
+                  unitLabel={ __( 'Gap size unit', 'fleximpleblocks' ) }
+                  initialPosition={ 0 }
+                  min={ 0 }
+                  max={ 200 }
+                  attribute={ gap }
+                  target={ tab.name }
+                  onChange={ value => setAttributes({ gap: value }) }
+                />
+              </>
+            }
+          </ResponsiveSettingsTabPanel>
+        </PanelBody>
+      </InspectorControls>
 
-			<div { ...blockProps }>
-				<style>
-					{ direction.small &&
+      <div { ...blockProps }>
+        <style>
+          { direction.small &&
 						`.${ defaultClassName }.direction-${ direction.small === 'row' ? 'h' : 'v' }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
 							flex-direction: ${ direction.small };
 						}`
-					}
-					{ direction.small === 'row' &&
+          }
+          { direction.small === 'row' &&
 						`.${ defaultClassName }.gap-h-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
 							${ 'margin-left: ' + gap.small.value + gap.small.unit + ';' }
 						}` }
-					{ direction.small === 'column' &&
+          { direction.small === 'column' &&
 						`.${ defaultClassName }.gap-v-${ gap.small.value + ( gap.small.unit === '%' ? 'pct' : gap.small.unit ) }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
 							${ 'margin-top: ' + gap.small.value + gap.small.unit + ';' }
 						}` }
 
-					{ !!direction.medium && direction.medium !== direction.small &&
+          { !!direction.medium && direction.medium !== direction.small &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
 							.${ defaultClassName }.direction-${ direction.medium === 'row' ? 'h' : 'v' }--md > .block-editor-inner-blocks > .block-editor-block-list__layout {
 								flex-direction: ${ direction.medium };
@@ -134,9 +140,9 @@ function ContactInfoEdit( {
 									${ 'margin-top: ' + gap.medium.value + gap.medium.unit + ';' }
 								}` : '' }
 						}`
-					}
+          }
 
-					{ !!direction.large && direction.large !== direction.medium &&
+          { !!direction.large && direction.large !== direction.medium &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
 							.${ defaultClassName }.direction-${ direction.large === 'row' ? 'h' : 'v' }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout {
 								flex-direction: ${ direction.large };
@@ -150,19 +156,19 @@ function ContactInfoEdit( {
 									${ 'margin-top: ' + gap.large.value + gap.large.unit + ';' }
 								}` : '' }
 						}`
-					}
-				</style>
+          }
+        </style>
 
-				<InnerBlocks
-					template={ TEMPLATE }
-					templateLock={ false }
-					orientation="horizontal"
-				/>
-			</div>
-		</>
-	)
+        <InnerBlocks
+          template={ TEMPLATE }
+          templateLock={ false }
+          orientation="horizontal"
+        />
+      </div>
+    </>
+  )
 }
 
 export default compose( [
-	withColors( { buttonPrevColor: 'color' }, { buttonNextColor: 'color' } ),
+  withColors({ buttonPrevColor: 'color' }, { buttonNextColor: 'color' }),
 ] )( ContactInfoEdit )

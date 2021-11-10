@@ -11,23 +11,22 @@
  # CSS3 GRADIENTS
  ---------------------*/
 // Usage: @include linear-gradient( #dfdfdf,0%,#f8f8f8,100% );
-@mixin linear-gradient( $color-1, $stop-1, $color-2, $stop-2 ) {
-	background: $color-1;
-	/* Old browsers */
-	background: -moz-linear-gradient( top, $color-1 $stop-1, $color-2 $stop-2 );
-	/* FF3.6+ */
-	background: -webkit-linear-gradient( top, $color-1 $stop-1, $color-2 $stop-2 );
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient( top, $color-1 $stop-1, $color-2 $stop-2 );
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient( top, $color-1 $stop-1, $color-2 $stop-2 );
-	/* IE10+ */
-	background: linear-gradient( to bottom, $color-1 $stop-1, $color-2 $stop-2 );
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-1', endColorstr='$color-2', GradientType=0 );
-	/* IE6-9 */
+@mixin linear-gradient($color-1, $stop-1, $color-2, $stop-2) {
+  background: $color-1;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, $color-1 $stop-1, $color-2 $stop-2);
+  /* FF3.6+ */
+  background: -webkit-linear-gradient(top, $color-1 $stop-1, $color-2 $stop-2);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $color-1 $stop-1, $color-2 $stop-2);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $color-1 $stop-1, $color-2 $stop-2);
+  /* IE10+ */
+  background: linear-gradient(to bottom, $color-1 $stop-1, $color-2 $stop-2);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-1', endColorstr='$color-2', GradientType=0 );
+  /* IE6-9 */
 }
-
 
 /*----------------------
  # BOX SHADOW
@@ -40,42 +39,115 @@
 ///   div { @include box-shadow( 1 ); }
 /// @link http://codepen.io/dbox/pen/RawBEW
 
-@mixin box-shadow( $z-depth: 1, $inset: false, $important: false, $strength: 1, $color: black ) {
-	@if $important == isImportant {
-		@if $inset {
-			@if $z-depth == 1 { box-shadow: 0 2px 2px 0 rgba( $color, $strength * 0.16 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset !important; }
-			@if $z-depth == 2 { box-shadow: 0 3px 8px 0 rgba( $color, $strength * 0.2 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset !important; }
-			@if $z-depth == 3 { box-shadow: 0 6px 24px 0 rgba( $color, $strength * 0.24 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset !important; }
-			@if $z-depth == 4 { box-shadow: 0 12px 36px 0 rgba( $color, $strength * 0.28 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset !important; }
-			@if $z-depth == 5 { box-shadow: 0 24px 48px 0 rgba( $color, $strength * 0.32 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset !important; }
-			@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
-		} @else {
-			@if $z-depth == 1 { box-shadow: 0 2px 2px 0 rgba( $color, $strength * 0.16 ), 0 0 0 1px rgba( $color, $strength * 0.08 ) !important; }
-			@if $z-depth == 2 { box-shadow: 0 3px 8px 0 rgba( $color, $strength * 0.2 ), 0 0 0 1px rgba( $color, $strength * 0.08 ) !important; }
-			@if $z-depth == 3 { box-shadow: 0 6px 24px 0 rgba( $color, $strength * 0.24 ), 0 0 0 1px rgba( $color, $strength * 0.08 ) !important; }
-			@if $z-depth == 4 { box-shadow: 0 12px 36px 0 rgba( $color, $strength * 0.28 ), 0 0 0 1px rgba( $color, $strength * 0.08 ) !important; }
-			@if $z-depth == 5 { box-shadow: 0 24px 48px 0 rgba( $color, $strength * 0.32 ), 0 0 0 1px rgba( $color, $strength * 0.08 ) !important; }
-			@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
-		}
-	} @else {
-		@if $inset {
-			@if $z-depth == 1 { box-shadow: 0 2px 2px 0 rgba( $color, $strength * 0.16 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset; }
-			@if $z-depth == 2 { box-shadow: 0 3px 8px 0 rgba( $color, $strength * 0.2 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset; }
-			@if $z-depth == 3 { box-shadow: 0 6px 24px 0 rgba( $color, $strength * 0.24 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset; }
-			@if $z-depth == 4 { box-shadow: 0 12px 36px 0 rgba( $color, $strength * 0.28 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset; }
-			@if $z-depth == 5 { box-shadow: 0 24px 48px 0 rgba( $color, $strength * 0.32 ) $inset, 0 0 0 1px rgba( $color, $strength * 0.08 ) $inset; }
-			@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
-		} @else {
-			@if $z-depth == 1 { box-shadow: 0 2px 2px 0 rgba( $color, $strength * 0.16 ), 0 0 0 1px rgba( $color, $strength * 0.08 ); }
-			@if $z-depth == 2 { box-shadow: 0 3px 8px 0 rgba( $color, $strength * 0.2 ), 0 0 0 1px rgba( $color, $strength * 0.08 ); }
-			@if $z-depth == 3 { box-shadow: 0 6px 24px 0 rgba( $color, $strength * 0.24 ), 0 0 0 1px rgba( $color, $strength * 0.08 ); }
-			@if $z-depth == 4 { box-shadow: 0 12px 36px 0 rgba( $color, $strength * 0.28 ), 0 0 0 1px rgba( $color, $strength * 0.08 ); }
-			@if $z-depth == 5 { box-shadow: 0 24px 48px 0 rgba( $color, $strength * 0.32 ), 0 0 0 1px rgba( $color, $strength * 0.08 ); }
-			@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
-		}
-	}
+@mixin box-shadow(
+  $z-depth: 1,
+  $inset: false,
+  $important: false,
+  $strength: 1,
+  $color: black
+) {
+  @if $important == isImportant {
+    @if $inset {
+      @if $z-depth == 1 {
+        box-shadow: 0 2px 2px 0 rgba($color, $strength * 0.16) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset !important;
+      }
+      @if $z-depth == 2 {
+        box-shadow: 0 3px 8px 0 rgba($color, $strength * 0.2) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset !important;
+      }
+      @if $z-depth == 3 {
+        box-shadow: 0 6px 24px 0 rgba($color, $strength * 0.24) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset !important;
+      }
+      @if $z-depth == 4 {
+        box-shadow: 0 12px 36px 0 rgba($color, $strength * 0.28) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset !important;
+      }
+      @if $z-depth == 5 {
+        box-shadow: 0 24px 48px 0 rgba($color, $strength * 0.32) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset !important;
+      }
+      @if ($z-depth < 1) or ($z-depth > 5) {
+        @warn "$z-depth must be between 1 and 5";
+      }
+    } @else {
+      @if $z-depth == 1 {
+        box-shadow: 0 2px 2px 0 rgba($color, $strength * 0.16),
+          0 0 0 1px rgba($color, $strength * 0.08) !important;
+      }
+      @if $z-depth == 2 {
+        box-shadow: 0 3px 8px 0 rgba($color, $strength * 0.2),
+          0 0 0 1px rgba($color, $strength * 0.08) !important;
+      }
+      @if $z-depth == 3 {
+        box-shadow: 0 6px 24px 0 rgba($color, $strength * 0.24),
+          0 0 0 1px rgba($color, $strength * 0.08) !important;
+      }
+      @if $z-depth == 4 {
+        box-shadow: 0 12px 36px 0 rgba($color, $strength * 0.28),
+          0 0 0 1px rgba($color, $strength * 0.08) !important;
+      }
+      @if $z-depth == 5 {
+        box-shadow: 0 24px 48px 0 rgba($color, $strength * 0.32),
+          0 0 0 1px rgba($color, $strength * 0.08) !important;
+      }
+      @if ($z-depth < 1) or ($z-depth > 5) {
+        @warn "$z-depth must be between 1 and 5";
+      }
+    }
+  } @else {
+    @if $inset {
+      @if $z-depth == 1 {
+        box-shadow: 0 2px 2px 0 rgba($color, $strength * 0.16) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset;
+      }
+      @if $z-depth == 2 {
+        box-shadow: 0 3px 8px 0 rgba($color, $strength * 0.2) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset;
+      }
+      @if $z-depth == 3 {
+        box-shadow: 0 6px 24px 0 rgba($color, $strength * 0.24) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset;
+      }
+      @if $z-depth == 4 {
+        box-shadow: 0 12px 36px 0 rgba($color, $strength * 0.28) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset;
+      }
+      @if $z-depth == 5 {
+        box-shadow: 0 24px 48px 0 rgba($color, $strength * 0.32) $inset,
+          0 0 0 1px rgba($color, $strength * 0.08) $inset;
+      }
+      @if ($z-depth < 1) or ($z-depth > 5) {
+        @warn "$z-depth must be between 1 and 5";
+      }
+    } @else {
+      @if $z-depth == 1 {
+        box-shadow: 0 2px 2px 0 rgba($color, $strength * 0.16),
+          0 0 0 1px rgba($color, $strength * 0.08);
+      }
+      @if $z-depth == 2 {
+        box-shadow: 0 3px 8px 0 rgba($color, $strength * 0.2),
+          0 0 0 1px rgba($color, $strength * 0.08);
+      }
+      @if $z-depth == 3 {
+        box-shadow: 0 6px 24px 0 rgba($color, $strength * 0.24),
+          0 0 0 1px rgba($color, $strength * 0.08);
+      }
+      @if $z-depth == 4 {
+        box-shadow: 0 12px 36px 0 rgba($color, $strength * 0.28),
+          0 0 0 1px rgba($color, $strength * 0.08);
+      }
+      @if $z-depth == 5 {
+        box-shadow: 0 24px 48px 0 rgba($color, $strength * 0.32),
+          0 0 0 1px rgba($color, $strength * 0.08);
+      }
+      @if ($z-depth < 1) or ($z-depth > 5) {
+        @warn "$z-depth must be between 1 and 5";
+      }
+    }
+  }
 }
-
 
 /*----------------------
  # MATERIAL DESIGN SHADOWS
@@ -90,24 +162,57 @@
 ///   div { @include material-box-shadow( 3 ); }
 /// @link http://codepen.io/dbox/pen/RawBEW
 
-@mixin material-box-shadow( $z-depth: 1, $strength: 1, $color: black ) {
-	@if $z-depth == 1 { box-shadow: 0 1px 3px rgba( $color, $strength * 0.14 ), 0 1px 2px rgba( $color, $strength * 0.24 ); }
-	@if $z-depth == 2 { box-shadow: 0 3px 6px rgba( $color, $strength * 0.16 ), 0 3px 6px rgba( $color, $strength * 0.23 ); }
-	@if $z-depth == 3 { box-shadow: 0 10px 20px rgba( $color, $strength * 0.19 ), 0 6px 6px rgba( $color, $strength * 0.23 ); }
-	@if $z-depth == 4 { box-shadow: 0 15px 30px rgba( $color, $strength * 0.25 ), 0 10px 10px rgba( $color, $strength * 0.22 ); }
-	@if $z-depth == 5 { box-shadow: 0 20px 40px rgba( $color, $strength * 0.30 ), 0 15px 12px rgba( $color, $strength * 0.22 ); }
-	@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
+@mixin material-box-shadow($z-depth: 1, $strength: 1, $color: black) {
+  @if $z-depth == 1 {
+    box-shadow: 0 1px 3px rgba($color, $strength * 0.14),
+      0 1px 2px rgba($color, $strength * 0.24);
+  }
+  @if $z-depth == 2 {
+    box-shadow: 0 3px 6px rgba($color, $strength * 0.16),
+      0 3px 6px rgba($color, $strength * 0.23);
+  }
+  @if $z-depth == 3 {
+    box-shadow: 0 10px 20px rgba($color, $strength * 0.19),
+      0 6px 6px rgba($color, $strength * 0.23);
+  }
+  @if $z-depth == 4 {
+    box-shadow: 0 15px 30px rgba($color, $strength * 0.25),
+      0 10px 10px rgba($color, $strength * 0.22);
+  }
+  @if $z-depth == 5 {
+    box-shadow: 0 20px 40px rgba($color, $strength * 0.3),
+      0 15px 12px rgba($color, $strength * 0.22);
+  }
+  @if ($z-depth < 1) or ($z-depth > 5) {
+    @warn "$z-depth must be between 1 and 5";
+  }
 }
 
-@mixin material-text-shadow( $z-depth: 1, $strength: 1, $color: black ) {
-	@if $z-depth == 1 { text-shadow: 0 1px 3px rgba( $color, $strength * 0.14 ), 0 1px 2px rgba( $color, $strength * 0.24 ); }
-	@if $z-depth == 2 { text-shadow: 0 3px 6px rgba( $color, $strength * 0.16 ), 0 3px 6px rgba( $color, $strength * 0.23 ); }
-	@if $z-depth == 3 { text-shadow: 0 10px 20px rgba( $color, $strength * 0.19 ), 0 6px 6px rgba( $color, $strength * 0.23 ); }
-	@if $z-depth == 4 { text-shadow: 0 15px 30px rgba( $color, $strength * 0.25 ), 0 10px 10px rgba( $color, $strength * 0.22 ); }
-	@if $z-depth == 5 { text-shadow: 0 20px 40px rgba( $color, $strength * 0.30 ), 0 15px 12px rgba( $color, $strength * 0.22 ); }
-	@if ( $z-depth < 1 ) or ( $z-depth > 5 ) { @warn "$z-depth must be between 1 and 5"; }
+@mixin material-text-shadow($z-depth: 1, $strength: 1, $color: black) {
+  @if $z-depth == 1 {
+    text-shadow: 0 1px 3px rgba($color, $strength * 0.14),
+      0 1px 2px rgba($color, $strength * 0.24);
+  }
+  @if $z-depth == 2 {
+    text-shadow: 0 3px 6px rgba($color, $strength * 0.16),
+      0 3px 6px rgba($color, $strength * 0.23);
+  }
+  @if $z-depth == 3 {
+    text-shadow: 0 10px 20px rgba($color, $strength * 0.19),
+      0 6px 6px rgba($color, $strength * 0.23);
+  }
+  @if $z-depth == 4 {
+    text-shadow: 0 15px 30px rgba($color, $strength * 0.25),
+      0 10px 10px rgba($color, $strength * 0.22);
+  }
+  @if $z-depth == 5 {
+    text-shadow: 0 20px 40px rgba($color, $strength * 0.3),
+      0 15px 12px rgba($color, $strength * 0.22);
+  }
+  @if ($z-depth < 1) or ($z-depth > 5) {
+    @warn "$z-depth must be between 1 and 5";
+  }
 }
-
 
 /*----------------------
  # TINT AND SHADE FUNCTIONS
@@ -130,22 +235,20 @@
   @return mix(black, $color, $percentage);
 }
 
-
 /*----------------------
  # DYNAMICALLY CHANGE COLOR
  ---------------------*/
-@function dynamic-text-color( $color ) {
-	@if ( lightness( $color ) > 60 ) {
-		@return #111111;
-	} @else {
-		@return #ffffff;
-	}
+@function dynamic-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return #111111;
+  } @else {
+    @return #ffffff;
+  }
 }
-
 
 /*----------------------
  # STRIP-UNIT FUNCTION
  ---------------------*/
 @function strip-units($number) {
-	@return $number / ($number * 0 + 1);
+  @return $number / ($number * 0 + 1);
 }

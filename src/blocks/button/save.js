@@ -7,7 +7,11 @@ import classnames from 'classnames'
  * WordPress dependencies
  */
 import { getBlockDefaultClassName } from '@wordpress/blocks'
-import { getColorClassName, RichText, useBlockProps } from '@wordpress/block-editor'
+import {
+  getColorClassName,
+  RichText,
+  useBlockProps,
+} from '@wordpress/block-editor'
 
 /**
  * Internal dependencies
@@ -16,118 +20,121 @@ import metadata from './block.json'
 
 const { name } = metadata
 
-function ButtonSave( {
-	className,
-	attributes: {
-		text,
-		url,
-		linkTarget,
-		borderRadius,
-		width,
-		title,
-		noFollow,
-		noReferrer,
-		iconId,
-		iconSize,
-		iconPosition,
-		isIconOnly,
-		hasCustomIcon,
-		customIcon,
-		backgroundColor,
-		textColor,
-		customBackgroundColor,
-		customTextColor,
-		alignmentHorizontal,
-	},
-} ) {
-	const defaultClassName = getBlockDefaultClassName( name )
+function ButtonSave({
+  className,
+  attributes: {
+    text,
+    url,
+    linkTarget,
+    borderRadius,
+    width,
+    title,
+    noFollow,
+    noReferrer,
+    iconId,
+    iconSize,
+    iconPosition,
+    isIconOnly,
+    hasCustomIcon,
+    customIcon,
+    backgroundColor,
+    textColor,
+    customBackgroundColor,
+    customTextColor,
+    alignmentHorizontal,
+  },
+}) {
+  const defaultClassName = getBlockDefaultClassName( name )
 
-	const textColorClass = getColorClassName( 'color', textColor )
-	const backgroundColorClass = getColorClassName( 'background-color', backgroundColor )
+  const textColorClass = getColorClassName( 'color', textColor )
+  const backgroundColorClass = getColorClassName(
+    'background-color',
+    backgroundColor,
+  )
 
-	const classes = classnames( {
-		[ `block-align-h-${ alignmentHorizontal }` ]: alignmentHorizontal,
-	} )
+  const classes = classnames({
+    [ `block-align-h-${ alignmentHorizontal }` ]: alignmentHorizontal,
+  })
 
-	const blockProps = useBlockProps.save( {
-		className: classes,
-	} )
+  const blockProps = useBlockProps.save({
+    className: classes,
+  })
 
-	const buttonClasses = classnames(
-		`${ defaultClassName }__link`, {
-			[ `width-${ width }` ]: width,
-			'has-text-color': textColor || customTextColor,
-			[ textColorClass ]: textColorClass,
-			'has-background': backgroundColor || customBackgroundColor,
-			[ backgroundColorClass ]: backgroundColorClass,
-		},
-	)
+  const buttonClasses = classnames( `${ defaultClassName }__link`, {
+    [ `width-${ width }` ]: width,
+    'has-text-color': textColor || customTextColor,
+    [ textColorClass ]: textColorClass,
+    'has-background': backgroundColor || customBackgroundColor,
+    [ backgroundColorClass ]: backgroundColorClass,
+  })
 
-	const relAttribute = `${ !! noFollow ? 'nofollow' : '' } ${ !! noReferrer ? 'noreferrer' : '' }`.trim()
+  const relAttribute = `${ noFollow ? 'nofollow' : '' } ${
+    noReferrer ? 'noreferrer' : ''
+  }`.trim()
 
-	const buttonStyles = {
-		backgroundColor: backgroundColorClass ? undefined : customBackgroundColor,
-		color: textColorClass ? undefined : customTextColor,
-		borderRadius: borderRadius.value ? borderRadius.value + borderRadius.unit : undefined,
-	}
+  const buttonStyles = {
+    backgroundColor: backgroundColorClass ? undefined : customBackgroundColor,
+    color: textColorClass ? undefined : customTextColor,
+    borderRadius: borderRadius.value
+      ? borderRadius.value + borderRadius.unit
+      : undefined,
+  }
 
-	const iconClasses = classnames(
-		`${ defaultClassName }__icon`, {
-			[ iconId ]: iconId,
-			[ `position-${ iconPosition }` ]: iconPosition && ! isIconOnly,
-		},
-	)
+  const iconClasses = classnames( `${ defaultClassName }__icon`, {
+    [ iconId ]: iconId,
+    [ `position-${ iconPosition }` ]: iconPosition && !isIconOnly,
+  })
 
-	const customIconClasses = classnames(
-		`${ defaultClassName }__custom-icon`, {
-			[ `position-${ iconPosition }` ]: iconPosition && ! isIconOnly,
-		},
-	)
+  const customIconClasses = classnames( `${ defaultClassName }__custom-icon`, {
+    [ `position-${ iconPosition }` ]: iconPosition && !isIconOnly,
+  })
 
-	return (
-		<div { ...blockProps }>
-			<a
-				className={ buttonClasses }
-				href={ url }
-				target={ linkTarget }
-				title={ title }
-				style={ buttonStyles }
-				rel={ relAttribute ? relAttribute : null }
-			>
-				{ !! iconId && iconPosition === 'left' &&
-					<i className={ iconClasses } style={ { fontSize: iconSize } } />
-				}
+  return (
+    <div { ...blockProps }>
+      <a
+        className={ buttonClasses }
+        href={ url }
+        target={ linkTarget }
+        title={ title }
+        style={ buttonStyles }
+        rel={ relAttribute ? relAttribute : null }
+      >
+        { !!iconId && iconPosition === 'left' && 
+        <i className={ iconClasses } style={ { fontSize: iconSize } } />
+        }
 
-				{ !! hasCustomIcon && iconPosition === 'left' &&
-					<div
-						className={ customIconClasses }
-						style={ { height: iconSize } }
-						dangerouslySetInnerHTML={ { __html: customIcon } }
-					/>
-				}
+        { !!hasCustomIcon && iconPosition === 'left' && 
+        <div
+          className={ customIconClasses }
+          style={ { height: iconSize } }
+          dangerouslySetInnerHTML={ { __html: customIcon } }
+        />
+        }
 
-				{ ! isIconOnly &&
-					<RichText.Content
-						tagName="span"
-						className={ `${ defaultClassName }__text` }
-						value={ text }
-					/>
-				}
+        { !isIconOnly && 
+        <RichText.Content
+          tagName="span"
+          className={ `${ defaultClassName }__text` }
+          value={ text }
+        />
+        }
 
-				{ !! hasCustomIcon && ( iconPosition === 'right' || iconPosition === undefined ) &&
-					<div
-						className={ customIconClasses }
-						style={ { height: iconSize } }
-						dangerouslySetInnerHTML={ { __html: customIcon } }
-					/>
-				}
+        { !!hasCustomIcon &&
+        ( iconPosition === 'right' || iconPosition === undefined ) && 
+          <div
+            className={ customIconClasses }
+            style={ { height: iconSize } }
+            dangerouslySetInnerHTML={ { __html: customIcon } }
+          />
+        }
 
-				{ !! iconId && ( iconPosition === 'right' || iconPosition === undefined ) &&
-					<i className={ iconClasses } style={ { fontSize: iconSize } } />
-				}
-			</a>
-		</div>
-	)
+        { !!iconId &&
+        ( iconPosition === 'right' || iconPosition === undefined ) && 
+          <i className={ iconClasses } style={ { fontSize: iconSize } } />
+        }
+      </a>
+    </div>
+  )
 }
 
 export default ButtonSave

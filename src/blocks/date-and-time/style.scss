@@ -7,24 +7,24 @@
 $default-class-name: "fleximple-block-date-and-time";
 
 .fleximple-block-date-and-time {
-	.#{$default-class-name}__date,
-	.#{$default-class-name}__time,
-	.#{$default-class-name}__separator {
-		display: inline;
+  .#{$default-class-name}__date,
+  .#{$default-class-name}__time,
+  .#{$default-class-name}__separator {
+    display: inline;
 
-		span {
-			display: inline-block;
-		}
-	}
+    span {
+      display: inline-block;
+    }
+  }
 
-	.#{$default-class-name}__date,
-	.#{$default-class-name}__time {
-		span + span {
-			margin-left: 4px;
-		}
-	}
+  .#{$default-class-name}__date,
+  .#{$default-class-name}__time {
+    span + span {
+      margin-left: 4px;
+    }
+  }
 
-	.#{$default-class-name}__separator {
-		margin: 0 4px;
-	}
+  .#{$default-class-name}__separator {
+    margin: 0 4px;
+  }
 }

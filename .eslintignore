@@ -2,8 +2,11 @@
 **/*.build.js
 **/node_modules/**
 **/vendor/**
+assets
 build
+dist
 coverage
 cypress
+languages
 node_modules
 vendor

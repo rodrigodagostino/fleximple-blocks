@@ -7,6 +7,8 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "webpack --mode=production",
+    "lint": "eslint --ext .ts,.js ./",
+    "lint:fix": "eslint --ext .ts,.js ./ --fix",
 		"makejson": "wp i18n make-json languages/fleximpleblocks-es_ES.po --no-purge",
 		"makepot": "wp i18n make-pot ./ languages/fleximpleblocks.pot",
 		"start": "webpack --mode=development --watch",

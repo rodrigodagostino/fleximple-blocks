@@ -1,22 +1,22 @@
 {
-	"name": "fleximple-blocks/tabs",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"count": {
-			"type": "number",
-			"default": 3
-		},
-		"tabsData": {
-			"type": "array",
-			"default": [
-                { "label": "Tab 1" },
-                { "label": "Tab 2" },
-                { "label": "Tab 3" }
-            ]
-		},
-		"tabsAlignment": {
-			"type": "string",
-			"default": "left"
-		}
-	}
+  "name": "fleximple-blocks/tabs",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "count": {
+      "type": "number",
+      "default": 3
+    },
+    "tabsData": {
+      "type": "array",
+      "default": [
+        { "label": "Tab 1" },
+        { "label": "Tab 2" },
+        { "label": "Tab 3" }
+      ]
+    },
+    "tabsAlignment": {
+      "type": "string",
+      "default": "left"
+    }
+  }
 }

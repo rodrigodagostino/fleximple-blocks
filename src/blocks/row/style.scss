@@ -8,67 +8,67 @@
 $default-class-name: "fleximple-block-row";
 
 .fleximple-block-row {
-	position: relative;
+  position: relative;
 
-	&__inner {
-		display: flex;
-	}
+  &__inner {
+    display: flex;
+  }
 
-	&[class*="block-align-v-"] .#{$default-class-name}__content {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-	}
+  &[class*="block-align-v-"] .#{$default-class-name}__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
 
-	&.background-attachment-fixed {
-		background-attachment: fixed;
-	}
+  &.background-attachment-fixed {
+    background-attachment: fixed;
+  }
 
-	&__overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 0;
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
 
-		$steps: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80,
-			85, 90, 95, 100;
+    $steps: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85,
+      90, 95, 100;
 
-		@each $step in $steps {
-			&.opacity-#{ $step } {
-				opacity: math.div($step, 100);
-			}
-		}
-	}
+    @each $step in $steps {
+      &.opacity-#{ $step } {
+        opacity: math.div($step, 100);
+      }
+    }
+  }
 
-	&.alignwide,
-	&.alignfull {
-		padding-left: var(--site-main__padding, 16px);
-		padding-right: var(--site-main__padding, 16px);
-	}
+  &.alignwide,
+  &.alignfull {
+    padding-left: var(--site-main__padding, 16px);
+    padding-right: var(--site-main__padding, 16px);
+  }
 
-	@media only screen and (min-width: var(--bp-small)) {
-		&.alignwide,
-		&.alignfull {
-			padding-left: var(--site-main__padding--small, 16px);
-			padding-right: var(--site-main__padding--small, 16px);
-		}
-	}
+  @media only screen and (min-width: var(--bp-small)) {
+    &.alignwide,
+    &.alignfull {
+      padding-left: var(--site-main__padding--small, 16px);
+      padding-right: var(--site-main__padding--small, 16px);
+    }
+  }
 
-	@media only screen and (min-width: var(--bp-medium)) {
-		&.alignwide,
-		&.alignfull {
-			padding-left: var(--site-main__padding--medium, 20px);
-			padding-right: var(--site-main__padding--medium, 20px);
-		}
-	}
+  @media only screen and (min-width: var(--bp-medium)) {
+    &.alignwide,
+    &.alignfull {
+      padding-left: var(--site-main__padding--medium, 20px);
+      padding-right: var(--site-main__padding--medium, 20px);
+    }
+  }
 
-	@media only screen and (min-width: var(--bp-large)) {
-		&.alignwide,
-		&.alignfull {
-			padding-left: var(--site-main__padding--large, 24px);
-			padding-right: var(--site-main__padding--large, 24px);
-		}
-	}
+  @media only screen and (min-width: var(--bp-large)) {
+    &.alignwide,
+    &.alignfull {
+      padding-left: var(--site-main__padding--large, 24px);
+      padding-right: var(--site-main__padding--large, 24px);
+    }
+  }
 }

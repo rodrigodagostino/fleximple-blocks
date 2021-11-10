@@ -1,132 +1,127 @@
 {
-	"name": "fleximple-blocks/testimonial",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"iconId": {
-			"type": "string",
-			"default": "fas fa-quote-left"
-		},
-		"iconSize": {
-			"type": "number",
-			"default": 60
-		},
-		"iconColor": {
-			"type": "string"
-		},
-		"customIconColor": {
-			"type": "string"
-		},
-		"quote": {
-			"type": "string",
-			"source": "html",
-			"selector": "blockquote",
-			"default": ""
-		},
-		"mediaId": {
-			"type": "number"
-		},
-		"mediaUrl": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "img",
-			"attribute": "src"
-		},
-		"mediaAlt": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "img",
-			"attribute": "alt",
-			"default": ""
-		},
-		"mediaHeight": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 100,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"mediaBorderRadius": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 0,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"reference": {
-			"type": "string",
-			"source": "html",
-			"selector": "p",
-			"default": ""
-		},
-		"textAlignment": {
-			"type": "object",
-			"default": {
-				"small": "center",
-				"medium": "",
-				"large": ""
-			}
-		},
-		"gap": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 20,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"order": {
-			"type": "array",
-			"default": [
-				"icon",
-				"quote",
-				"media",
-				"reference"
-			]
-		},
-		"displayIcon": {
-			"type": "boolean",
-			"default": true
-		},
-		"displayQuote": {
-			"type": "boolean",
-			"default": true
-		},
-		"displayMedia": {
-			"type": "boolean",
-			"default": true
-		},
-		"displayReference": {
-			"type": "boolean",
-			"default": true
-		}
-	}
+  "name": "fleximple-blocks/testimonial",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "iconId": {
+      "type": "string",
+      "default": "fas fa-quote-left"
+    },
+    "iconSize": {
+      "type": "number",
+      "default": 60
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "customIconColor": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "string",
+      "source": "html",
+      "selector": "blockquote",
+      "default": ""
+    },
+    "mediaId": {
+      "type": "number"
+    },
+    "mediaUrl": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src"
+    },
+    "mediaAlt": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "alt",
+      "default": ""
+    },
+    "mediaHeight": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 100,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "mediaBorderRadius": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 0,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "reference": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    },
+    "textAlignment": {
+      "type": "object",
+      "default": {
+        "small": "center",
+        "medium": "",
+        "large": ""
+      }
+    },
+    "gap": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 20,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "order": {
+      "type": "array",
+      "default": ["icon", "quote", "media", "reference"]
+    },
+    "displayIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayQuote": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayMedia": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayReference": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }

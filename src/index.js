@@ -2,8 +2,8 @@
  * WordPress dependencies
  */
 import {
-	registerBlockType,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+  registerBlockType,
+  unstable__bootstrapServerSideBlockDefinitions,
 } from '@wordpress/blocks'
 
 /**
@@ -31,37 +31,37 @@ import * as testimonial from './blocks/testimonial'
 import * as weather from './blocks/weather'
 
 export const registerFleximpleBlocks = () => {
-	[
-		ad,
-		button,
-		buttons,
-		contactInfo,
-		contactInfoItem,
-		dateAndTime,
-		feature,
-		header,
-		icon,
-		iframe,
-		map,
-		post,
-		postCarousel,
-		profile,
-		recentPosts,
-		row,
-		tabPanel,
-		tabs,
-		testimonial,
-		weather,
-	].forEach( block => {
-		if ( !block ) {
-			return
-		}
-		const { metadata, settings, name } = block
-		if ( metadata ) {
-			unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } )
-		}
-		registerBlockType( name, settings )
-	} )
+  [
+    ad,
+    button,
+    buttons,
+    contactInfo,
+    contactInfoItem,
+    dateAndTime,
+    feature,
+    header,
+    icon,
+    iframe,
+    map,
+    post,
+    postCarousel,
+    profile,
+    recentPosts,
+    row,
+    tabPanel,
+    tabs,
+    testimonial,
+    weather,
+  ].forEach( block => {
+    if ( !block ) {
+      return
+    }
+    const { metadata, settings, name } = block
+    if ( metadata ) {
+      unstable__bootstrapServerSideBlockDefinitions({ [ name ]: metadata })
+    }
+    registerBlockType( name, settings )
+  })
 }
 
 registerFleximpleBlocks()

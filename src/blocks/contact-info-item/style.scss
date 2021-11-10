@@ -5,14 +5,14 @@
  */
 
 .fleximple-block-contact-info-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	.fleximple-block-icon,
-	p {
-		white-space: nowrap;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  .fleximple-block-icon,
+  p {
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

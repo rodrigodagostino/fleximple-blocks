@@ -6,17 +6,17 @@
  */
 
 .fleximple-block-row {
-	&[class*="block-align-v-"]
-		> [class$="__inner"]
-		> [class$="__content"]
-		> .block-editor-inner-blocks
-		> .block-editor-block-list__layout {
-		position: relative;
-		display: flex;
-		flex-direction: column;
+  &[class*="block-align-v-"]
+    > [class$="__inner"]
+    > [class$="__content"]
+    > .block-editor-inner-blocks
+    > .block-editor-block-list__layout {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
-		& > * {
-			margin: 0;
-		}
-	}
+    & > * {
+      margin: 0;
+    }
+  }
 }

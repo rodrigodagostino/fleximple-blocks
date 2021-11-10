@@ -22,31 +22,32 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-	title: __( 'Ad', 'fleximpleblocks' ),
-	description: __( 'Display an ad that can switch to different versions depending on the screen size.', 'fleximpleblocks' ),
-	icon,
-	keywords: [
-		/* translators: block keyword */
-		__( 'Ad', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'advertisement', 'fleximpleblocks' ),
-		/* translators: block keyword */
-		__( 'fleximple block', 'fleximpleblocks' ),
-	],
+  title: __( 'Ad', 'fleximpleblocks' ),
+  description: __(
+    'Display an ad that can switch to different versions depending on the screen size.',
+    'fleximpleblocks',
+  ),
+  icon,
+  keywords: [
+    /* translators: block keyword */
+    __( 'Ad', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'advertisement', 'fleximpleblocks' ),
+    /* translators: block keyword */
+    __( 'fleximple block', 'fleximpleblocks' ),
+  ],
 
-	edit,
-	save,
+  edit,
+  save,
 }
 
 // Provide a custom block class
 function setBlockCustomClassName( className, blockName ) {
-	return blockName === name ?
-		'fleximple-block-ad' :
-		className
+  return blockName === name ? 'fleximple-block-ad' : className
 }
 
 wp.hooks.addFilter(
-	'blocks.getBlockDefaultClassName',
-	'fleximple-blocks/fleximple-block-ad',
-	setBlockCustomClassName,
+  'blocks.getBlockDefaultClassName',
+  'fleximple-blocks/fleximple-block-ad',
+  setBlockCustomClassName,
 )
