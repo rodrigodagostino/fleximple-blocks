@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fleximple Blocks 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks\n"
-"POT-Creation-Date: 2021-09-20T00:34:20+02:00\n"
-"PO-Revision-Date: 2021-09-19 19:36-0300\n"
+"POT-Creation-Date: 2021-11-10T04:01:21+01:00\n"
+"PO-Revision-Date: 2021-11-10 00:01-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -112,51 +112,51 @@ msgstr "Cargar Swiper."
 msgid "Open Weather API key."
 msgstr "Clave de la API de Open Weather."
 
-#: dist/admin-script.js:2 src/js/admin.js:90
+#: dist/admin-script.js:2 src/js/admin.js:105
 msgid "Breakpoints"
 msgstr "Puntos de quiebre"
 
-#: dist/admin-script.js:2 src/js/admin.js:92
+#: dist/admin-script.js:2 src/js/admin.js:107
 msgid "Define the breakpoint values that will be used by the Fleximple Blocks."
 msgstr ""
 "Define los valores para los puntos de quiebre que serán usados por los "
 "Fleximple Blocks."
 
-#: dist/admin-script.js:2 src/js/admin.js:100
+#: dist/admin-script.js:2 src/js/admin.js:115
 msgid "Small breakpoint"
 msgstr "Punto de quiebre pequeño"
 
 #: dist/admin-script.js:2 dist/index.js:2 src/blocks/post-carousel/edit.js:256
-#: src/js/admin.js:101 src/js/admin.js:111 src/js/admin.js:121
-#: src/js/admin.js:131
+#: src/js/admin.js:116 src/js/admin.js:130 src/js/admin.js:144
+#: src/js/admin.js:158
 msgid "In pixels."
 msgstr "En píxeles."
 
-#: dist/admin-script.js:2 src/js/admin.js:110
+#: dist/admin-script.js:2 src/js/admin.js:129
 msgid "Medium breakpoint"
 msgstr "Punto de quiebre medio"
 
-#: dist/admin-script.js:2 src/js/admin.js:120
+#: dist/admin-script.js:2 src/js/admin.js:143
 msgid "Large breakpoint"
 msgstr "Punto de quiebre grande"
 
-#: dist/admin-script.js:2 src/js/admin.js:130
+#: dist/admin-script.js:2 src/js/admin.js:157
 msgid "Extra large breakpoint"
 msgstr "Punto de quiebre extra grande"
 
-#: dist/admin-script.js:2 src/js/admin.js:163 src/js/admin.js:240
+#: dist/admin-script.js:2 src/js/admin.js:194 src/js/admin.js:291
 msgid "Save changes"
 msgstr "Guardar cambios"
 
-#: dist/admin-script.js:2 src/js/admin.js:168
+#: dist/admin-script.js:2 src/js/admin.js:199
 msgid "Third Parties"
 msgstr "Terceros"
 
-#: dist/admin-script.js:2 src/js/admin.js:171
+#: dist/admin-script.js:2 src/js/admin.js:202
 msgid "Load Font Awesome"
 msgstr "Cargar Font Awesome"
 
-#: dist/admin-script.js:2 src/js/admin.js:176
+#: dist/admin-script.js:2 src/js/admin.js:210
 msgid ""
 "It’s only necessary for icons to work. Deactivate it if you won’t be using "
 "them."
@@ -164,11 +164,11 @@ msgstr ""
 "Sólo es necesario para que los íconos funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:2 src/js/admin.js:182
+#: dist/admin-script.js:2 src/js/admin.js:219
 msgid "Load Leaflet"
 msgstr "Cargar Leaflet"
 
-#: dist/admin-script.js:2 src/js/admin.js:187
+#: dist/admin-script.js:2 src/js/admin.js:227
 msgid ""
 "It’s only necessary for maps to work. Deactivate it if you won’t be using "
 "them."
@@ -176,11 +176,11 @@ msgstr ""
 "Sólo es necesario para que los mapas funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:2 src/js/admin.js:193
+#: dist/admin-script.js:2 src/js/admin.js:236
 msgid "Load Swiper"
 msgstr "Cargar Swiper"
 
-#: dist/admin-script.js:2 src/js/admin.js:198
+#: dist/admin-script.js:2 src/js/admin.js:244
 msgid ""
 "It’s only necessary for carousels to work. Deactivate it if you won’t be "
 "using them."
@@ -188,12 +188,12 @@ msgstr ""
 "Sólo es necesario para que los carruseles funcionen. Desactívalo si no vas a "
 "utilizarlos."
 
-#: dist/admin-script.js:2 src/js/admin.js:204
+#: dist/admin-script.js:2 src/js/admin.js:253
 msgid "Open Weather API key"
 msgstr "Clave de la API de Open Weather"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/ad/index.js:25 src/blocks/ad/index.js:30
+#: dist/index.js:2 src/blocks/ad/index.js:25 src/blocks/ad/index.js:33
 msgid "Ad"
 msgstr "Anuncio"
 
@@ -206,59 +206,59 @@ msgstr ""
 "de la pantalla."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/ad/index.js:32
+#: dist/index.js:2 src/blocks/ad/index.js:35
 msgid "advertisement"
 msgstr "publicidad"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/ad/index.js:34 src/blocks/button/index.js:32
-#: src/blocks/buttons/index.js:33 src/blocks/contact-info/index.js:32
-#: src/blocks/date-and-time/index.js:31 src/blocks/feature/index.js:33
-#: src/blocks/header/index.js:38 src/blocks/icon/index.js:32
-#: src/blocks/iframe/index.js:32 src/blocks/map/index.js:32
-#: src/blocks/post-carousel/index.js:32 src/blocks/post/index.js:32
-#: src/blocks/profile/index.js:33 src/blocks/recent-posts/index.js:32
-#: src/blocks/row/index.js:33 src/blocks/tabs/index.js:32
-#: src/blocks/testimonial/index.js:33 src/blocks/weather/index.js:32
+#: dist/index.js:2 src/blocks/ad/index.js:37 src/blocks/button/index.js:35
+#: src/blocks/buttons/index.js:35 src/blocks/contact-info/index.js:35
+#: src/blocks/date-and-time/index.js:34 src/blocks/feature/index.js:35
+#: src/blocks/header/index.js:40 src/blocks/icon/index.js:32
+#: src/blocks/iframe/index.js:35 src/blocks/map/index.js:35
+#: src/blocks/post-carousel/index.js:34 src/blocks/post/index.js:32
+#: src/blocks/profile/index.js:35 src/blocks/recent-posts/index.js:34
+#: src/blocks/row/index.js:35 src/blocks/tabs/index.js:35
+#: src/blocks/testimonial/index.js:35 src/blocks/weather/index.js:34
 msgid "fleximple block"
 msgstr "bloque fleximple"
 
-#: dist/index.js:2 src/blocks/button/edit.js:253 src/blocks/buttons/edit.js:68
+#: dist/index.js:2 src/blocks/button/edit.js:284 src/blocks/buttons/edit.js:72
 #: src/blocks/contact-info-item/edit.js:69 src/blocks/contact-info/edit.js:85
-#: src/blocks/date-and-time/edit.js:63 src/blocks/feature/edit.js:180
-#: src/blocks/header/edit.js:104 src/blocks/icon/edit.js:78
-#: src/blocks/iframe/edit.js:66 src/blocks/map/edit.js:120
-#: src/blocks/post-carousel/edit.js:164 src/blocks/post/edit.js:152
+#: src/blocks/date-and-time/edit.js:75 src/blocks/feature/edit.js:182
+#: src/blocks/header/edit.js:104 src/blocks/icon/edit.js:82
+#: src/blocks/iframe/edit.js:66 src/blocks/map/edit.js:126
+#: src/blocks/post-carousel/edit.js:164 src/blocks/post/edit.js:156
 #: src/blocks/profile/edit.js:133 src/blocks/recent-posts/edit.js:146
 #: src/blocks/row/edit.js:199 src/blocks/testimonial/edit.js:110
 #: src/blocks/weather/edit.js:97
 msgid "Main"
 msgstr "Principal"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:262 src/blocks/row/edit.js:285
+#: dist/index.js:2 src/blocks/profile/edit.js:268 src/blocks/row/edit.js:294
 msgid "Image"
 msgstr "Imagen"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:277
-#: src/blocks/profile/edit.js:285 src/blocks/row/edit.js:323
-#: src/blocks/row/edit.js:335
+#: dist/index.js:2 src/blocks/profile/edit.js:283
+#: src/blocks/profile/edit.js:291 src/blocks/row/edit.js:332
+#: src/blocks/row/edit.js:344
 msgid "Replace image"
 msgstr "Reemplazar imagen"
 
-#: dist/index.js:2 src/blocks/row/edit.js:334
+#: dist/index.js:2 src/blocks/row/edit.js:343
 msgid "Choose image"
 msgstr "Elegir imagen"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:294 src/blocks/row/edit.js:364
+#: dist/index.js:2 src/blocks/profile/edit.js:300 src/blocks/row/edit.js:373
 msgid "Remove image"
 msgstr "Quitar imagen"
 
-#: dist/index.js:2 src/blocks/row/edit.js:425
+#: dist/index.js:2 src/blocks/row/edit.js:434
 msgid "Size"
 msgstr "Tamaño"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:368
-#: src/blocks/post/edit.js:239 src/blocks/recent-posts/edit.js:300
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:377
+#: src/blocks/post/edit.js:247 src/blocks/recent-posts/edit.js:307
 msgid "None"
 msgstr "Ninguna"
 
@@ -326,14 +326,14 @@ msgstr "No se encontraron íconos."
 msgid "Select icon"
 msgstr "Elegir ícono"
 
-#: dist/index.js:2 src/blocks/buttons/edit.js:113
-#: src/blocks/contact-info-item/edit.js:92 src/blocks/contact-info/edit.js:138
+#: dist/index.js:2 src/blocks/buttons/edit.js:123
+#: src/blocks/contact-info-item/edit.js:98 src/blocks/contact-info/edit.js:144
 #: src/blocks/testimonial/edit.js:135
 msgid "Gap size"
 msgstr "Tamaño de separación"
 
-#: dist/index.js:2 src/blocks/buttons/edit.js:114
-#: src/blocks/contact-info-item/edit.js:93 src/blocks/contact-info/edit.js:139
+#: dist/index.js:2 src/blocks/buttons/edit.js:124
+#: src/blocks/contact-info-item/edit.js:99 src/blocks/contact-info/edit.js:145
 #: src/blocks/testimonial/edit.js:136
 msgid "Gap size unit"
 msgstr "Unidad de tamaño de separación"
@@ -434,74 +434,74 @@ msgstr "Relleno inferior"
 msgid "Bottom padding unit"
 msgstr "Unidad de relleno inferior"
 
-#: dist/index.js:2 src/blocks/button/edit.js:255 src/blocks/buttons/edit.js:92
-#: src/blocks/contact-info/edit.js:116 src/blocks/post-carousel/edit.js:316
+#: dist/index.js:2 src/blocks/button/edit.js:285 src/blocks/buttons/edit.js:102
+#: src/blocks/contact-info/edit.js:122 src/blocks/post-carousel/edit.js:322
 #: src/blocks/profile/edit.js:138 src/blocks/row/edit.js:228
 msgid "Horizontal alignment"
 msgstr "Alineación horizontal"
 
-#: dist/index.js:2 src/blocks/button/edit.js:265 src/blocks/profile/edit.js:331
+#: dist/index.js:2 src/blocks/button/edit.js:296 src/blocks/profile/edit.js:337
 #: src/blocks/testimonial/edit.js:166
 msgid "Border radius"
 msgstr "Radio de esquinas"
 
-#: dist/index.js:2 src/blocks/button/edit.js:266 src/blocks/profile/edit.js:332
+#: dist/index.js:2 src/blocks/button/edit.js:297 src/blocks/profile/edit.js:338
 #: src/blocks/testimonial/edit.js:167
 msgid "Border radius unit"
 msgstr "Unidad de radio de esquinas"
 
-#: dist/index.js:2 src/blocks/button/edit.js:276
+#: dist/index.js:2 src/blocks/button/edit.js:307
 msgid "Button width"
 msgstr "Ancho del botón"
 
-#: dist/index.js:2 src/blocks/button/edit.js:279
+#: dist/index.js:2 src/blocks/button/edit.js:310
 msgid "Automatic"
 msgstr "Automático"
 
-#: dist/index.js:2 src/blocks/button/edit.js:280
-#: src/blocks/post-carousel/edit.js:370 src/blocks/recent-posts/edit.js:302
+#: dist/index.js:2 src/blocks/button/edit.js:311
+#: src/blocks/post-carousel/edit.js:379 src/blocks/recent-posts/edit.js:312
 msgid "Full"
 msgstr "Completo"
 
-#: dist/index.js:2 src/blocks/button/edit.js:286
+#: dist/index.js:2 src/blocks/button/edit.js:317
 msgid "Button title"
 msgstr "Título de botón"
 
-#: dist/index.js:2 src/blocks/button/edit.js:288
+#: dist/index.js:2 src/blocks/button/edit.js:319
 msgid "Type the button title…"
 msgstr "Ingresa el título del botón…"
 
-#: dist/index.js:2 src/blocks/button/edit.js:290
+#: dist/index.js:2 src/blocks/button/edit.js:321
 msgid "It will show to the user as a tooltip."
 msgstr "Se mostrará al usuario en forma de descripción emergente."
 
-#: dist/index.js:2 src/blocks/button/edit.js:294 src/blocks/feature/edit.js:229
-#: src/blocks/post-carousel/edit.js:337 src/blocks/post/edit.js:196
+#: dist/index.js:2 src/blocks/button/edit.js:328 src/blocks/feature/edit.js:231
+#: src/blocks/post-carousel/edit.js:343 src/blocks/post/edit.js:200
 #: src/blocks/recent-posts/edit.js:232
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
 
-#: dist/index.js:2 src/blocks/button/edit.js:303 src/blocks/feature/edit.js:235
-#: src/blocks/post/edit.js:205
+#: dist/index.js:2 src/blocks/button/edit.js:337 src/blocks/feature/edit.js:237
+#: src/blocks/post/edit.js:209
 msgid "Google search spider should not follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: dist/index.js:2 src/blocks/button/edit.js:299 src/blocks/feature/edit.js:234
-#: src/blocks/post/edit.js:201
+#: dist/index.js:2 src/blocks/button/edit.js:333 src/blocks/feature/edit.js:236
+#: src/blocks/post/edit.js:205
 msgid "Google search spider should follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: dist/index.js:2 src/blocks/button/edit.js:311 src/blocks/feature/edit.js:240
-#: src/blocks/post-carousel/edit.js:348 src/blocks/post/edit.js:213
+#: dist/index.js:2 src/blocks/button/edit.js:345 src/blocks/feature/edit.js:242
+#: src/blocks/post-carousel/edit.js:354 src/blocks/post/edit.js:217
 #: src/blocks/recent-posts/edit.js:243
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
-#: dist/index.js:2 src/blocks/button/edit.js:320 src/blocks/feature/edit.js:246
-#: src/blocks/post-carousel/edit.js:354 src/blocks/post/edit.js:222
+#: dist/index.js:2 src/blocks/button/edit.js:354 src/blocks/feature/edit.js:248
+#: src/blocks/post-carousel/edit.js:360 src/blocks/post/edit.js:226
 #: src/blocks/recent-posts/edit.js:249
 msgid ""
 "The browser should not send an HTTP referer header if the user follows the "
@@ -510,8 +510,8 @@ msgstr ""
 "El navegador no debe enviar un encabezado de referencia HTTP si el usuario "
 "sigue el hipervínculo."
 
-#: dist/index.js:2 src/blocks/button/edit.js:316 src/blocks/feature/edit.js:245
-#: src/blocks/post-carousel/edit.js:353 src/blocks/post/edit.js:218
+#: dist/index.js:2 src/blocks/button/edit.js:350 src/blocks/feature/edit.js:247
+#: src/blocks/post-carousel/edit.js:359 src/blocks/post/edit.js:222
 #: src/blocks/recent-posts/edit.js:248
 msgid ""
 "The browser should send an HTTP referer header if the user follows the "
@@ -521,54 +521,54 @@ msgstr ""
 "sigue el hipervínculo."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/button/edit.js:328 src/blocks/button/edit.js:332
-#: src/blocks/icon/edit.js:82 src/blocks/icon/index.js:25
-#: src/blocks/icon/index.js:30 src/blocks/testimonial/edit.js:181
-#: src/blocks/testimonial/edit.js:185
+#: dist/index.js:2 src/blocks/button/edit.js:362 src/blocks/button/edit.js:366
+#: src/blocks/icon/edit.js:86 src/blocks/icon/index.js:25
+#: src/blocks/icon/index.js:30 src/blocks/testimonial/edit.js:182
+#: src/blocks/testimonial/edit.js:188
 msgid "Icon"
 msgstr "Ícono"
 
-#: dist/index.js:2 src/blocks/button/edit.js:339 src/blocks/icon/edit.js:89
-#: src/blocks/testimonial/edit.js:192
+#: dist/index.js:2 src/blocks/button/edit.js:373 src/blocks/icon/edit.js:93
+#: src/blocks/testimonial/edit.js:195
 msgid "Icon size"
 msgstr "Tamaño de ícono"
 
-#: dist/index.js:2 src/blocks/button/edit.js:351 src/blocks/button/edit.js:352
+#: dist/index.js:2 src/blocks/button/edit.js:386 src/blocks/button/edit.js:388
 msgid "Icon position"
 msgstr "Posición de ícono"
 
-#: dist/index.js:2 src/blocks/button/edit.js:371
+#: dist/index.js:2 src/blocks/button/edit.js:408
 msgid "Display icon only"
 msgstr "Mostrar sólo el ícono"
 
-#: dist/index.js:2 src/blocks/button/edit.js:384 src/blocks/icon/edit.js:100
+#: dist/index.js:2 src/blocks/button/edit.js:421 src/blocks/icon/edit.js:104
 msgid "Use custom icon"
 msgstr "Utilizar ícono personalizado"
 
-#: dist/index.js:2 src/blocks/button/edit.js:391
+#: dist/index.js:2 src/blocks/button/edit.js:428
 msgid "Custom icon"
 msgstr "Ícono personalizado"
 
-#: dist/index.js:2 src/blocks/button/edit.js:393
+#: dist/index.js:2 src/blocks/button/edit.js:430
 msgid "Insert the HTML code for your custom icon."
 msgstr "Ingresa el código HTML para tu ícono personalizado."
 
-#: dist/index.js:2 src/blocks/button/edit.js:401 src/blocks/icon/edit.js:117
-#: src/blocks/post-carousel/edit.js:441 src/blocks/testimonial/edit.js:204
+#: dist/index.js:2 src/blocks/button/edit.js:441 src/blocks/icon/edit.js:121
+#: src/blocks/post-carousel/edit.js:453 src/blocks/testimonial/edit.js:207
 msgid "Color"
 msgstr "Color"
 
-#: dist/index.js:2 src/blocks/button/edit.js:418 src/blocks/header/edit.js:133
+#: dist/index.js:2 src/blocks/button/edit.js:458 src/blocks/header/edit.js:133
 #: src/blocks/row/edit.js:271
 msgid "Spacing"
 msgstr "Espaciado"
 
-#: dist/index.js:2 src/blocks/button/edit.js:440
+#: dist/index.js:2 src/blocks/button/edit.js:492
 msgid "Write text…"
 msgstr "Escribe el texto…"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/button/index.js:25 src/blocks/button/index.js:30
+#: dist/index.js:2 src/blocks/button/index.js:25 src/blocks/button/index.js:33
 msgid "Button"
 msgstr "Botón"
 
@@ -579,45 +579,45 @@ msgstr ""
 "estilo botón."
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/button/index.js:38
+#: dist/index.js:2 src/blocks/button/index.js:41
 msgid "Fill"
 msgstr "Relleno"
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/button/index.js:44
+#: dist/index.js:2 src/blocks/button/index.js:47
 msgid "Outline"
 msgstr "Contorno"
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/button/index.js:49
+#: dist/index.js:2 src/blocks/button/index.js:52
 msgid "Clear"
 msgstr "Vacío"
 
-#: dist/index.js:2 src/blocks/buttons/edit.js:73
+#: dist/index.js:2 src/blocks/buttons/edit.js:77
 #: src/blocks/contact-info-item/edit.js:74 src/blocks/contact-info/edit.js:98
 #: src/blocks/profile/edit.js:200
 msgid "Direction"
 msgstr "Dirección"
 
-#: dist/index.js:2 src/blocks/buttons/edit.js:76
-#: src/blocks/contact-info-item/edit.js:77 src/blocks/contact-info/edit.js:101
-#: src/blocks/profile/edit.js:203
+#: dist/index.js:2 src/blocks/buttons/edit.js:81
+#: src/blocks/contact-info-item/edit.js:78 src/blocks/contact-info/edit.js:102
+#: src/blocks/profile/edit.js:204
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: dist/index.js:2 src/blocks/buttons/edit.js:77
-#: src/blocks/contact-info-item/edit.js:78 src/blocks/contact-info/edit.js:102
-#: src/blocks/profile/edit.js:204
+#: dist/index.js:2 src/blocks/buttons/edit.js:85
+#: src/blocks/contact-info-item/edit.js:82 src/blocks/contact-info/edit.js:106
+#: src/blocks/profile/edit.js:208
 msgid "Vertical"
 msgstr "Vertical"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/buttons/index.js:26
-#: src/blocks/buttons/index.js:31
+#: dist/index.js:2 src/blocks/buttons/index.js:25
+#: src/blocks/buttons/index.js:33
 msgid "Buttons"
 msgstr "Botones"
 
-#: dist/index.js:2 src/blocks/buttons/index.js:27
+#: dist/index.js:2 src/blocks/buttons/index.js:26
 msgid "Prompt visitors to take action with a group of button-style links."
 msgstr ""
 "Anima a los visitantes a realizar una acción a través de un grupo de enlaces "
@@ -629,7 +629,7 @@ msgstr "Elementos"
 
 #. translators: block keyword
 #: dist/index.js:2 src/blocks/contact-info/index.js:25
-#: src/blocks/contact-info/index.js:30
+#: src/blocks/contact-info/index.js:33
 msgid "Contact Info"
 msgstr "Información de contacto"
 
@@ -651,7 +651,7 @@ msgstr ""
 
 #. translators: block keyword
 #: dist/index.js:2 src/blocks/date-and-time/index.js:24
-#: src/blocks/date-and-time/index.js:29
+#: src/blocks/date-and-time/index.js:32
 msgid "Date & Time"
 msgstr "Fecha y hora"
 
@@ -659,72 +659,72 @@ msgstr "Fecha y hora"
 msgid "Displays the current date and/or time based on your chosen settings."
 msgstr "Muestra la fecha y/o la hora actual según la configuración elegida."
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:65
-#: src/blocks/post/components/post-sortable-control.js:161
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:77
+#: src/blocks/post/components/post-sortable-control.js:173
 msgid "Display date"
 msgstr "Mostrar fecha"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:73
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:85
 msgid "Date format"
 msgstr "Formato de fecha"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:97
-#: src/blocks/date-and-time/edit.js:152
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:109
+#: src/blocks/date-and-time/edit.js:169
 msgid "Custom"
 msgstr "Personalizado"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:111
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:123
 msgid "Custom date format"
 msgstr "Formato personalizado de fecha"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:117
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:129
 msgid "Documentation on date and time formatting."
 msgstr "Documentación sobre formato de fecha y hora."
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:128
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:145
 msgid "Display time"
 msgstr "Mostrar hora"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:136
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:153
 msgid "Time format"
 msgstr "Formato de hora"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:166
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:183
 msgid "Custom time format"
 msgstr "Formato personalizado de hora"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:184
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:203
 msgid "Separator"
 msgstr "Separador"
 
-#: dist/index.js:2 src/blocks/date-and-time/edit.js:186
+#: dist/index.js:2 src/blocks/date-and-time/edit.js:205
 msgid "Type in the date/time separator…"
 msgstr "Ingresa el separador de fecha/hora…"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:185 src/blocks/header/edit.js:120
+#: dist/index.js:2 src/blocks/feature/edit.js:187 src/blocks/header/edit.js:120
 #: src/blocks/profile/edit.js:158 src/blocks/testimonial/edit.js:115
 msgid "Text alignment"
 msgstr "Alineación de texto"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:205
+#: dist/index.js:2 src/blocks/feature/edit.js:207
 #: src/blocks/profile/edit.js:189
 msgid "Content gap size"
 msgstr "Tamaño de separación de contenido"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:206
+#: dist/index.js:2 src/blocks/feature/edit.js:208
 #: src/blocks/profile/edit.js:190
 msgid "Content gap size unit"
 msgstr "Unidad de tamaño de separación de contenido"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:221
+#: dist/index.js:2 src/blocks/feature/edit.js:223
 msgid "Link title"
 msgstr "Título del enlace"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:223
+#: dist/index.js:2 src/blocks/feature/edit.js:225
 msgid "Type the link title…"
 msgstr "Ingresa el título del enlace…"
 
-#: dist/index.js:2 src/blocks/feature/edit.js:225
+#: dist/index.js:2 src/blocks/feature/edit.js:227
 msgid ""
 "Here you can provide a brief explanation about the link’s destination, which "
 "is meant to be used by screen readers."
@@ -733,72 +733,72 @@ msgstr ""
 "cual será utilizada por los lectores de pantalla."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/feature/index.js:26
-#: src/blocks/feature/index.js:31
+#: dist/index.js:2 src/blocks/feature/index.js:25
+#: src/blocks/feature/index.js:33
 msgid "Feature"
 msgstr "Característica"
 
-#: dist/index.js:2 src/blocks/feature/index.js:27
+#: dist/index.js:2 src/blocks/feature/index.js:26
 msgid "Display an icon along with complementary text elements."
 msgstr "Muestra un ícono justo a elementos de texto complementarios."
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:45
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:49
 msgid "Display heading"
 msgstr "Mostrar título"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:47
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:51
 msgid "Hide heading"
 msgstr "Ocultar encabezado"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:51
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:55
 msgid "Display subhead"
 msgstr "Mostrar subtítulo"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:53
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:57
 msgid "Hide subhead"
 msgstr "Ocultar subtítulo"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:57
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:61
 msgid "Display additional content"
 msgstr "Mostrar contenido adicional"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:59
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:63
 msgid "Hide additional content"
 msgstr "Ocultar contenido adicional"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:32
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:36
 msgid "Heading"
 msgstr "Encabezado"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:35
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:39
 msgid "Subhead"
 msgstr "Subtítulo"
 
-#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:38
+#: dist/index.js:2 src/blocks/header/components/header-sortable-control.js:42
 msgid "Additional content"
 msgstr "Contenido adicional"
 
-#: dist/index.js:2 src/blocks/header/edit.js:139
-#: src/blocks/post-carousel/edit.js:452 src/blocks/post/edit.js:297
-#: src/blocks/recent-posts/edit.js:345 src/blocks/testimonial/edit.js:215
+#: dist/index.js:2 src/blocks/header/edit.js:148
+#: src/blocks/post-carousel/edit.js:465 src/blocks/post/edit.js:308
+#: src/blocks/recent-posts/edit.js:358 src/blocks/testimonial/edit.js:219
 msgid "Display"
 msgstr "Mostrar"
 
 #. translators: content placeholder
-#: dist/index.js:2 src/blocks/header/edit.js:252 src/blocks/row/edit.js:57
+#: dist/index.js:2 src/blocks/header/edit.js:263 src/blocks/row/edit.js:57
 msgid "Write heading…"
 msgstr "Escribe el encabezado…"
 
-#: dist/index.js:2 src/blocks/header/edit.js:266
+#: dist/index.js:2 src/blocks/header/edit.js:277
 msgid "Write subhead…"
 msgstr "Escribe el subtítulo…"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/header/index.js:27 src/blocks/header/index.js:32
+#: dist/index.js:2 src/blocks/header/index.js:26 src/blocks/header/index.js:34
 msgid "Header"
 msgstr "Cabecera"
 
-#: dist/index.js:2 src/blocks/header/index.js:28
+#: dist/index.js:2 src/blocks/header/index.js:27
 msgid ""
 "Introduce new sections and organize content to help visitors (and search "
 "engines) better understand the structure of your site."
@@ -807,20 +807,20 @@ msgstr ""
 "(y a los motores de búsqueda) a comprender mejor la estructura de su sitio."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/header/index.js:34
+#: dist/index.js:2 src/blocks/header/index.js:36
 msgid "heading"
 msgstr "encabezado"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/header/index.js:36
+#: dist/index.js:2 src/blocks/header/index.js:38
 msgid "title"
 msgstr "título"
 
-#: dist/index.js:2 src/blocks/icon/edit.js:107
+#: dist/index.js:2 src/blocks/icon/edit.js:111
 msgid "Custom Icon"
 msgstr "Ícono personalizado"
 
-#: dist/index.js:2 src/blocks/icon/edit.js:109
+#: dist/index.js:2 src/blocks/icon/edit.js:113
 msgid "Paste the code for your custom icon in here…"
 msgstr "Pega aquí el código para tu ícono personalizado…"
 
@@ -844,11 +844,11 @@ msgstr "Ancho"
 msgid "Width unit"
 msgstr "Unidad de ancho"
 
-#: dist/index.js:2 src/blocks/iframe/edit.js:87 src/blocks/map/edit.js:135
+#: dist/index.js:2 src/blocks/iframe/edit.js:87 src/blocks/map/edit.js:141
 msgid "Height"
 msgstr "Alto"
 
-#: dist/index.js:2 src/blocks/iframe/edit.js:88 src/blocks/map/edit.js:136
+#: dist/index.js:2 src/blocks/iframe/edit.js:88 src/blocks/map/edit.js:142
 msgid "Height unit"
 msgstr "Unidad de alto"
 
@@ -857,7 +857,7 @@ msgid "Adjust height automatically"
 msgstr "Ajustar altura automáticamente"
 
 #: dist/index.js:2 src/blocks/iframe/edit.js:105
-#: src/blocks/post/components/post-sortable-control.js:85
+#: src/blocks/post/components/post-sortable-control.js:97
 msgid "Title"
 msgstr "Título"
 
@@ -873,7 +873,7 @@ msgstr ""
 "documento actual."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/iframe/index.js:30
+#: dist/index.js:2 src/blocks/iframe/index.js:33
 msgid "Iframe"
 msgstr "Iframe"
 
@@ -888,9 +888,9 @@ msgid "Search for a location…"
 msgstr "Busca una ubicación…"
 
 #: dist/index.js:2 src/blocks/map/components/location-select-control.js:64
-#: src/blocks/post-carousel/edit.js:473
-#: src/blocks/post/components/post-select-control.js:99
-#: src/blocks/post/edit.js:315 src/blocks/recent-posts/edit.js:368
+#: src/blocks/post-carousel/edit.js:490
+#: src/blocks/post/components/post-select-control.js:105
+#: src/blocks/post/edit.js:328 src/blocks/recent-posts/edit.js:385
 #: src/blocks/weather/components/location-select-control.js:58
 #: src/blocks/weather/edit.js:171
 msgid "Loading…"
@@ -902,7 +902,7 @@ msgid "No results found."
 msgstr "No se encontraron resultados."
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/map/index.js:25 src/blocks/map/index.js:30
+#: dist/index.js:2 src/blocks/map/index.js:25 src/blocks/map/index.js:33
 msgid "Map"
 msgstr "Mapa"
 
@@ -910,46 +910,46 @@ msgstr "Mapa"
 msgid "Embed a simple map with a location of your choosing."
 msgstr "Incrusta un mapa sencillo con una ubicación de su elección."
 
-#: dist/index.js:2 src/blocks/map/edit.js:124
+#: dist/index.js:2 src/blocks/map/edit.js:130
 msgid "Zoom"
 msgstr "Zoom"
 
-#: dist/index.js:2 src/blocks/map/edit.js:148
+#: dist/index.js:2 src/blocks/map/edit.js:154
 msgid "Layer"
 msgstr "Capa"
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/map/edit.js:151
-#: src/blocks/post-carousel/index.js:38 src/blocks/post/index.js:38
-#: src/blocks/tabs/index.js:38
+#: dist/index.js:2 src/blocks/map/edit.js:158
+#: src/blocks/post-carousel/index.js:40 src/blocks/post/index.js:38
+#: src/blocks/tabs/index.js:41
 msgid "Standard"
 msgstr "Estándar"
 
-#: dist/index.js:2 src/blocks/map/edit.js:152
+#: dist/index.js:2 src/blocks/map/edit.js:162
 msgid "Black and white"
 msgstr "Blanco y negro"
 
-#: dist/index.js:2 src/blocks/map/edit.js:153
+#: dist/index.js:2 src/blocks/map/edit.js:166
 msgid "Humanitarian"
 msgstr "Humanitaria"
 
-#: dist/index.js:2 src/blocks/map/edit.js:154
+#: dist/index.js:2 src/blocks/map/edit.js:170
 msgid "Watercolor"
 msgstr "Acuarela"
 
-#: dist/index.js:2 src/blocks/map/edit.js:160
+#: dist/index.js:2 src/blocks/map/edit.js:178
 msgid "Display popup"
 msgstr "Mostrar ventana emergente"
 
-#: dist/index.js:2 src/blocks/map/edit.js:170
+#: dist/index.js:2 src/blocks/map/edit.js:188
 msgid "Click on the marker to display the popup."
 msgstr "Has clic en el marcador para mostrar la ventana emergente."
 
-#: dist/index.js:2 src/blocks/map/edit.js:175
+#: dist/index.js:2 src/blocks/map/edit.js:193
 msgid "Display zoom control"
 msgstr "Mostrar control de zoom"
 
-#: dist/index.js:2 src/blocks/map/edit.js:181
+#: dist/index.js:2 src/blocks/map/edit.js:199
 msgid "Display attribution control"
 msgstr "Mostrar control de atribución"
 
@@ -958,200 +958,200 @@ msgid "Edit"
 msgstr "Editar"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/post/components/post-select-control.js:85
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:91
 #: src/blocks/post/index.js:25 src/blocks/post/index.js:30
 msgid "Post"
 msgstr "Entrada"
 
-#: dist/index.js:2 src/blocks/post/components/post-select-control.js:97
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:103
 msgid "Search a post…"
 msgstr "Busca una entrada…"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:474
-#: src/blocks/post/components/post-select-control.js:100
-#: src/blocks/recent-posts/edit.js:369
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:491
+#: src/blocks/post/components/post-select-control.js:106
+#: src/blocks/recent-posts/edit.js:386
 msgid "No posts found."
 msgstr "No se encontraron entradas."
 
-#: dist/index.js:2 src/blocks/post/components/post-select-control.js:105
+#: dist/index.js:2 src/blocks/post/components/post-select-control.js:111
 msgid "Post type"
 msgstr "Tipo de entrada"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:113
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:125
 msgid "Display media"
 msgstr "Mostrar multimedia"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:115
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:127
 msgid "Hide media"
 msgstr "Ocultar multimedia"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:119
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:131
 msgid "Display featured image"
 msgstr "Mostrar imagen destacada"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:121
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:133
 msgid "Hide featured image"
 msgstr "Ocultar imagen destacada"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:125
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:137
 msgid "Display audio"
 msgstr "Mostrar audio"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:127
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:139
 msgid "Hide audio"
 msgstr "Ocultar audio"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:131
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:143
 msgid "Display content"
 msgstr "Mostrar contenido"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:133
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:145
 msgid "Hide content"
 msgstr "Ocultar contenido"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:137
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:149
 msgid "Display categories"
 msgstr "Mostrar categorías"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:139
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:151
 msgid "Hide categories"
 msgstr "Ocultar categorías"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:143
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:155
 msgid "Display title"
 msgstr "Mostrar título"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:145
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:157
 msgid "Hide title"
 msgstr "Ocultar título"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:149
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:161
 msgid "Display meta"
 msgstr "Mostrar metadatos"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:151
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:163
 msgid "Hide meta"
 msgstr "Ocultar metadatos"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:155
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:167
 msgid "Display author"
 msgstr "Mostrar autor"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:157
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:169
 msgid "Hide author"
 msgstr "Ocultar autor"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:163
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:175
 msgid "Hide date"
 msgstr "Ocultar fecha"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:167
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:179
 msgid "Display comments"
 msgstr "Mostrar comentarios"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:169
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:181
 msgid "Hide comments"
 msgstr "Ocultar comentarios"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:173
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:185
 msgid "Display excerpt"
 msgstr "Mostrar extracto"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:175
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:187
 msgid "Hide excerpt"
 msgstr "Ocultar extracto"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:179
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:191
 msgid "Display read more"
 msgstr "Mostrar leer más"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:181
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:193
 msgid "Hide read more"
 msgstr "Ocultar leer más"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:185
-#: src/blocks/post/edit.js:180
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:197
+#: src/blocks/post/edit.js:184
 msgid "Display extra articles"
 msgstr "Mostrar artículos extra"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:187
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:199
 msgid "Hide extra articles"
 msgstr "Ocultar artículos extra"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:360
-#: src/blocks/post/components/post-sortable-control.js:70
-#: src/blocks/post/edit.js:231 src/blocks/profile/edit.js:260
-#: src/blocks/recent-posts/edit.js:281 src/blocks/testimonial/edit.js:150
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:367
+#: src/blocks/post/components/post-sortable-control.js:82
+#: src/blocks/post/edit.js:236 src/blocks/profile/edit.js:266
+#: src/blocks/recent-posts/edit.js:285 src/blocks/testimonial/edit.js:150
 msgid "Media"
 msgstr "Multimedia"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:73
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:85
 msgid "Featured image"
 msgstr "Imagen destacada"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:76
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:88
 msgid "Audio"
 msgstr "Audio"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:79
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:91
 msgid "Content"
 msgstr "Contenido"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:82
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:94
 msgid "Categories"
 msgstr "Categorías"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:88
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:100
 msgid "Meta"
 msgstr "Metadatos"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:91
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:103
 msgid "Author"
 msgstr "Autor"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:94
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:106
 msgid "Date"
 msgstr "Fecha"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:97
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:109
 msgid "Comments"
 msgstr "Comentarios"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:100
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:112
 msgid "Excerpt"
 msgstr "Extracto"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:103
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:115
 msgid "Read more"
 msgstr "Leer más"
 
-#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:106
-#: src/blocks/post/edit.js:186
+#: dist/index.js:2 src/blocks/post/components/post-sortable-control.js:118
+#: src/blocks/post/edit.js:190
 msgid "Extra articles"
 msgstr "Artículos extra"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:302
-#: src/blocks/post/edit.js:156 src/blocks/recent-posts/edit.js:208
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:308
+#: src/blocks/post/edit.js:160 src/blocks/recent-posts/edit.js:208
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:328
-#: src/blocks/post/edit.js:171 src/blocks/recent-posts/edit.js:223
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:334
+#: src/blocks/post/edit.js:175 src/blocks/recent-posts/edit.js:223
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:365
-#: src/blocks/post/edit.js:236 src/blocks/recent-posts/edit.js:297
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:374
+#: src/blocks/post/edit.js:243 src/blocks/recent-posts/edit.js:303
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:384
-#: src/blocks/post/edit.js:254 src/blocks/recent-posts/edit.js:316
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:393
+#: src/blocks/post/edit.js:264 src/blocks/recent-posts/edit.js:328
 msgid "Aspect ratio"
 msgstr "Relación de aspecto"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:457
-#: src/blocks/post/edit.js:302 src/blocks/recent-posts/edit.js:350
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:472
+#: src/blocks/post/edit.js:315 src/blocks/recent-posts/edit.js:365
 msgid "Read more text"
 msgstr "Texto leer más"
 
@@ -1160,12 +1160,12 @@ msgid "Display a specific post or page."
 msgstr "Muestra una entrada o página específica."
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/post-carousel/index.js:44
+#: dist/index.js:2 src/blocks/post-carousel/index.js:46
 #: src/blocks/post/index.js:44
 msgid "Stacked"
 msgstr "Apilado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:300
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:304
 msgid "Posts"
 msgstr "Entradas"
 
@@ -1270,57 +1270,57 @@ msgstr "Cubo"
 msgid "Cards"
 msgstr "Tarjetas"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:274
-#: src/blocks/recent-posts/edit.js:254
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:275
+#: src/blocks/recent-posts/edit.js:255
 msgid "Sorting and filtering"
 msgstr "Orden y filtrado"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:290
-#: src/blocks/recent-posts/edit.js:270
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:293
+#: src/blocks/recent-posts/edit.js:273
 msgid "Manually select posts"
 msgstr "Elegir entradas manualmente"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:343
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:349
 #: src/blocks/recent-posts/edit.js:238
 msgid "Google search spider should not follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:342
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:348
 #: src/blocks/recent-posts/edit.js:237
 msgid "Google search spider should follow the links to these posts."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:413
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:423
 msgid "Icons"
 msgstr "Íconos"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:417
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:429
 msgid "Previous button"
 msgstr "Botón anterior"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:422
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:434
 msgid "Next button"
 msgstr "Botón siguiente"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:429
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:441
 msgid "Button icon size"
 msgstr "Tamaño de ícono de botón"
 
-#: dist/index.js:2 src/blocks/post-carousel/edit.js:444
+#: dist/index.js:2 src/blocks/post-carousel/edit.js:456
 msgid "Button icon"
 msgstr "Ícono de botón"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/post-carousel/index.js:25
-#: src/blocks/post-carousel/index.js:30
+#: dist/index.js:2 src/blocks/post-carousel/index.js:24
+#: src/blocks/post-carousel/index.js:32
 msgid "Post Carousel"
 msgstr "Carrusel de Entradas"
 
-#: dist/index.js:2 src/blocks/post-carousel/index.js:26
-#: src/blocks/recent-posts/index.js:26
+#: dist/index.js:2 src/blocks/post-carousel/index.js:25
+#: src/blocks/recent-posts/index.js:25
 msgid "Display a list of your most recent posts."
 msgstr "Muestra una lista de tus entradas más recientes."
 
@@ -1344,40 +1344,40 @@ msgstr "Tamaño de separación de multimedia"
 msgid "Media gap size unit"
 msgstr "Unidad de tamaño de separación de multimedia"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:218
+#: dist/index.js:2 src/blocks/profile/edit.js:224
 msgid "Reverse order"
 msgstr "Orden inverso"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:285
-#: src/blocks/profile/edit.js:464
+#: dist/index.js:2 src/blocks/profile/edit.js:291
+#: src/blocks/profile/edit.js:470
 msgid "Choose profile image"
 msgstr "Elegir imagen de perfil"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:308
+#: dist/index.js:2 src/blocks/profile/edit.js:314
 msgid "Media width"
 msgstr "Ancho de multimedia"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:309
+#: dist/index.js:2 src/blocks/profile/edit.js:315
 msgid "Media width unit"
 msgstr "Unidad de ancho de multimedia"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:320
+#: dist/index.js:2 src/blocks/profile/edit.js:326
 #: src/blocks/testimonial/edit.js:155
 msgid "Media height"
 msgstr "Alto de multimedia"
 
-#: dist/index.js:2 src/blocks/profile/edit.js:321
+#: dist/index.js:2 src/blocks/profile/edit.js:327
 #: src/blocks/testimonial/edit.js:156
 msgid "Media height unit"
 msgstr "Unidad de alto de multimedia"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/profile/index.js:26
-#: src/blocks/profile/index.js:31
+#: dist/index.js:2 src/blocks/profile/index.js:25
+#: src/blocks/profile/index.js:33
 msgid "Profile"
 msgstr "Perfil"
 
-#: dist/index.js:2 src/blocks/profile/index.js:27
+#: dist/index.js:2 src/blocks/profile/index.js:26
 msgid "Introduce your staff members to your visitors."
 msgstr "Presenta a los miembros de tu personal a tus visitantes."
 
@@ -1405,21 +1405,21 @@ msgstr "Separación de columnas"
 msgid "Column gap unit"
 msgstr "Unidad de separación de columnas"
 
-#: dist/index.js:2 src/blocks/recent-posts/edit.js:284
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:290
 msgid "Image width"
 msgstr "Ancho de imagen"
 
-#: dist/index.js:2 src/blocks/recent-posts/edit.js:389
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:406
 msgid "List view"
 msgstr "Vista de lista"
 
-#: dist/index.js:2 src/blocks/recent-posts/edit.js:395
+#: dist/index.js:2 src/blocks/recent-posts/edit.js:412
 msgid "Grid view"
 msgstr "Vista de grilla"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/recent-posts/index.js:25
-#: src/blocks/recent-posts/index.js:30
+#: dist/index.js:2 src/blocks/recent-posts/index.js:24
+#: src/blocks/recent-posts/index.js:32
 msgid "Recent Posts"
 msgstr "Entradas Recientes"
 
@@ -1456,60 +1456,60 @@ msgstr "Etiqueta HTML"
 msgid "Vertical alignment"
 msgstr "Alineación vertical"
 
-#: dist/index.js:2 src/blocks/row/edit.js:278
+#: dist/index.js:2 src/blocks/row/edit.js:287
 msgid "Background"
 msgstr "Fondo"
 
-#: dist/index.js:2 src/blocks/row/edit.js:376
+#: dist/index.js:2 src/blocks/row/edit.js:385
 msgid "Media Size"
 msgstr "Tamaño de multimedia"
 
-#: dist/index.js:2 src/blocks/row/edit.js:428
+#: dist/index.js:2 src/blocks/row/edit.js:438
 msgid "Auto"
 msgstr "Automático"
 
-#: dist/index.js:2 src/blocks/row/edit.js:429
+#: dist/index.js:2 src/blocks/row/edit.js:442
 msgid "Cover"
 msgstr "Cubrir"
 
-#: dist/index.js:2 src/blocks/row/edit.js:430
+#: dist/index.js:2 src/blocks/row/edit.js:446
 msgid "Contain"
 msgstr "Contener"
 
-#: dist/index.js:2 src/blocks/row/edit.js:444 src/blocks/row/edit.js:447
+#: dist/index.js:2 src/blocks/row/edit.js:462 src/blocks/row/edit.js:466
 msgid "Repeat"
 msgstr "Repetir"
 
-#: dist/index.js:2 src/blocks/row/edit.js:448
+#: dist/index.js:2 src/blocks/row/edit.js:470
 msgid "Repeat X"
 msgstr "Repetir X"
 
-#: dist/index.js:2 src/blocks/row/edit.js:449
+#: dist/index.js:2 src/blocks/row/edit.js:474
 msgid "Repeat Y"
 msgstr "Repetir Y"
 
-#: dist/index.js:2 src/blocks/row/edit.js:450
+#: dist/index.js:2 src/blocks/row/edit.js:478
 msgid "No repeat"
 msgstr "No repetir"
 
-#: dist/index.js:2 src/blocks/row/edit.js:470
+#: dist/index.js:2 src/blocks/row/edit.js:500
 msgid "Fixed background"
 msgstr "Fondo fijo"
 
-#: dist/index.js:2 src/blocks/row/edit.js:477
+#: dist/index.js:2 src/blocks/row/edit.js:507
 msgid "Overlay"
 msgstr "Capa superpuesta"
 
-#: dist/index.js:2 src/blocks/row/edit.js:487
+#: dist/index.js:2 src/blocks/row/edit.js:517
 msgid "Overlay opacity"
 msgstr "Opacidad de capa superpuesta"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/row/index.js:26 src/blocks/row/index.js:31
+#: dist/index.js:2 src/blocks/row/index.js:25 src/blocks/row/index.js:33
 msgid "Row"
 msgstr "Fila"
 
-#: dist/index.js:2 src/blocks/row/index.js:27
+#: dist/index.js:2 src/blocks/row/index.js:26
 msgid "Organize and structure your content within this feature-rich block."
 msgstr ""
 "Organiza y estructura tu contenido dentro de este bloque rico en funciones."
@@ -1522,7 +1522,7 @@ msgstr ""
 "La unidad individual que funciona como el componente estructural principal "
 "para el bloque de pestañas."
 
-#: dist/index.js:2 src/blocks/tab-panel/index.js:44
+#: dist/index.js:2 src/blocks/tab-panel/index.js:49
 msgid "Add content…"
 msgstr "Añade el contenido…"
 
@@ -1547,7 +1547,7 @@ msgid "Add tab"
 msgstr "Añadir pestaña"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/tabs/index.js:25 src/blocks/tabs/index.js:30
+#: dist/index.js:2 src/blocks/tabs/index.js:25 src/blocks/tabs/index.js:33
 msgid "Tabs"
 msgstr "Pestañas"
 
@@ -1556,12 +1556,12 @@ msgid "Divide and organize your content through tabs."
 msgstr "Divide y organiza tu contenido a través de pestañas."
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/tabs/index.js:44
+#: dist/index.js:2 src/blocks/tabs/index.js:47
 msgid "Underlined"
 msgstr "Subrayado"
 
 #. translators: block style
-#: dist/index.js:2 src/blocks/tabs/index.js:49
+#: dist/index.js:2 src/blocks/tabs/index.js:52
 msgid "Pills"
 msgstr "Pastillas"
 
@@ -1597,25 +1597,25 @@ msgstr "Mostrar referencia"
 msgid "Hide reference"
 msgstr "Ocultar referencia"
 
-#: dist/index.js:2 src/blocks/testimonial/edit.js:289
+#: dist/index.js:2 src/blocks/testimonial/edit.js:295
 msgid "Write quote…"
 msgstr "Escribe la cita…"
 
-#: dist/index.js:2 src/blocks/testimonial/edit.js:311
+#: dist/index.js:2 src/blocks/testimonial/edit.js:317
 msgid "Choose testimonial image"
 msgstr "Elegir imagen de testimonio"
 
-#: dist/index.js:2 src/blocks/testimonial/edit.js:331
+#: dist/index.js:2 src/blocks/testimonial/edit.js:340
 msgid "Write reference…"
 msgstr "Escribe la referencia…"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/testimonial/index.js:26
-#: src/blocks/testimonial/index.js:31
+#: dist/index.js:2 src/blocks/testimonial/index.js:25
+#: src/blocks/testimonial/index.js:33
 msgid "Testimonial"
 msgstr "Testimonio"
 
-#: dist/index.js:2 src/blocks/testimonial/index.js:27
+#: dist/index.js:2 src/blocks/testimonial/index.js:26
 msgid "Present your customers thoughts of your products and/or services."
 msgstr ""
 "Muestra la opinión de tus clientes acerca de tus productos y/o servicios."
@@ -1805,12 +1805,12 @@ msgid "Zulu"
 msgstr "Zulú"
 
 #. translators: block keyword
-#: dist/index.js:2 src/blocks/weather/index.js:25
-#: src/blocks/weather/index.js:30
+#: dist/index.js:2 src/blocks/weather/index.js:24
+#: src/blocks/weather/index.js:32
 msgid "Weather"
 msgstr "Clima"
 
-#: dist/index.js:2 src/blocks/weather/index.js:26
+#: dist/index.js:2 src/blocks/weather/index.js:25
 msgid "Display the weather conditions for a chosen location."
 msgstr "Muestra las condiciones meteorológicas de una ubicación elegida."
 
@@ -2376,7 +2376,7 @@ msgstr "3 veces"
 msgid "Infinitely"
 msgstr "Indefinidamente"
 
-#: dist/index.js:2 src/hooks/animation.js:37
+#: dist/index.js:2 src/hooks/animation.js:38
 msgid "Animation"
 msgstr "Animación"
 
