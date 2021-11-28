@@ -4,7 +4,8 @@
   "category": "fleximple-blocks",
   "attributes": {
     "postId": {
-      "type": "number"
+      "type": "number",
+      "default": null
     },
     "postType": {
       "type": "string",
