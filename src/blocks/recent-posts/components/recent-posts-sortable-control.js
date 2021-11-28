@@ -16,423 +16,281 @@ import { arrayMoveImmutable } from 'array-move'
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
-const { Icon, Button } = wp.components
-const { Component } = wp.element
+import { Button, Icon } from '@wordpress/components'
 
 /**
  * Internal dependencies
  */
 import { interactionIcons } from 'fleximple-components/components/icons'
 
-class RecentPostsSortableControl extends Component {
-  constructor() {
-    super( ...arguments )
-
-    this.onSortStart = this.onSortStart.bind( this )
-    this.onContentSortEnd = this.onContentSortEnd.bind( this )
-    this.onMediaSortEnd = this.onMediaSortEnd.bind( this )
-    this.onMetaSortEnd = this.onMetaSortEnd.bind( this )
-    this.getLabel = this.getLabel.bind( this )
-    this.getHelpText = this.getHelpText.bind( this )
-    this.getState = this.getState.bind( this )
-    this.toggleAttribute = this.toggleAttribute.bind( this )
-
-    this.state = {}
-  }
-
-  onSortStart = () => {
+const RecentPostsSortableControl = ({
+  attributes,
+  attributes: {
+    orderArticle,
+    orderContent,
+    orderMedia,
+    orderMeta,
+  },
+  setAttributes,
+}) => {
+  const onSortStart = () => {
     document.body.setAttribute( 'style', 'cursor:grabbing' )
   }
 
-  onSortEnd = ({ oldIndex, newIndex }) => {
+  const onSortEnd = ({ oldIndex, newIndex }) => {
     document.body.removeAttribute( 'style' )
-    const orderArticle = arrayMoveImmutable(
-      this.props.attributes.orderArticle,
-      oldIndex,
-      newIndex,
-    )
-    this.props.setAttributes({ orderArticle })
+    const orderArticle = arrayMoveImmutable( orderArticle, oldIndex, newIndex )
+    setAttributes({ orderArticle })
   }
 
-  onMediaSortEnd = ({ oldIndex, newIndex }) => {
+  const onMediaSortEnd = ({ oldIndex, newIndex }) => {
     document.body.removeAttribute( 'style' )
-    const orderMedia = arrayMoveImmutable(
-      this.props.attributes.orderMedia,
-      oldIndex,
-      newIndex,
-    )
-    this.props.setAttributes({ orderMedia })
+    const orderMedia = arrayMoveImmutable( orderMedia, oldIndex, newIndex )
+    setAttributes({ orderMedia })
   }
 
-  onContentSortEnd = ({ oldIndex, newIndex }) => {
+  const onContentSortEnd = ({ oldIndex, newIndex }) => {
     document.body.removeAttribute( 'style' )
-    const orderContent = arrayMoveImmutable(
-      this.props.attributes.orderContent,
-      oldIndex,
-      newIndex,
-    )
-    this.props.setAttributes({ orderContent })
+    const orderContent = arrayMoveImmutable( orderContent, oldIndex, newIndex )
+    setAttributes({ orderContent })
   }
 
-  onMetaSortEnd = ({ oldIndex, newIndex }) => {
+  const onMetaSortEnd = ({ oldIndex, newIndex }) => {
     document.body.removeAttribute( 'style' )
-    const orderMeta = arrayMoveImmutable(
-      this.props.attributes.orderMeta,
-      oldIndex,
-      newIndex,
+    const orderMeta = arrayMoveImmutable( orderMeta, oldIndex, newIndex )
+    setAttributes({ orderMeta })
+  }
+
+  const getLabel = attribute => {
+    switch ( attribute ) {
+      case 'media':
+        return __( 'Media', 'fleximpleblocks' )
+      case 'featuredImage':
+        return __( 'Featured image', 'fleximpleblocks' )
+      case 'content':
+        return __( 'Content', 'fleximpleblocks' )
+      case 'categories':
+        return __( 'Categories', 'fleximpleblocks' )
+      case 'title':
+        return __( 'Title', 'fleximpleblocks' )
+      case 'meta':
+        return __( 'Meta', 'fleximpleblocks' )
+      case 'author':
+        return __( 'Author', 'fleximpleblocks' )
+      case 'date':
+        return __( 'Date', 'fleximpleblocks' )
+      case 'comments':
+        return __( 'Comments', 'fleximpleblocks' )
+      case 'excerpt':
+        return __( 'Excerpt', 'fleximpleblocks' )
+      case 'readMore':
+        return __( 'Read more', 'fleximpleblocks' )
+    }
+  }
+
+  const getHelpText = ( attribute, state ) => {
+    switch ( attribute ) {
+      case 'media':
+        return state === 'hidden'
+          ? __( 'Display media', 'fleximpleblocks' )
+          : __( 'Hide media', 'fleximpleblocks' )
+      case 'featuredImage':
+        return state === 'hidden'
+          ? __( 'Display featured image', 'fleximpleblocks' )
+          : __( 'Hide featured image', 'fleximpleblocks' )
+      case 'content':
+        return state === 'hidden'
+          ? __( 'Display content', 'fleximpleblocks' )
+          : __( 'Hide content', 'fleximpleblocks' )
+      case 'categories':
+        return state === 'hidden'
+          ? __( 'Display categories', 'fleximpleblocks' )
+          : __( 'Hide categories', 'fleximpleblocks' )
+      case 'title':
+        return state === 'hidden'
+          ? __( 'Display title', 'fleximpleblocks' )
+          : __( 'Hide title', 'fleximpleblocks' )
+      case 'meta':
+        return state === 'hidden'
+          ? __( 'Display meta', 'fleximpleblocks' )
+          : __( 'Hide meta', 'fleximpleblocks' )
+      case 'author':
+        return state === 'hidden'
+          ? __( 'Display author', 'fleximpleblocks' )
+          : __( 'Hide author', 'fleximpleblocks' )
+      case 'date':
+        return state === 'hidden'
+          ? __( 'Display date', 'fleximpleblocks' )
+          : __( 'Hide date', 'fleximpleblocks' )
+      case 'comments':
+        return state === 'hidden'
+          ? __( 'Display comments', 'fleximpleblocks' )
+          : __( 'Hide comments', 'fleximpleblocks' )
+      case 'excerpt':
+        return state === 'hidden'
+          ? __( 'Display excerpt', 'fleximpleblocks' )
+          : __( 'Hide excerpt', 'fleximpleblocks' )
+      case 'readMore':
+        return state === 'hidden'
+          ? __( 'Display read more', 'fleximpleblocks' )
+          : __( 'Hide read more', 'fleximpleblocks' )    
+    }
+  }
+
+  const getState = attribute => {
+    const displayAttribute = `display${ attribute.charAt( 0 ).toUpperCase() }${ attribute.slice( 1 ) }`
+    return attributes[ displayAttribute ]
+  }
+
+  const toggleAttribute = attribute => {
+    const displayAttribute = `display${ attribute.charAt( 0 ).toUpperCase() }${ attribute.slice( 1 ) }`
+    setAttributes({ [ displayAttribute ]: !attributes[ displayAttribute ] })
+  }
+
+  const DragHandle = SortableHandle( () => {
+    return (
+      <div className="fleximple-components-sortable-control__drag-handle">
+        <Icon icon={ interactionIcons.dragHandle } />
+      </div>
     )
-    this.props.setAttributes({ orderMeta })
-  }
+  })
 
-  getLabel( attribute ) {
-    if ( 'media' === attribute ) {
-      return __( 'Media', 'fleximpleblocks' )
-    }
-    if ( 'featuredImage' === attribute ) {
-      return __( 'Featured image', 'fleximpleblocks' )
-    }
-    if ( 'content' === attribute ) {
-      return __( 'Content', 'fleximpleblocks' )
-    }
-    if ( 'categories' === attribute ) {
-      return __( 'Categories', 'fleximpleblocks' )
-    }
-    if ( 'title' === attribute ) {
-      return __( 'Title', 'fleximpleblocks' )
-    }
-    if ( 'meta' === attribute ) {
-      return __( 'Meta', 'fleximpleblocks' )
-    }
-    if ( 'author' === attribute ) {
-      return __( 'Author', 'fleximpleblocks' )
-    }
-    if ( 'date' === attribute ) {
-      return __( 'Date', 'fleximpleblocks' )
-    }
-    if ( 'comments' === attribute ) {
-      return __( 'Comments', 'fleximpleblocks' )
-    }
-    if ( 'excerpt' === attribute ) {
-      return __( 'Excerpt', 'fleximpleblocks' )
-    }
-    if ( 'readMore' === attribute ) {
-      return __( 'Read more', 'fleximpleblocks' )
-    }
-  }
+  const Item = ({ value }) => {
+    const label = getLabel( value )
+    let icon = 'hidden'
+    let text = getHelpText( value, 'hidden' )
 
-  getHelpText( attribute, state ) {
-    if ( 'media' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display media', 'fleximpleblocks' )
-      }
-      return __( 'Hide media', 'fleximpleblocks' )
+    if ( getState( value ) ) {
+      icon = 'visibility'
+      text = getHelpText( value, 'visible' )
     }
-    if ( 'featuredImage' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display featured image', 'fleximpleblocks' )
-      }
-      return __( 'Hide featured image', 'fleximpleblocks' )
-    }
-    if ( 'content' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display content', 'fleximpleblocks' )
-      }
-      return __( 'Hide content', 'fleximpleblocks' )
-    }
-    if ( 'categories' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display categories', 'fleximpleblocks' )
-      }
-      return __( 'Hide categories', 'fleximpleblocks' )
-    }
-    if ( 'title' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display title', 'fleximpleblocks' )
-      }
-      return __( 'Hide title', 'fleximpleblocks' )
-    }
-    if ( 'meta' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display meta', 'fleximpleblocks' )
-      }
-      return __( 'Hide meta', 'fleximpleblocks' )
-    }
-    if ( 'author' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display author', 'fleximpleblocks' )
-      }
-      return __( 'Hide author', 'fleximpleblocks' )
-    }
-    if ( 'date' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display date', 'fleximpleblocks' )
-      }
-      return __( 'Hide date', 'fleximpleblocks' )
-    }
-    if ( 'comments' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display comments', 'fleximpleblocks' )
-      }
-      return __( 'Hide comments', 'fleximpleblocks' )
-    }
-    if ( 'excerpt' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display excerpt', 'fleximpleblocks' )
-      }
-      return __( 'Hide excerpt', 'fleximpleblocks' )
-    }
-    if ( 'readMore' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display read more', 'fleximpleblocks' )
-      }
-      return __( 'Hide read more', 'fleximpleblocks' )
-    }
-  }
-
-  getState( attribute ) {
-    if ( 'media' === attribute ) {
-      return this.props.attributes.displayMedia
-    }
-    if ( 'featuredImage' === attribute ) {
-      return this.props.attributes.displayFeaturedImage
-    }
-    if ( 'content' === attribute ) {
-      return this.props.attributes.displayContent
-    }
-    if ( 'categories' === attribute ) {
-      return this.props.attributes.displayCategories
-    }
-    if ( 'title' === attribute ) {
-      return this.props.attributes.displayTitle
-    }
-    if ( 'meta' === attribute ) {
-      return this.props.attributes.displayMeta
-    }
-    if ( 'author' === attribute ) {
-      return this.props.attributes.displayAuthor
-    }
-    if ( 'date' === attribute ) {
-      return this.props.attributes.displayDate
-    }
-    if ( 'comments' === attribute ) {
-      return this.props.attributes.displayComments
-    }
-    if ( 'excerpt' === attribute ) {
-      return this.props.attributes.displayExcerpt
-    }
-    if ( 'readMore' === attribute ) {
-      return this.props.attributes.displayReadMore
-    }
-  }
-
-  toggleAttribute( attribute ) {
-    if ( 'media' === attribute ) {
-      this.props.setAttributes({
-        displayMedia: !this.props.attributes.displayMedia,
-      })
-    }
-    if ( 'featuredImage' === attribute ) {
-      this.props.setAttributes({
-        displayFeaturedImage: !this.props.attributes.displayFeaturedImage,
-      })
-    }
-    if ( 'content' === attribute ) {
-      this.props.setAttributes({
-        displayContent: !this.props.attributes.displayContent,
-      })
-    }
-    if ( 'categories' === attribute ) {
-      this.props.setAttributes({
-        displayCategories: !this.props.attributes.displayCategories,
-      })
-    }
-    if ( 'title' === attribute ) {
-      this.props.setAttributes({
-        displayTitle: !this.props.attributes.displayTitle,
-      })
-    }
-    if ( 'meta' === attribute ) {
-      this.props.setAttributes({
-        displayMeta: !this.props.attributes.displayMeta,
-      })
-    }
-    if ( 'author' === attribute ) {
-      this.props.setAttributes({
-        displayAuthor: !this.props.attributes.displayAuthor,
-      })
-    }
-    if ( 'date' === attribute ) {
-      this.props.setAttributes({
-        displayDate: !this.props.attributes.displayDate,
-      })
-    }
-    if ( 'comments' === attribute ) {
-      this.props.setAttributes({
-        displayComments: !this.props.attributes.displayComments,
-      })
-    }
-    if ( 'excerpt' === attribute ) {
-      this.props.setAttributes({
-        displayExcerpt: !this.props.attributes.displayExcerpt,
-      })
-    }
-    if ( 'readMore' === attribute ) {
-      this.props.setAttributes({
-        displayReadMore: !this.props.attributes.displayReadMore,
-      })
-    }
-  }
-
-  render() {
-    const {
-      attributes: { orderArticle, orderContent, orderMedia, orderMeta },
-    } = this.props
-
-    const DragHandle = SortableHandle( () => {
-      return (
-        <div className="fleximple-components-sortable-control__drag-handle">
-          <Icon icon={ interactionIcons.dragHandle } />
-        </div>
-      )
-    })
-
-    const Item = ({ value }) => {
-      const label = this.getLabel( value )
-      let icon = 'hidden'
-      let text = this.getHelpText( value, 'hidden' )
-
-      if ( this.getState( value ) ) {
-        icon = 'visibility'
-        text = this.getHelpText( value, 'visible' )
-      }
-
-      return (
-        <div className="fleximple-components-sortable-control__item is-disabled">
-          <div className="fleximple-components-sortable-control__label">
-            { label }
-          </div>
-          <Button
-            icon={ icon }
-            label={ text }
-            className="fleximple-components-sortable-control__button"
-            onClick={ () => this.toggleAttribute( value ) }
-          />
-        </div>
-      )
-    }
-
-    const SortableItem = SortableElement( ({ value }) => {
-      const label = this.getLabel( value )
-      let icon = 'hidden'
-      let text = this.getHelpText( value, 'hidden' )
-
-      if ( this.getState( value ) ) {
-        icon = 'visibility'
-        text = this.getHelpText( value, 'visible' )
-      }
-
-      return (
-        <div className="fleximple-components-sortable-control__item">
-          <DragHandle />
-          <div className="fleximple-components-sortable-control__label">
-            { label }
-          </div>
-          <Button
-            icon={ icon }
-            label={ text }
-            className="fleximple-components-sortable-control__button"
-            onClick={ () => this.toggleAttribute( value ) }
-          />
-        </div>
-      )
-    })
-
-    const SortableList = SortableContainer( ({ items }) => {
-      return (
-        <div className="fleximple-components-sortable-control__sortable-list">
-          { items.map( ( value, index ) => {
-            // Used for not sortable items
-            // if ( 'featuredImage' === value ) {
-            // 	return <Item key={ `item-${ index }` } index={ index } value={ value } />;
-            // }
-            if ( 'media' === value ) {
-              return (
-                <>
-                  <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
-                  />
-                  <SortableList
-                    items={ orderMedia }
-                    onSortStart={ this.onSortStart }
-                    onSortEnd={ this.onMediaSortEnd }
-                    useDragHandle
-                    // pressDelay={ 100 }
-                    helperClass="fleximple-components-sortable-control__helper"
-                  />
-                </>
-              )
-            }
-            if ( 'content' === value ) {
-              return (
-                <>
-                  <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
-                  />
-                  <SortableList
-                    items={ orderContent }
-                    onSortStart={ this.onSortStart }
-                    onSortEnd={ this.onContentSortEnd }
-                    useDragHandle
-                    // pressDelay={ 100 }
-                    helperClass="fleximple-components-sortable-control__helper"
-                  />
-                </>
-              )
-            }
-            if ( 'meta' === value ) {
-              return (
-                <>
-                  <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
-                  />
-                  <SortableList
-                    items={ orderMeta }
-                    onSortStart={ this.onSortStart }
-                    onSortEnd={ this.onMetaSortEnd }
-                    useDragHandle
-                    // pressDelay={ 100 }
-                    helperClass="fleximple-components-sortable-control__helper"
-                  />
-                </>
-              )
-            }
-            return (
-              <SortableItem key={ `item-${ index }` } index={ index } value={ value } />
-            )
-          }) }
-        </div>
-      )
-    })
 
     return (
-      <div className="fleximple-components-sortable-control">
-        <SortableList
-          items={ orderArticle }
-          onSortStart={ this.onSortStart }
-          onSortEnd={ this.onSortEnd }
-          useDragHandle
-          // pressDelay={ 100 }
-          helperClass="fleximple-components-sortable-control__helper"
+      <div className="fleximple-components-sortable-control__item is-disabled">
+        <div className="fleximple-components-sortable-control__label">
+          { label }
+        </div>
+        <Button
+          icon={ icon }
+          label={ text }
+          className="fleximple-components-sortable-control__button"
+          onClick={ () => toggleAttribute( value ) }
         />
       </div>
     )
   }
+
+  const SortableItem = SortableElement( ({ value }) => {
+    const label = getLabel( value )
+    let icon = 'hidden'
+    let text = getHelpText( value, 'hidden' )
+
+    if ( getState( value ) ) {
+      icon = 'visibility'
+      text = getHelpText( value, 'visible' )
+    }
+
+    return (
+      <div className="fleximple-components-sortable-control__item">
+        <DragHandle />
+        <div className="fleximple-components-sortable-control__label">
+          { label }
+        </div>
+        <Button
+          icon={ icon }
+          label={ text }
+          className="fleximple-components-sortable-control__button"
+          onClick={ () => toggleAttribute( value ) }
+        />
+      </div>
+    )
+  })
+
+  const SortableList = SortableContainer( ({ items }) => {
+    return (
+      <div className="fleximple-components-sortable-control__sortable-list">
+        { items.map( ( value, index ) => {
+          // Used for not sortable items
+          // if ( 'featuredImage' === value ) {
+          // 	return <Item key={ `item-${ index }` } index={ index } value={ value } />;
+          // }
+          if ( 'media' === value ) {
+            return (
+              <>
+                <SortableItem
+                  key={ `item-${ index }` }
+                  index={ index }
+                  value={ value }
+                />
+                <SortableList
+                  items={ orderMedia }
+                  onSortStart={ onSortStart }
+                  onSortEnd={ onMediaSortEnd }
+                  useDragHandle
+                  // pressDelay={ 100 }
+                  helperClass="fleximple-components-sortable-control__helper"
+                />
+              </>
+            )
+          }
+          if ( 'content' === value ) {
+            return (
+              <>
+                <SortableItem
+                  key={ `item-${ index }` }
+                  index={ index }
+                  value={ value }
+                />
+                <SortableList
+                  items={ orderContent }
+                  onSortStart={ onSortStart }
+                  onSortEnd={ onContentSortEnd }
+                  useDragHandle
+                  // pressDelay={ 100 }
+                  helperClass="fleximple-components-sortable-control__helper"
+                />
+              </>
+            )
+          }
+          if ( 'meta' === value ) {
+            return (
+              <>
+                <SortableItem
+                  key={ `item-${ index }` }
+                  index={ index }
+                  value={ value }
+                />
+                <SortableList
+                  items={ orderMeta }
+                  onSortStart={ onSortStart }
+                  onSortEnd={ onMetaSortEnd }
+                  useDragHandle
+                  // pressDelay={ 100 }
+                  helperClass="fleximple-components-sortable-control__helper"
+                />
+              </>
+            )
+          }
+          return (
+            <SortableItem key={ `item-${ index }` } index={ index } value={ value } />
+          )
+        }) }
+      </div>
+    )
+  })
+
+  return (
+    <div className="fleximple-components-sortable-control">
+      <SortableList
+        items={ orderArticle }
+        onSortStart={ onSortStart }
+        onSortEnd={ onSortEnd }
+        useDragHandle
+        // pressDelay={ 100 }
+        helperClass="fleximple-components-sortable-control__helper"
+      />
+    </div>
+  )
 }
 
 export default RecentPostsSortableControl
