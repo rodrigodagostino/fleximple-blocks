@@ -55,7 +55,7 @@ module.exports = {
     'comma-style': 'error',
     'computed-property-spacing': [ 'error', 'always' ],
     'func-call-spacing': 'error',
-    indent: [ 'error', 2 ],
+    indent: [ 'error', 2, { SwitchCase: 1 } ],
     'key-spacing': [ 'error', { afterColon: true } ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
