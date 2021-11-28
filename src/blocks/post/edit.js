@@ -19,7 +19,8 @@ import {
   ToggleControl,
 } from '@wordpress/components'
 import { withInstanceId } from '@wordpress/compose'
-import { useEffect, useRef, useState } from '@wordpress/element'
+import { useEffect, useMemo, useState } from '@wordpress/element'
+import { addQueryArgs } from '@wordpress/url'
 
 /**
  * Internal dependencies
@@ -57,10 +58,8 @@ function PostEdit({
   instanceId,
 }) {
   const [ postData, setPostData ] = useState( null )
-  const [ isFetching, setIsFetching ] = useState( true )
+  const [ isFetching, setIsFetching ] = useState( false )
   const [ imageSizeOptions, setImageSizeOptions ] = useState( [] )
-
-  const prevPostId = useRef( postId || null )
 
   useEffect( () => {
     if ( !attributes.className ) {
@@ -68,21 +67,33 @@ function PostEdit({
     }
 
     if ( !postId ) {
-      fetchRandomPostData()
+      fetchRandomPostId()
       return
     }
     fetchPostData()
   }, [] )
 
-  useEffect( () => {
-    if ( prevPostId.current !== postId ) {
-      fetchPostData()
-    }
-    prevPostId.current = postId
-  }, [ postId ] )
+  const fetchRandomPostId = () => {
+    if ( isFetching ) return
+
+    apiFetch({
+      path: addQueryArgs( '/wp/v2/posts', {
+        per_page: 20,
+      }),
+    })
+      .then( results => {
+        const randomIndex = Math.floor( Math.random() * results.length )
+        setAttributes({
+          postId: results[ randomIndex ].id,
+        })
+      })
+      .catch( error => console.error( error ) )
+  }
 
   const fetchPostData = () => {
+    if ( isFetching || !postId || !postType ) return
     setIsFetching( true )
+
     apiFetch({
       path: `/wp/v2/${ postType }/${ postId }`,
     })
@@ -92,27 +103,12 @@ function PostEdit({
           setAttributes({ displayAudio: false })
         }
         filterImageSizeOptions( result )
-        setIsFetching( false )
       })
       .catch( error => console.error( error ) )
+      .finally( () => setIsFetching( false ) )
   }
 
-  const fetchRandomPostData = () => {
-    setIsFetching( true )
-    apiFetch({ path: '/wp/v2/posts/' })
-      .then( results => {
-        const randomIndex = Math.floor( Math.random() * results.length )
-        const randomPostData = results[ randomIndex ]
-        setPostData( randomPostData )
-        prevPostId.current = randomPostData.id
-        setAttributes({
-          postId: randomPostData.id,
-        })
-        filterImageSizeOptions( randomPostData )
-        setIsFetching( false )
-      })
-      .catch( error => console.error( error ) )
-  }
+  useMemo( () => fetchPostData(), [ postId ] )
 
   const filterImageSizeOptions = data => {
     if ( data && data.featured_media_data ) {
