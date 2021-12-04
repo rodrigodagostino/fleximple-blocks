@@ -16,10 +16,16 @@ import {
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
-import { Button, Icon, Path, SVG } from '@wordpress/components'
+import { Button, Icon } from '@wordpress/components'
+ 
+/**
+  * Internal dependencies
+  */
+import { interactionIcons } from 'fleximple-components/components/icons'
 
 function HeaderSortableControl({
-  attributes: { order, displayHeading, displaySubhead, displayAdditional },
+  attributes,
+  attributes: { order },
   setAttributes,
 }) {
   const onSortStart = () => {
@@ -44,60 +50,36 @@ function HeaderSortableControl({
   }
 
   const getHelpText = ( attribute, state ) => {
-    if ( 'heading' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display heading', 'fleximpleblocks' )
-      }
-      return __( 'Hide heading', 'fleximpleblocks' )
-    }
-    if ( 'subhead' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display subhead', 'fleximpleblocks' )
-      }
-      return __( 'Hide subhead', 'fleximpleblocks' )
-    }
-    if ( 'additional' === attribute ) {
-      if ( state === 'hidden' ) {
-        return __( 'Display additional content', 'fleximpleblocks' )
-      }
-      return __( 'Hide additional content', 'fleximpleblocks' )
+    switch ( attribute ) {
+      case 'heading':
+        return state === 'hidden'
+          ? __( 'Display heading', 'fleximpleblocks' )
+          : __( 'Hide heading', 'fleximpleblocks' )
+      case 'subhead':
+        return state === 'hidden'
+          ? __( 'Display subhead', 'fleximpleblocks' )
+          : __( 'Hide subhead', 'fleximpleblocks' )
+      case 'additional':
+        return state === 'hidden'
+          ? __( 'Display additional content', 'fleximpleblocks' )
+          : __( 'Hide additional content', 'fleximpleblocks' )
     }
   }
 
   const getState = attribute => {
-    if ( 'heading' === attribute ) {
-      return displayHeading
-    }
-    if ( 'subhead' === attribute ) {
-      return displaySubhead
-    }
-    if ( 'additional' === attribute ) {
-      return displayAdditional
-    }
+    const displayAttribute = `display${ attribute.charAt( 0 ).toUpperCase() }${ attribute.slice( 1 ) }`
+    return attributes[ displayAttribute ]
   }
 
   const toggleAttribute = attribute => {
-    if ( 'heading' === attribute ) {
-      setAttributes({ displayHeading: !displayHeading })
-    }
-    if ( 'subhead' === attribute ) {
-      setAttributes({ displaySubhead: !displaySubhead })
-    }
-    if ( 'additional' === attribute ) {
-      setAttributes({ displayAdditional: !displayAdditional })
-    }
+    const displayAttribute = `display${ attribute.charAt( 0 ).toUpperCase() }${ attribute.slice( 1 ) }`
+    setAttributes({ [ displayAttribute ]: !attributes[ displayAttribute ] })
   }
 
   const DragHandle = SortableHandle( () => {
     return (
       <div className="fleximple-components-sortable-control__drag-handle">
-        <Icon
-          icon={ () => (
-            <SVG width="18" height="18" aria-hidden="true">
-              <Path d="M10 13c0 .6.4 1 1 1s1-.4 1-1-.4-1-1-1-1 .4-1 1zm2-8c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1zM8 5c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1zm0 8c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1zm4-4c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1zM8 9c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1z" />
-            </SVG>
-          ) }
-        />
+        <Icon icon={ interactionIcons.dragHandle } />
       </div>
     )
   })
