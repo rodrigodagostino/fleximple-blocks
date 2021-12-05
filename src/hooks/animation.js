@@ -10,13 +10,11 @@ import { hasBlockSupport } from '@wordpress/blocks'
 import { InspectorControls } from '@wordpress/block-editor'
 import { PanelBody } from '@wordpress/components'
 import { createHigherOrderComponent } from '@wordpress/compose'
-import { } from '@wordpress/element'
 
 /**
  * Internal dependencies
  */
 import AnimationControls from 'fleximple-components/components/animation-controls'
-
 
 /**
  * Override the default edit UI to include a new block inspector control for
@@ -38,7 +36,7 @@ export const withInspectorControls = createHigherOrderComponent( BlockEdit => {
               title={ __( 'Animation', 'fleximpleblocks' ) }
               initialOpen={ false }
             >
-              <AnimationControls { ... props } />
+              <AnimationControls { ...props } />
             </PanelBody>
           </InspectorControls>
         </>
@@ -48,7 +46,6 @@ export const withInspectorControls = createHigherOrderComponent( BlockEdit => {
     return <BlockEdit { ...props } />
   }
 }, 'withInspectorControl' )
-
 
 wp.hooks.addFilter(
   'editor.BlockEdit',
