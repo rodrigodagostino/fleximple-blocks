@@ -16,6 +16,7 @@ module.exports = {
     window: true,
     document: true,
     fetch: false,
+    MutationObserver: true,
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
