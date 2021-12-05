@@ -11,7 +11,7 @@ $default-class-name: "fleximple-block-tabs";
     display: flex;
     flex-wrap: wrap;
 
-    &.block-align-left {
+    &.block-align-start {
       justify-content: flex-start;
     }
 
@@ -19,7 +19,7 @@ $default-class-name: "fleximple-block-tabs";
       justify-content: center;
     }
 
-    &.block-align-right {
+    &.block-align-end {
       justify-content: flex-end;
     }
 
