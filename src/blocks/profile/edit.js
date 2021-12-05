@@ -418,7 +418,7 @@ function ProfileEdit({
             }`
           }
 
-          { ( !!textAlignment.large || !!mediaGap.large.value || !!contentGap.large.value || !!mediaWidth.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) && 
+          { ( !!textAlignment.large || !!mediaGap.large.value || !!contentGap.large.value || !!mediaWidth.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) &&
             `@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
             ${ textAlignment.large ? `
               .${ defaultClassName }.text-align-${ textAlignment.large }--lg .fleximple-components__media-placeholder {
@@ -476,7 +476,7 @@ function ProfileEdit({
             </MediaUploadCheck>
           </figure>
 
-          <div className={ `${ defaultClassName }__content` }>	
+          <div className={ `${ defaultClassName }__content` }>
             <InnerBlocks
               template={ TEMPLATE }
               templateLock={ false }

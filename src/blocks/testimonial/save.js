@@ -99,7 +99,7 @@ class TestimonialSave extends Component {
 							border-radius: ${ mediaBorderRadius.small.value + mediaBorderRadius.small.unit };
 						}` : '' }
 
-          { ( !!gap.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) && 
+          { ( !!gap.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
 						${ gap.medium.value ?
         `.${ defaultClassName }.gap-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md > * {
@@ -116,7 +116,7 @@ class TestimonialSave extends Component {
 						}`
           }
 
-          { ( !!gap.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) && 
+          { ( !!gap.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
 						${ gap.large.value ?
         `.${ defaultClassName }.gap-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg > * {

@@ -69,7 +69,7 @@ function URLPicker({
     // prevents default behaviour for event
     return false
   }
-  const linkControl = isURLPickerOpen && 
+  const linkControl = isURLPickerOpen &&
   <Popover
     position="bottom center"
     onClose={ () => setIsURLPickerOpen( false ) }
@@ -89,7 +89,7 @@ function URLPicker({
       } }
     />
   </Popover>
-	
+
   return (
     <>
       <BlockControls>

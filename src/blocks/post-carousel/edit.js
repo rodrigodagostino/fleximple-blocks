@@ -159,7 +159,7 @@ function PostCarouselEdit({
 
   const hasPosts = Array.isArray( recentPosts ) && recentPosts.length
 
-  const inspectorControls = 
+  const inspectorControls =
     <InspectorControls>
       <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
         <RangeControl
@@ -376,7 +376,7 @@ function PostCarouselEdit({
                   options={ [
                     { label: __( 'None', 'fleximpleblocks' ), value: 'none' },
                     ...imageSizeOptions,
-                    { label: __( 'Full', 'fleximpleblocks' ), value: 'full' },	
+                    { label: __( 'Full', 'fleximpleblocks' ), value: 'full' },
                   ] }
                   onChange={ value => {
                     setResponsiveAttribute(
@@ -476,7 +476,7 @@ function PostCarouselEdit({
         }
       </PanelBody>
     </InspectorControls>
-  
+
   if ( !hasPosts ) {
     return (
       <>

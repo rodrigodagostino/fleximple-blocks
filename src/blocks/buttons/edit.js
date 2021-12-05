@@ -153,7 +153,7 @@ function ButtonsEdit({
 							align-items: ${ alignmentHorizontal.small };
 						}` }
 
-          { !!direction.medium && 
+          { !!direction.medium &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
 							${ direction.medium === 'row' ? `
 								.${ defaultClassName }.gap-h-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
@@ -172,7 +172,7 @@ function ButtonsEdit({
 						}`
           }
 
-          { !!direction.large && 
+          { !!direction.large &&
 						`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
 							${ direction.large === 'row' ? `
 								.${ defaultClassName }.gap-h-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {

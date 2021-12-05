@@ -126,7 +126,7 @@ const PostCarouselPreview = ({
         ] }
         { ...swiperParams }
       >
-        { hasNavigation && 
+        { hasNavigation &&
           <>
             <button className={ buttonPrevClasses } style={ buttonPrevStyles }>
               <span className="screen-reader-only">

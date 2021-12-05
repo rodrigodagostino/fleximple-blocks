@@ -120,7 +120,7 @@ function AdEdit({
         <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
           <>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab => 
+              { tab =>
                 <>
                   <BaseControl
                     label={ __( 'Image', 'fleximpleblocks' ) }
@@ -152,9 +152,9 @@ function AdEdit({
                         } }
                         allowedTypes={ ALLOWED_MEDIA_TYPES }
                         value={ id[ tab.name ] }
-                        render={ ({ open }) => 
+                        render={ ({ open }) =>
                           <>
-                            { !!id[ tab.name ] && 
+                            { !!id[ tab.name ] &&
                             <Button
                               className="button fleximple-components-button-image width-full"
                               onClick={ open }
@@ -177,7 +177,7 @@ function AdEdit({
                                 : __( 'Replace image', 'fleximpleblocks' ) }
                             </Button>
 
-                            { !!id[ tab.name ] && 
+                            { !!id[ tab.name ] &&
                             <Button
                               className="button button-link-delete width-full is-button is-large"
                               style={ { marginTop: '10px' } }
@@ -212,7 +212,7 @@ function AdEdit({
                     </MediaUploadCheck>
                   </BaseControl>
 
-                  { !!id[ tab.name ] && mediaData && 
+                  { !!id[ tab.name ] && mediaData &&
                   <SelectControl
                     label={ __( 'Size', 'fleximpleblocks' ) }
                     value={ size[ tab.name ] }
@@ -283,7 +283,7 @@ function AdEdit({
       </InspectorControls>
 
       <picture { ...blockProps }>
-        { !id.small && !id.medium && !id.large && 
+        { !id.small && !id.medium && !id.large &&
         <Placeholder
           icon={ icon }
           label={ __( 'Ad', 'fleximpleblocks' ) }
@@ -314,7 +314,7 @@ function AdEdit({
             } }
             allowedTypes={ ALLOWED_MEDIA_TYPES }
             value={ id }
-            render={ ({ open }) => 
+            render={ ({ open }) =>
               <>
                 <Button
                   className="button button-large is-button is-primary width-full"
@@ -331,7 +331,7 @@ function AdEdit({
         </Placeholder>
         }
 
-        { ( !!id.small || !!id.medium || !!id.large ) && 
+        { ( !!id.small || !!id.medium || !!id.large ) &&
         <>
           { pictureSources }
           <img

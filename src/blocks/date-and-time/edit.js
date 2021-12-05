@@ -79,7 +79,7 @@ function DateAndTimeEdit({
             onChange={ () => setAttributes({ displayDate: !displayDate }) }
           />
 
-          { displayDate && 
+          { displayDate &&
           <>
             <RadioControl
               label={ __( 'Date format', 'fleximpleblocks' ) }
@@ -118,7 +118,7 @@ function DateAndTimeEdit({
               } }
             />
 
-            { dateFormat === 'custom' && 
+            { dateFormat === 'custom' &&
             <TextControl
               label={ __( 'Custom date format', 'fleximpleblocks' ) }
               hideLabelFromVision="true"
@@ -147,7 +147,7 @@ function DateAndTimeEdit({
             onChange={ () => setAttributes({ displayTime: !displayTime }) }
           />
 
-          { displayTime && 
+          { displayTime &&
           <>
             <RadioControl
               label={ __( 'Time format', 'fleximpleblocks' ) }
@@ -178,7 +178,7 @@ function DateAndTimeEdit({
               } }
             />
 
-            { timeFormat === 'custom' && 
+            { timeFormat === 'custom' &&
             <TextControl
               label={ __( 'Custom time format', 'fleximpleblocks' ) }
               hideLabelFromVision="true"
@@ -198,7 +198,7 @@ function DateAndTimeEdit({
           </>
           }
 
-          { displayDate && displayTime && 
+          { displayDate && displayTime &&
           <TextControl
             label={ __( 'Separator', 'fleximpleblocks' ) }
             value={ separator }
@@ -213,14 +213,14 @@ function DateAndTimeEdit({
       </InspectorControls>
 
       <time { ...blockProps }>
-        { displayDate && 
+        { displayDate &&
         <span
           className={ `${ defaultClassName }__date` }
           dangerouslySetInnerHTML={ { __html: splitDate() } }
         />
         }
 
-        { separator && displayDate && displayTime && 
+        { separator && displayDate && displayTime &&
         <span
           className={ `${ defaultClassName }__separator` }
         >
@@ -228,7 +228,7 @@ function DateAndTimeEdit({
         </span>
         }
 
-        { displayTime && 
+        { displayTime &&
         <span
           className={ `${ defaultClassName }__time` }
           dangerouslySetInnerHTML={ { __html: splitTime() } }

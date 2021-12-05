@@ -1,18 +1,18 @@
 /**
-   * External dependencies
-   */
+ * External dependencies
+ */
 import classnames from 'classnames'
 
 /**
-   * WordPress dependencies
-   */
+ * WordPress dependencies
+ */
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { getColorClassName, useBlockProps } from '@wordpress/block-editor'
 import { RawHTML } from '@wordpress/element'
 
 /**
-   * Internal dependencies
-   */
+ * Internal dependencies
+ */
 import metadata from './block.json'
 
 const { name } = metadata
@@ -30,25 +30,21 @@ function IconSave({
 }) {
   const defaultClassName = getBlockDefaultClassName( name )
 
-  const classes = classnames(
-    defaultClassName, {
-      [ `${ defaultClassName }--custom` ]: hasCustomIcon,
-      'has-text-color': iconColor || customIconColor,
-      [ `block-align-h-${ alignmentHorizontal }` ]: alignmentHorizontal,
-    },
-  )
+  const classes = classnames( defaultClassName, {
+    [ `${ defaultClassName }--custom` ]: hasCustomIcon,
+    'has-text-color': iconColor || customIconColor,
+    [ `block-align-h-${ alignmentHorizontal }` ]: alignmentHorizontal,
+  })
 
   const blockProps = useBlockProps.save({
     className: classes,
   })
-      
+
   const iconColorClass = getColorClassName( 'color', iconColor )
 
-  const iconClasses = classnames(
-    iconId, {
-      [ iconColorClass ]: iconColorClass,
-    },
-  )
+  const iconClasses = classnames( iconId, {
+    [ iconColorClass ]: iconColorClass,
+  })
 
   const iconStyles = {
     fontSize: `${ iconSize }px`,
@@ -58,17 +54,13 @@ function IconSave({
 
   return (
     <>
-      { !!iconId && !hasCustomIcon &&
-      <div { ...blockProps }>
-        <i className={ iconClasses } style={ iconStyles } />
-      </div>
-      }
+      { !!iconId && !hasCustomIcon && (
+        <div { ...blockProps }>
+          <i className={ iconClasses } style={ iconStyles } />
+        </div>
+      ) }
 
-      { !!hasCustomIcon &&
-      <RawHTML { ...blockProps }>
-        { customIcon }
-      </RawHTML>
-      }
+      { !!hasCustomIcon && <RawHTML { ...blockProps }>{ customIcon }</RawHTML> }
     </>
   )
 }

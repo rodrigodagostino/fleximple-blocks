@@ -53,7 +53,7 @@ const PostCarouselPreviewArticle = ({
   },
 }) => {
   const defaultClassName = getBlockDefaultClassName( name )
-  
+
   const contentClasses = classnames( `${ defaultClassName }__entry-content`, {
     [ `block-align-${ contentAlignment }` ]: contentAlignment,
   })

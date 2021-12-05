@@ -45,7 +45,7 @@ class TabsSave extends Component {
     return (
       <div className={ className }>
         <div className={ tabListClasses }>
-          { tabsData.map( ( tabData, index ) => 
+          { tabsData.map( ( tabData, index ) =>
             <button
               key={ index }
               className={ `${ defaultClassName }__tab${ index === 0 ? ' is-active' : '' }` }

@@ -99,11 +99,11 @@ function ButtonSave({
         style={ buttonStyles }
         rel={ relAttribute ? relAttribute : null }
       >
-        { !!iconId && iconPosition === 'left' && 
+        { !!iconId && iconPosition === 'left' &&
         <i className={ iconClasses } style={ { fontSize: iconSize } } />
         }
 
-        { !!hasCustomIcon && iconPosition === 'left' && 
+        { !!hasCustomIcon && iconPosition === 'left' &&
         <div
           className={ customIconClasses }
           style={ { height: iconSize } }
@@ -111,7 +111,7 @@ function ButtonSave({
         />
         }
 
-        { !isIconOnly && 
+        { !isIconOnly &&
         <RichText.Content
           tagName="span"
           className={ `${ defaultClassName }__text` }
@@ -120,7 +120,7 @@ function ButtonSave({
         }
 
         { !!hasCustomIcon &&
-        ( iconPosition === 'right' || iconPosition === undefined ) && 
+        ( iconPosition === 'right' || iconPosition === undefined ) &&
           <div
             className={ customIconClasses }
             style={ { height: iconSize } }
@@ -129,7 +129,7 @@ function ButtonSave({
         }
 
         { !!iconId &&
-        ( iconPosition === 'right' || iconPosition === undefined ) && 
+        ( iconPosition === 'right' || iconPosition === undefined ) &&
           <i className={ iconClasses } style={ { fontSize: iconSize } } />
         }
       </a>

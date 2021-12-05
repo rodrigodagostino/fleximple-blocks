@@ -52,7 +52,7 @@ function IframeEdit({
     }
   }
 
-  const blockProps = useBlockProps({				
+  const blockProps = useBlockProps({
     src: url,
     width: width.value + width.unit,
     height: !hasAutoHeight ? height.value + height.unit : autoHeight,

@@ -47,7 +47,7 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
 
   return (
     <picture { ...useBlockProps.save() }>
-      { !linkUrl && ( !!id.small || !!id.medium || !!id.large ) && 
+      { !linkUrl && ( !!id.small || !!id.medium || !!id.large ) &&
       <>
         { pictureSources }
         <img
@@ -58,14 +58,14 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
       </>
       }
 
-      { !!linkUrl && 
+      { !!linkUrl &&
       <a
         className={ `${ defaultClassName }__link` }
         href={ linkUrl }
         target={ linkTarget }
         rel="noopener"
       >
-        { ( !!id.small || !!id.medium || !!id.large ) && 
+        { ( !!id.small || !!id.medium || !!id.large ) &&
         <>
           { pictureSources }
           <img

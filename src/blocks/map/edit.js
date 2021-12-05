@@ -136,7 +136,7 @@ function MapEdit({
           />
 
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab => 
+            { tab =>
               <SpacingControls
                 valueLabel={ __( 'Height', 'fleximpleblocks' ) }
                 unitLabel={ __( 'Height unit', 'fleximpleblocks' ) }
@@ -180,7 +180,7 @@ function MapEdit({
             onChange={ () => setAttributes({ displayPopup: !displayPopup }) }
           />
 
-          { !!displayPopup && 
+          { !!displayPopup &&
           <TextareaControl
             label={ __( 'Popup content' ) }
             value={ popup }

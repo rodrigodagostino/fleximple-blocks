@@ -149,7 +149,7 @@ function WeatherEdit({
       </InspectorControls>
 
       <div { ...blockProps }>
-        { !apiKey && 
+        { !apiKey &&
         <Placeholder className="fleximple-components-placeholder">
           <p>
             { __(
@@ -165,16 +165,16 @@ function WeatherEdit({
         </Placeholder>
         }
 
-        { !!apiKey && !!isFetching && 
+        { !!apiKey && !!isFetching &&
         <Placeholder className="fleximple-components-placeholder">
           <Spinner />
           <p>{ __( 'Loading…', 'fleximpleblocks' ) }</p>
         </Placeholder>
         }
 
-        { !!apiKey && !isFetching && !!weatherData && 
+        { !!apiKey && !isFetching && !!weatherData &&
         <>
-          { !!shortName && 
+          { !!shortName &&
           <style>
             { `.${ defaultClassName }__city-name { display: none }
 							@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.xlargeBreakpointValue }px) {
@@ -191,22 +191,22 @@ function WeatherEdit({
             <span className={ `${ defaultClassName }__temperature-number` }>
               { Math.round( weatherData.main.temp ) }
             </span>
-            { ( units === 'metric' || units === 'imperial' ) && 
+            { ( units === 'metric' || units === 'imperial' ) &&
             <span className={ `${ defaultClassName }__temperature-degree-symbol` }>
               &deg;
             </span>
             }
-            { displayUnits && units === 'metric' && 
+            { displayUnits && units === 'metric' &&
             <span className={ `${ defaultClassName }__temperature-units` }>
               C
             </span>
             }
-            { displayUnits && units === 'imperial' && 
+            { displayUnits && units === 'imperial' &&
             <span className={ `${ defaultClassName }__temperature-units` }>
               F
             </span>
             }
-            { displayUnits && units === 'kelvin' && 
+            { displayUnits && units === 'kelvin' &&
             <span className={ `${ defaultClassName }__temperature-units` }>
               K
             </span>

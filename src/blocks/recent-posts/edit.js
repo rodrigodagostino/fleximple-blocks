@@ -102,7 +102,7 @@ function RecentPostsEdit({
     if ( selectedPosts ) {
       fetchSelectedPostsData()
     }
-    
+
     // componentWillUnmount equivalent
     return () => {
       setIsStillMounted( false )
@@ -141,7 +141,7 @@ function RecentPostsEdit({
     )
   })
 
-  const inspectorControls = 
+  const inspectorControls =
     <InspectorControls>
       <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
         <RangeControl
@@ -154,7 +154,7 @@ function RecentPostsEdit({
         />
 
         <ResponsiveSettingsTabPanel initialTabName="large">
-          { tab => 
+          { tab =>
             <>
               { layout === 'grid' &&
               <RangeControl
@@ -297,7 +297,7 @@ function RecentPostsEdit({
         }
 
         <ResponsiveSettingsTabPanel initialTabName="medium">
-          { tab => 
+          { tab =>
             <>
               <SelectControl
                 label={ __( 'Image size', 'fleximpleblocks' ) }
@@ -369,7 +369,7 @@ function RecentPostsEdit({
         }
       </PanelBody>
     </InspectorControls>
-  
+
 
   const hasPosts = Array.isArray( recentPosts ) && recentPosts.length
   if ( !hasPosts ) {

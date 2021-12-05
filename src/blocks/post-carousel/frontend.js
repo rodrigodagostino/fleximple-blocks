@@ -13,11 +13,11 @@ if ( swipers.length ) {
     swipers[ i ].querySelector( '.swiper-button-prev' ).classList.add( `swiper-button-prev-${ i + 1 }` )
     swipers[ i ].querySelector( '.swiper-button-next' ).classList.add( `swiper-button-next-${ i + 1 }` )
     swipers[ i ].querySelector( '.swiper-pagination' ).classList.add( `swiper-pagination-${ i + 1 }` )
-  
+
     let swiperParams = swipers[ i ].getAttribute( 'data-swiper' )
     swiperParams = JSON.stringify( eval( '(' + swiperParams + ')' ) )
     swiperParams = JSON.parse( swiperParams )
-  
+
     new Swiper( `.swiper-${ i + 1 }`, {
       slidesPerView: swiperParams.slidesPerView,
       loop: swiperParams.loop,

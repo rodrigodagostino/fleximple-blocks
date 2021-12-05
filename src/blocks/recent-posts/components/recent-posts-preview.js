@@ -86,7 +86,7 @@ const RecentPostsPreview = ({
     `${ defaultClassName }__entry-picture`, {
       [ `aspect-ratio-${ aspectRatio.small }--sm` ]: aspectRatio.small !== 'none',
       [ `aspect-ratio-${ aspectRatio.medium }--md` ]: aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,
-      [ `aspect-ratio-${ aspectRatio.large }--lg` ]: aspectRatio.large !== 'none' && aspectRatio.large !== aspectRatio.medium,	
+      [ `aspect-ratio-${ aspectRatio.large }--lg` ]: aspectRatio.large !== 'none' && aspectRatio.large !== aspectRatio.medium,
     },
   )
 
@@ -97,7 +97,7 @@ const RecentPostsPreview = ({
   return (
     <div { ...blockProps }>
       <style>
-        { ( !!columns.small || !!aspectRatio.small ) && 
+        { ( !!columns.small || !!aspectRatio.small ) &&
 					`${ 'list' === layout && !!gapRow.small.value ? `
 						.${ defaultClassName }.gap-row-${ gapRow.small.value + gapRow.small.unit === '%' ? 'pct' : gapRow.small.unit }--sm .${ defaultClassName }__entry {
 							margin-bottom: ${ gapRow.small.value + gapRow.small.unit };
@@ -116,7 +116,7 @@ const RecentPostsPreview = ({
 						}` : '' }`
         }
 
-        { !!aspectRatio.medium && 
+        { !!aspectRatio.medium &&
 					`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.smallBreakpointValue }px) {
 						${ aspectRatio.medium ? `
 							.${ defaultClassName }__entry-picture.aspect-ratio-${ aspectRatio.medium }--md {
@@ -125,7 +125,7 @@ const RecentPostsPreview = ({
 					}`
         }
 
-        { ( !!columns.medium || !!aspectRatio.large ) && 
+        { ( !!columns.medium || !!aspectRatio.large ) &&
 					`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
 						${ 'list' === layout && !!gapRow.medium.value ? `
 							.fleximple-block-recent-posts.gap-row-${ gapRow.medium.value + ( gapRow.medium.unit === '%' ? 'pct' : gapRow.medium.unit ) }--md .fleximple-block-recent-posts__entry {
@@ -146,7 +146,7 @@ const RecentPostsPreview = ({
 					}`
         }
 
-        { !!columns.large && 
+        { !!columns.large &&
 					`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
 						${ 'list' === layout && !!gapRow.large.value ? `
 							.fleximple-block-recent-posts.gap-row-${ gapRow.large.value + ( gapRow.large.unit === '%' ? 'pct' : gapRow.large.unit ) }--lg .fleximple-block-recent-posts__entry {
@@ -236,7 +236,7 @@ const RecentPostsPreview = ({
 															target="_blank"
 															rel={ relAttribute }
 															data-link-name="article"> */ }
-                            { !!post.meta.kicker && 
+                            { !!post.meta.kicker &&
                             <span
                               className={ `${ defaultClassName }__entry-kicker` }
                               dangerouslySetInnerHTML={ { __html: post.meta.kicker } }

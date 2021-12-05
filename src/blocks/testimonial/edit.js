@@ -109,7 +109,7 @@ class TestimonialEdit extends Component {
         <InspectorControls>
           <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab => 
+              { tab =>
                 <>
                   <BaseControl
                     label={ __( 'Text alignment', 'fleximpleblocks' ) }
@@ -149,7 +149,7 @@ class TestimonialEdit extends Component {
           { !!mediaId &&
           <PanelBody title={ __( 'Media', 'fleximpleblocks' ) } initialOpen={ false }>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab => 
+              { tab =>
                 <>
                   <SpacingControls
                     valueLabel={ __( 'Media height', 'fleximpleblocks' ) }
@@ -238,7 +238,7 @@ class TestimonialEdit extends Component {
 								border-radius: ${ mediaBorderRadius.small.value + mediaBorderRadius.small.unit };
 							}` : '' }
 
-            { ( !!gap.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) && 
+            { ( !!gap.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) &&
 							`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
 							${ gap.medium.value ?
         `.${ defaultClassName }.gap-${ gap.medium.value + ( gap.medium.unit === '%' ? 'pct' : gap.medium.unit ) }--md > * {
@@ -255,7 +255,7 @@ class TestimonialEdit extends Component {
 							}`
             }
 
-            { ( !!gap.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) && 
+            { ( !!gap.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) &&
 							`@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
 							${ gap.large.value ?
         `.${ defaultClassName }.gap-${ gap.large.value + ( gap.large.unit === '%' ? 'pct' : gap.large.unit ) }--lg > * {
@@ -308,7 +308,7 @@ class TestimonialEdit extends Component {
                           onSelect={ media => setAttributes({ mediaId: media.id, mediaUrl: media.url, mediaAlt: media.alt }) }
                           allowedTypes={ [ 'image' ] }
                           value={ mediaId }
-                          render={ ({ open }) => 
+                          render={ ({ open }) =>
                             <Button
                               isDefault
                               className={ !mediaId ? 'button button-hero' : '' }

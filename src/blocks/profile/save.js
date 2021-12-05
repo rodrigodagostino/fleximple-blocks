@@ -98,7 +98,7 @@ function ProfileSave({
             border-radius: ${ mediaBorderRadius.small.value + mediaBorderRadius.small.unit };
           }` }
 
-        { ( !!textAlignment.medium || !!mediaGap.medium.value || !!contentGap.medium.value || !!mediaWidth.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) && 
+        { ( !!textAlignment.medium || !!mediaGap.medium.value || !!contentGap.medium.value || !!mediaWidth.medium.value || !!mediaHeight.medium.value || !!mediaBorderRadius.medium.value ) &&
           `@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.mediumBreakpointValue }px) {
           ${ !!textAlignment.medium &&
             `.${ defaultClassName }.text-align-${ textAlignment.medium }--md .${ defaultClassName }__media {
@@ -132,7 +132,7 @@ function ProfileSave({
           }`
         }
 
-        { ( !!textAlignment.large || !!mediaGap.large.value || !!contentGap.large.value || !!mediaWidth.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) && 
+        { ( !!textAlignment.large || !!mediaGap.large.value || !!contentGap.large.value || !!mediaWidth.large.value || !!mediaHeight.large.value || !!mediaBorderRadius.large.value ) &&
           `@media only screen and (min-width: ${ fleximpleblocksPluginData.settings.largeBreakpointValue }px) {
           ${ !!textAlignment.large &&
             `.${ defaultClassName }.text-align-${ textAlignment.large }--lg .${ defaultClassName }__media {
