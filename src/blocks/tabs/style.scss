@@ -7,7 +7,7 @@
 $default-class-name: "fleximple-block-tabs";
 
 .fleximple-block-tabs {
-  & &__tab-list {
+  &__tab-list {
     display: flex;
     flex-wrap: wrap;
 
@@ -36,11 +36,11 @@ $default-class-name: "fleximple-block-tabs";
     }
   }
 
-  & &__panel-list {
+  &__panel-list {
     padding: 20px;
   }
 
-  & &__tab {
+  &__tab {
     color: var(--gray-300);
     background-color: transparent;
     border-color: transparent;

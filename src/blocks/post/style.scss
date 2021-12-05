@@ -11,23 +11,23 @@ $default-class-name: "fleximple-block-post";
   flex-direction: column;
   position: relative;
 
-  & &__media + &__content,
-  & &__content + &__media {
+  &__media + &__content,
+  &__content + &__media {
     margin-top: 16px;
   }
 
-  & &__media {
+  &__media {
     position: relative;
   }
 
-  & &__picture {
+  &__picture {
     height: 0;
     margin: 0 !important;
     overflow: hidden;
     display: block;
   }
 
-  & &__image {
+  &__image {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,7 +38,7 @@ $default-class-name: "fleximple-block-post";
     margin-bottom: 0;
   }
 
-  & &__audio {
+  &__audio {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -46,7 +46,7 @@ $default-class-name: "fleximple-block-post";
     z-index: 10;
   }
 
-  & &__content {
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -65,11 +65,11 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__categories {
+  &__categories {
     font-size: 13px;
   }
 
-  & &__category {
+  &__category {
     margin-right: 8px;
     position: relative;
     z-index: 1;
@@ -79,7 +79,7 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__title {
+  &__title {
     line-height: 1.25;
 
     .#{$default-class-name}__kicker {
@@ -98,7 +98,7 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__meta {
+  &__meta {
     font-size: 13px;
     z-index: 1;
 
@@ -113,7 +113,7 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__excerpt {
+  &__excerpt {
     font-size: 15px;
     line-height: 1.5;
 
@@ -122,13 +122,13 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__read-more {
+  &__read-more {
     font-size: 15px;
     display: inline-block;
     z-index: 1;
   }
 
-  & &__footer {
+  &__footer {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -139,7 +139,7 @@ $default-class-name: "fleximple-block-post";
     }
   }
 
-  & &__link-overlay {
+  &__link-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -175,7 +175,7 @@ $default-class-name: "fleximple-block-post";
 
 @media only screen and (min-width: 46.25em) {
   .fleximple-block-post {
-    & &__footer {
+    &__footer {
       flex-direction: row;
       justify-content: space-between;
 

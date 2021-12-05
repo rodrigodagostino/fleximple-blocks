@@ -15,7 +15,7 @@
     margin-bottom: 0 !important;
   }
 
-  & &__heading {
+  &__heading {
     margin-top: 0;
 
     &:not(.block-editor-rich-text__editable) {
@@ -23,10 +23,10 @@
     }
   }
 
-  & &__subhead {
+  &__subhead {
     font-weight: 700;
   }
 
-  & &__additional-content {
+  &__additional-content {
   }
 }

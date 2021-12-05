@@ -52,32 +52,32 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry {
+  &__entry {
     position: relative;
     z-index: 1;
   }
 
-  & &__entry-media + &__entry-content {
+  &__entry-media + &__entry-content {
     margin-top: rem(16px);
   }
 
-  & &__entry-content + &__entry-media {
+  &__entry-content + &__entry-media {
     margin-top: rem(16px);
   }
 
-  & &__entry-media {
+  &__entry-media {
     position: relative;
     z-index: -1;
   }
 
-  & &__entry-picture {
+  &__entry-picture {
     height: 0;
     margin: 0 !important;
     overflow: hidden;
     display: block;
   }
 
-  & &__entry-image {
+  &__entry-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,7 +88,7 @@ $default-class-name: "fleximple-block-recent-posts";
     margin-bottom: 0;
   }
 
-  & &__entry-content {
+  &__entry-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -107,11 +107,11 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry-categories {
+  &__entry-categories {
     font-size: 13px;
   }
 
-  & &__entry-category {
+  &__entry-category {
     margin-right: 8px;
     position: relative;
     z-index: 1;
@@ -121,7 +121,7 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry-title {
+  &__entry-title {
     line-height: 1.25;
 
     .#{$default-class-name}__entry-kicker {
@@ -140,7 +140,7 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry-meta {
+  &__entry-meta {
     font-size: 13px;
     z-index: 1;
 
@@ -155,7 +155,7 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry-excerpt {
+  &__entry-excerpt {
     font-size: 15px;
     line-height: 1.5;
 
@@ -164,13 +164,13 @@ $default-class-name: "fleximple-block-recent-posts";
     }
   }
 
-  & &__entry-read-more {
+  &__entry-read-more {
     font-size: 15px;
     display: inline-block;
     z-index: 1;
   }
 
-  & &__entry-link-overlay {
+  &__entry-link-overlay {
     position: absolute;
     top: 0;
     right: 0;

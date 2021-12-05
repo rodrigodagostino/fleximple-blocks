@@ -7,11 +7,11 @@
 .fleximple-block-feature {
   position: relative;
 
-  & &__inner > *:nth-child(2) {
+  &__inner > *:nth-child(2) {
     margin-top: 0 !important;
   }
 
-  & &__inner > *:last-child {
+  &__inner > *:last-child {
     margin-bottom: 0 !important;
   }
 
@@ -20,7 +20,7 @@
     z-index: 1;
   }
 
-  & &__link {
+  &__link {
     position: absolute;
     top: 0;
     left: 0;

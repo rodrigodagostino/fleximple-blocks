@@ -19,7 +19,7 @@
     justify-content: flex-end;
   }
 
-  & &__link {
+  &__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -49,8 +49,8 @@
     }
   }
 
-  & &__icon,
-  & &__custom-icon {
+  &__icon,
+  &__custom-icon {
     font-style: normal;
     text-align: center;
     margin: 0 auto;
@@ -68,7 +68,7 @@
     }
   }
 
-  & &__custom-icon {
+  &__custom-icon {
     svg,
     img {
       width: auto;
