@@ -17,13 +17,14 @@ module.exports = {
     document: true,
     fetch: false,
   },
-  parser: 'babel-eslint',
   parserOptions: {
+    parser: '@babel/eslint-parser',
     ecmaFeatures: {
       jsx: true,
       modules: true,
     },
     ecmaVersion: 2018,
+    requireConfigFile: false,
     sourceType: 'module',
   },
   plugins: [ 'react', 'jsx-a11y' ],
@@ -66,6 +67,7 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
     'no-redeclare': 'error',
+    'no-trailing-spaces': 'error',
     'no-useless-return': 'error',
     'no-whitespace-before-property': 'error',
     'object-curly-spacing': [ 'error', 'always' ],
