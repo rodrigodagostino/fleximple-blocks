@@ -31,7 +31,10 @@ function fleximpleblocks_render_post_carousel_block( $attributes ) {
   }
 
   $default_class_name = 'fleximple-block-post-carousel';
-  $class_name = $attributes['className'];
+  $class_name = '';
+  if ( isset( $attributes['className'] ) ) {
+    $class_name = $attributes['className'];
+  }
   $classes = 'fleximple-block-post-carousel';
 
   $post_carousel = get_posts( $args );

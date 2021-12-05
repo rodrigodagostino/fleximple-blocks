@@ -31,7 +31,10 @@ function fleximpleblocks_render_recent_posts_block( $attributes ) {
   }
 
   $default_class_name = 'fleximple-block-recent-posts';
-  $class_name = $attributes['className'];
+  $class_name = '';
+  if ( isset( $attributes['className'] ) ) {
+    $class_name = $attributes['className'];
+  }
   $classes = 'fleximple-block-recent-posts';
 
   $recent_posts = get_posts( $args );

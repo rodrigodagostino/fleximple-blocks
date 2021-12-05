@@ -19,7 +19,10 @@ function fleximpleblocks_render_post_block( $attributes, $content ) {
   }
 
   $default_class_name = 'fleximple-block-post';
-  $class_name = $attributes['className'];
+  $class_name = '';
+  if ( isset( $attributes['className'] ) ) {
+    $class_name = $attributes['className'];
+  }
   $classes = 'fleximple-block-post';
 
   $post_id = $attributes['postId'];
