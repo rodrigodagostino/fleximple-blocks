@@ -53,7 +53,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-duplicate-imports': 'error',
     'no-else-return': 'error',
-    'no-extra-parens': 'error',
+    'no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line' } ],
     'no-extra-semi': 'error',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
