@@ -3,7 +3,7 @@
  */
 
 const tabsBlockInstances = document.querySelectorAll( '.fleximple-block-tabs' )
-tabsBlockInstances.forEach( instance => {
+tabsBlockInstances.forEach( ( instance ) => {
   instance
     .querySelector(
       '.fleximple-block-tabs__panel-list .fleximple-block-tab-panel',
@@ -18,13 +18,13 @@ tabs.forEach( ( tab, index ) => {
   tab.setAttribute( 'data-tab-index', index + 1 )
   tab.addEventListener( 'click', function () {
     const siblingTabs = tab.parentNode.childNodes
-    siblingTabs.forEach( item => item.classList.remove( 'is-active' ) )
+    siblingTabs.forEach( ( item ) => item.classList.remove( 'is-active' ) )
     tab.classList.add( 'is-active' )
 
     const tabPanels = tab
       .closest( '.fleximple-block-tabs' )
       .querySelectorAll( '.fleximple-block-tab-panel' )
-    tabPanels.forEach( item => item.classList.remove( 'is-active' ) )
+    tabPanels.forEach( ( item ) => item.classList.remove( 'is-active' ) )
     tabPanels[ index ].classList.add( 'is-active' )
   })
 })

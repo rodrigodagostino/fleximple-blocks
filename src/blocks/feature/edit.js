@@ -76,7 +76,7 @@ function URLPicker({
   >
     <LinkControl
       className="wp-block-navigation-link__inline-link-input"
-      value={ { url, opensInNewTab } }
+      value={{ url, opensInNewTab }}
       onChange={ ({
         url: newURL = '',
         opensInNewTab: newOpensInNewTab,
@@ -106,9 +106,9 @@ function URLPicker({
       { isSelected &&
       <KeyboardShortcuts
         bindGlobal
-        shortcuts={ {
+        shortcuts={{
           [ rawShortcut.primary( 'k' ) ]: openLinkControl,
-        } }
+        }}
       />
       }
       { linkControl }
@@ -181,7 +181,7 @@ class FeatureEdit extends Component {
         <InspectorControls>
           <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab =>
+              { ( tab ) =>
                 <>
                   <BaseControl
                     label={ __( 'Text alignment', 'fleximpleblocks' ) }
@@ -190,7 +190,7 @@ class FeatureEdit extends Component {
                     <AlignmentToolbar
                       id={ `fleximple-blocks-profile-text-alignment-control-${ instanceId }` }
                       value={ textAlignment[ tab.name ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -211,7 +211,7 @@ class FeatureEdit extends Component {
                     max={ 200 }
                     attribute={ contentGap }
                     target={ tab.name }
-                    onChange={ value => setAttributes({ contentGap: value }) }
+                    onChange={ ( value ) => setAttributes({ contentGap: value }) }
                   />
                 </>
               }
@@ -223,7 +223,7 @@ class FeatureEdit extends Component {
                 label={ __( 'Link title', 'fleximpleblocks' ) }
                 value={ linkTitle }
                 placeholder={ __( 'Type the link title…', 'fleximpleblocks' ) }
-                onChange={ value => setAttributes({ linkTitle: value }) }
+                onChange={ ( value ) => setAttributes({ linkTitle: value }) }
                 help={ __( 'Here you can provide a brief explanation about the link’s destination, which is meant to be used by screen readers.', 'fleximpleblocks' ) }
               />
 

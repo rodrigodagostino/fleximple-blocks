@@ -170,7 +170,7 @@ function HeaderSave({
       </style>
 
       { // eslint-disable-next-line array-callback-return
-        order.map( fragment => {
+        order.map( ( fragment ) => {
           if ( 'heading' === fragment ) {
             if ( !RichText.isEmpty( heading ) && displayHeading ) {
               return (

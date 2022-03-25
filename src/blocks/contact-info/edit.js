@@ -41,7 +41,7 @@ const { name } = metadata
  * Block constants
  */
 const ALLOWED_BLOCKS = [ 'fleximple-blocks/contact-info-item' ]
-const getContactInfoTemplate = memoize( items => {
+const getContactInfoTemplate = memoize( ( items ) => {
   return times( items, () => [ 'fleximple-blocks/contact-info-item' ] )
 })
 
@@ -88,11 +88,11 @@ function ContactInfoEdit({
             min={ 1 }
             max={ 10 }
             value={ items }
-            onChange={ value => setAttributes({ items: value }) }
+            onChange={ ( value ) => setAttributes({ items: value }) }
           />
 
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <RadioControl
                   label={ __( 'Direction', 'fleximpleblocks' ) }
@@ -107,7 +107,7 @@ function ContactInfoEdit({
                       value: 'column',
                     },
                   ] }
-                  onChange={ option => {
+                  onChange={ ( option ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -128,7 +128,7 @@ function ContactInfoEdit({
                     spaceControlsEnabled={
                       direction[ tab.name ] === '' ? true : false
                     }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -148,7 +148,7 @@ function ContactInfoEdit({
                   max={ 200 }
                   attribute={ gap }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ gap: value }) }
+                  onChange={ ( value ) => setAttributes({ gap: value }) }
                 />
               </>
             }

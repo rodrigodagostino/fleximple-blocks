@@ -54,11 +54,11 @@ function IconSave({
 
   return (
     <>
-      { !!iconId && !hasCustomIcon && (
+      { !!iconId && !hasCustomIcon &&
         <div { ...blockProps }>
           <i className={ iconClasses } style={ iconStyles } />
         </div>
-      ) }
+      }
 
       { !!hasCustomIcon && <RawHTML { ...blockProps }>{ customIcon }</RawHTML> }
     </>

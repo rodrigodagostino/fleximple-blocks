@@ -110,7 +110,7 @@ function PostCarouselEdit({
       path: addQueryArgs( '/wp/v2/categories', {
         per_page: -1,
       }),
-    }).then( results => {
+    }).then( ( results ) => {
       if ( isStillMounted ) setCategoriesList( results )
     },
     ).catch( () => {
@@ -135,23 +135,23 @@ function PostCarouselEdit({
 
   const fetchSelectedPostsData = async () => {
     const map = new Map()
-    await Promise.all( selectedPosts.map( async selectedPost => {
+    await Promise.all( selectedPosts.map( async ( selectedPost ) => {
       await apiFetch({
         path: `/wp/v2/posts/${ selectedPost.value }`,
-      }).then( response => map.set( selectedPost, response ) )
+      }).then( ( response ) => map.set( selectedPost, response ) )
     }) )
 
     // Display responses in 'selectedPosts' array order.
     const arrangedSelectedPosts = new Array()
-    await selectedPosts.forEach( selectedPost => {
+    await selectedPosts.forEach( ( selectedPost ) => {
       arrangedSelectedPosts.push( map.get( selectedPost ) )
     })
 
     setSelectedPostsData( arrangedSelectedPosts )
   }
 
-  const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map( size => {
-    const label = size.replace( /^\w/, c => c.toUpperCase() ).replace( /_/g, ' ' )
+  const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map( ( size ) => {
+    const label = size.replace( /^\w/, ( c ) => c.toUpperCase() ).replace( /_/g, ' ' )
     return (
       { label: label, value: size }
     )
@@ -168,7 +168,7 @@ function PostCarouselEdit({
           min={ 1 }
           max={ !hasPosts ? MAX_POSTS_COLUMNS : Math.min( MAX_POSTS_COLUMNS, recentPosts.length ) }
           value={ postsToShow }
-          onChange={ value => setAttributes({ postsToShow: value }) }
+          onChange={ ( value ) => setAttributes({ postsToShow: value }) }
           required
         />
 
@@ -177,7 +177,7 @@ function PostCarouselEdit({
           min={ 1 }
           max={ 6 }
           value={ slidesPerView }
-          onChange={ value => setAttributes({ slidesPerView: value }) }
+          onChange={ ( value ) => setAttributes({ slidesPerView: value }) }
         />
 
         <ToggleControl
@@ -199,7 +199,7 @@ function PostCarouselEdit({
             <input
               type="number"
               value={ speed }
-              onChange={ event => event.target.value === '' ?
+              onChange={ ( event ) => event.target.value === '' ?
                 setAttributes({ speed: undefined }) :
                 setAttributes({ speed: Number( event.target.value ) })
               }
@@ -214,7 +214,7 @@ function PostCarouselEdit({
             <input
               type="number"
               value={ delay }
-              onChange={ event => event.target.value === '' ?
+              onChange={ ( event ) => event.target.value === '' ?
                 setAttributes({ delay: undefined }) :
                 setAttributes({ delay: Number( event.target.value ) })
               }
@@ -244,7 +244,7 @@ function PostCarouselEdit({
             { label: __( 'Fraction', 'fleximpleblocks' ), value: 'fraction' },
             { label: __( 'Progress bar', 'fleximpleblocks' ), value: 'progressbar' },
           ] }
-          onChange={ value => setAttributes({ paginationType: value }) }
+          onChange={ ( value ) => setAttributes({ paginationType: value }) }
         />
 
         <RangeControl
@@ -252,7 +252,7 @@ function PostCarouselEdit({
           min={ 0 }
           max={ 60 }
           value={ spaceBetween }
-          onChange={ value => setAttributes({ spaceBetween: value }) }
+          onChange={ ( value ) => setAttributes({ spaceBetween: value }) }
           help={ __( 'In pixels.', 'fleximpleblocks' ) }
         />
 
@@ -267,7 +267,7 @@ function PostCarouselEdit({
             { label: __( 'Cube', 'fleximpleblocks' ), value: 'cube' },
             { label: __( 'Cards', 'fleximpleblocks' ), value: 'cards' },
           ] }
-          onChange={ value => setAttributes({ effect: value }) }
+          onChange={ ( value ) => setAttributes({ effect: value }) }
         />
       </PanelBody>
 
@@ -281,12 +281,12 @@ function PostCarouselEdit({
           categoriesList={ categoriesList }
           selectedCategories={ categories }
           selectedExcludedCategories={ excludedCategories }
-          onNumberOfItemsChange={ value => setAttributes({ postsToShow: value }) }
-          onOffsetChange={ value => setAttributes({ offset: value }) }
-          onCategoriesChange={ selectedOptions => setAttributes({ categories: selectedOptions }) }
-          onExcludedCategoriesChange={ selectedOptions => setAttributes({ excludedCategories: selectedOptions }) }
-          onOrderChange={ value => setAttributes({ order: value }) }
-          onOrderByChange={ value => setAttributes({ orderBy: value }) }
+          onNumberOfItemsChange={ ( value ) => setAttributes({ postsToShow: value }) }
+          onOffsetChange={ ( value ) => setAttributes({ offset: value }) }
+          onCategoriesChange={ ( selectedOptions ) => setAttributes({ categories: selectedOptions }) }
+          onExcludedCategoriesChange={ ( selectedOptions ) => setAttributes({ excludedCategories: selectedOptions }) }
+          onOrderChange={ ( value ) => setAttributes({ order: value }) }
+          onOrderByChange={ ( value ) => setAttributes({ orderBy: value }) }
         />
 
         <ToggleControl
@@ -313,7 +313,7 @@ function PostCarouselEdit({
             minLevel={ 1 }
             maxLevel={ 7 }
             selectedLevel={ headingLevel }
-            onChange={ value => setAttributes({ headingLevel: value }) }
+            onChange={ ( value ) => setAttributes({ headingLevel: value }) }
             isCollapsed={ false }
           />
         </BaseControl>
@@ -325,7 +325,7 @@ function PostCarouselEdit({
           <BlockAlignmentHorizontalToolbar
             id={ `fleximple-blocks-button-horizontal-block-align-toolbar-${ instanceId }` }
             value={ contentAlignment }
-            onChange={ value => setAttributes({ contentAlignment: value }) }
+            onChange={ ( value ) => setAttributes({ contentAlignment: value }) }
           />
         </BaseControl>
 
@@ -333,7 +333,7 @@ function PostCarouselEdit({
           <RangeControl
             label={ __( 'Max number of words in excerpt', 'fleximpleblocks' ) }
             value={ excerptLength }
-            onChange={ value => setAttributes({ excerptLength: value }) }
+            onChange={ ( value ) => setAttributes({ excerptLength: value }) }
             min={ 10 }
             max={ 100 }
           />
@@ -368,7 +368,7 @@ function PostCarouselEdit({
           initialOpen={ false }
         >
           <ResponsiveSettingsTabPanel initialTabName="large">
-            { tab =>
+            { ( tab ) =>
               <>
                 <SelectControl
                   label={ __( 'Image size', 'fleximpleblocks' ) }
@@ -378,7 +378,7 @@ function PostCarouselEdit({
                     ...imageSizeOptions,
                     { label: __( 'Full', 'fleximpleblocks' ), value: 'full' },
                   ] }
-                  onChange={ value => {
+                  onChange={ ( value ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -403,7 +403,7 @@ function PostCarouselEdit({
                     { label: '2:1', value: '2-1' },
                     { label: '3:1', value: '3-1' },
                   ] }
-                  onChange={ value => {
+                  onChange={ ( value ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -428,12 +428,12 @@ function PostCarouselEdit({
             {
               label: __( 'Previous button', 'fleximpleblocks' ),
               value: buttonPrevIcon,
-              onChange: value => setAttributes({ buttonPrevIcon: value }),
+              onChange: ( value ) => setAttributes({ buttonPrevIcon: value }),
             },
             {
               label: __( 'Next button', 'fleximpleblocks' ),
               value: buttonNextIcon,
-              onChange: value => setAttributes({ buttonNextIcon: value }),
+              onChange: ( value ) => setAttributes({ buttonNextIcon: value }),
             },
           ] }
           sizes={ [
@@ -443,7 +443,7 @@ function PostCarouselEdit({
               initialPosition: 40,
               min: 10,
               max: 120,
-              onChange: value => setAttributes({ buttonIconSize: value }),
+              onChange: ( value ) => setAttributes({ buttonIconSize: value }),
             },
           ] }
         />
@@ -471,7 +471,7 @@ function PostCarouselEdit({
           <TextControl
             label={ __( 'Read more text', 'fleximpleblocks' ) }
             value={ readMore }
-            onChange={ value => setAttributes({ readMore: value }) }
+            onChange={ ( value ) => setAttributes({ readMore: value }) }
           />
         }
       </PanelBody>
@@ -511,12 +511,12 @@ function PostCarouselEdit({
       <BlockControls>
         <HeadingLevelDropdown
           selectedLevel={ headingLevel }
-          onChange={ value => setAttributes({ headingLevel: value }) }
+          onChange={ ( value ) => setAttributes({ headingLevel: value }) }
         />
 
         <BlockAlignmentHorizontalToolbar
           value={ contentAlignment }
-          onChange={ value => setAttributes({ contentAlignment: value }) }
+          onChange={ ( value ) => setAttributes({ contentAlignment: value }) }
         />
       </BlockControls>
 
@@ -541,11 +541,11 @@ export default compose( [
     const { getEntityRecords } = select( 'core' )
     const categoriesIds =
       categories && categories.length > 0
-        ? categories.map( cat => cat.value )
+        ? categories.map( ( cat ) => cat.value )
         : []
     const excludedCategoriesIds =
       excludedCategories && excludedCategories.length > 0
-        ? excludedCategories.map( cat => cat.value )
+        ? excludedCategories.map( ( cat ) => cat.value )
         : []
     const recentPostsQuery = pickBy({
       categories: categoriesIds,
@@ -554,14 +554,14 @@ export default compose( [
       per_page: postsToShow,
       categories_exclude: excludedCategoriesIds,
       offset,
-    }, value => !isUndefined( value ) )
+    }, ( value ) => !isUndefined( value ) )
 
     const posts = getEntityRecords( 'postType', 'post', recentPostsQuery )
 
     return {
       recentPosts: !Array.isArray( posts )
         ? posts
-        : posts.map( post => {
+        : posts.map( ( post ) => {
           return post
         }),
     }

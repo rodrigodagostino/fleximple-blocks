@@ -32,7 +32,7 @@ const { name } = metadata
  */
 const ALLOWED_BLOCKS = [ 'fleximple-blocks/post' ]
 
-const getExtraArticlesTemplate = memoize( extraArticles => {
+const getExtraArticlesTemplate = memoize( ( extraArticles ) => {
   return times( extraArticles, () => [
     'fleximple-blocks/post',
     {
@@ -92,10 +92,10 @@ function PostPreview({
     `${ defaultClassName }__picture`, {
       [ `aspect-ratio-${ aspectRatio.small }--sm` ]: aspectRatio.small !== 'none',
       [ `aspect-ratio-${ aspectRatio.medium }--md` ]: aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,
-      [ `aspect-ratio-${ aspectRatio.large }--lg` ]: aspectRatio.large !== 'none' && aspectRatio.large !== aspectRatio.medium,	
+      [ `aspect-ratio-${ aspectRatio.large }--lg` ]: aspectRatio.large !== 'none' && aspectRatio.large !== aspectRatio.medium,
       [ `object-position-${ focalPoint.small.x * 100 }-${ focalPoint.small.y * 100 }--sm` ]: imageSize.small !== 'none' && ( focalPoint.small.x || focalPoint.small.y ),
       [ `object-position-${ focalPoint.medium.x * 100 }-${ focalPoint.medium.y * 100 }--md` ]: imageSize.medium !== 'none' && ( focalPoint.medium.x || focalPoint.medium.y ) && ( focalPoint.medium.x !== focalPoint.small.x || focalPoint.medium.y !== focalPoint.small.y ),
-      [ `object-position-${ focalPoint.large.x * 100 }-${ focalPoint.large.y * 100 }--lg` ]: imageSize.large !== 'none' && ( focalPoint.large.x || focalPoint.large.y ) && ( focalPoint.large.x !== focalPoint.medium.x || focalPoint.large.y !== focalPoint.medium.y ),	
+      [ `object-position-${ focalPoint.large.x * 100 }-${ focalPoint.large.y * 100 }--lg` ]: imageSize.large !== 'none' && ( focalPoint.large.x || focalPoint.large.y ) && ( focalPoint.large.x !== focalPoint.medium.x || focalPoint.large.y !== focalPoint.medium.y ),
     },
   )
 
@@ -126,7 +126,7 @@ function PostPreview({
 
   return (
     <>
-      { !!postData && 
+      { !!postData &&
         <article { ...blockProps }>
           <style>
             { ( !!aspectRatio.small || !!focalPoint.small.x || !!focalPoint.small.y ) &&
@@ -175,11 +175,11 @@ function PostPreview({
             }
           </style>
 
-          { orderArticle.map( articleFragment => {
+          { orderArticle.map( ( articleFragment ) => {
             if ( articleFragment === 'media' && displayMedia && ( displayFeaturedImage || !!displayAudio ) ) {
               return (
                 <div className={ `${ defaultClassName }__media` }>
-                  { orderMedia.map( mediaFragment => {
+                  { orderMedia.map( ( mediaFragment ) => {
                     if ( mediaFragment === 'featuredImage' && displayFeaturedImage ) {
                       return (
                         <picture className={ pictureClasses }>
@@ -211,7 +211,7 @@ function PostPreview({
               return (
                 <>
                   <div className={ `${ defaultClassName }__content` }>
-                    { orderContent.map( contentFragment => {
+                    { orderContent.map( ( contentFragment ) => {
                       if ( contentFragment === 'categories' && displayCategories && !!postData.categories_data ) {
                         return (
                           <div className={ `${ defaultClassName }__categories` }>
@@ -223,12 +223,12 @@ function PostPreview({
                                   href={ category.url }
                                   rel="category"
                                   data-category-slug={ category.slug }
-                                  dangerouslySetInnerHTML={ {
+                                  dangerouslySetInnerHTML={{
                                     __html: `<span class="screen-reader-only">${ __(
                                       'Category:',
                                       'fleximpleblocks',
                                     ) }</span> ${ category.name }`,
-                                  } }
+                                  }}
                                 />
                               )
                             }) }
@@ -249,12 +249,12 @@ function PostPreview({
                             { !!postData.meta.kicker &&
                               <span
                                 className={ `${ defaultClassName }__kicker` }
-                                dangerouslySetInnerHTML={ { __html: postData.meta.kicker } }
+                                dangerouslySetInnerHTML={{ __html: postData.meta.kicker }}
                               />
                             }
                             <span
                               className={ `${ defaultClassName }__headline` }
-                              dangerouslySetInnerHTML={ { __html: postData.title.rendered.trim() } }
+                              dangerouslySetInnerHTML={{ __html: postData.title.rendered.trim() }}
                             />
                             { /* </a> */ }
                           </TagName>
@@ -266,19 +266,19 @@ function PostPreview({
                           <div className={ `${ defaultClassName }__meta` }>
                             {
                               // eslint-disable-next-line array-callback-return
-                              orderMeta.map( metaFragment => {
+                              orderMeta.map( ( metaFragment ) => {
                                 if ( metaFragment === 'author' && displayAuthor && !!postData.author_data ) {
                                   return (
                                     <a
                                       href={ postData.author_data.url }
                                       className={ `${ defaultClassName }__entry-byline` }
                                       rel="author"
-                                      dangerouslySetInnerHTML={ {
+                                      dangerouslySetInnerHTML={{
                                         __html: `<span class="screen-reader-only">${ __(
                                           'Published by:',
                                           'fleximpleblocks',
                                         ) }</span> ${ postData.author_data.name }`,
-                                      } }
+                                      }}
                                     />
                                   )
                                 }
@@ -288,7 +288,7 @@ function PostPreview({
                                     <time
                                       dateTime={ format( 'c', postData.date_gmt ) }
                                       className={ `${ defaultClassName }__entry-date` }
-                                      dangerouslySetInnerHTML={ {
+                                      dangerouslySetInnerHTML={{
                                         __html: `<span class="screen-reader-only">${ __(
                                           'Published on:',
                                           'fleximpleblocks',
@@ -296,7 +296,7 @@ function PostPreview({
                                           dateFormat,
                                           postData.date_gmt,
                                         ) }`,
-                                      } }
+                                      }}
                                     />
                                   )
                                 }
@@ -331,7 +331,6 @@ function PostPreview({
                           <a
                             href={ postData.link }
                             className={ `${ defaultClassName }__read-more` }
-                            // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
                             rel={ relAttribute ? relAttribute : null }
                             data-link-name="article"
@@ -346,16 +345,15 @@ function PostPreview({
                   <a
                     href={ `${ fleximpleblocksPluginData.homeUrl }/wp-admin/post.php?post=${ postData.id }&action=edit` }
                     className={ `${ defaultClassName }__link-overlay` }
-                    // eslint-disable-next-line react/jsx-no-target-blank
                     target="_blank"
                     rel={ relAttribute ? relAttribute : null }
                     data-link-name="article"
                     tabIndex="-1"
                     aria-hidden="true"
                     /* translators: edit post link text */
-                    dangerouslySetInnerHTML={ {
+                    dangerouslySetInnerHTML={{
                       __html: `${ __( 'Edit', 'fleximpleblocks' ) } «${ postData.title.rendered }»`,
-                    } }
+                    }}
                   />
                 </>
               )

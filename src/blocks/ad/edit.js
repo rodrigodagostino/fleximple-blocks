@@ -54,12 +54,12 @@ function AdEdit({
   const fetchMediaData = async () => {
     const mediaIds = Object.entries( id )
     await Promise.all(
-      mediaIds.map( mediaId => {
+      mediaIds.map( ( mediaId ) => {
         const [ key, value ] = mediaId
         if ( !value ) return { [ key ]: null }
         return apiFetch({
           path: `/wp/v2/media/${ value }`,
-        }).then( response => {
+        }).then( ( response ) => {
           return {
             [ key ]: {
               id: response.id,
@@ -70,7 +70,7 @@ function AdEdit({
           }
         })
       }),
-    ).then( responses => {
+    ).then( ( responses ) => {
       setMediaData({
         ...responses[ '0' ],
         ...responses[ '1' ],
@@ -120,7 +120,7 @@ function AdEdit({
         <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
           <>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab =>
+              { ( tab ) =>
                 <>
                   <BaseControl
                     label={ __( 'Image', 'fleximpleblocks' ) }
@@ -129,7 +129,7 @@ function AdEdit({
                     <MediaUploadCheck>
                       <MediaUpload
                         id={ `fleximple-blocks-container-media-control-${ instanceId }` }
-                        onSelect={ media => {
+                        onSelect={ ( media ) => {
                           setResponsiveAttribute(
                             attributes,
                             setAttributes,
@@ -161,7 +161,7 @@ function AdEdit({
                             >
                               <img
                                 src={ url[ tab.name ] }
-                                style={ { verticalAlign: 'middle' } }
+                                style={{ verticalAlign: 'middle' }}
                                 alt={ __( 'Replace image', 'fleximpleblocks' ) }
                               />
                             </Button>
@@ -169,7 +169,7 @@ function AdEdit({
 
                             <Button
                               className="button button-large is-button is-default is-large width-full"
-                              style={ { marginTop: '10px' } }
+                              style={{ marginTop: '10px' }}
                               onClick={ open }
                             >
                               { !id[ tab.name ]
@@ -180,7 +180,7 @@ function AdEdit({
                             { !!id[ tab.name ] &&
                             <Button
                               className="button button-link-delete width-full is-button is-large"
-                              style={ { marginTop: '10px' } }
+                              style={{ marginTop: '10px' }}
                               isDestructive
                               onClick={ () => {
                                 setResponsiveAttribute(
@@ -219,7 +219,7 @@ function AdEdit({
                     options={ [
                       { label: __( 'None', 'fleximpleblocks' ), value: 'none' },
                       ...Object.keys( mediaData[ tab.name ].sizes ).map(
-                        mediaSize => {
+                        ( mediaSize ) => {
                           const label = mediaSize
                             .replace( /_/g, ' ' )
                             .replace( /(?:^|\s)\S/g, function ( a ) {
@@ -232,7 +232,7 @@ function AdEdit({
                         },
                       ),
                     ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -259,7 +259,7 @@ function AdEdit({
               label={ __( 'Link URL', 'fleximpleblocks' ) }
               value={ linkUrl }
               placeholder={ __( 'Type the link URL…', 'fleximpleblocks' ) }
-              onChange={ value => setAttributes({ linkUrl: value }) }
+              onChange={ ( value ) => setAttributes({ linkUrl: value }) }
             />
 
             <SelectControl
@@ -275,7 +275,7 @@ function AdEdit({
                   value: '_blank',
                 },
               ] }
-              onChange={ value => setAttributes({ linkTarget: value }) }
+              onChange={ ( value ) => setAttributes({ linkTarget: value }) }
               disabled={ !linkUrl }
             />
           </>
@@ -295,7 +295,7 @@ function AdEdit({
         >
           <MediaUpload
             id={ `fleximple-blocks-container-media-control-${ instanceId }` }
-            onSelect={ media => {
+            onSelect={ ( media ) => {
               setResponsiveAttribute(
                 attributes,
                 setAttributes,
@@ -318,7 +318,7 @@ function AdEdit({
               <>
                 <Button
                   className="button button-large is-button is-primary width-full"
-                  style={ { marginTop: '10px' } }
+                  style={{ marginTop: '10px' }}
                   onClick={ open }
                 >
                   { !id.small

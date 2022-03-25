@@ -72,59 +72,59 @@ function URLPicker({
     setIsURLPickerOpen( false )
   }
 
-  const linkControl = ( isURLPickerOpen || urlIsSetandSelected ) && 
-  <Popover
-    position="bottom center"
-    onClose={ () => setIsURLPickerOpen( false ) }
-    anchorRef={ anchorRef?.current }
-  >
-    <LinkControl
-      className="wp-block-navigation-link__inline-link-input"
-      value={ { url, opensInNewTab } }
-      onChange={ ({ url: newURL = '', opensInNewTab: newOpensInNewTab }) => {
-        setAttributes({ url: newURL })
+  const linkControl = ( isURLPickerOpen || urlIsSetandSelected ) && (
+    <Popover
+      position="bottom center"
+      onClose={ () => setIsURLPickerOpen( false ) }
+      anchorRef={ anchorRef?.current }
+    >
+      <LinkControl
+        className="wp-block-navigation-link__inline-link-input"
+        value={{ url, opensInNewTab }}
+        onChange={ ({ url: newURL = '', opensInNewTab: newOpensInNewTab }) => {
+          setAttributes({ url: newURL })
 
-        if ( opensInNewTab !== newOpensInNewTab ) {
-          onToggleOpenInNewTab( newOpensInNewTab )
-        }
-      } }
-    />
-  </Popover>
-	
+          if ( opensInNewTab !== newOpensInNewTab ) {
+            onToggleOpenInNewTab( newOpensInNewTab )
+          }
+        } }
+      />
+    </Popover>
+  )
 
   return (
     <>
       <BlockControls group="block">
-        { !urlIsSet && 
-        <ToolbarButton
-          name="link"
-          icon={ link }
-          title={ __( 'Link' ) }
-          shortcut={ displayShortcut.primary( 'k' ) }
-          onClick={ openLinkControl }
-        />
-        }
-        { urlIsSetandSelected && 
-        <ToolbarButton
-          name="link"
-          icon={ linkOff }
-          title={ __( 'Unlink' ) }
-          shortcut={ displayShortcut.primaryShift( 'k' ) }
-          onClick={ unlinkButton }
-          isActive={ true }
-        />
-        }
+        { !urlIsSet && (
+          <ToolbarButton
+            name="link"
+            icon={ link }
+            title={ __( 'Link' ) }
+            shortcut={ displayShortcut.primary( 'k' ) }
+            onClick={ openLinkControl }
+          />
+        ) }
+        { urlIsSetandSelected && (
+          <ToolbarButton
+            name="link"
+            icon={ linkOff }
+            title={ __( 'Unlink' ) }
+            shortcut={ displayShortcut.primaryShift( 'k' ) }
+            onClick={ unlinkButton }
+            isActive={ true }
+          />
+        ) }
       </BlockControls>
 
-      { isSelected && 
-      <KeyboardShortcuts
-        bindGlobal
-        shortcuts={ {
-          [ rawShortcut.primary( 'k' ) ]: openLinkControl,
-          [ rawShortcut.primaryShift( 'k' ) ]: unlinkButton,
-        } }
-      />
-      }
+      { isSelected && (
+        <KeyboardShortcuts
+          bindGlobal
+          shortcuts={{
+            [ rawShortcut.primary( 'k' ) ]: openLinkControl,
+            [ rawShortcut.primaryShift( 'k' ) ]: unlinkButton,
+          }}
+        />
+      ) }
 
       { linkControl }
     </>
@@ -170,7 +170,7 @@ function ButtonEdit({
   }, [] )
 
   const onToggleOpenInNewTab = useCallback(
-    value => {
+    ( value ) => {
       const newLinkTarget = value ? '_blank' : undefined
 
       setAttributes({
@@ -199,27 +199,27 @@ function ButtonEdit({
     [ textColor.class ]: textColor.class,
     [ `padding-top-${
       paddingTop.small.value +
-			( paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit )
+      ( paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit )
     }--sm` ]: paddingTop.small.value,
     [ `padding-top-${
       paddingTop.medium.value +
-			( paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit )
+      ( paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit )
     }--md` ]: paddingTop.medium.value,
     [ `padding-top-${
       paddingTop.large.value +
-			( paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit )
+      ( paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit )
     }--lg` ]: paddingTop.large.value,
     [ `padding-left-${
       paddingLeft.small.value +
-			( paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit )
+      ( paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit )
     }--sm` ]: paddingLeft.small.value,
     [ `padding-left-${
       paddingLeft.medium.value +
-			( paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit )
+      ( paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit )
     }--md` ]: paddingLeft.medium.value,
     [ `padding-left-${
       paddingLeft.large.value +
-			( paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit )
+      ( paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit )
     }--lg` ]: paddingLeft.large.value,
     [ `padding-right-${
       paddingRight.small.value +
@@ -227,23 +227,23 @@ function ButtonEdit({
     }--sm` ]: paddingRight.small.value,
     [ `padding-right-${
       paddingRight.medium.value +
-			( paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit )
+      ( paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit )
     }--md` ]: paddingRight.medium.value,
     [ `padding-right-${
       paddingRight.large.value +
-			( paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit )
+      ( paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit )
     }--lg` ]: paddingRight.large.value,
     [ `padding-bottom-${
       paddingBottom.small.value +
-			( paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit )
+      ( paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit )
     }--sm` ]: paddingBottom.small.value,
     [ `padding-bottom-${
       paddingBottom.medium.value +
-			( paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit )
+      ( paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit )
     }--md` ]: paddingBottom.medium.value,
     [ `padding-bottom-${
       paddingBottom.large.value +
-			( paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit )
+      ( paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit )
     }--lg` ]: paddingBottom.large.value,
   })
 
@@ -285,7 +285,7 @@ function ButtonEdit({
           <BaseControl label={ __( 'Horizontal alignment', 'fleximpleblocks' ) }>
             <BlockAlignmentHorizontalToolbar
               value={ alignmentHorizontal }
-              onChange={ value =>
+              onChange={ ( value ) =>
                 setAttributes({ alignmentHorizontal: value })
               }
               spaceControlsEnabled
@@ -299,7 +299,7 @@ function ButtonEdit({
             min={ 0 }
             max={ 100 }
             attribute={ borderRadius }
-            onChange={ value => setAttributes({ borderRadius: value }) }
+            onChange={ ( value ) => setAttributes({ borderRadius: value }) }
             isResponsive={ false }
           />
 
@@ -310,14 +310,14 @@ function ButtonEdit({
               { label: __( 'Automatic', 'fleximpleblocks' ), value: 'auto' },
               { label: __( 'Full', 'fleximpleblocks' ), value: 'full' },
             ] }
-            onChange={ value => setAttributes({ width: value }) }
+            onChange={ ( value ) => setAttributes({ width: value }) }
           />
 
           <TextControl
             label={ __( 'Button title', 'fleximpleblocks' ) }
             value={ title }
             placeholder={ __( 'Type the button title…', 'fleximpleblocks' ) }
-            onChange={ value => setAttributes({ title: value }) }
+            onChange={ ( value ) => setAttributes({ title: value }) }
             help={ __(
               'It will show to the user as a tooltip.',
               'fleximpleblocks',
@@ -365,7 +365,7 @@ function ButtonEdit({
               {
                 label: __( 'Icon', 'fleximpleblocks' ),
                 value: iconId,
-                onChange: value => setAttributes({ iconId: value }),
+                onChange: ( value ) => setAttributes({ iconId: value }),
               },
             ] }
             sizes={ [
@@ -375,34 +375,34 @@ function ButtonEdit({
                 initialPosition: 18,
                 min: 10,
                 max: 120,
-                onChange: value => setAttributes({ iconSize: value }),
+                onChange: ( value ) => setAttributes({ iconSize: value }),
               },
             ] }
           />
 
-          { !isIconOnly && 
-          <BaseControl>
-            <p className="fleximple-components-control__label">
-              { __( 'Icon position', 'fleximpleblocks' ) }
-            </p>
-            <ButtonGroup aria-label={ __( 'Icon position', 'fleximpleblocks' ) }>
-              { [ 'left', 'right' ].map( position => {
-                const isCurrent = position === iconPosition
-                return (
-                  <Button
-                    key={ position }
-                    isLarge
-                    isPrimary={ isCurrent }
-                    aria-pressed={ isCurrent }
-                    onClick={ () => setAttributes({ iconPosition: position }) }
-                  >
-                    { position.charAt( 0 ).toUpperCase() + position.slice( 1 ) }
-                  </Button>
-                )
-              }) }
-            </ButtonGroup>
-          </BaseControl>
-          }
+          { !isIconOnly && (
+            <BaseControl>
+              <p className="fleximple-components-control__label">
+                { __( 'Icon position', 'fleximpleblocks' ) }
+              </p>
+              <ButtonGroup aria-label={ __( 'Icon position', 'fleximpleblocks' ) }>
+                { [ 'left', 'right' ].map( ( position ) => {
+                  const isCurrent = position === iconPosition
+                  return (
+                    <Button
+                      key={ position }
+                      isLarge
+                      isPrimary={ isCurrent }
+                      aria-pressed={ isCurrent }
+                      onClick={ () => setAttributes({ iconPosition: position }) }
+                    >
+                      { position.charAt( 0 ).toUpperCase() + position.slice( 1 ) }
+                    </Button>
+                  )
+                }) }
+              </ButtonGroup>
+            </BaseControl>
+          ) }
 
           <ToggleControl
             label={ __( 'Display icon only', 'fleximpleblocks' ) }
@@ -423,18 +423,18 @@ function ButtonEdit({
             onChange={ () => setAttributes({ hasCustomIcon: !hasCustomIcon }) }
           />
 
-          { !!hasCustomIcon && 
-          <TextareaControl
-            label={ __( 'Custom icon', 'fleximpleblocks' ) }
-            style={ { fontFamily: 'monospace' } }
-            help={ __(
-              'Insert the HTML code for your custom icon.',
-              'fleximpleblocks',
-            ) }
-            value={ customIcon }
-            onChange={ value => setAttributes({ customIcon: value }) }
-          />
-          }
+          { !!hasCustomIcon && (
+            <TextareaControl
+              label={ __( 'Custom icon', 'fleximpleblocks' ) }
+              style={{ fontFamily: 'monospace' }}
+              help={ __(
+                'Insert the HTML code for your custom icon.',
+                'fleximpleblocks',
+              ) }
+              value={ customIcon }
+              onChange={ ( value ) => setAttributes({ customIcon: value }) }
+            />
+          ) }
         </PanelBody>
 
         <PanelColorSettings
@@ -473,47 +473,44 @@ function ButtonEdit({
           style={ buttonStyles }
           rel={ relAttribute ? relAttribute : null }
         >
-          { !!iconId && iconPosition === 'left' && !hasCustomIcon && 
-          <i className={ iconClasses } style={ { fontSize: iconSize } } />
+          { !!iconId && iconPosition === 'left' && !hasCustomIcon &&
+            <i className={ iconClasses } style={{ fontSize: iconSize }} />
           }
 
-          { !!hasCustomIcon && !!customIcon && iconPosition === 'left' && 
-          <RawHTML
-            className={ customIconClasses }
-            style={ { height: iconSize } }
-          >
-            { customIcon }
-          </RawHTML>
-          }
+          { !!hasCustomIcon && !!customIcon && iconPosition === 'left' && (
+            <RawHTML className={ customIconClasses } style={{ height: iconSize }}>
+              { customIcon }
+            </RawHTML>
+          ) }
 
-          { !isIconOnly && 
-          <RichText
-            className={ `${ defaultClassName }__text` }
-            placeholder={ __( 'Write text…', 'fleximpleblocks' ) }
-            value={ text }
-            onChange={ value => setAttributes({ text: value }) }
-            allowedFormats={ [ 'bold', 'italic', 'strikethrough' ] }
-            keepPlaceholderOnFocus
-          />
-          }
+          { !isIconOnly && (
+            <RichText
+              className={ `${ defaultClassName }__text` }
+              placeholder={ __( 'Write text…', 'fleximpleblocks' ) }
+              value={ text }
+              onChange={ ( value ) => setAttributes({ text: value }) }
+              allowedFormats={ [ 'bold', 'italic', 'strikethrough' ] }
+              keepPlaceholderOnFocus
+            />
+          ) }
 
           { !!hasCustomIcon &&
-          ( iconPosition === 'right' || iconPosition === undefined ) && 
+            ( iconPosition === 'right' || iconPosition === undefined ) && (
             <RawHTML
               className={ customIconClasses }
-              style={ { height: iconSize } }
+              style={{ height: iconSize }}
             >
               { customIcon }
             </RawHTML>
-          }
+          ) }
 
           { !!iconId &&
-          ( iconPosition === 'right' || iconPosition === undefined ) &&
-          !hasCustomIcon && 
+            ( iconPosition === 'right' || iconPosition === undefined ) &&
+            !hasCustomIcon && (
             <span>
-              <i className={ iconClasses } style={ { fontSize: iconSize } } />
+              <i className={ iconClasses } style={{ fontSize: iconSize }} />
             </span>
-          }
+          ) }
         </div>
       </div>
     </>

@@ -71,7 +71,7 @@ function ButtonsEdit({
       <InspectorControls>
         <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <RadioControl
                   label={ __( 'Direction', 'fleximpleblocks' ) }
@@ -86,7 +86,7 @@ function ButtonsEdit({
                       value: 'column',
                     },
                   ] }
-                  onChange={ option => {
+                  onChange={ ( option ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -105,7 +105,7 @@ function ButtonsEdit({
                   <BlockAlignmentHorizontalToolbar
                     id={ `fleximple-blocks-buttons-horizontal-block-align-toolbar-${ instanceId }` }
                     value={ alignmentHorizontal[ tab.name ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -127,7 +127,7 @@ function ButtonsEdit({
                   max={ 200 }
                   attribute={ gap }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ gap: value }) }
+                  onChange={ ( value ) => setAttributes({ gap: value }) }
                 />
               </>
             }

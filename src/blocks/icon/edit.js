@@ -75,7 +75,7 @@ function IconEdit({
       <BlockControls>
         <BlockAlignmentHorizontalToolbar
           value={ alignmentHorizontal }
-          onChange={ value => setAttributes({ alignmentHorizontal: value }) }
+          onChange={ ( value ) => setAttributes({ alignmentHorizontal: value }) }
         />
       </BlockControls>
       <InspectorControls>
@@ -85,7 +85,7 @@ function IconEdit({
               {
                 label: __( 'Icon', 'fleximpleblocks' ),
                 value: iconId,
-                onChange: value => setAttributes({ iconId: value }),
+                onChange: ( value ) => setAttributes({ iconId: value }),
               },
             ] }
             sizes={ [
@@ -95,7 +95,7 @@ function IconEdit({
                 initialPosition: 60,
                 min: 10,
                 max: 120,
-                onChange: value => setAttributes({ iconSize: value }),
+                onChange: ( value ) => setAttributes({ iconSize: value }),
               },
             ] }
           />
@@ -109,10 +109,10 @@ function IconEdit({
           { !!hasCustomIcon &&
           <TextareaControl
             label={ __( 'Custom Icon', 'fleximpleblocks' ) }
-            style={ { fontFamily: 'monospace' } }
+            style={{ fontFamily: 'monospace' }}
             placeholder={ __( 'Paste the code for your custom icon in here…', 'fleximpleblocks' ) }
             value={ customIcon }
-            onChange={ value => setAttributes({ customIcon: value }) }
+            onChange={ ( value ) => setAttributes({ customIcon: value }) }
           />
           }
         </PanelBody>

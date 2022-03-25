@@ -104,7 +104,7 @@ export const getHelpText = ( attribute, state ) => {
   }
 }
 
-export const getLabel = attribute => {
+export const getLabel = ( attribute ) => {
   switch ( attribute ) {
     case 'additional':
       return __( 'Additional content', 'fleximpleblocks' )

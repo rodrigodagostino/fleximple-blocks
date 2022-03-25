@@ -52,7 +52,7 @@ export const registerFleximpleBlocks = () => {
     tabs,
     testimonial,
     weather,
-  ].forEach( block => {
+  ].forEach( ( block ) => {
     if ( !block ) {
       return
     }

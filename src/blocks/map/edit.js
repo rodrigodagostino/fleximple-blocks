@@ -28,7 +28,7 @@ import {
   TextareaControl,
   ToggleControl,
 } from '@wordpress/components'
-import { useEffect, useRef } from '@wordpress/element'
+import { useRef } from '@wordpress/element'
 
 const { name } = metadata
 
@@ -51,26 +51,6 @@ function MapEdit({
   const mapRef = useRef()
   const markerRef = useRef()
   const popupRef = useRef()
-
-  // componentWillMount equivalent
-  // useEffect( () => {
-  // 	const currentMap = mapRef.current.leafletElement
-  // 	if ( currentMap !== null ) {
-  // 		currentMap.on( 'zoomend', () => {
-  // 			const currentZoom = currentMap.getZoom()
-  // 			setAttributes( { zoom: currentZoom } )
-  // 		} )
-  // 		currentMap.on( 'baselayerchange', ( e ) => {
-  // 			setAttributes( {
-  // 				layer: {
-  // 					name: e.name,
-  // 					url: e.layer.options.url,
-  // 					attribution: e.layer.options.attribution,
-  // 				},
-  // 			} )
-  // 		} )
-  // 	}
-  // }, [] )
 
   const updatePosition = () => {
     const currentMap = markerRef.current
@@ -132,11 +112,11 @@ function MapEdit({
             min={ 1 }
             max={ 19 }
             value={ zoom }
-            onChange={ value => setAttributes({ zoom: value }) }
+            onChange={ ( value ) => setAttributes({ zoom: value }) }
           />
 
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <SpacingControls
                 valueLabel={ __( 'Height', 'fleximpleblocks' ) }
                 unitLabel={ __( 'Height unit', 'fleximpleblocks' ) }
@@ -145,7 +125,7 @@ function MapEdit({
                 max={ 1200 }
                 attribute={ height }
                 target={ tab.name }
-                onChange={ value => setAttributes({ height: value }) }
+                onChange={ ( value ) => setAttributes({ height: value }) }
               />
             }
           </ResponsiveSettingsTabPanel>
@@ -171,7 +151,7 @@ function MapEdit({
                 value: 'watercolor',
               },
             ] }
-            onChange={ value => setAttributes({ layer: value }) }
+            onChange={ ( value ) => setAttributes({ layer: value }) }
           />
 
           <ToggleControl
@@ -184,7 +164,7 @@ function MapEdit({
           <TextareaControl
             label={ __( 'Popup content' ) }
             value={ popup }
-            onChange={ value => setAttributes({ popup: value }) }
+            onChange={ ( value ) => setAttributes({ popup: value }) }
             help={ __( 'Click on the marker to display the popup.', 'fleximpleblocks' ) }
           />
           }

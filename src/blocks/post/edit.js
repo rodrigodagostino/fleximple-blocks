@@ -81,13 +81,13 @@ function PostEdit({
         per_page: 20,
       }),
     })
-      .then( results => {
+      .then( ( results ) => {
         const randomIndex = Math.floor( Math.random() * results.length )
         setAttributes({
           postId: results[ randomIndex ].id,
         })
       })
-      .catch( error => console.error( error ) )
+      .catch( ( error ) => console.error( error ) )
   }
 
   const fetchPostData = () => {
@@ -97,23 +97,23 @@ function PostEdit({
     apiFetch({
       path: `/wp/v2/${ postType }/${ postId }`,
     })
-      .then( result => {
+      .then( ( result ) => {
         setPostData( result )
         if ( !result.audio_data ) {
           setAttributes({ displayAudio: false })
         }
         filterImageSizeOptions( result )
       })
-      .catch( error => console.error( error ) )
+      .catch( ( error ) => console.error( error ) )
       .finally( () => setIsFetching( false ) )
   }
 
   useMemo( () => fetchPostData(), [ postId ] )
 
-  const filterImageSizeOptions = data => {
+  const filterImageSizeOptions = ( data ) => {
     if ( data && data.featured_media_data ) {
       const options = Object.keys( data.featured_media_data ).map(
-        mediaSize => {
+        ( mediaSize ) => {
           const label = mediaSize
             .replace( /_/g, ' ' )
             .replace( /(?:^|\s)\S/g, function ( a ) {
@@ -141,7 +141,7 @@ function PostEdit({
             minLevel={ 2 }
             maxLevel={ 5 }
             selectedLevel={ headingLevel }
-            onChange={ value => setAttributes({ headingLevel: value }) }
+            onChange={ ( value ) => setAttributes({ headingLevel: value }) }
             isCollapsed={ false }
           />
         </BlockControls>
@@ -161,7 +161,7 @@ function PostEdit({
                 minLevel={ 1 }
                 maxLevel={ 7 }
                 selectedLevel={ headingLevel }
-                onChange={ value => setAttributes({ headingLevel: value }) }
+                onChange={ ( value ) => setAttributes({ headingLevel: value }) }
                 isCollapsed={ false }
               />
             </BaseControl>
@@ -172,7 +172,7 @@ function PostEdit({
                 min={ 10 }
                 max={ 100 }
                 value={ excerptLength }
-                onChange={ value => setAttributes({ excerptLength: value }) }
+                onChange={ ( value ) => setAttributes({ excerptLength: value }) }
               />
             }
 
@@ -187,7 +187,7 @@ function PostEdit({
                 min={ 1 }
                 max={ 6 }
                 value={ extraArticles }
-                onChange={ value => setAttributes({ extraArticles: value }) }
+                onChange={ ( value ) => setAttributes({ extraArticles: value }) }
                 required
               />
             }
@@ -233,7 +233,7 @@ function PostEdit({
               initialOpen={ false }
             >
               <ResponsiveSettingsTabPanel initialTabName="medium">
-                { tab =>
+                { ( tab ) =>
                   <>
                     <SelectControl
                       label={ __( 'Image size', 'fleximpleblocks' ) }
@@ -245,7 +245,7 @@ function PostEdit({
                         },
                         ...imageSizeOptions,
                       ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -270,7 +270,7 @@ function PostEdit({
                         { label: '2:1', value: '2-1' },
                         { label: '3:1', value: '3-1' },
                       ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -284,7 +284,7 @@ function PostEdit({
                     <FocalPointPicker
                       url={ postData.featured_media_data[ imageSize[ tab.name ] ] ? postData.featured_media_data[ imageSize[ tab.name ] ].url : null }
                       value={ focalPoint[ tab.name ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -310,7 +310,7 @@ function PostEdit({
               <TextControl
                 label={ __( 'Read more text', 'fleximpleblocks' ) }
                 value={ readMore }
-                onChange={ value => setAttributes({ readMore: value }) }
+                onChange={ ( value ) => setAttributes({ readMore: value }) }
               />
             }
           </PanelBody>

@@ -16,20 +16,20 @@ import { __ } from '@wordpress/i18n'
 import { BaseControl } from '@wordpress/components'
 
 function LocationSelectControl({ attributes: { units, language }, setAttributes, hideLabelFromVision, help, instanceId }) {
-  const filterResults = searchResults => {
-    return searchResults.list.map( searchResult => ({
+  const filterResults = ( searchResults ) => {
+    return searchResults.list.map( ( searchResult ) => ({
       label: searchResult.name + ', ' + searchResult.sys.country,
       value: searchResult.name + ',' + searchResult.sys.country,
     }) )
   }
 
-  const fetchPromiseOptions = async inputValue => {
+  const fetchPromiseOptions = async ( inputValue ) => {
     if ( !inputValue || inputValue.length < 3 ) return []
     const searchResults = await fetch(
       `https://api.openweathermap.org/data/2.5/find?q=${ encodeURIComponent( inputValue ) }&appid=${
         fleximpleblocksPluginData.settings.openWeatherApiKey
       }&units=${ units }&lang=${ language }`,
-    ).then( results => {
+    ).then( ( results ) => {
       return results.json()
     })
     const filteredResults = await filterResults( searchResults )
@@ -54,7 +54,7 @@ function LocationSelectControl({ attributes: { units, language }, setAttributes,
           // defaultOptions={ defaultOptions }
           loadOptions={ fetchPromiseOptions }
           placeholder={ __( 'Search for a location…', 'fleximpleblocks' ) }
-          onChange={ selectedOption => setAttributes({ cityName: selectedOption.value }) }
+          onChange={ ( selectedOption ) => setAttributes({ cityName: selectedOption.value }) }
           loadingMessage={ () => __( 'Loading…', 'fleximpleblocks' ) }
           noOptionsMessage={ () => __( 'No results found.', 'fleximpleblocks' ) }
         />

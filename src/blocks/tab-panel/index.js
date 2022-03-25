@@ -40,7 +40,7 @@ export const settings = {
     html: false,
   },
 
-  edit: props => {
+  edit: ( props ) => {
     const { className } = props
 
     const TEMPLATE = [

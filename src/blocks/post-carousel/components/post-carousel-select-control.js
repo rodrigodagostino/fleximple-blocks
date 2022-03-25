@@ -27,8 +27,8 @@ const PostCarouselSelectControl = ({
 
   const [ defaultOptions, setDefaultOptions ] = useState()
 
-  const filterResults = searchResults => {
-    return searchResults.map( searchResult => ({
+  const filterResults = ( searchResults ) => {
+    return searchResults.map( ( searchResult ) => ({
       label: searchResult.title.rendered,
       value: searchResult.id,
     }) )
@@ -44,7 +44,7 @@ const PostCarouselSelectControl = ({
     setDefaultOptions( filteredResults )
   }
 
-  const fetchPromiseOptions = async inputValue => {
+  const fetchPromiseOptions = async ( inputValue ) => {
     if ( !inputValue || inputValue.length < 3 ) {
       return []
     }
@@ -78,7 +78,7 @@ const PostCarouselSelectControl = ({
           loadOptions={ fetchPromiseOptions }
           placeholder={ __( 'Search a post…', 'fleximpleblocks' ) }
           defaultValue={ selectedPosts }
-          onChange={ selectedOptions =>
+          onChange={ ( selectedOptions ) =>
             setAttributes({ selectedPosts: selectedOptions })
           }
           isMulti={ true }

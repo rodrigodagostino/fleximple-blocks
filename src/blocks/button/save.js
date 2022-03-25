@@ -21,7 +21,6 @@ import metadata from './block.json'
 const { name } = metadata
 
 function ButtonSave({
-  className,
   attributes: {
     text,
     url,
@@ -100,14 +99,14 @@ function ButtonSave({
         rel={ relAttribute ? relAttribute : null }
       >
         { !!iconId && iconPosition === 'left' &&
-        <i className={ iconClasses } style={ { fontSize: iconSize } } />
+        <i className={ iconClasses } style={{ fontSize: iconSize }} />
         }
 
         { !!hasCustomIcon && iconPosition === 'left' &&
         <div
           className={ customIconClasses }
-          style={ { height: iconSize } }
-          dangerouslySetInnerHTML={ { __html: customIcon } }
+          style={{ height: iconSize }}
+          dangerouslySetInnerHTML={{ __html: customIcon }}
         />
         }
 
@@ -123,14 +122,14 @@ function ButtonSave({
         ( iconPosition === 'right' || iconPosition === undefined ) &&
           <div
             className={ customIconClasses }
-            style={ { height: iconSize } }
-            dangerouslySetInnerHTML={ { __html: customIcon } }
+            style={{ height: iconSize }}
+            dangerouslySetInnerHTML={{ __html: customIcon }}
           />
         }
 
         { !!iconId &&
         ( iconPosition === 'right' || iconPosition === undefined ) &&
-          <i className={ iconClasses } style={ { fontSize: iconSize } } />
+          <i className={ iconClasses } style={{ fontSize: iconSize }} />
         }
       </a>
     </div>

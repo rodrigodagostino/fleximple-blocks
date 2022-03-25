@@ -110,7 +110,7 @@ function DateAndTimeEdit({
                   value: 'custom',
                 },
               ] }
-              onChange={ option => {
+              onChange={ ( option ) => {
                 if ( option === 'custom' ) {
                   setAttributes({ customDateFormat: dateFormat })
                 }
@@ -133,7 +133,7 @@ function DateAndTimeEdit({
                 </ExternalLink>
               }
               value={ customDateFormat }
-              onChange={ value =>
+              onChange={ ( value ) =>
                 setAttributes({ customDateFormat: value })
               }
             />
@@ -170,7 +170,7 @@ function DateAndTimeEdit({
                   value: 'custom',
                 },
               ] }
-              onChange={ option => {
+              onChange={ ( option ) => {
                 if ( option === 'custom' ) {
                   setAttributes({ customTimeFormat: timeFormat })
                 }
@@ -190,7 +190,7 @@ function DateAndTimeEdit({
                 </ExternalLink>
               }
               value={ customTimeFormat }
-              onChange={ value =>
+              onChange={ ( value ) =>
                 setAttributes({ customTimeFormat: value })
               }
             />
@@ -206,7 +206,7 @@ function DateAndTimeEdit({
               'Type in the date/time separator…',
               'fleximpleblocks',
             ) }
-            onChange={ value => setAttributes({ separator: value }) }
+            onChange={ ( value ) => setAttributes({ separator: value }) }
           />
           }
         </PanelBody>
@@ -216,7 +216,7 @@ function DateAndTimeEdit({
         { displayDate &&
         <span
           className={ `${ defaultClassName }__date` }
-          dangerouslySetInnerHTML={ { __html: splitDate() } }
+          dangerouslySetInnerHTML={{ __html: splitDate() }}
         />
         }
 
@@ -231,7 +231,7 @@ function DateAndTimeEdit({
         { displayTime &&
         <span
           className={ `${ defaultClassName }__time` }
-          dangerouslySetInnerHTML={ { __html: splitTime() } }
+          dangerouslySetInnerHTML={{ __html: splitTime() }}
         />
         }
       </time>

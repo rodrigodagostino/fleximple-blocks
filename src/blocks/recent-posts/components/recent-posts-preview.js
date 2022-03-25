@@ -167,11 +167,11 @@ const RecentPostsPreview = ({
       { postsData.map( ( post, i ) => {
         return (
           <article key={ i } id={ `post-${ post.id }` } className={ `${ defaultClassName }__entry` }>
-            { orderArticle.map( fragment => {
+            { orderArticle.map( ( fragment ) => {
               if ( 'media' === fragment && displayMedia && displayFeaturedImage ) {
                 return (
-                  <div className={ `${ defaultClassName }__entry-media` } style={ { width: 'list' === layout ? `${ imageWidth }%` : undefined } }>
-                    { orderMedia.map( mediaFragment => {
+                  <div className={ `${ defaultClassName }__entry-media` } style={{ width: 'list' === layout ? `${ imageWidth }%` : undefined }}>
+                    { orderMedia.map( ( mediaFragment ) => {
                       if ( mediaFragment === 'featuredImage' && displayFeaturedImage ) {
                         const pictureSources = []
                         if ( post.featured_media ) {
@@ -207,8 +207,8 @@ const RecentPostsPreview = ({
 
               if ( 'content' === fragment && displayContent ) {
                 return (
-                  <div className={ `${ defaultClassName }__entry-content` } style={ { width: 'list' === layout && !!post.featured_media ? `${ 100 - imageWidth }%` : undefined } }>
-                    { orderContent.map( contentFragment => {
+                  <div className={ `${ defaultClassName }__entry-content` } style={{ width: 'list' === layout && !!post.featured_media ? `${ 100 - imageWidth }%` : undefined }}>
+                    { orderContent.map( ( contentFragment ) => {
                       if ( contentFragment === 'categories' && displayCategories && !!post.categories_data ) {
                         return (
                           <div className={ `${ defaultClassName }__entry-categories` }>
@@ -220,7 +220,7 @@ const RecentPostsPreview = ({
                                   href={ category.url }
                                   rel="category"
                                   data-category-slug={ category.slug }
-                                  dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Category:', 'fleximpleblocks' ) }</span> ${ category.name }` } }
+                                  dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Category:', 'fleximpleblocks' ) }</span> ${ category.name }` }}
                                 />
                               )
                             }) }
@@ -239,12 +239,12 @@ const RecentPostsPreview = ({
                             { !!post.meta.kicker &&
                             <span
                               className={ `${ defaultClassName }__entry-kicker` }
-                              dangerouslySetInnerHTML={ { __html: post.meta.kicker } }
+                              dangerouslySetInnerHTML={{ __html: post.meta.kicker }}
                             />
                             }
                             <span
                               className={ `${ defaultClassName }__entry-headline` }
-                              dangerouslySetInnerHTML={ { __html: post.title.rendered.trim() } }
+                              dangerouslySetInnerHTML={{ __html: post.title.rendered.trim() }}
                             />
                             { /* </a> */ }
                           </TagName>
@@ -255,14 +255,14 @@ const RecentPostsPreview = ({
                         return (
                           <div className={ `${ defaultClassName }__entry-meta` }>
                             { // eslint-disable-next-line array-callback-return
-                              orderMeta.map( metaFragment => {
+                              orderMeta.map( ( metaFragment ) => {
                                 if ( metaFragment === 'author' && displayAuthor && !!post.author_data ) {
                                   return (
                                     <a
                                       href={ post.author_data.url }
                                       className={ `${ defaultClassName }__entry-byline` }
                                       rel="author"
-                                      dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Published by:', 'fleximpleblocks' ) }</span> ${ post.author_data.name }` } }
+                                      dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Published by:', 'fleximpleblocks' ) }</span> ${ post.author_data.name }` }}
                                     />
                                   )
                                 }
@@ -272,7 +272,7 @@ const RecentPostsPreview = ({
                                     <time
                                       dateTime={ format( 'c', post.date_gmt ) }
                                       className={ `${ defaultClassName }__entry-date` }
-                                      dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Published on:', 'fleximpleblocks' ) }</span> ${ dateI18n( dateFormat, post.date_gmt ) }` } }
+                                      dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Published on:', 'fleximpleblocks' ) }</span> ${ dateI18n( dateFormat, post.date_gmt ) }` }}
                                     />
                                   )
                                 }
@@ -313,7 +313,7 @@ const RecentPostsPreview = ({
                             target="_blank"
                             rel={ relAttribute }
                             data-link-name="article"
-                            dangerouslySetInnerHTML={ { __html: readMore } }
+                            dangerouslySetInnerHTML={{ __html: readMore }}
                           />
                         )
                       }
@@ -333,7 +333,7 @@ const RecentPostsPreview = ({
               tabIndex="-1"
               aria-hidden="true"
               /* translators: edit post link text */
-              dangerouslySetInnerHTML={ { __html: `${ __( 'Edit', 'fleximpleblocks' ) } «${ post.title.rendered }»` } }
+              dangerouslySetInnerHTML={{ __html: `${ __( 'Edit', 'fleximpleblocks' ) } «${ post.title.rendered }»` }}
             />
           </article>
         )

@@ -24,8 +24,8 @@ import AnimationControls from 'fleximple-components/components/animation-control
  *
  * @return {WPComponent} Wrapped component.
  */
-export const withInspectorControls = createHigherOrderComponent( BlockEdit => {
-  return props => {
+export const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
+  return ( props ) => {
     const hasAnimationSupport = hasBlockSupport( props.name, 'animation', true )
     if ( hasAnimationSupport && props.isSelected ) {
       return (

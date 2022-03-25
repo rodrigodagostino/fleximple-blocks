@@ -44,7 +44,7 @@ class FleximpleBlocksSettings extends Component {
       this.settings = new wp.api.models.Settings()
 
       if ( false === this.state.isAPILoaded ) {
-        this.settings.fetch().then( response => {
+        this.settings.fetch().then( ( response ) => {
           this.setState({
             fleximpleblocks_small_breakpoint_value:
 							response.fleximpleblocks_small_breakpoint_value,
@@ -76,7 +76,7 @@ class FleximpleBlocksSettings extends Component {
       [ option ]: value,
     })
 
-    model.save().then( response => {
+    model.save().then( ( response ) => {
       this.setState({
         [ option ]: response[ option ],
         isAPISaving: false,
@@ -115,7 +115,7 @@ class FleximpleBlocksSettings extends Component {
                 label={ __( 'Small breakpoint', 'fleximpleblocks' ) }
                 help={ __( 'In pixels.', 'fleximpleblocks' ) }
                 value={ this.state.fleximpleblocks_small_breakpoint_value }
-                onChange={ value =>
+                onChange={ ( value ) =>
                   this.setState({
                     fleximpleblocks_small_breakpoint_value: value,
                   })
@@ -129,7 +129,7 @@ class FleximpleBlocksSettings extends Component {
                 label={ __( 'Medium breakpoint', 'fleximpleblocks' ) }
                 help={ __( 'In pixels.', 'fleximpleblocks' ) }
                 value={ this.state.fleximpleblocks_medium_breakpoint_value }
-                onChange={ value =>
+                onChange={ ( value ) =>
                   this.setState({
                     fleximpleblocks_medium_breakpoint_value: value,
                   })
@@ -143,7 +143,7 @@ class FleximpleBlocksSettings extends Component {
                 label={ __( 'Large breakpoint', 'fleximpleblocks' ) }
                 help={ __( 'In pixels.', 'fleximpleblocks' ) }
                 value={ this.state.fleximpleblocks_large_breakpoint_value }
-                onChange={ value =>
+                onChange={ ( value ) =>
                   this.setState({
                     fleximpleblocks_large_breakpoint_value: value,
                   })
@@ -157,7 +157,7 @@ class FleximpleBlocksSettings extends Component {
                 label={ __( 'Extra large breakpoint', 'fleximpleblocks' ) }
                 help={ __( 'In pixels.', 'fleximpleblocks' ) }
                 value={ this.state.fleximpleblocks_xlarge_breakpoint_value }
-                onChange={ value =>
+                onChange={ ( value ) =>
                   this.setState({
                     fleximpleblocks_xlarge_breakpoint_value: value,
                   })
@@ -252,7 +252,7 @@ class FleximpleBlocksSettings extends Component {
               <TextControl
                 label={ __( 'Open Weather API key', 'fleximpleblocks' ) }
                 value={ this.state.fleximpleblocks_open_weather_api_key }
-                onChange={ value =>
+                onChange={ ( value ) =>
                   this.setState({ fleximpleblocks_open_weather_api_key: value })
                 }
                 help={

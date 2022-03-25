@@ -19,8 +19,8 @@ function LocationSelectControl({
   help,
   instanceId,
 }) {
-  const filterResults = searchResults => {
-    return searchResults.map( searchResult => ({
+  const filterResults = ( searchResults ) => {
+    return searchResults.map( ( searchResult ) => ({
       label: searchResult.display_name,
       value: {
         lat: searchResult.lat,
@@ -29,13 +29,13 @@ function LocationSelectControl({
     }) )
   }
 
-  const fetchPromiseOptions = async inputValue => {
+  const fetchPromiseOptions = async ( inputValue ) => {
     if ( !inputValue ) {
       return []
     }
     const url = `https://nominatim.openstreetmap.org/?format=json&addressdetails=1&q=${ encodeURIComponent( inputValue ) }&format=json`
     const searchResults = await fetch( url )
-      .then( results => {
+      .then( ( results ) => {
         return results.json()
       })
     const filteredResults = await filterResults( searchResults )
@@ -60,7 +60,7 @@ function LocationSelectControl({
           // defaultOptions={ defaultOptions }
           loadOptions={ fetchPromiseOptions }
           placeholder={ __( 'Search for a location…', 'fleximpleblocks' ) }
-          onChange={ selectedOption => setAttributes({ position: selectedOption.value }) }
+          onChange={ ( selectedOption ) => setAttributes({ position: selectedOption.value }) }
           loadingMessage={ () => __( 'Loading…', 'fleximpleblocks' ) }
           noOptionsMessage={ () => __( 'No results found.', 'fleximpleblocks' ) }
         />

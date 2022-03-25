@@ -37,11 +37,11 @@ function PostSelectControl({
 
   const fetchPostTypes = () => {
     apiFetch({ path: '/wp/v2/types/' })
-      .then( types => {
-        const typesObjectToArray = Object.keys( types ).map( type => {
+      .then( ( types ) => {
+        const typesObjectToArray = Object.keys( types ).map( ( type ) => {
           return types[ type ]
         })
-        const typesArray = typesObjectToArray.map( type => {
+        const typesArray = typesObjectToArray.map( ( type ) => {
           const typeObject = {}
           typeObject.label = type.name
           typeObject.value = type.rest_base
@@ -49,11 +49,11 @@ function PostSelectControl({
         })
         setPostTypes( typesArray )
       })
-      .catch( error => console.error( error ) )
+      .catch( ( error ) => console.error( error ) )
   }
 
-  const filterResults = searchResults => {
-    return searchResults.map( searchResult => ({
+  const filterResults = ( searchResults ) => {
+    return searchResults.map( ( searchResult ) => ({
       label: searchResult.title.rendered,
       value: searchResult.id,
     }) )
@@ -69,7 +69,7 @@ function PostSelectControl({
     setDefaultOptions( filteredResults )
   }
 
-  const fetchPromiseOptions = async inputValue => {
+  const fetchPromiseOptions = async ( inputValue ) => {
     if ( !inputValue || inputValue.length < 3 ) {
       return []
     }
@@ -101,7 +101,7 @@ function PostSelectControl({
           defaultOptions={ defaultOptions }
           loadOptions={ fetchPromiseOptions }
           placeholder={ __( 'Search a post…', 'fleximpleblocks' ) }
-          onChange={ selectedOption => setAttributes({ postId: selectedOption.value }) }
+          onChange={ ( selectedOption ) => setAttributes({ postId: selectedOption.value }) }
           loadingMessage={ () => __( 'Loading…', 'fleximpleblocks' ) }
           noOptionsMessage={ () => __( 'No posts found.', 'fleximpleblocks' ) }
         />
@@ -112,7 +112,7 @@ function PostSelectControl({
         labelPosition="top"
         value={ postType }
         options={ postTypes }
-        onChange={ value => setAttributes({ postType: value }) }
+        onChange={ ( value ) => setAttributes({ postType: value }) }
       />
     </>
   )

@@ -109,7 +109,7 @@ class TestimonialEdit extends Component {
         <InspectorControls>
           <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab =>
+              { ( tab ) =>
                 <>
                   <BaseControl
                     label={ __( 'Text alignment', 'fleximpleblocks' ) }
@@ -118,7 +118,7 @@ class TestimonialEdit extends Component {
                     <AlignmentToolbar
                       id={ `fleximple-blocks-testimonialblock-align-toolbar-${ instanceId }` }
                       value={ textAlignment[ tab.name ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -139,7 +139,7 @@ class TestimonialEdit extends Component {
                     max={ 200 }
                     attribute={ gap }
                     target={ tab.name }
-                    onChange={ value => setAttributes({ gap: value }) }
+                    onChange={ ( value ) => setAttributes({ gap: value }) }
                   />
                 </>
               }
@@ -149,7 +149,7 @@ class TestimonialEdit extends Component {
           { !!mediaId &&
           <PanelBody title={ __( 'Media', 'fleximpleblocks' ) } initialOpen={ false }>
             <ResponsiveSettingsTabPanel initialTabName="small">
-              { tab =>
+              { ( tab ) =>
                 <>
                   <SpacingControls
                     valueLabel={ __( 'Media height', 'fleximpleblocks' ) }
@@ -159,7 +159,7 @@ class TestimonialEdit extends Component {
                     max={ 800 }
                     attribute={ mediaHeight }
                     target={ tab.name }
-                    onChange={ value => setAttributes({ mediaHeight: value }) }
+                    onChange={ ( value ) => setAttributes({ mediaHeight: value }) }
                   />
 
                   <SpacingControls
@@ -170,7 +170,7 @@ class TestimonialEdit extends Component {
                     max={ 200 }
                     attribute={ mediaBorderRadius }
                     target={ tab.name }
-                    onChange={ value => setAttributes({ mediaBorderRadius: value }) }
+                    onChange={ ( value ) => setAttributes({ mediaBorderRadius: value }) }
                   />
                 </>
               }
@@ -187,7 +187,7 @@ class TestimonialEdit extends Component {
                 {
                   label: __( 'Icon', 'fleximpleblocks' ),
                   value: iconId,
-                  onChange: value => setAttributes({ iconId: value }),
+                  onChange: ( value ) => setAttributes({ iconId: value }),
                 },
               ] }
               sizes={ [
@@ -197,7 +197,7 @@ class TestimonialEdit extends Component {
                   initialPosition: 60,
                   min: 10,
                   max: 120,
-                  onChange: value => setAttributes({ iconSize: value }),
+                  onChange: ( value ) => setAttributes({ iconSize: value }),
                 },
               ] }
             />
@@ -274,7 +274,7 @@ class TestimonialEdit extends Component {
           </style>
 
           { // eslint-disable-next-line array-callback-return
-            order.map( fragment => {
+            order.map( ( fragment ) => {
               if ( 'icon' === fragment ) {
                 if ( displayIcon ) {
                   return (
@@ -291,7 +291,7 @@ class TestimonialEdit extends Component {
                       tagName={ 'blockquote' }
                       className={ `${ defaultClassName }__quote` }
                       value={ quote }
-                      onChange={ value => setAttributes({ quote: value }) }
+                      onChange={ ( value ) => setAttributes({ quote: value }) }
                       placeholder={ __( 'Write quote…', 'fleximpleblocks' ) }
                       keepPlaceholderOnFocus
                     />
@@ -305,7 +305,7 @@ class TestimonialEdit extends Component {
                     <figure className={ !mediaId ? `${ defaultClassName }__media fleximple-components__media-placeholder` : `${ defaultClassName }__media fleximple-components__media-placeholder is-active` }>
                       <MediaUploadCheck>
                         <MediaUpload
-                          onSelect={ media => setAttributes({ mediaId: media.id, mediaUrl: media.url, mediaAlt: media.alt }) }
+                          onSelect={ ( media ) => setAttributes({ mediaId: media.id, mediaUrl: media.url, mediaAlt: media.alt }) }
                           allowedTypes={ [ 'image' ] }
                           value={ mediaId }
                           render={ ({ open }) =>
@@ -336,7 +336,7 @@ class TestimonialEdit extends Component {
                       tagName={ 'p' }
                       className={ `${ defaultClassName }__reference` }
                       value={ reference }
-                      onChange={ value => setAttributes({ reference: value }) }
+                      onChange={ ( value ) => setAttributes({ reference: value }) }
                       placeholder={ __( 'Write reference…', 'fleximpleblocks' ) }
                       keepPlaceholderOnFocus
                     />

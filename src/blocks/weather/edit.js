@@ -65,14 +65,14 @@ function WeatherEdit({
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ cityName }&appid=${ apiKey }&units=${ units }&lang=${ language }`
     fetch( url )
-      .then( results => {
+      .then( ( results ) => {
         return results.json()
       })
-      .then( data => {
+      .then( ( data ) => {
         setWeatherData( data )
         setIsFetching( false )
       })
-      .catch( error => console.error( error ) )
+      .catch( ( error ) => console.error( error ) )
   }
 
   const defaultClassName = getBlockDefaultClassName( name )
@@ -104,7 +104,7 @@ function WeatherEdit({
               'fleximpleblocks',
             ) }
             value={ shortName }
-            onChange={ value =>
+            onChange={ ( value ) =>
               setAttributes({ shortName: value })
             }
           />
@@ -135,7 +135,7 @@ function WeatherEdit({
                 value: 'kelvin',
               },
             ] }
-            onChange={ value => setAttributes({ units: value }) }
+            onChange={ ( value ) => setAttributes({ units: value }) }
           />
 
           <SelectControl
@@ -143,7 +143,7 @@ function WeatherEdit({
             labelPosition="top"
             value={ language }
             options={ languages }
-            onChange={ value => setAttributes({ language: value }) }
+            onChange={ ( value ) => setAttributes({ language: value }) }
           />
         </PanelBody>
       </InspectorControls>

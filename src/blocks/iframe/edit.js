@@ -68,7 +68,7 @@ function IframeEdit({
             label={ __( 'URL', 'fleximpleblocks' ) }
             value={ url }
             placeholder={ __( 'Type the Iframe URL…', 'fleximpleblocks' ) }
-            onChange={ value => setAttributes({ url: value }) }
+            onChange={ ( value ) => setAttributes({ url: value }) }
           />
 
           <SpacingControls
@@ -78,7 +78,7 @@ function IframeEdit({
             min={ 0 }
             max={ 1000 }
             attribute={ width }
-            onChange={ value => setAttributes({ width: value }) }
+            onChange={ ( value ) => setAttributes({ width: value }) }
             isResponsive={ false }
           />
 
@@ -90,7 +90,7 @@ function IframeEdit({
               min={ 0 }
               max={ 1000 }
               attribute={ height }
-              onChange={ value => setAttributes({ height: value }) }
+              onChange={ ( value ) => setAttributes({ height: value }) }
               isResponsive={ false }
             />
           }
@@ -105,7 +105,7 @@ function IframeEdit({
             label={ __( 'Title', 'fleximpleblocks' ) }
             value={ title }
             placeholder={ __( 'Type the Iframe title…', 'fleximpleblocks' ) }
-            onChange={ value => setAttributes({ title: value }) }
+            onChange={ ( value ) => setAttributes({ title: value }) }
           />
         </PanelBody>
       </InspectorControls>

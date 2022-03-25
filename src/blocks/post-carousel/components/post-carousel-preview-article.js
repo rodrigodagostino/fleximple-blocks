@@ -102,11 +102,11 @@ const PostCarouselPreviewArticle = ({
       </style>
 
       <article id={ `post-${ post.id }` } className={ `${ defaultClassName }__entry` }>
-        { orderArticle.map( fragment => {
+        { orderArticle.map( ( fragment ) => {
           if ( fragment === 'media' && displayMedia && displayFeaturedImage ) {
             return (
               <div className={ `${ defaultClassName }__entry-media` }>
-                { orderMedia.map( mediaFragment => {
+                { orderMedia.map( ( mediaFragment ) => {
                   if ( mediaFragment === 'featuredImage' && displayFeaturedImage ) {
                     const pictureSources = []
                     if ( post.featured_media ) {
@@ -143,7 +143,7 @@ const PostCarouselPreviewArticle = ({
           if ( 'content' === fragment && displayContent ) {
             return (
               <div className={ contentClasses }>
-                { orderContent.map( contentFragment => {
+                { orderContent.map( ( contentFragment ) => {
                   if ( 'categories' === contentFragment && displayCategories && !!post.categories_data ) {
                     return (
                       <div className={ `${ defaultClassName }__entry-categories` }>
@@ -155,7 +155,7 @@ const PostCarouselPreviewArticle = ({
                               href={ category.url }
                               rel="category"
                               data-category-slug={ category.slug }
-                              dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Category:', 'fleximpleblocks' ) }</span> ${ category.name }` } }
+                              dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Category:', 'fleximpleblocks' ) }</span> ${ category.name }` }}
                             />
                           )
                         }) }
@@ -174,12 +174,12 @@ const PostCarouselPreviewArticle = ({
                         { !!post.meta.kicker &&
                         <span
                           className={ `${ defaultClassName }__entry-kicker` }
-                          dangerouslySetInnerHTML={ { __html: post.meta.kicker } }
+                          dangerouslySetInnerHTML={{ __html: post.meta.kicker }}
                         />
                         }
                         <span
                           className={ `${ defaultClassName }__entry-headline` }
-                          dangerouslySetInnerHTML={ { __html: post.title.rendered.trim() } }
+                          dangerouslySetInnerHTML={{ __html: post.title.rendered.trim() }}
                         />
                         { /* </a> */ }
                       </TagName>
@@ -190,14 +190,14 @@ const PostCarouselPreviewArticle = ({
                     return (
                       <div className={ `${ defaultClassName }__entry-meta` }>
                         { // eslint-disable-next-line array-callback-return
-                          orderMeta.map( metaFragment => {
+                          orderMeta.map( ( metaFragment ) => {
                             if ( metaFragment === 'author' && displayAuthor && !!post.author_data ) {
                               return (
                                 <a
                                   href={ post.author_data.url }
                                   className={ `${ defaultClassName }__entry-byline` }
                                   rel="author"
-                                  dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Published by:', 'fleximpleblocks' ) }</span> ${ post.author_data.name }` } }
+                                  dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Published by:', 'fleximpleblocks' ) }</span> ${ post.author_data.name }` }}
                                 />
                               )
                             }
@@ -207,7 +207,7 @@ const PostCarouselPreviewArticle = ({
                                 <time
                                   dateTime={ format( 'c', post.date_gmt ) }
                                   className={ `${ defaultClassName }__entry-date` }
-                                  dangerouslySetInnerHTML={ { __html: `<span class="screen-reader-only">${ __( 'Published on:', 'fleximpleblocks' ) }</span> ${ dateI18n( dateFormat, post.date_gmt ) }` } }
+                                  dangerouslySetInnerHTML={{ __html: `<span class="screen-reader-only">${ __( 'Published on:', 'fleximpleblocks' ) }</span> ${ dateI18n( dateFormat, post.date_gmt ) }` }}
                                 />
                               )
                             }
@@ -247,7 +247,7 @@ const PostCarouselPreviewArticle = ({
                         target="_blank"
                         rel={ relAttribute }
                         data-link-name="article"
-                        dangerouslySetInnerHTML={ { __html: readMore } }
+                        dangerouslySetInnerHTML={{ __html: readMore }}
                       />
                     )
                   }
@@ -265,7 +265,7 @@ const PostCarouselPreviewArticle = ({
           data-link-name="article"
           tabIndex="-1"
           aria-hidden="true"
-          dangerouslySetInnerHTML={ { __html: post.title.rendered } }
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
       </article>
     </>

@@ -6,7 +6,7 @@ const autoResizableIframes = document.querySelectorAll(
   '[data-auto-height="true"]',
 )
 
-autoResizableIframes.forEach( iframe => {
+autoResizableIframes.forEach( ( iframe ) => {
   iframe.addEventListener( 'load', function () {
     resizeIframe( iframe )
     setInterval( function () {
@@ -15,6 +15,6 @@ autoResizableIframes.forEach( iframe => {
   })
 })
 
-const resizeIframe = iframe => {
+const resizeIframe = ( iframe ) => {
   iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px'
 }

@@ -102,12 +102,12 @@ function RowEdit({
 
   const fetchMediaData = async () => {
     const mediaIds = Object.entries( mediaId )
-    await Promise.all( mediaIds.map( id => {
+    await Promise.all( mediaIds.map( ( id ) => {
       const [ key, value ] = id
       if ( !value ) return { [ key ]: null }
       return apiFetch({
         path: `/wp/v2/media/${ value }`,
-      }).then( response => {
+      }).then( ( response ) => {
         return {
           [ key ]: {
             id: response.id,
@@ -117,7 +117,7 @@ function RowEdit({
           },
         }
       })
-    }) ).then( responses => {
+    }) ).then( ( responses ) => {
       setMediaData({
         ...responses[ '0' ],
         ...responses[ '1' ],
@@ -203,7 +203,7 @@ function RowEdit({
             placeholder={ __( 'Type the row ID…', 'fleximpleblocks' ) }
             prepend={ true }
             prependText="#"
-            onChange={ value => setAttributes({ rowId: value }) }
+            onChange={ ( value ) => setAttributes({ rowId: value }) }
           />
 
           <SelectControl
@@ -218,11 +218,11 @@ function RowEdit({
               { label: '<main>', value: 'main' },
               { label: '<footer>', value: 'footer' },
             ] }
-            onChange={ value => setAttributes({ rowTag: value }) }
+            onChange={ ( value ) => setAttributes({ rowTag: value }) }
           />
 
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <BaseControl
                   label={ __( 'Horizontal alignment', 'fleximpleblocks' ) }
@@ -231,7 +231,7 @@ function RowEdit({
                   <BlockAlignmentHorizontalToolbar
                     id={ `fleximple-blocks-row-horizontal-block-align-toolbar-${ instanceId }` }
                     value={ alignmentHorizontal[ tab.name ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -250,7 +250,7 @@ function RowEdit({
                   <BlockAlignmentVerticalToolbar
                     id={ `fleximple-blocks-row-vertical-block-align-toolbar-${ instanceId }` }
                     value={ alignmentVertical[ tab.name ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -288,7 +288,7 @@ function RowEdit({
           initialOpen={ false }
         >
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <BaseControl
                   label={ __( 'Image', 'fleximpleblocks' ) }
@@ -297,7 +297,7 @@ function RowEdit({
                   <MediaUploadCheck>
                     <MediaUpload
                       id={ `fleximple-blocks-container-media-control-${ instanceId }` }
-                      onSelect={ media => {
+                      onSelect={ ( media ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -328,7 +328,7 @@ function RowEdit({
                             >
                               <img
                                 src={ mediaUrl[ tab.name ] }
-                                style={ { verticalAlign: 'middle' } }
+                                style={{ verticalAlign: 'middle' }}
                                 alt={ __( 'Replace image', 'fleximpleblocks' ) }
                               />
                             </Button>
@@ -336,7 +336,7 @@ function RowEdit({
 
                           <Button
                             className="button button-large is-button is-default is-large width-full"
-                            style={ { marginTop: '10px' } }
+                            style={{ marginTop: '10px' }}
                             onClick={ open }
                           >
                             { !mediaId[ tab.name ]
@@ -347,7 +347,7 @@ function RowEdit({
                           { !!mediaId[ tab.name ] &&
                             <Button
                               className="button button-link-delete width-full is-button is-large"
-                              style={ { marginTop: '10px' } }
+                              style={{ marginTop: '10px' }}
                               isDestructive
                               onClick={ () => {
                                 setResponsiveAttribute(
@@ -385,7 +385,7 @@ function RowEdit({
                       label={ __( 'Media Size', 'fleximpleblocks' ) }
                       value={ mediaSize[ tab.name ] }
                       options={ Object.keys( mediaData[ tab.name ].sizes ).map(
-                        size => {
+                        ( size ) => {
                           const label = size
                             .replace( /_/g, ' ' )
                             .replace( /(?:^|\s)\S/g, function ( a ) {
@@ -397,7 +397,7 @@ function RowEdit({
                           }
                         },
                       ) }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -419,7 +419,7 @@ function RowEdit({
                       label={ __( 'Background Image Position' ) }
                       url={ mediaUrl[ tab.name ] }
                       value={ focalPoint[ tab.name ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -447,7 +447,7 @@ function RowEdit({
                           value: 'contain',
                         },
                       ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -479,7 +479,7 @@ function RowEdit({
                           value: 'no-repeat',
                         },
                       ] }
-                      onChange={ value => {
+                      onChange={ ( value ) => {
                         setResponsiveAttribute(
                           attributes,
                           setAttributes,
@@ -520,7 +520,7 @@ function RowEdit({
             max={ 100 }
             step={ 5 }
             value={ overlayOpacity }
-            onChange={ value => setAttributes({ overlayOpacity: value }) }
+            onChange={ ( value ) => setAttributes({ overlayOpacity: value }) }
           />
         </PanelBody>
       </InspectorControls>

@@ -93,7 +93,7 @@ function RecentPostsEdit({
       path: addQueryArgs( '/wp/v2/categories', {
         per_page: -1,
       }),
-    }).then( results => {
+    }).then( ( results ) => {
       if ( isStillMounted ) setCategoriesList( results )
     }).catch( () => {
       if ( isStillMounted ) setCategoriesList( [] )
@@ -117,25 +117,25 @@ function RecentPostsEdit({
 
   const fetchSelectedPostsData = async () => {
     const map = new Map()
-    await Promise.all( selectedPosts.map( async selectedPost => {
+    await Promise.all( selectedPosts.map( async ( selectedPost ) => {
       await apiFetch({
         path: `/wp/v2/posts/${ selectedPost.value }`,
-      }).then( results => {
+      }).then( ( results ) => {
         map.set( selectedPost, results )
       })
     }) )
 
     // Display responses in 'selectedPosts' array order.
     const arrangedSelectedPosts = new Array()
-    await selectedPosts.forEach( selectedPost => {
+    await selectedPosts.forEach( ( selectedPost ) => {
       arrangedSelectedPosts.push( map.get( selectedPost ) )
     })
 
     setSelectedPostsData( arrangedSelectedPosts )
   }
 
-  const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map( size => {
-    const label = size.replace( /^\w/, c => c.toUpperCase() ).replace( /_/g, ' ' )
+  const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map( ( size ) => {
+    const label = size.replace( /^\w/, ( c ) => c.toUpperCase() ).replace( /_/g, ' ' )
     return (
       { label: label, value: size }
     )
@@ -149,12 +149,12 @@ function RecentPostsEdit({
           min={ 1 }
           max={ 100 }
           value={ postsToShow }
-          onChange={ value => setAttributes({ postsToShow: value }) }
+          onChange={ ( value ) => setAttributes({ postsToShow: value }) }
           required
         />
 
         <ResponsiveSettingsTabPanel initialTabName="large">
-          { tab =>
+          { ( tab ) =>
             <>
               { layout === 'grid' &&
               <RangeControl
@@ -163,7 +163,7 @@ function RecentPostsEdit({
                 min={ 1 }
                 max={ !hasPosts ? MAX_POSTS_COLUMNS : Math.min( MAX_POSTS_COLUMNS, recentPosts.length ) }
                 value={ columns[ tab.name ] }
-                onChange={ value => {
+                onChange={ ( value ) => {
                   setResponsiveAttribute(
                     attributes,
                     setAttributes,
@@ -185,7 +185,7 @@ function RecentPostsEdit({
                 max={ 200 }
                 attribute={ gapRow }
                 target={ tab.name }
-                onChange={ value => setAttributes({ gapRow: value }) }
+                onChange={ ( value ) => setAttributes({ gapRow: value }) }
               />
 
               { layout === 'grid' &&
@@ -197,7 +197,7 @@ function RecentPostsEdit({
                 max={ 200 }
                 attribute={ gapColumn }
                 target={ tab.name }
-                onChange={ value => setAttributes({ gapColumn: value }) }
+                onChange={ ( value ) => setAttributes({ gapColumn: value }) }
               />
               }
             </>
@@ -213,7 +213,7 @@ function RecentPostsEdit({
             minLevel={ 1 }
             maxLevel={ 7 }
             selectedLevel={ headingLevel }
-            onChange={ value => setAttributes({ headingLevel: value }) }
+            onChange={ ( value ) => setAttributes({ headingLevel: value }) }
             isCollapsed={ false }
           />
         </BaseControl>
@@ -222,7 +222,7 @@ function RecentPostsEdit({
         <RangeControl
           label={ __( 'Max number of words in excerpt', 'fleximpleblocks' ) }
           value={ excerptLength }
-          onChange={ value => setAttributes({ excerptLength: value }) }
+          onChange={ ( value ) => setAttributes({ excerptLength: value }) }
           min={ 10 }
           max={ 100 }
         />
@@ -261,12 +261,12 @@ function RecentPostsEdit({
           categoriesList={ categoriesList }
           selectedCategories={ categories }
           selectedExcludedCategories={ excludedCategories }
-          onNumberOfItemsChange={ value => setAttributes({ postsToShow: value }) }
-          onOffsetChange={ value => setAttributes({ offset: value }) }
-          onCategoriesChange={ selectedOptions => setAttributes({ categories: selectedOptions }) }
-          onExcludedCategoriesChange={ selectedOptions => setAttributes({ excludedCategories: selectedOptions }) }
-          onOrderChange={ value => setAttributes({ order: value }) }
-          onOrderByChange={ value => setAttributes({ orderBy: value }) }
+          onNumberOfItemsChange={ ( value ) => setAttributes({ postsToShow: value }) }
+          onOffsetChange={ ( value ) => setAttributes({ offset: value }) }
+          onCategoriesChange={ ( selectedOptions ) => setAttributes({ categories: selectedOptions }) }
+          onExcludedCategoriesChange={ ( selectedOptions ) => setAttributes({ excludedCategories: selectedOptions }) }
+          onOrderChange={ ( value ) => setAttributes({ order: value }) }
+          onOrderByChange={ ( value ) => setAttributes({ orderBy: value }) }
         />
 
         <ToggleControl
@@ -290,14 +290,14 @@ function RecentPostsEdit({
           label={ __( 'Image width', 'fleximpleblocks' ) }
           className="gap-v-small"
           value={ imageWidth }
-          onChange={ value => setAttributes({ imageWidth: value }) }
+          onChange={ ( value ) => setAttributes({ imageWidth: value }) }
           min={ 10 }
           max={ 90 }
         />
         }
 
         <ResponsiveSettingsTabPanel initialTabName="medium">
-          { tab =>
+          { ( tab ) =>
             <>
               <SelectControl
                 label={ __( 'Image size', 'fleximpleblocks' ) }
@@ -313,7 +313,7 @@ function RecentPostsEdit({
                     value: 'full',
                   },
                 ] }
-                onChange={ value => {
+                onChange={ ( value ) => {
                   setResponsiveAttribute(
                     attributes,
                     setAttributes,
@@ -338,7 +338,7 @@ function RecentPostsEdit({
                   { label: '2:1', value: '2-1' },
                   { label: '3:1', value: '3-1' },
                 ] }
-                onChange={ value => {
+                onChange={ ( value ) => {
                   setResponsiveAttribute(
                     attributes,
                     setAttributes,
@@ -364,7 +364,7 @@ function RecentPostsEdit({
         <TextControl
           label={ __( 'Read more text', 'fleximpleblocks' ) }
           value={ readMore }
-          onChange={ value => setAttributes({ readMore: value }) }
+          onChange={ ( value ) => setAttributes({ readMore: value }) }
         />
         }
       </PanelBody>
@@ -421,7 +421,7 @@ function RecentPostsEdit({
       <BlockControls>
         <HeadingLevelDropdown
           selectedLevel={ headingLevel }
-          onChange={ value => setAttributes({ headingLevel: value }) }
+          onChange={ ( value ) => setAttributes({ headingLevel: value }) }
         />
 
         <Toolbar controls={ layoutControls } />
@@ -448,11 +448,11 @@ export default compose( [
     const { getEntityRecords } = select( 'core' )
     const categoriesIds =
       categories && categories.length > 0
-        ? categories.map( cat => cat.value )
+        ? categories.map( ( cat ) => cat.value )
         : []
     const excludedCategoriesIds =
       excludedCategories && excludedCategories.length > 0
-        ? excludedCategories.map( cat => cat.value )
+        ? excludedCategories.map( ( cat ) => cat.value )
         : []
     const recentPostsQuery = pickBy({
       categories: categoriesIds,
@@ -461,14 +461,14 @@ export default compose( [
       per_page: postsToShow,
       categories_exclude: excludedCategoriesIds,
       offset,
-    }, value => !isUndefined( value ) )
+    }, ( value ) => !isUndefined( value ) )
 
     const posts = getEntityRecords( 'postType', 'post', recentPostsQuery )
 
     return {
       recentPosts: !Array.isArray( posts )
         ? posts
-        : posts.map( post => {
+        : posts.map( ( post ) => {
           return post
         }),
     }

@@ -16,7 +16,7 @@ export const setResponsiveAttribute = (
   setAttributes({ [ attribute ]: newAttribute })
 }
 
-export const hexToRGB = hex => {
+export const hexToRGB = ( hex ) => {
   if ( hex.length <= 4 ) {
     const hexArray = hex.match( /[\w\d]{1}/g )
     const rgbArray = []

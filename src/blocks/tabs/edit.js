@@ -36,7 +36,7 @@ const { name } = metadata
  */
 const ALLOWED_BLOCKS = [ 'fleximple-blocks/tab-panel' ]
 
-const getTabsTemplate = memoize( count => {
+const getTabsTemplate = memoize( ( count ) => {
   return times( count, () => [ 'fleximple-blocks/tab-panel' ] )
 })
 
@@ -56,19 +56,19 @@ const TabsEdit = ({
   }, [] )
 
   const deactivateTabPanels = () => {
-    block.innerBlocks.forEach( item => {
+    block.innerBlocks.forEach( ( item ) => {
       const tabPanelSelector = document.querySelector( `#block-${ item.clientId } .fleximple-block-tab-panel` )
       tabPanelSelector && tabPanelSelector.classList.remove( 'is-active' )
     })
   }
 
-  const activateCurrentTabPanel = index => {
+  const activateCurrentTabPanel = ( index ) => {
     const currentInnerBlockId = block.innerBlocks[ index ].clientId
     const tabPanelSelector = document.querySelector( `#block-${ currentInnerBlockId } .fleximple-block-tab-panel` )
     tabPanelSelector && tabPanelSelector.classList.add( 'is-active' )
   }
 
-  const setCurrentTabPanel = index => {
+  const setCurrentTabPanel = ( index ) => {
     const currentBlock = document.querySelector( `#block-${ block.clientId }` )
     if ( index < 0 ) index = 0
     if ( currentBlock ) {
@@ -104,13 +104,13 @@ const TabsEdit = ({
     })
   }
 
-  const onRemoveTab = async tabIndex => {
+  const onRemoveTab = async ( tabIndex ) => {
     // Retrieve the block ID
     const removedBlockId = block.innerBlocks[ tabIndex ].clientId
     // Remove the block
     await dispatch( 'core/block-editor' ).removeBlock( removedBlockId, false )
 
-    setCurrentTab( prevCurrentTab => {
+    setCurrentTab( ( prevCurrentTab ) => {
       let newCurrentTab = prevCurrentTab - 1
       if ( tabIndex + 1 === prevCurrentTab ) {
         newCurrentTab =
@@ -162,7 +162,7 @@ const TabsEdit = ({
             <BlockAlignmentHorizontalToolbar
               id={ `fleximple-blocks-tabs-horizontal-block-align-toolbar-${ instanceId }` }
               value={ tabsAlignment }
-              onChange={ value => setAttributes({ tabsAlignment: value }) }
+              onChange={ ( value ) => setAttributes({ tabsAlignment: value }) }
               spaceControlsEnabled
             />
           </BaseControl>
@@ -172,14 +172,14 @@ const TabsEdit = ({
       <BlockControls>
         <BlockAlignmentHorizontalToolbar
           value={ tabsAlignment }
-          onChange={ value => setAttributes({ tabsAlignment: value }) }
+          onChange={ ( value ) => setAttributes({ tabsAlignment: value }) }
           spaceControlsEnabled
         />
       </BlockControls>
 
       <div className={ className }>
         <div className={ tabListClasses } role="tablist">
-          { tabsData.map( ( tabData, index ) => (
+          { tabsData.map( ( tabData, index ) =>
             <button
               key={ index }
               className={ `${ defaultClassName }__tab${
@@ -201,7 +201,7 @@ const TabsEdit = ({
               <RichText
                 key="editable"
                 value={ tabData.label }
-                onChange={ value => updateLabels({ label: value }, index ) }
+                onChange={ ( value ) => updateLabels({ label: value }, index ) }
                 placeholder={ __( 'Write tab title…', 'fleximpleblocks' ) }
                 keepPlaceholderOnFocus
               />
@@ -211,7 +211,7 @@ const TabsEdit = ({
                   className={ `${ defaultClassName }__icon ${ defaultClassName }__icon--delete` }
                   role="button"
                   onClick={ () => onRemoveTab( index ) }
-                  onKeyDown={ event => {
+                  onKeyDown={ ( event ) => {
                     if ( ENTER === event.keyCode || SPACE === event.keyCode ) {
                       onRemoveTab( index )
                     }
@@ -221,8 +221,8 @@ const TabsEdit = ({
                   <Icon icon={ interactionIcons.times } />
                 </span>
               </Tooltip>
-            </button>
-          ) ) }
+            </button>,
+          ) }
 
           <button
             className={ `${ defaultClassName }__tab` }

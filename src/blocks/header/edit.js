@@ -92,11 +92,11 @@ function HeaderEdit({
       <BlockControls>
         <HeadingLevelDropdown
           selectedLevel={ headingLevel }
-          onChange={ value => setAttributes({ headingLevel: value }) }
+          onChange={ ( value ) => setAttributes({ headingLevel: value }) }
         />
         <AlignmentToolbar
           value={ textAlignment }
-          onChange={ value => setAttributes({ textAlignment: value }) }
+          onChange={ ( value ) => setAttributes({ textAlignment: value }) }
         />
       </BlockControls>
 
@@ -111,7 +111,7 @@ function HeaderEdit({
               minLevel={ 1 }
               maxLevel={ 7 }
               selectedLevel={ headingLevel }
-              onChange={ value => setAttributes({ headingLevel: value }) }
+              onChange={ ( value ) => setAttributes({ headingLevel: value }) }
               isCollapsed={ false }
             />
           </BaseControl>
@@ -123,7 +123,7 @@ function HeaderEdit({
             <AlignmentToolbar
               id={ `fleximple-blocks-header-text-alignment-toolbar-${ instanceId }` }
               value={ textAlignment }
-              onChange={ value => setAttributes({ textAlignment: value }) }
+              onChange={ ( value ) => setAttributes({ textAlignment: value }) }
               isCollapsed={ false }
             />
           </BaseControl>
@@ -251,7 +251,7 @@ function HeaderEdit({
         </style>
 
         { // eslint-disable-next-line array-callback-return
-          order.map( fragment => {
+          order.map( ( fragment ) => {
             if ( 'heading' === fragment ) {
               if ( displayHeading ) {
                 return (
@@ -259,7 +259,7 @@ function HeaderEdit({
                     tagName={ tagName }
                     className={ `${ defaultClassName }__heading` }
                     value={ heading }
-                    onChange={ value => setAttributes({ heading: value }) }
+                    onChange={ ( value ) => setAttributes({ heading: value }) }
                     placeholder={ __( 'Write heading…', 'fleximpleblocks' ) }
                     keepPlaceholderOnFocus
                   />
@@ -273,7 +273,7 @@ function HeaderEdit({
                   <RichText
                     className={ `${ defaultClassName }__subhead` }
                     value={ subhead }
-                    onChange={ value => setAttributes({ subhead: value }) }
+                    onChange={ ( value ) => setAttributes({ subhead: value }) }
                     placeholder={ __( 'Write subhead…', 'fleximpleblocks' ) }
                     keepPlaceholderOnFocus
                   />

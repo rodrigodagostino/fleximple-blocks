@@ -135,7 +135,7 @@ class TestimonialSave extends Component {
         </style>
 
         { // eslint-disable-next-line array-callback-return
-          order.map( fragment => {
+          order.map( ( fragment ) => {
             if ( 'icon' === fragment ) {
               if ( displayIcon ) {
                 return (

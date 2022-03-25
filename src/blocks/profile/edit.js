@@ -132,7 +132,7 @@ function ProfileEdit({
       <InspectorControls>
         <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <BaseControl
                   label={ __( 'Horizontal alignment', 'fleximpleblocks' ) }
@@ -141,7 +141,7 @@ function ProfileEdit({
                   <BlockAlignmentHorizontalToolbar
                     id={ `fleximple-blocks-profile-horizontal-block-align-control-${ instanceId }` }
                     value={ contentAlignment[ tab.name ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -161,7 +161,7 @@ function ProfileEdit({
                   <AlignmentToolbar
                     id={ `fleximple-blocks-profile-text-alignment-control-${ instanceId }` }
                     value={ textAlignment[ tab.name ] }
-                    onChange={ value => {
+                    onChange={ ( value ) => {
                       setResponsiveAttribute(
                         attributes,
                         setAttributes,
@@ -182,7 +182,7 @@ function ProfileEdit({
                   max={ 200 }
                   attribute={ mediaGap }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ mediaGap: value }) }
+                  onChange={ ( value ) => setAttributes({ mediaGap: value }) }
                 />
 
                 <SpacingControls
@@ -193,7 +193,7 @@ function ProfileEdit({
                   max={ 200 }
                   attribute={ contentGap }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ contentGap: value }) }
+                  onChange={ ( value ) => setAttributes({ contentGap: value }) }
                 />
 
                 <RadioControl
@@ -209,7 +209,7 @@ function ProfileEdit({
                       value: 'column',
                     },
                   ] }
-                  onChange={ option => {
+                  onChange={ ( option ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -271,7 +271,7 @@ function ProfileEdit({
             <MediaUploadCheck>
               <MediaUpload
                 id={ `fleximple-blocks-container-media-control-${ instanceId }` }
-                onSelect={ media => setAttributes({ mediaId: media.id, mediaUrl: media.url }) }
+                onSelect={ ( media ) => setAttributes({ mediaId: media.id, mediaUrl: media.url }) }
                 allowedTypes={ ALLOWED_MEDIA_TYPES }
                 value={ mediaId }
                 render={ ({ open }) =>
@@ -280,13 +280,13 @@ function ProfileEdit({
                     <Button
                       className="button fleximple-components-button-image width-full"
                       onClick={ open }>
-                      <img src={ mediaUrl } style={ { verticalAlign: 'middle' } } alt={ __( 'Replace image', 'fleximpleblocks' ) } />
+                      <img src={ mediaUrl } style={{ verticalAlign: 'middle' }} alt={ __( 'Replace image', 'fleximpleblocks' ) } />
                     </Button>
                     }
 
                     <Button
                       className="button button-large is-button is-default is-large width-full"
-                      style={ { marginTop: '10px' } }
+                      style={{ marginTop: '10px' }}
                       onClick={ open }>
                       { !mediaId ? __( 'Choose profile image', 'fleximpleblocks' ) : __( 'Replace image', 'fleximpleblocks' ) }
                     </Button>
@@ -294,7 +294,7 @@ function ProfileEdit({
                     { !!mediaId &&
                     <Button
                       className="button button-link-delete width-full is-button is-large"
-                      style={ { marginTop: '10px' } }
+                      style={{ marginTop: '10px' }}
                       isDestructive
                       onClick={ () => setAttributes({ mediaId: null, mediaUrl: null }) }>
                       { __( 'Remove image', 'fleximpleblocks' ) }
@@ -308,7 +308,7 @@ function ProfileEdit({
 
           { !!mediaId &&
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <SpacingControls
                   valueLabel={ __( 'Media width', 'fleximpleblocks' ) }
@@ -319,7 +319,7 @@ function ProfileEdit({
                   max={ 800 }
                   attribute={ mediaWidth }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ mediaWidth: value }) }
+                  onChange={ ( value ) => setAttributes({ mediaWidth: value }) }
                 />
 
                 <SpacingControls
@@ -330,7 +330,7 @@ function ProfileEdit({
                   max={ 800 }
                   attribute={ mediaHeight }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ mediaHeight: value }) }
+                  onChange={ ( value ) => setAttributes({ mediaHeight: value }) }
                 />
 
                 <SpacingControls
@@ -341,7 +341,7 @@ function ProfileEdit({
                   max={ 200 }
                   attribute={ mediaBorderRadius }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ mediaBorderRadius: value }) }
+                  onChange={ ( value ) => setAttributes({ mediaBorderRadius: value }) }
                 />
               </>
             }
@@ -461,7 +461,7 @@ function ProfileEdit({
           <figure className={ mediaClasses } style={ mediaStyles }>
             <MediaUploadCheck>
               <MediaUpload
-                onSelect={ media => setAttributes({ mediaId: media.id, mediaUrl: media.url, mediaAlt: media.alt }) }
+                onSelect={ ( media ) => setAttributes({ mediaId: media.id, mediaUrl: media.url, mediaAlt: media.alt }) }
                 allowedTypes={ [ 'image' ] }
                 value={ mediaId }
                 render={ ({ open }) =>

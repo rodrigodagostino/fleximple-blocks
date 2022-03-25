@@ -59,9 +59,9 @@ const TestimonialSortableControl = ({
   const SortableList = SortableContainer( ({ items }) => {
     return (
       <div className="fleximple-components-sortable-control__sortable-list">
-        { items.map( ( value, index ) => (
-          <SortableItem key={ `item-${ index }` } index={ index } value={ value } />
-        ) ) }
+        { items.map( ( value, index ) =>
+          <SortableItem key={ `item-${ index }` } index={ index } value={ value } />,
+        ) }
       </div>
     )
   })

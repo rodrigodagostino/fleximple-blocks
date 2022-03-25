@@ -68,7 +68,7 @@ function ContactInfoEdit({
       <InspectorControls>
         <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
           <ResponsiveSettingsTabPanel initialTabName="small">
-            { tab =>
+            { ( tab ) =>
               <>
                 <RadioControl
                   label={ __( 'Direction', 'fleximpleblocks' ) }
@@ -83,7 +83,7 @@ function ContactInfoEdit({
                       value: 'column',
                     },
                   ] }
-                  onChange={ option => {
+                  onChange={ ( option ) => {
                     setResponsiveAttribute(
                       attributes,
                       setAttributes,
@@ -102,7 +102,7 @@ function ContactInfoEdit({
                   max={ 200 }
                   attribute={ gap }
                   target={ tab.name }
-                  onChange={ value => setAttributes({ gap: value }) }
+                  onChange={ ( value ) => setAttributes({ gap: value }) }
                 />
               </>
             }
