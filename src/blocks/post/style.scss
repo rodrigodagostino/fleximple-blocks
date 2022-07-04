@@ -162,11 +162,10 @@ $default-class-name: "fleximple-block-post";
 
     & .fleximple-block-post__content {
       flex: 0 0 40%;
-      padding: 20px;
-      margin-top: -10%;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px;
+      padding: var(--space-125, 20px);
+      margin-top: -5rem;
+      margin-left: var(--space-125, 20px);
+      margin-right: var(--space-125, 20px);
       position: relative;
       background-color: var(--white-rich);
     }
@@ -184,7 +183,7 @@ $default-class-name: "fleximple-block-post";
       }
 
       & > * + * {
-        margin-left: 20px;
+        margin-left: var(--space-125, 20px);
       }
     }
   }

@@ -33,6 +33,19 @@ export const settings = {
     /* translators: block keyword */
     __( 'fleximple block', 'fleximpleblocks' ),
   ],
+  styles: [
+    {
+      name: 'standard',
+      /* translators: block style */
+      label: __( 'Standard', 'fleximpleblocks' ),
+      isDefault: true,
+    },
+    {
+      name: 'stacked',
+      /* translators: block style */
+      label: __( 'Stacked', 'fleximpleblocks' ),
+    },
+  ],
 
   getEditWrapperProps( attributes ) {
     const { alignment } = attributes

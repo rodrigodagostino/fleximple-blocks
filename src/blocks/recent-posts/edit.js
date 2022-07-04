@@ -89,6 +89,10 @@ function RecentPostsEdit({
   useEffect( () => {
     setIsStillMounted( true )
 
+    if ( !attributes.className ) {
+      setAttributes({ className: 'is-style-standard' })
+    }
+
     apiFetch({
       path: addQueryArgs( '/wp/v2/categories', {
         per_page: -1,

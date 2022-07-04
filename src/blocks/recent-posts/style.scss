@@ -178,4 +178,24 @@ $default-class-name: "fleximple-block-recent-posts";
     bottom: 0;
     opacity: 0;
   }
+
+  &.is-style-stacked {
+    flex-direction: column;
+    justify-content: center;
+
+    & .fleximple-block-recent-posts__entry-media {
+      flex: 0 0 70%;
+      margin-bottom: 0;
+    }
+
+    & .fleximple-block-recent-posts__entry-content {
+      flex: 0 0 40%;
+      padding: var(--space-125, 20px);
+      margin-top: -5rem;
+      margin-left: var(--space-125, 20px);
+      margin-right: var(--space-125, 20px);
+      position: relative;
+      background-color: var(--white-rich);
+    }
+  }
 }
