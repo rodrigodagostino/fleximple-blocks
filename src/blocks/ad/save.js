@@ -14,31 +14,31 @@ import metadata from './block.json'
 const { name } = metadata
 
 function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
-  const defaultClassName = getBlockDefaultClassName( name )
+  const defaultClassName = getBlockDefaultClassName(name)
 
   const pictureSources = []
   // The generated array needs to be reversed in order for <source>
   // to work properly (from largest to smallest).
-  Object.entries( id )
+  Object.entries(id)
     .reverse()
-    .forEach( ( [ key, value ], index, array ) => {
-      if ( value ) {
+    .forEach(([key, value], index, array) => {
+      if (value) {
         pictureSources.push(
           <source
-            className={ `${ defaultClassName }__image` }
+            className={`${defaultClassName}__image`}
             // Assign the closest lower breakpoint
             // (“small” shouldn’t have a media attribute).
             media={
               key !== 'small'
                 ? `(min-width: ${
-                  fleximpleblocksPluginData.settings[
-                    array[ index + 1 ][ 0 ] + 'BreakpointValue'
-                  ]
-                }px)`
+                    fleximpleblocksPluginData.settings[
+                      array[index + 1][0] + 'BreakpointValue'
+                    ]
+                  }px)`
                 : null
             }
-            srcSet={ url[ key ] }
-          />,
+            srcSet={url[key]}
+          />
         )
       }
     })
@@ -46,37 +46,37 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
   const imageSource = url.small ? url.small : null
 
   return (
-    <picture { ...useBlockProps.save() }>
-      { !linkUrl && ( !!id.small || !!id.medium || !!id.large ) &&
-      <>
-        { pictureSources }
-        <img
-          className={ `${ defaultClassName }__image` }
-          src={ imageSource }
-          alt={ alt }
-        />
-      </>
-      }
-
-      { !!linkUrl &&
-      <a
-        className={ `${ defaultClassName }__link` }
-        href={ linkUrl }
-        target={ linkTarget }
-        rel="noopener"
-      >
-        { ( !!id.small || !!id.medium || !!id.large ) &&
+    <picture {...useBlockProps.save()}>
+      {!linkUrl && (!!id.small || !!id.medium || !!id.large) && (
         <>
-          { pictureSources }
+          {pictureSources}
           <img
-            className={ `${ defaultClassName }__image` }
-            src={ imageSource }
-            alt={ alt }
+            className={`${defaultClassName}__image`}
+            src={imageSource}
+            alt={alt}
           />
         </>
-        }
-      </a>
-      }
+      )}
+
+      {!!linkUrl && (
+        <a
+          className={`${defaultClassName}__link`}
+          href={linkUrl}
+          target={linkTarget}
+          rel="noopener"
+        >
+          {(!!id.small || !!id.medium || !!id.large) && (
+            <>
+              {pictureSources}
+              <img
+                className={`${defaultClassName}__image`}
+                src={imageSource}
+                alt={alt}
+              />
+            </>
+          )}
+        </a>
+      )}
     </picture>
   )
 }

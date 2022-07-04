@@ -28,39 +28,39 @@ function IconSave({
     alignmentHorizontal,
   },
 }) {
-  const defaultClassName = getBlockDefaultClassName( name )
+  const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames( defaultClassName, {
-    [ `${ defaultClassName }--custom` ]: hasCustomIcon,
+  const classes = classnames(defaultClassName, {
+    [`${defaultClassName}--custom`]: hasCustomIcon,
     'has-text-color': iconColor || customIconColor,
-    [ `block-align-h-${ alignmentHorizontal }` ]: alignmentHorizontal,
+    [`block-align-h-${alignmentHorizontal}`]: alignmentHorizontal,
   })
 
   const blockProps = useBlockProps.save({
     className: classes,
   })
 
-  const iconColorClass = getColorClassName( 'color', iconColor )
+  const iconColorClass = getColorClassName('color', iconColor)
 
-  const iconClasses = classnames( iconId, {
-    [ iconColorClass ]: iconColorClass,
+  const iconClasses = classnames(iconId, {
+    [iconColorClass]: iconColorClass,
   })
 
   const iconStyles = {
-    fontSize: `${ iconSize }px`,
+    fontSize: `${iconSize}px`,
     color: iconColorClass ? undefined : customIconColor,
     height: hasCustomIcon ? iconSize : undefined,
   }
 
   return (
     <>
-      { !!iconId && !hasCustomIcon &&
-        <div { ...blockProps }>
-          <i className={ iconClasses } style={ iconStyles } />
+      {!!iconId && !hasCustomIcon && (
+        <div {...blockProps}>
+          <i className={iconClasses} style={iconStyles} />
         </div>
-      }
+      )}
 
-      { !!hasCustomIcon && <RawHTML { ...blockProps }>{ customIcon }</RawHTML> }
+      {!!hasCustomIcon && <RawHTML {...blockProps}>{customIcon}</RawHTML>}
     </>
   )
 }

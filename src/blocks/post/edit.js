@@ -57,75 +57,73 @@ function PostEdit({
   setAttributes,
   instanceId,
 }) {
-  const [ postData, setPostData ] = useState( null )
-  const [ isFetching, setIsFetching ] = useState( false )
-  const [ imageSizeOptions, setImageSizeOptions ] = useState( [] )
+  const [postData, setPostData] = useState(null)
+  const [isFetching, setIsFetching] = useState(false)
+  const [imageSizeOptions, setImageSizeOptions] = useState([])
 
-  useEffect( () => {
-    if ( !attributes.className ) {
+  useEffect(() => {
+    if (!attributes.className) {
       setAttributes({ className: 'is-style-standard' })
     }
 
-    if ( !postId ) {
+    if (!postId) {
       fetchRandomPostId()
       return
     }
     fetchPostData()
-  }, [] )
+  }, [])
 
   const fetchRandomPostId = () => {
-    if ( isFetching ) return
+    if (isFetching) return
 
     apiFetch({
-      path: addQueryArgs( '/wp/v2/posts', {
+      path: addQueryArgs('/wp/v2/posts', {
         per_page: 20,
       }),
     })
-      .then( ( results ) => {
-        const randomIndex = Math.floor( Math.random() * results.length )
+      .then((results) => {
+        const randomIndex = Math.floor(Math.random() * results.length)
         setAttributes({
-          postId: results[ randomIndex ].id,
+          postId: results[randomIndex].id,
         })
       })
-      .catch( ( error ) => console.error( error ) )
+      .catch((error) => console.error(error))
   }
 
   const fetchPostData = () => {
-    if ( isFetching || !postId || !postType ) return
-    setIsFetching( true )
+    if (isFetching || !postId || !postType) return
+    setIsFetching(true)
 
     apiFetch({
-      path: `/wp/v2/${ postType }/${ postId }`,
+      path: `/wp/v2/${postType}/${postId}`,
     })
-      .then( ( result ) => {
-        setPostData( result )
-        if ( !result.audio_data ) {
+      .then((result) => {
+        setPostData(result)
+        if (!result.audio_data) {
           setAttributes({ displayAudio: false })
         }
-        filterImageSizeOptions( result )
+        filterImageSizeOptions(result)
       })
-      .catch( ( error ) => console.error( error ) )
-      .finally( () => setIsFetching( false ) )
+      .catch((error) => console.error(error))
+      .finally(() => setIsFetching(false))
   }
 
-  useMemo( () => fetchPostData(), [ postId ] )
+  useMemo(() => fetchPostData(), [postId])
 
-  const filterImageSizeOptions = ( data ) => {
-    if ( data && data.featured_media_data ) {
-      const options = Object.keys( data.featured_media_data ).map(
-        ( mediaSize ) => {
-          const label = mediaSize
-            .replace( /_/g, ' ' )
-            .replace( /(?:^|\s)\S/g, function ( a ) {
-              return a.toUpperCase()
-            })
-          return {
-            label,
-            value: mediaSize,
-          }
-        },
-      )
-      setImageSizeOptions( options )
+  const filterImageSizeOptions = (data) => {
+    if (data && data.featured_media_data) {
+      const options = Object.keys(data.featured_media_data).map((mediaSize) => {
+        const label = mediaSize
+          .replace(/_/g, ' ')
+          .replace(/(?:^|\s)\S/g, function (a) {
+            return a.toUpperCase()
+          })
+        return {
+          label,
+          value: mediaSize,
+        }
+      })
+      setImageSizeOptions(options)
     }
   }
 
@@ -135,206 +133,215 @@ function PostEdit({
 
   return (
     <>
-      { !!postData &&
+      {!!postData && (
         <BlockControls>
           <HeadingLevelDropdown
-            minLevel={ 2 }
-            maxLevel={ 5 }
-            selectedLevel={ headingLevel }
-            onChange={ ( value ) => setAttributes({ headingLevel: value }) }
-            isCollapsed={ false }
+            minLevel={2}
+            maxLevel={5}
+            selectedLevel={headingLevel}
+            onChange={(value) => setAttributes({ headingLevel: value })}
+            isCollapsed={false}
           />
         </BlockControls>
-      }
+      )}
 
-      { !!postData &&
+      {!!postData && (
         <InspectorControls>
-          <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
-            <PostSelectControl { ...{ attributes, setAttributes } } />
+          <PanelBody title={__('Main', 'fleximpleblocks')}>
+            <PostSelectControl {...{ attributes, setAttributes }} />
 
             <BaseControl
-              label={ __( 'Heading level', 'fleximpleblocks' ) }
-              id={ `fleximple-blocks-post-heading-control-${ instanceId }` }
+              label={__('Heading level', 'fleximpleblocks')}
+              id={`fleximple-blocks-post-heading-control-${instanceId}`}
             >
               <HeadingLevelToolbar
-                id={ `fleximple-blocks-post-heading-control-${ instanceId }` }
-                minLevel={ 1 }
-                maxLevel={ 7 }
-                selectedLevel={ headingLevel }
-                onChange={ ( value ) => setAttributes({ headingLevel: value }) }
-                isCollapsed={ false }
+                id={`fleximple-blocks-post-heading-control-${instanceId}`}
+                minLevel={1}
+                maxLevel={7}
+                selectedLevel={headingLevel}
+                onChange={(value) => setAttributes({ headingLevel: value })}
+                isCollapsed={false}
               />
             </BaseControl>
 
-            { displayExcerpt &&
+            {displayExcerpt && (
               <RangeControl
-                label={ __( 'Max number of words in excerpt', 'fleximpleblocks' ) }
-                min={ 10 }
-                max={ 100 }
-                value={ excerptLength }
-                onChange={ ( value ) => setAttributes({ excerptLength: value }) }
+                label={__('Max number of words in excerpt', 'fleximpleblocks')}
+                min={10}
+                max={100}
+                value={excerptLength}
+                onChange={(value) => setAttributes({ excerptLength: value })}
               />
-            }
+            )}
 
             <ToggleControl
-              label={ __( 'Display extra articles', 'fleximpleblocks' ) }
-              checked={ !!displayExtraArticles }
-              onChange={ () => setAttributes({ displayExtraArticles: !displayExtraArticles }) }
+              label={__('Display extra articles', 'fleximpleblocks')}
+              checked={!!displayExtraArticles}
+              onChange={() =>
+                setAttributes({ displayExtraArticles: !displayExtraArticles })
+              }
             />
-            { displayExtraArticles &&
+            {displayExtraArticles && (
               <RangeControl
-                label={ __( 'Extra articles', 'fleximpleblocks' ) }
-                min={ 1 }
-                max={ 6 }
-                value={ extraArticles }
-                onChange={ ( value ) => setAttributes({ extraArticles: value }) }
+                label={__('Extra articles', 'fleximpleblocks')}
+                min={1}
+                max={6}
+                value={extraArticles}
+                onChange={(value) => setAttributes({ extraArticles: value })}
                 required
               />
-            }
+            )}
 
             <ToggleControl
-              label={ __( '“nofollow” attribute', 'fleximpleblocks' ) }
-              checked={ !!noFollow }
-              onChange={ () => setAttributes({ noFollow: !noFollow }) }
+              label={__('“nofollow” attribute', 'fleximpleblocks')}
+              checked={!!noFollow}
+              onChange={() => setAttributes({ noFollow: !noFollow })}
               help={
                 !noFollow
                   ? __(
-                    'Google search spider should follow the links to this post.',
-                    'fleximpleblocks',
-                  )
+                      'Google search spider should follow the links to this post.',
+                      'fleximpleblocks'
+                    )
                   : __(
-                    'Google search spider should not follow the links to this post.',
-                    'fleximpleblocks',
-                  )
+                      'Google search spider should not follow the links to this post.',
+                      'fleximpleblocks'
+                    )
               }
             />
 
             <ToggleControl
-              label={ __( '“noreferrer” attribute', 'fleximpleblocks' ) }
-              checked={ !!noReferrer }
-              onChange={ () => setAttributes({ noReferrer: !noReferrer }) }
+              label={__('“noreferrer” attribute', 'fleximpleblocks')}
+              checked={!!noReferrer}
+              onChange={() => setAttributes({ noReferrer: !noReferrer })}
               help={
                 !noReferrer
                   ? __(
-                    'The browser should send an HTTP referer header if the user follows the hyperlink.',
-                    'fleximpleblocks',
-                  )
+                      'The browser should send an HTTP referer header if the user follows the hyperlink.',
+                      'fleximpleblocks'
+                    )
                   : __(
-                    'The browser should not send an HTTP referer header if the user follows the hyperlink.',
-                    'fleximpleblocks',
-                  )
+                      'The browser should not send an HTTP referer header if the user follows the hyperlink.',
+                      'fleximpleblocks'
+                    )
               }
             />
           </PanelBody>
 
-          { displayMedia && displayFeaturedImage && !!postData.featured_media_data &&
-            <PanelBody
-              title={ __( 'Media', 'fleximpleblocks' ) }
-              initialOpen={ false }
-            >
-              <ResponsiveSettingsTabPanel initialTabName="medium">
-                { ( tab ) =>
-                  <>
-                    <SelectControl
-                      label={ __( 'Image size', 'fleximpleblocks' ) }
-                      value={ imageSize[ tab.name ] }
-                      options={ [
-                        {
-                          label: __( 'None', 'fleximpleblocks' ),
-                          value: 'none',
-                        },
-                        ...imageSizeOptions,
-                      ] }
-                      onChange={ ( value ) => {
-                        setResponsiveAttribute(
-                          attributes,
-                          setAttributes,
-                          'imageSize',
-                          tab.name,
-                          value,
-                        )
-                      } }
-                    />
+          {displayMedia &&
+            displayFeaturedImage &&
+            !!postData.featured_media_data && (
+              <PanelBody
+                title={__('Media', 'fleximpleblocks')}
+                initialOpen={false}
+              >
+                <ResponsiveSettingsTabPanel initialTabName="medium">
+                  {(tab) => (
+                    <>
+                      <SelectControl
+                        label={__('Image size', 'fleximpleblocks')}
+                        value={imageSize[tab.name]}
+                        options={[
+                          {
+                            label: __('None', 'fleximpleblocks'),
+                            value: 'none',
+                          },
+                          ...imageSizeOptions,
+                        ]}
+                        onChange={(value) => {
+                          setResponsiveAttribute(
+                            attributes,
+                            setAttributes,
+                            'imageSize',
+                            tab.name,
+                            value
+                          )
+                        }}
+                      />
 
-                    <SelectControl
-                      label={ __( 'Aspect ratio', 'fleximpleblocks' ) }
-                      value={ aspectRatio[ tab.name ] }
-                      options={ [
-                        { label: 'None', value: 'none' },
-                        { label: '1:1', value: '1-1' },
-                        { label: '5:4', value: '5-4' },
-                        { label: '4:3', value: '4-3' },
-                        { label: '3:2', value: '3-2' },
-                        { label: '16:10', value: '16-10' },
-                        { label: '16:9', value: '16-9' },
-                        { label: '2:1', value: '2-1' },
-                        { label: '3:1', value: '3-1' },
-                      ] }
-                      onChange={ ( value ) => {
-                        setResponsiveAttribute(
-                          attributes,
-                          setAttributes,
-                          'aspectRatio',
-                          tab.name,
-                          value,
-                        )
-                      } }
-                    />
+                      <SelectControl
+                        label={__('Aspect ratio', 'fleximpleblocks')}
+                        value={aspectRatio[tab.name]}
+                        options={[
+                          { label: 'None', value: 'none' },
+                          { label: '1:1', value: '1-1' },
+                          { label: '5:4', value: '5-4' },
+                          { label: '4:3', value: '4-3' },
+                          { label: '3:2', value: '3-2' },
+                          { label: '16:10', value: '16-10' },
+                          { label: '16:9', value: '16-9' },
+                          { label: '2:1', value: '2-1' },
+                          { label: '3:1', value: '3-1' },
+                        ]}
+                        onChange={(value) => {
+                          setResponsiveAttribute(
+                            attributes,
+                            setAttributes,
+                            'aspectRatio',
+                            tab.name,
+                            value
+                          )
+                        }}
+                      />
 
-                    <FocalPointPicker
-                      url={ postData.featured_media_data[ imageSize[ tab.name ] ] ? postData.featured_media_data[ imageSize[ tab.name ] ].url : null }
-                      value={ focalPoint[ tab.name ] }
-                      onChange={ ( value ) => {
-                        setResponsiveAttribute(
-                          attributes,
-                          setAttributes,
-                          'focalPoint',
-                          tab.name,
-                          value,
-                        )
-                      } }
-                    />
-                  </>
-                }
-              </ResponsiveSettingsTabPanel>
-            </PanelBody>
-          }
+                      <FocalPointPicker
+                        url={
+                          postData.featured_media_data[imageSize[tab.name]]
+                            ? postData.featured_media_data[imageSize[tab.name]]
+                                .url
+                            : null
+                        }
+                        value={focalPoint[tab.name]}
+                        onChange={(value) => {
+                          setResponsiveAttribute(
+                            attributes,
+                            setAttributes,
+                            'focalPoint',
+                            tab.name,
+                            value
+                          )
+                        }}
+                      />
+                    </>
+                  )}
+                </ResponsiveSettingsTabPanel>
+              </PanelBody>
+            )}
 
           <PanelBody
-            title={ __( 'Display', 'fleximpleblocks' ) }
-            initialOpen={ false }
+            title={__('Display', 'fleximpleblocks')}
+            initialOpen={false}
           >
-            <PostSortableControl { ...{ attributes, setAttributes } } />
+            <PostSortableControl {...{ attributes, setAttributes }} />
 
-            { !!displayReadMore &&
+            {!!displayReadMore && (
               <TextControl
-                label={ __( 'Read more text', 'fleximpleblocks' ) }
-                value={ readMore }
-                onChange={ ( value ) => setAttributes({ readMore: value }) }
+                label={__('Read more text', 'fleximpleblocks')}
+                value={readMore}
+                onChange={(value) => setAttributes({ readMore: value })}
               />
-            }
+            )}
           </PanelBody>
         </InspectorControls>
-      }
+      )}
 
-      { !!isFetching &&
-        <div { ...blockProps }>
+      {!!isFetching && (
+        <div {...blockProps}>
           <Placeholder className="fleximple-components-placeholder">
             <Spinner />
-            <p>{ __( 'Loading…', 'fleximpleblocks' ) }</p>
+            <p>{__('Loading…', 'fleximpleblocks')}</p>
           </Placeholder>
         </div>
-      }
+      )}
 
-      { !isFetching && !!postData &&
+      {!isFetching && !!postData && (
         <PostPreview
-          postData={ postData }
-          blockProps={ blockProps }
-          { ...{ attributes } }
+          postData={postData}
+          blockProps={blockProps}
+          {...{ attributes }}
         />
-      }
+      )}
     </>
   )
 }
 
-export default withInstanceId( PostEdit )
+export default withInstanceId(PostEdit)

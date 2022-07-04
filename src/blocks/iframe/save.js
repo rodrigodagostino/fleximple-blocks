@@ -4,13 +4,7 @@
 import { useBlockProps } from '@wordpress/block-editor'
 
 function IframeSave({
-  attributes: {
-    url,
-    width,
-    height,
-    hasAutoHeight,
-    title,
-  },
+  attributes: { url, width, height, hasAutoHeight, title },
 }) {
   const blockProps = useBlockProps.save({
     src: url,
@@ -21,9 +15,7 @@ function IframeSave({
     scrolling: hasAutoHeight ? 'no' : null,
   })
 
-  return (
-    <iframe { ...blockProps } title={ title } />
-  )
+  return <iframe {...blockProps} title={title} />
 }
 
 export default IframeSave

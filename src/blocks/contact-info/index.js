@@ -22,27 +22,27 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Contact Info', 'fleximpleblocks' ),
+  title: __('Contact Info', 'fleximpleblocks'),
   description: __(
     'Display any blocks of your choosing separated in multiple slides, and sequentially shown in a sliding motion.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
   icon,
   keywords: [
     /* translators: block keyword */
-    __( 'Contact Info', 'fleximpleblocks' ),
+    __('Contact Info', 'fleximpleblocks'),
     /* translators: block keyword */
-    __( 'fleximple block', 'fleximpleblocks' ),
+    __('fleximple block', 'fleximpleblocks'),
   ],
 
-  getEditWrapperProps( attributes ) {
+  getEditWrapperProps(attributes) {
     const { alignment } = attributes
     if (
       'left' === alignment ||
-			'center' === alignment ||
-			'right' === alignment ||
-			'wide' === alignment ||
-			'full' === alignment
+      'center' === alignment ||
+      'right' === alignment ||
+      'wide' === alignment ||
+      'full' === alignment
     ) {
       return { 'data-align': alignment }
     }
@@ -53,12 +53,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-contact-info' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-contact-info',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

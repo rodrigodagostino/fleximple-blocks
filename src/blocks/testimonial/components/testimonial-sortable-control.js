@@ -8,8 +8,8 @@
 import { SortableContainer, SortableElement } from 'react-sortable-hoc'
 
 /**
-  * WordPress dependencies
-  */
+ * WordPress dependencies
+ */
 import { Button } from '@wordpress/components'
 
 /**
@@ -30,38 +30,38 @@ const TestimonialSortableControl = ({
   attributes: { order },
   setAttributes,
 }) => {
-  const SortableItem = SortableElement( ({ value }) => {
-    const label = getLabel( value )
+  const SortableItem = SortableElement(({ value }) => {
+    const label = getLabel(value)
     let icon = 'hidden'
-    let text = getHelpText( value, 'hidden' )
+    let text = getHelpText(value, 'hidden')
 
-    if ( getState( value, attributes ) ) {
+    if (getState(value, attributes)) {
       icon = 'visibility'
-      text = getHelpText( value, 'visible' )
+      text = getHelpText(value, 'visible')
     }
 
     return (
       <div className="fleximple-components-sortable-control__item">
         <DragHandle />
         <div className="fleximple-components-sortable-control__label">
-          { label }
+          {label}
         </div>
         <Button
-          icon={ icon }
-          label={ text }
+          icon={icon}
+          label={text}
           className="fleximple-components-sortable-control__button"
-          onClick={ () => toggleAttribute( value, attributes, setAttributes ) }
+          onClick={() => toggleAttribute(value, attributes, setAttributes)}
         />
       </div>
     )
   })
 
-  const SortableList = SortableContainer( ({ items }) => {
+  const SortableList = SortableContainer(({ items }) => {
     return (
       <div className="fleximple-components-sortable-control__sortable-list">
-        { items.map( ( value, index ) =>
-          <SortableItem key={ `item-${ index }` } index={ index } value={ value } />,
-        ) }
+        {items.map((value, index) => (
+          <SortableItem key={`item-${index}`} index={index} value={value} />
+        ))}
       </div>
     )
   })
@@ -69,10 +69,10 @@ const TestimonialSortableControl = ({
   return (
     <div className="fleximple-components-sortable-control">
       <SortableList
-        items={ order }
-        onSortStart={ onSortStart }
-        onSortEnd={ ( sortEnd, e ) =>
-          onSortEnd( sortEnd, e, 'order', order, setAttributes )
+        items={order}
+        onSortStart={onSortStart}
+        onSortEnd={(sortEnd, e) =>
+          onSortEnd(sortEnd, e, 'order', order, setAttributes)
         }
         useDragHandle
         helperClass="fleximple-components-sortable-control__helper"

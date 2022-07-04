@@ -1,25 +1,25 @@
-const path = require( 'path' )
-const postcssPresetEnv = require( 'postcss-preset-env' )
-const postcssRem = require( 'postcss-rem' )
-const postcssColorMod = require( 'postcss-color-mod-function' )
-const postcssAtVariables = require( 'postcss-at-rules-variables' )
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
-const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
-const IgnoreEmitPlugin = require( 'ignore-emit-webpack-plugin' )
-const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' )
+const path = require('path')
+const postcssPresetEnv = require('postcss-preset-env')
+const postcssRem = require('postcss-rem')
+const postcssColorMod = require('postcss-color-mod-function')
+const postcssAtVariables = require('postcss-at-rules-variables')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin')
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin')
 
 const config = {
   entry: {
-    'admin-script': path.resolve( process.cwd(), 'src/js', 'admin.js' ),
-    'frontend-script': path.resolve( process.cwd(), 'src/js', 'frontend.js' ),
-    index: path.resolve( process.cwd(), 'src', 'index.js' ),
-    'admin-style': path.resolve( process.cwd(), 'src/scss', 'admin.scss' ),
-    'editor-style': path.resolve( process.cwd(), 'src/scss', 'editor.scss' ),
-    style: path.resolve( process.cwd(), 'src/scss', 'style.scss' ),
+    'admin-script': path.resolve(process.cwd(), 'src/js', 'admin.js'),
+    'frontend-script': path.resolve(process.cwd(), 'src/js', 'frontend.js'),
+    index: path.resolve(process.cwd(), 'src', 'index.js'),
+    'admin-style': path.resolve(process.cwd(), 'src/scss', 'admin.scss'),
+    'editor-style': path.resolve(process.cwd(), 'src/scss', 'editor.scss'),
+    style: path.resolve(process.cwd(), 'src/scss', 'style.scss'),
   },
   output: {
     filename: '[name].js',
-    path: path.resolve( process.cwd(), 'dist' ),
+    path: path.resolve(process.cwd(), 'dist'),
   },
   resolve: {
     alias: {
@@ -57,15 +57,14 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          require.resolve( 'thread-loader' ),
+          require.resolve('thread-loader'),
           {
-            loader: require.resolve( 'babel-loader' ),
+            loader: require.resolve('babel-loader'),
             options: {
               // Babel uses a directory within local node_modules
               // by default. Use the environment variable option
               // to enable more persistent caching.
-              cacheDirectory:
-								process.env.BABEL_CACHE_DIRECTORY || true,
+              cacheDirectory: process.env.BABEL_CACHE_DIRECTORY || true,
             },
           },
         ],
@@ -111,7 +110,7 @@ const config = {
                   }),
                   postcssColorMod(),
                   postcssAtVariables({
-                    atRules: [ 'media' ],
+                    atRules: ['media'],
                   }),
                 ],
               },
@@ -129,14 +128,14 @@ const config = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new IgnoreEmitPlugin( [ 'style.js' ] ),
+    new IgnoreEmitPlugin(['style.js']),
     new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
   ],
 }
 
-module.exports = ( env, argv ) => {
+module.exports = (env, argv) => {
   config.mode = argv.mode
-  if ( argv.mode === 'development' ) {
+  if (argv.mode === 'development') {
     config.devtool = 'source-map'
   }
   return config

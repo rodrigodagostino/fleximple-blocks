@@ -5,187 +5,187 @@ import { __ } from '@wordpress/i18n'
 
 export const languages = [
   {
-    label: __( 'Afrikaans', 'fleximpleblocks' ),
+    label: __('Afrikaans', 'fleximpleblocks'),
     value: 'af',
   },
   {
-    label: __( 'Albanian', 'fleximpleblocks' ),
+    label: __('Albanian', 'fleximpleblocks'),
     value: 'al',
   },
   {
-    label: __( 'Arabic', 'fleximpleblocks' ),
+    label: __('Arabic', 'fleximpleblocks'),
     value: 'ar',
   },
   {
-    label: __( 'Azerbaijani', 'fleximpleblocks' ),
+    label: __('Azerbaijani', 'fleximpleblocks'),
     value: 'az',
   },
   {
-    label: __( 'Bulgarian', 'fleximpleblocks' ),
+    label: __('Bulgarian', 'fleximpleblocks'),
     value: 'bg',
   },
   {
-    label: __( 'Catalan', 'fleximpleblocks' ),
+    label: __('Catalan', 'fleximpleblocks'),
     value: 'ca',
   },
   {
-    label: __( 'Czech', 'fleximpleblocks' ),
+    label: __('Czech', 'fleximpleblocks'),
     value: 'cz',
   },
   {
-    label: __( 'Danish', 'fleximpleblocks' ),
+    label: __('Danish', 'fleximpleblocks'),
     value: 'da',
   },
   {
-    label: __( 'German', 'fleximpleblocks' ),
+    label: __('German', 'fleximpleblocks'),
     value: 'de',
   },
   {
-    label: __( 'Greek', 'fleximpleblocks' ),
+    label: __('Greek', 'fleximpleblocks'),
     value: 'aaaaaa',
   },
   {
-    label: __( 'English', 'fleximpleblocks' ),
+    label: __('English', 'fleximpleblocks'),
     value: 'aaaaaa',
   },
   {
-    label: __( 'Basque', 'fleximpleblocks' ),
+    label: __('Basque', 'fleximpleblocks'),
     value: 'eu',
   },
   {
-    label: __( 'Persian (Farsi)', 'fleximpleblocks' ),
+    label: __('Persian (Farsi)', 'fleximpleblocks'),
     value: 'fa',
   },
   {
-    label: __( 'Finnish', 'fleximpleblocks' ),
+    label: __('Finnish', 'fleximpleblocks'),
     value: 'fi',
   },
   {
-    label: __( 'French', 'fleximpleblocks' ),
+    label: __('French', 'fleximpleblocks'),
     value: 'fr',
   },
   {
-    label: __( 'Galician', 'fleximpleblocks' ),
+    label: __('Galician', 'fleximpleblocks'),
     value: 'gl',
   },
   {
-    label: __( 'Hebrew', 'fleximpleblocks' ),
+    label: __('Hebrew', 'fleximpleblocks'),
     value: 'he',
   },
   {
-    label: __( 'Hindi', 'fleximpleblocks' ),
+    label: __('Hindi', 'fleximpleblocks'),
     value: 'hi',
   },
   {
-    label: __( 'Croatian', 'fleximpleblocks' ),
+    label: __('Croatian', 'fleximpleblocks'),
     value: 'hr',
   },
   {
-    label: __( 'Hungarian', 'fleximpleblocks' ),
+    label: __('Hungarian', 'fleximpleblocks'),
     value: 'hu',
   },
   {
-    label: __( 'Indonesian', 'fleximpleblocks' ),
+    label: __('Indonesian', 'fleximpleblocks'),
     value: 'id',
   },
   {
-    label: __( 'Italian', 'fleximpleblocks' ),
+    label: __('Italian', 'fleximpleblocks'),
     value: 'it',
   },
   {
-    label: __( 'Japanese', 'fleximpleblocks' ),
+    label: __('Japanese', 'fleximpleblocks'),
     value: 'jp',
   },
   {
-    label: __( 'Korean', 'fleximpleblocks' ),
+    label: __('Korean', 'fleximpleblocks'),
     value: 'kr',
   },
   {
-    label: __( 'Latvian', 'fleximpleblocks' ),
+    label: __('Latvian', 'fleximpleblocks'),
     value: 'la',
   },
   {
-    label: __( 'Lithuanian', 'fleximpleblocks' ),
+    label: __('Lithuanian', 'fleximpleblocks'),
     value: 'lt',
   },
   {
-    label: __( 'Macedonian', 'fleximpleblocks' ),
+    label: __('Macedonian', 'fleximpleblocks'),
     value: 'mk',
   },
   {
-    label: __( 'Norwegian', 'fleximpleblocks' ),
+    label: __('Norwegian', 'fleximpleblocks'),
     value: 'no',
   },
   {
-    label: __( 'Dutch', 'fleximpleblocks' ),
+    label: __('Dutch', 'fleximpleblocks'),
     value: 'nl',
   },
   {
-    label: __( 'Polish', 'fleximpleblocks' ),
+    label: __('Polish', 'fleximpleblocks'),
     value: 'pl',
   },
   {
-    label: __( 'Portuguese', 'fleximpleblocks' ),
+    label: __('Portuguese', 'fleximpleblocks'),
     value: 'pt',
   },
   {
-    label: __( 'Portuguese (Brasil)', 'fleximpleblocks' ),
+    label: __('Portuguese (Brasil)', 'fleximpleblocks'),
     value: 'pt_br',
   },
   {
-    label: __( 'Romanian', 'fleximpleblocks' ),
+    label: __('Romanian', 'fleximpleblocks'),
     value: 'ro',
   },
   {
-    label: __( 'Russian', 'fleximpleblocks' ),
+    label: __('Russian', 'fleximpleblocks'),
     value: 'ru',
   },
   {
-    label: __( 'Swedish', 'fleximpleblocks' ),
+    label: __('Swedish', 'fleximpleblocks'),
     value: 'se',
   },
   {
-    label: __( 'Slovak', 'fleximpleblocks' ),
+    label: __('Slovak', 'fleximpleblocks'),
     value: 'sk',
   },
   {
-    label: __( 'Slovenian', 'fleximpleblocks' ),
+    label: __('Slovenian', 'fleximpleblocks'),
     value: 'sl',
   },
   {
-    label: __( 'Spanish', 'fleximpleblocks' ),
+    label: __('Spanish', 'fleximpleblocks'),
     value: 'es',
   },
   {
-    label: __( 'Serbian', 'fleximpleblocks' ),
+    label: __('Serbian', 'fleximpleblocks'),
     value: 'sr',
   },
   {
-    label: __( 'Thai', 'fleximpleblocks' ),
+    label: __('Thai', 'fleximpleblocks'),
     value: 'th',
   },
   {
-    label: __( 'Turkish', 'fleximpleblocks' ),
+    label: __('Turkish', 'fleximpleblocks'),
     value: 'tr',
   },
   {
-    label: __( 'Ukrainian', 'fleximpleblocks' ),
+    label: __('Ukrainian', 'fleximpleblocks'),
     value: 'uk',
   },
   {
-    label: __( 'Vietnamese', 'fleximpleblocks' ),
+    label: __('Vietnamese', 'fleximpleblocks'),
     value: 'vi',
   },
   {
-    label: __( 'Chinese Simplified', 'fleximpleblocks' ),
+    label: __('Chinese Simplified', 'fleximpleblocks'),
     value: 'zh_cn',
   },
   {
-    label: __( 'Chinese Traditional', 'fleximpleblocks' ),
+    label: __('Chinese Traditional', 'fleximpleblocks'),
     value: 'zh_tw',
   },
   {
-    label: __( 'Zulu', 'fleximpleblocks' ),
+    label: __('Zulu', 'fleximpleblocks'),
     value: 'zu',
   },
 ]

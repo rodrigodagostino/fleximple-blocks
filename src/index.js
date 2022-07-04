@@ -31,7 +31,7 @@ import * as testimonial from './blocks/testimonial'
 import * as weather from './blocks/weather'
 
 export const registerFleximpleBlocks = () => {
-  [
+  ;[
     ad,
     button,
     buttons,
@@ -52,15 +52,15 @@ export const registerFleximpleBlocks = () => {
     tabs,
     testimonial,
     weather,
-  ].forEach( ( block ) => {
-    if ( !block ) {
+  ].forEach((block) => {
+    if (!block) {
       return
     }
     const { metadata, settings, name } = block
-    if ( metadata ) {
-      unstable__bootstrapServerSideBlockDefinitions({ [ name ]: metadata })
+    if (metadata) {
+      unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata })
     }
-    registerBlockType( name, settings )
+    registerBlockType(name, settings)
   })
 }
 

@@ -22,20 +22,20 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Row', 'fleximpleblocks' ),
+  title: __('Row', 'fleximpleblocks'),
   description: __(
     'Organize and structure your content within this feature-rich block.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
   icon,
   keywords: [
     /* translators: block keyword */
-    __( 'Row', 'fleximpleblocks' ),
+    __('Row', 'fleximpleblocks'),
     /* translators: block keyword */
-    __( 'fleximple block', 'fleximpleblocks' ),
+    __('fleximple block', 'fleximpleblocks'),
   ],
 
-  getEditWrapperProps( attributes ) {
+  getEditWrapperProps(attributes) {
     const { alignment } = attributes
     if (
       'left' === alignment ||
@@ -53,12 +53,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-row' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-row',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

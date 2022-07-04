@@ -44,28 +44,24 @@ function IconEdit({
   iconColor,
   setIconColor,
 }) {
-  const defaultClassName = getBlockDefaultClassName( name )
+  const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(
-    defaultClassName, {
-      [ `${ defaultClassName }--custom` ]: hasCustomIcon,
-      'has-text-color': iconColor.color,
-      [ `text-align-${ alignmentHorizontal }` ]: alignmentHorizontal,
-    },
-  )
+  const classes = classnames(defaultClassName, {
+    [`${defaultClassName}--custom`]: hasCustomIcon,
+    'has-text-color': iconColor.color,
+    [`text-align-${alignmentHorizontal}`]: alignmentHorizontal,
+  })
 
   const blockProps = useBlockProps({
     className: classes,
   })
 
-  const iconClasses = classnames(
-    iconId, {
-      [ iconColor.class ]: iconColor.class,
-    },
-  )
+  const iconClasses = classnames(iconId, {
+    [iconColor.class]: iconColor.class,
+  })
 
   const iconStyles = {
-    fontSize: `${ iconSize }px`,
+    fontSize: `${iconSize}px`,
     color: iconColor.color,
     height: hasCustomIcon ? iconSize : undefined,
   }
@@ -74,77 +70,74 @@ function IconEdit({
     <>
       <BlockControls>
         <BlockAlignmentHorizontalToolbar
-          value={ alignmentHorizontal }
-          onChange={ ( value ) => setAttributes({ alignmentHorizontal: value }) }
+          value={alignmentHorizontal}
+          onChange={(value) => setAttributes({ alignmentHorizontal: value })}
         />
       </BlockControls>
       <InspectorControls>
-        <PanelBody title={ __( 'Main', 'fleximpleblocks' ) }>
+        <PanelBody title={__('Main', 'fleximpleblocks')}>
           <IconPicker
-            icons={ [
+            icons={[
               {
-                label: __( 'Icon', 'fleximpleblocks' ),
+                label: __('Icon', 'fleximpleblocks'),
                 value: iconId,
-                onChange: ( value ) => setAttributes({ iconId: value }),
+                onChange: (value) => setAttributes({ iconId: value }),
               },
-            ] }
-            sizes={ [
+            ]}
+            sizes={[
               {
-                label: __( 'Icon size', 'fleximpleblocks' ),
+                label: __('Icon size', 'fleximpleblocks'),
                 value: iconSize,
                 initialPosition: 60,
                 min: 10,
                 max: 120,
-                onChange: ( value ) => setAttributes({ iconSize: value }),
+                onChange: (value) => setAttributes({ iconSize: value }),
               },
-            ] }
+            ]}
           />
 
           <ToggleControl
-            label={ __( 'Use custom icon', 'fleximpleblocks' ) }
-            checked={ hasCustomIcon }
-            onChange={ () => setAttributes({ hasCustomIcon: !hasCustomIcon }) }
+            label={__('Use custom icon', 'fleximpleblocks')}
+            checked={hasCustomIcon}
+            onChange={() => setAttributes({ hasCustomIcon: !hasCustomIcon })}
           />
 
-          { !!hasCustomIcon &&
-          <TextareaControl
-            label={ __( 'Custom Icon', 'fleximpleblocks' ) }
-            style={{ fontFamily: 'monospace' }}
-            placeholder={ __( 'Paste the code for your custom icon in here…', 'fleximpleblocks' ) }
-            value={ customIcon }
-            onChange={ ( value ) => setAttributes({ customIcon: value }) }
-          />
-          }
+          {!!hasCustomIcon && (
+            <TextareaControl
+              label={__('Custom Icon', 'fleximpleblocks')}
+              style={{ fontFamily: 'monospace' }}
+              placeholder={__(
+                'Paste the code for your custom icon in here…',
+                'fleximpleblocks'
+              )}
+              value={customIcon}
+              onChange={(value) => setAttributes({ customIcon: value })}
+            />
+          )}
         </PanelBody>
 
         <PanelColorSettings
-          title={ __( 'Color', 'fleximpleblocks' ) }
-          colorSettings={ [
+          title={__('Color', 'fleximpleblocks')}
+          colorSettings={[
             {
-              label: __( 'Icon' ),
+              label: __('Icon'),
               value: iconColor.color,
               onChange: setIconColor,
             },
-          ] }
-          initialOpen={ false }>
-        </PanelColorSettings>
+          ]}
+          initialOpen={false}
+        ></PanelColorSettings>
       </InspectorControls>
 
-      { !!iconId && !hasCustomIcon &&
-      <div { ...blockProps }>
-        <i className={ iconClasses } style={ iconStyles } />
-      </div>
-      }
+      {!!iconId && !hasCustomIcon && (
+        <div {...blockProps}>
+          <i className={iconClasses} style={iconStyles} />
+        </div>
+      )}
 
-      { !!hasCustomIcon &&
-      <RawHTML { ...blockProps }>
-        { customIcon }
-      </RawHTML>
-      }
+      {!!hasCustomIcon && <RawHTML {...blockProps}>{customIcon}</RawHTML>}
     </>
   )
 }
 
-export default compose( [
-  withColors({ iconColor: 'color' }),
-] )( IconEdit )
+export default compose([withColors({ iconColor: 'color' })])(IconEdit)

@@ -22,12 +22,12 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Contact Item' ),
+  title: __('Contact Item'),
   description: __(
     'The single unit that works as the main structural component for the contact information block.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
-  parent: [ 'fleximple-blocks/contact-info' ],
+  parent: ['fleximple-blocks/contact-info'],
   icon,
   supports: {
     inserter: false,
@@ -40,12 +40,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-contact-info-item' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-contact-info-item',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

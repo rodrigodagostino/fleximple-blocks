@@ -30,50 +30,56 @@ const PostCarouselSortableControl = ({
   attributes: { orderArticle, orderContent, orderMedia, orderMeta },
   setAttributes,
 }) => {
-  const SortableItem = SortableElement( ({ value }) => {
-    const label = getLabel( value )
+  const SortableItem = SortableElement(({ value }) => {
+    const label = getLabel(value)
     let icon = 'hidden'
-    let text = getHelpText( value, 'hidden' )
+    let text = getHelpText(value, 'hidden')
 
-    if ( getState( value, attributes ) ) {
+    if (getState(value, attributes)) {
       icon = 'visibility'
-      text = getHelpText( value, 'visible' )
+      text = getHelpText(value, 'visible')
     }
 
     return (
       <div className="fleximple-components-sortable-control__item">
         <DragHandle />
         <div className="fleximple-components-sortable-control__label">
-          { label }
+          {label}
         </div>
         <Button
-          icon={ icon }
-          label={ text }
+          icon={icon}
+          label={text}
           className="fleximple-components-sortable-control__button"
-          onClick={ () => toggleAttribute( value, attributes, setAttributes ) }
+          onClick={() => toggleAttribute(value, attributes, setAttributes)}
         />
       </div>
     )
   })
 
-  const SortableList = SortableContainer( ({ items }) => {
+  const SortableList = SortableContainer(({ items }) => {
     return (
       <div className="fleximple-components-sortable-control__sortable-list">
-        { items.map( ( value, index ) => {
-          switch ( value ) {
+        {items.map((value, index) => {
+          switch (value) {
             case 'media':
               return (
                 <>
                   <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
+                    key={`item-${index}`}
+                    index={index}
+                    value={value}
                   />
                   <SortableList
-                    items={ orderMedia }
-                    onSortStart={ onSortStart }
-                    onSortEnd={ ( sortEnd, e ) =>
-                      onSortEnd( sortEnd, e, 'orderMedia', orderMedia, setAttributes )
+                    items={orderMedia}
+                    onSortStart={onSortStart}
+                    onSortEnd={(sortEnd, e) =>
+                      onSortEnd(
+                        sortEnd,
+                        e,
+                        'orderMedia',
+                        orderMedia,
+                        setAttributes
+                      )
                     }
                     useDragHandle
                     helperClass="fleximple-components-sortable-control__helper"
@@ -84,15 +90,21 @@ const PostCarouselSortableControl = ({
               return (
                 <>
                   <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
+                    key={`item-${index}`}
+                    index={index}
+                    value={value}
                   />
                   <SortableList
-                    items={ orderContent }
-                    onSortStart={ onSortStart }
-                    onSortEnd={ ( sortEnd, e ) =>
-                      onSortEnd( sortEnd, e, 'orderContent', orderContent, setAttributes )
+                    items={orderContent}
+                    onSortStart={onSortStart}
+                    onSortEnd={(sortEnd, e) =>
+                      onSortEnd(
+                        sortEnd,
+                        e,
+                        'orderContent',
+                        orderContent,
+                        setAttributes
+                      )
                     }
                     useDragHandle
                     helperClass="fleximple-components-sortable-control__helper"
@@ -103,15 +115,21 @@ const PostCarouselSortableControl = ({
               return (
                 <>
                   <SortableItem
-                    key={ `item-${ index }` }
-                    index={ index }
-                    value={ value }
+                    key={`item-${index}`}
+                    index={index}
+                    value={value}
                   />
                   <SortableList
-                    items={ orderMeta }
-                    onSortStart={ onSortStart }
-                    onSortEnd={ ( sortEnd, e ) =>
-                      onSortEnd( sortEnd, e, 'orderMeta', orderMeta, setAttributes )
+                    items={orderMeta}
+                    onSortStart={onSortStart}
+                    onSortEnd={(sortEnd, e) =>
+                      onSortEnd(
+                        sortEnd,
+                        e,
+                        'orderMeta',
+                        orderMeta,
+                        setAttributes
+                      )
                     }
                     useDragHandle
                     helperClass="fleximple-components-sortable-control__helper"
@@ -121,13 +139,13 @@ const PostCarouselSortableControl = ({
             default:
               return (
                 <SortableItem
-                  key={ `item-${ index }` }
-                  index={ index }
-                  value={ value }
+                  key={`item-${index}`}
+                  index={index}
+                  value={value}
                 />
               )
           }
-        }) }
+        })}
       </div>
     )
   })
@@ -135,10 +153,10 @@ const PostCarouselSortableControl = ({
   return (
     <div className="fleximple-components-sortable-control">
       <SortableList
-        items={ orderArticle }
-        onSortStart={ onSortStart }
-        onSortEnd={ ( sortEnd, e ) =>
-          onSortEnd( sortEnd, e, 'orderArticle', orderArticle, setAttributes )
+        items={orderArticle}
+        onSortStart={onSortStart}
+        onSortEnd={(sortEnd, e) =>
+          onSortEnd(sortEnd, e, 'orderArticle', orderArticle, setAttributes)
         }
         useDragHandle
         helperClass="fleximple-components-sortable-control__helper"

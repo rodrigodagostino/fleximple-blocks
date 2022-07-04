@@ -27,12 +27,12 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Tab Panel' ),
+  title: __('Tab Panel'),
   description: __(
     'The single unit that works as the main structural component for the tabs block.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
-  parent: [ 'fleximple-blocks/tabs' ],
+  parent: ['fleximple-blocks/tabs'],
   icon,
   supports: {
     inserter: false,
@@ -40,34 +40,34 @@ export const settings = {
     html: false,
   },
 
-  edit: ( props ) => {
+  edit: (props) => {
     const { className } = props
 
     const TEMPLATE = [
       [
         'core/paragraph',
-        { placeholder: __( 'Add content…', 'fleximpleblocks' ) },
+        { placeholder: __('Add content…', 'fleximpleblocks') },
       ],
     ]
 
     return (
-      <div className={ className } role="tabpanel">
+      <div className={className} role="tabpanel">
         <InnerBlocks
-          template={ TEMPLATE }
-          templateInsertUpdatesSelection={ false }
-          templateLock={ false }
+          template={TEMPLATE}
+          templateInsertUpdatesSelection={false}
+          templateLock={false}
         />
       </div>
     )
   },
 
   save: () => {
-    const defaultClassName = getBlockDefaultClassName( name )
+    const defaultClassName = getBlockDefaultClassName(name)
 
-    const classes = classnames( defaultClassName )
+    const classes = classnames(defaultClassName)
 
     return (
-      <div className={ classes } role="tabpanel">
+      <div className={classes} role="tabpanel">
         <InnerBlocks.Content />
       </div>
     )
@@ -75,12 +75,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-tab-panel' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-tab-panel',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

@@ -22,17 +22,17 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Profile', 'fleximpleblocks' ),
+  title: __('Profile', 'fleximpleblocks'),
   description: __(
     'Introduce your staff members to your visitors.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
   icon,
   keywords: [
     /* translators: block keyword */
-    __( 'Profile', 'fleximpleblocks' ),
+    __('Profile', 'fleximpleblocks'),
     /* translators: block keyword */
-    __( 'fleximple block', 'fleximpleblocks' ),
+    __('fleximple block', 'fleximpleblocks'),
   ],
 
   edit,
@@ -40,12 +40,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-profile' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-profile',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

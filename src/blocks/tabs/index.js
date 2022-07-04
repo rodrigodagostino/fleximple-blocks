@@ -22,34 +22,34 @@ const { name } = metadata
 export { metadata, name }
 
 export const settings = {
-  title: __( 'Tabs', 'fleximpleblocks' ),
+  title: __('Tabs', 'fleximpleblocks'),
   description: __(
     'Divide and organize your content through tabs.',
-    'fleximpleblocks',
+    'fleximpleblocks'
   ),
   icon,
   keywords: [
     /* translators: block keyword */
-    __( 'Tabs', 'fleximpleblocks' ),
+    __('Tabs', 'fleximpleblocks'),
     /* translators: block keyword */
-    __( 'fleximple block', 'fleximpleblocks' ),
+    __('fleximple block', 'fleximpleblocks'),
   ],
   styles: [
     {
       name: 'standard',
       /* translators: block style */
-      label: __( 'Standard', 'fleximpleblocks' ),
+      label: __('Standard', 'fleximpleblocks'),
       isDefault: true,
     },
     {
       name: 'underlined',
       /* translators: block style */
-      label: __( 'Underlined', 'fleximpleblocks' ),
+      label: __('Underlined', 'fleximpleblocks'),
     },
     {
       name: 'pills',
       /* translators: block style */
-      label: __( 'Pills', 'fleximpleblocks' ),
+      label: __('Pills', 'fleximpleblocks'),
     },
   ],
 
@@ -58,12 +58,12 @@ export const settings = {
 }
 
 // Provide a custom block class
-function setBlockCustomClassName( className, blockName ) {
+function setBlockCustomClassName(className, blockName) {
   return blockName === name ? 'fleximple-block-tabs' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
   'fleximple-blocks/fleximple-block-tabs',
-  setBlockCustomClassName,
+  setBlockCustomClassName
 )

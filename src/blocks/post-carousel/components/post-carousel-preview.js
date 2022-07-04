@@ -53,58 +53,58 @@ const PostCarouselPreview = ({
   const swiperParams = {
     slidesPerView,
     loop,
-    ... autoplay
+    ...(autoplay
       ? {
-        autoplay: {
-          delay,
-          disableOnInteraction: false,
-        },
-      }
-      : null,
+          autoplay: {
+            delay,
+            disableOnInteraction: false,
+          },
+        }
+      : null),
     speed,
-    ... hasNavigation
+    ...(hasNavigation
       ? {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      }
-      : null,
-    ... hasPagination
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        }
+      : null),
+    ...(hasPagination
       ? {
-        pagination: {
-          el: '.swiper-pagination',
-          type: paginationType,
-          clickable: true,
-        },
-      }
-      : null,
+          pagination: {
+            el: '.swiper-pagination',
+            type: paginationType,
+            clickable: true,
+          },
+        }
+      : null),
     spaceBetween,
-    ... effect !== 'slide' ? effect : null,
+    ...(effect !== 'slide' ? effect : null),
   }
 
   const blockProps = useBlockProps()
 
-  const buttonIconColorClass = getColorClassName( 'color', buttonIconColor )
+  const buttonIconColorClass = getColorClassName('color', buttonIconColor)
 
-  const buttonPrevClasses = classnames( 'swiper-button-prev', {
+  const buttonPrevClasses = classnames('swiper-button-prev', {
     'has-text-color': buttonIconColor || customButtonIconColor,
-    [ buttonIconColorClass ]: buttonIconColorClass,
+    [buttonIconColorClass]: buttonIconColorClass,
   })
 
-  const buttonPrevIconClasses = classnames({ [ buttonPrevIcon ]: buttonPrevIcon })
+  const buttonPrevIconClasses = classnames({ [buttonPrevIcon]: buttonPrevIcon })
 
   const buttonPrevStyles = {
     fontSize: buttonIconSize,
     color: buttonIconColorClass ? undefined : customButtonIconColor,
   }
 
-  const buttonNextClasses = classnames( 'swiper-button-next', {
+  const buttonNextClasses = classnames('swiper-button-next', {
     'has-text-color': buttonIconColor || customButtonIconColor,
-    [ buttonIconColorClass ]: buttonIconColorClass,
+    [buttonIconColorClass]: buttonIconColorClass,
   })
 
-  const buttonNextIconClasses = classnames({ [ buttonNextIcon ]: buttonNextIcon })
+  const buttonNextIconClasses = classnames({ [buttonNextIcon]: buttonNextIcon })
 
   const buttonNextStyles = {
     fontSize: buttonIconSize,
@@ -112,9 +112,9 @@ const PostCarouselPreview = ({
   }
 
   return (
-    <div { ...blockProps }>
+    <div {...blockProps}>
       <Swiper
-        modules={ [
+        modules={[
           Autoplay,
           Navigation,
           Pagination,
@@ -123,35 +123,35 @@ const PostCarouselPreview = ({
           EffectCoverflow,
           EffectCube,
           EffectCards,
-        ] }
-        { ...swiperParams }
+        ]}
+        {...swiperParams}
       >
-        { hasNavigation &&
+        {hasNavigation && (
           <>
-            <button className={ buttonPrevClasses } style={ buttonPrevStyles }>
+            <button className={buttonPrevClasses} style={buttonPrevStyles}>
               <span className="screen-reader-only">
-                { __( 'Previous slide', 'fleximpleblocks' ) }
+                {__('Previous slide', 'fleximpleblocks')}
               </span>
-              <i className={ buttonPrevIconClasses } aria-hidden="true" />
+              <i className={buttonPrevIconClasses} aria-hidden="true" />
             </button>
-            <button className={ buttonNextClasses } style={ buttonNextStyles }>
+            <button className={buttonNextClasses} style={buttonNextStyles}>
               <span className="screen-reader-only">
-                { __( 'Next slide', 'fleximpleblocks' ) }
+                {__('Next slide', 'fleximpleblocks')}
               </span>
-              <i className={ buttonNextIconClasses } aria-hidden="true" />
+              <i className={buttonNextIconClasses} aria-hidden="true" />
             </button>
           </>
-        }
+        )}
 
-        { hasPagination && <div className="swiper-pagination" /> }
+        {hasPagination && <div className="swiper-pagination" />}
 
-        { postsData.map( ( post, i ) => {
+        {postsData.map((post, i) => {
           return (
-            <SwiperSlide key={ i }>
-              <PostCarouselPreviewArticle post={ post } { ...{ attributes } } />
+            <SwiperSlide key={i}>
+              <PostCarouselPreviewArticle post={post} {...{ attributes }} />
             </SwiperSlide>
           )
-        }) }
+        })}
       </Swiper>
     </div>
   )
