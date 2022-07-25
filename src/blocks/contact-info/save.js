@@ -68,108 +68,108 @@ function ContactInfoSave({
           `.${defaultClassName}.direction-${
             direction.small === 'row' ? 'h' : 'v'
           }--sm {
-						flex-direction: ${direction.small};
-					}`}
+            flex-direction: ${direction.small};
+          }`}
         {direction.small === 'row' &&
           `.${defaultClassName}.gap-h-${
             gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
           }--sm > *:not(style) + * {
-						${'margin-left: ' + gap.small.value + gap.small.unit + ';'}
-					}
-					.${defaultClassName}.block-align-h-${alignmentHorizontal.small}--sm {
-						justify-content: ${alignmentHorizontal.small};
-					}`}
+            ${'margin: 0 0 0 ' + gap.small.value + gap.small.unit + ';'}
+          }
+          .${defaultClassName}.block-align-h-${alignmentHorizontal.small}--sm {
+            justify-content: ${alignmentHorizontal.small};
+          }`}
         {direction.small === 'column' &&
           `.${defaultClassName}.gap-v-${
             gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
           }--sm > *:not(style) + * {
-						${'margin-top: ' + gap.small.value + gap.small.unit + ';'}
-					}
-					.${defaultClassName}.block-align-h-${alignmentHorizontal.small}--sm {
-						align-items: ${alignmentHorizontal.small};
-					}`}
+            ${'margin: ' + gap.small.value + gap.small.unit + ' 0 0;'}
+          }
+          .${defaultClassName}.block-align-h-${alignmentHorizontal.small}--sm {
+            align-items: ${alignmentHorizontal.small};
+          }`}
 
         {!!direction.medium &&
           direction.medium !== direction.small &&
           `@media only screen and (min-width: ${
             fleximpleblocksPluginData.settings.mediumBreakpointValue
           }px) {
-						.${defaultClassName}.direction-${direction.medium === 'row' ? 'h' : 'v'}--md {
-							flex-direction: ${direction.medium};
-						}
-						${
+            .${defaultClassName}.direction-${direction.medium === 'row' ? 'h' : 'v'}--md {
+              flex-direction: ${direction.medium};
+            }
+            ${
               direction.medium === 'row'
                 ? `
-							.${defaultClassName}.gap-h-${
+              .${defaultClassName}.gap-h-${
                     gap.medium.value +
                     (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
                   }--lg > *:not(style) + * {
-								${'margin-left: ' + gap.medium.value + gap.medium.unit + ';'}
-							}
-							.${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--sm {
-								justify-content: ${alignmentHorizontal.medium};
-							}`
+                ${'margin: 0 0 0 ' + gap.medium.value + gap.medium.unit + ';'}
+              }
+              .${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--sm {
+                justify-content: ${alignmentHorizontal.medium};
+              }`
                 : ''
             }
-						${
+            ${
               direction.medium === 'column'
                 ? `
-							.${defaultClassName}.gap-v-${
+              .${defaultClassName}.gap-v-${
                     gap.medium.value +
                     (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
                   }--lg > *:not(style) + * {
-								${'margin-top: ' + gap.medium.value + gap.medium.unit + ';'}
-							}
-							.${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--md {
-								align-items: ${alignmentHorizontal.medium};
-							}`
+                ${'margin: ' + gap.medium.value + gap.medium.unit + ' 0 0;'}
+              }
+              .${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--md {
+                align-items: ${alignmentHorizontal.medium};
+              }`
                 : ''
             }
-					}`}
+          }`}
 
         {!!direction.large &&
           direction.large !== direction.medium &&
           `@media only screen and (min-width: ${
             fleximpleblocksPluginData.settings.largeBreakpointValue
           }px) {
-						.${defaultClassName}.direction-${direction.large === 'row' ? 'h' : 'v'}--lg {
-							flex-direction: ${direction.large};
-						}
-						${
+            .${defaultClassName}.direction-${direction.large === 'row' ? 'h' : 'v'}--lg {
+              flex-direction: ${direction.large};
+            }
+            ${
               direction.large === 'row'
                 ? `
-							.${defaultClassName}.gap-h-${
+              .${defaultClassName}.gap-h-${
                     gap.large.value +
                     (gap.large.unit === '%' ? 'pct' : gap.large.unit)
                   }--lg > *:not(style) + * {
-								${'margin-left: ' + gap.large.value + gap.large.unit + ';'}
-								}
-								.${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
-									justify-content: ${alignmentHorizontal.large};
-								}`
+                ${'margin: 0 0 0 ' + gap.large.value + gap.large.unit + ';'}
+                }
+                .${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
+                  justify-content: ${alignmentHorizontal.large};
+                }`
                 : ''
             }
-						${
+            ${
               direction.large === 'column'
                 ? `
-							.${defaultClassName}.gap-v-${
+              .${defaultClassName}.gap-v-${
                     gap.large.value +
                     (gap.large.unit === '%' ? 'pct' : gap.large.unit)
                   }--lg > *:not(style) + * {
-								${'margin-top: ' + gap.large.value + gap.large.unit + ';'}
-							}
-							.${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
-								align-items: ${
+                ${'margin: ' + gap.large.value + gap.large.unit + ' 0 0;'}
+              }
+              .${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
+                align-items: ${
                   alignmentHorizontal.large === 'start'
                     ? 'flex-start'
                     : alignmentHorizontal.large === 'end'
                     ? 'flex-end'
                     : alignmentHorizontal.large
                 };
-							}`
+              }`
                 : ''
             }
-					}`}
+          }`}
       </style>
 
       <InnerBlocks.Content />
