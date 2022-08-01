@@ -19,7 +19,7 @@ const { name } = metadata
 
 function IconSave({
   attributes: {
-    iconId,
+    iconData,
     iconSize,
     iconColor,
     customIconColor,
@@ -42,7 +42,7 @@ function IconSave({
 
   const iconColorClass = getColorClassName('color', iconColor)
 
-  const iconClasses = classnames(iconId, {
+  const iconClasses = classnames(iconData.value, {
     [iconColorClass]: iconColorClass,
   })
 
@@ -54,7 +54,7 @@ function IconSave({
 
   return (
     <>
-      {!!iconId && !hasCustomIcon && (
+      {!!iconData?.value && !hasCustomIcon && (
         <div {...blockProps}>
           <i className={iconClasses} style={iconStyles} />
         </div>

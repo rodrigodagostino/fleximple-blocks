@@ -34,7 +34,7 @@ const { name } = metadata
 
 function IconEdit({
   attributes: {
-    iconId,
+    iconData,
     iconSize,
     hasCustomIcon,
     customIcon,
@@ -56,7 +56,7 @@ function IconEdit({
     className: classes,
   })
 
-  const iconClasses = classnames(iconId, {
+  const iconClasses = classnames(iconData.value, {
     [iconColor.class]: iconColor.class,
   })
 
@@ -80,8 +80,8 @@ function IconEdit({
             icons={[
               {
                 label: __('Icon', 'fleximpleblocks'),
-                value: iconId,
-                onChange: (value) => setAttributes({ iconId: value }),
+                value: iconData,
+                onChange: (option) => setAttributes({ iconData: option }),
               },
             ]}
             sizes={[
@@ -129,7 +129,7 @@ function IconEdit({
         ></PanelColorSettings>
       </InspectorControls>
 
-      {!!iconId && !hasCustomIcon && (
+      {!!iconData?.value && !hasCustomIcon && (
         <div {...blockProps}>
           <i className={iconClasses} style={iconStyles} />
         </div>

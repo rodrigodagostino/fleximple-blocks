@@ -3,9 +3,12 @@
   "name": "fleximple-blocks/icon",
   "category": "fleximple-blocks",
   "attributes": {
-    "iconId": {
-      "type": "string",
-      "default": "fas fa-star"
+    "iconData": {
+      "type": "object",
+      "default": {
+        "label": "Star",
+        "value": "fas fa-star"
+      }
     },
     "iconSize": {
       "type": "number",
