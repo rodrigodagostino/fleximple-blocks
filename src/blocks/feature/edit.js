@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -148,7 +148,7 @@ class FeatureEdit extends Component {
 
     const defaultClassName = getBlockDefaultClassName(name)
 
-    const classes = classnames(defaultClassName, {
+    const classes = classNames(defaultClassName, {
       [`text-align-${textAlignment.small}--sm`]: textAlignment.small,
       [`text-align-${textAlignment.medium}--md`]: textAlignment.medium,
       [`text-align-${textAlignment.large}--lg`]: textAlignment.large,

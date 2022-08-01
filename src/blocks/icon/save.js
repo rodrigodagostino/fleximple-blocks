@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -30,7 +30,7 @@ function IconSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(defaultClassName, {
+  const classes = classNames(defaultClassName, {
     [`${defaultClassName}--custom`]: hasCustomIcon,
     'has-text-color': iconColor || customIconColor,
     [`block-align-h-${alignmentHorizontal}`]: alignmentHorizontal,
@@ -42,7 +42,7 @@ function IconSave({
 
   const iconColorClass = getColorClassName('color', iconColor)
 
-  const iconClasses = classnames(iconData.value, {
+  const iconClasses = classNames(iconData.value, {
     [iconColorClass]: iconColorClass,
   })
 

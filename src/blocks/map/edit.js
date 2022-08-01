@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 // import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
@@ -64,7 +64,7 @@ function MapEdit({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(className, {
+  const classes = classNames(className, {
     'is-selected': isSelected,
   })
 

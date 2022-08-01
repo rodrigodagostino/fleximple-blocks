@@ -5,7 +5,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import {
   Autoplay,
@@ -87,24 +87,24 @@ const PostCarouselPreview = ({
 
   const buttonIconColorClass = getColorClassName('color', buttonIconColor)
 
-  const buttonPrevClasses = classnames('swiper-button-prev', {
+  const buttonPrevClasses = classNames('swiper-button-prev', {
     'has-text-color': buttonIconColor || customButtonIconColor,
     [buttonIconColorClass]: buttonIconColorClass,
   })
 
-  const buttonPrevIconClasses = classnames({ [buttonPrevIcon]: buttonPrevIcon })
+  const buttonPrevIconClasses = classNames({ [buttonPrevIcon]: buttonPrevIcon })
 
   const buttonPrevStyles = {
     fontSize: buttonIconSize,
     color: buttonIconColorClass ? undefined : customButtonIconColor,
   }
 
-  const buttonNextClasses = classnames('swiper-button-next', {
+  const buttonNextClasses = classNames('swiper-button-next', {
     'has-text-color': buttonIconColor || customButtonIconColor,
     [buttonIconColorClass]: buttonIconColorClass,
   })
 
-  const buttonNextIconClasses = classnames({ [buttonNextIcon]: buttonNextIcon })
+  const buttonNextIconClasses = classNames({ [buttonNextIcon]: buttonNextIcon })
 
   const buttonNextStyles = {
     fontSize: buttonIconSize,

@@ -7,7 +7,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 import memoize from 'memize'
 import times from 'lodash/times'
 
@@ -89,7 +89,7 @@ function PostPreview({
       }
     : null
 
-  const pictureClasses = classnames(`${defaultClassName}__picture`, {
+  const pictureClasses = classNames(`${defaultClassName}__picture`, {
     [`aspect-ratio-${aspectRatio.small}--sm`]: aspectRatio.small !== 'none',
     [`aspect-ratio-${aspectRatio.medium}--md`]:
       aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,

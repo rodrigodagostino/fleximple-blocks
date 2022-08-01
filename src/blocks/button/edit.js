@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -182,7 +182,7 @@ function ButtonEdit({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`block-align-h-${alignmentHorizontal}`]: alignmentHorizontal,
   })
 
@@ -191,7 +191,7 @@ function ButtonEdit({
     title: title,
   })
 
-  const buttonClasses = classnames(`${defaultClassName}__link`, {
+  const buttonClasses = classNames(`${defaultClassName}__link`, {
     [`width-${width}`]: width,
     'has-background': backgroundColor.color,
     [backgroundColor.class]: backgroundColor.class,
@@ -259,12 +259,12 @@ function ButtonEdit({
     noReferrer ? 'noreferrer' : ''
   }`.trim()
 
-  const iconClasses = classnames(`${defaultClassName}__icon`, {
+  const iconClasses = classNames(`${defaultClassName}__icon`, {
     [iconId]: iconId,
     [`position-${iconPosition}`]: iconPosition && !isIconOnly,
   })
 
-  const customIconClasses = classnames(`${defaultClassName}__custom-icon`, {
+  const customIconClasses = classNames(`${defaultClassName}__custom-icon`, {
     [`position-${iconPosition}`]: iconPosition && !isIconOnly,
   })
 

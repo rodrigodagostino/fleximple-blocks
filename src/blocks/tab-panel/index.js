@@ -7,7 +7,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -64,7 +64,7 @@ export const settings = {
   save: () => {
     const defaultClassName = getBlockDefaultClassName(name)
 
-    const classes = classnames(defaultClassName)
+    const classes = classNames(defaultClassName)
 
     return (
       <div className={classes} role="tabpanel">

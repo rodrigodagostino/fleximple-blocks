@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -23,7 +23,7 @@ function ContactInfoSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(defaultClassName, {
+  const classes = classNames(defaultClassName, {
     [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
     [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
       direction.medium && direction.medium !== direction.small,
@@ -94,7 +94,9 @@ function ContactInfoSave({
           `@media only screen and (min-width: ${
             fleximpleblocksPluginData.settings.mediumBreakpointValue
           }px) {
-            .${defaultClassName}.direction-${direction.medium === 'row' ? 'h' : 'v'}--md {
+            .${defaultClassName}.direction-${
+            direction.medium === 'row' ? 'h' : 'v'
+          }--md {
               flex-direction: ${direction.medium};
             }
             ${
@@ -106,7 +108,9 @@ function ContactInfoSave({
                   }--lg > *:not(style) + * {
                 ${'margin: 0 0 0 ' + gap.medium.value + gap.medium.unit + ';'}
               }
-              .${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--sm {
+              .${defaultClassName}.block-align-h-${
+                    alignmentHorizontal.medium
+                  }--sm {
                 justify-content: ${alignmentHorizontal.medium};
               }`
                 : ''
@@ -120,7 +124,9 @@ function ContactInfoSave({
                   }--lg > *:not(style) + * {
                 ${'margin: ' + gap.medium.value + gap.medium.unit + ' 0 0;'}
               }
-              .${defaultClassName}.block-align-h-${alignmentHorizontal.medium}--md {
+              .${defaultClassName}.block-align-h-${
+                    alignmentHorizontal.medium
+                  }--md {
                 align-items: ${alignmentHorizontal.medium};
               }`
                 : ''
@@ -132,7 +138,9 @@ function ContactInfoSave({
           `@media only screen and (min-width: ${
             fleximpleblocksPluginData.settings.largeBreakpointValue
           }px) {
-            .${defaultClassName}.direction-${direction.large === 'row' ? 'h' : 'v'}--lg {
+            .${defaultClassName}.direction-${
+            direction.large === 'row' ? 'h' : 'v'
+          }--lg {
               flex-direction: ${direction.large};
             }
             ${
@@ -144,7 +152,9 @@ function ContactInfoSave({
                   }--lg > *:not(style) + * {
                 ${'margin: 0 0 0 ' + gap.large.value + gap.large.unit + ';'}
                 }
-                .${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
+                .${defaultClassName}.block-align-h-${
+                    alignmentHorizontal.large
+                  }--lg {
                   justify-content: ${alignmentHorizontal.large};
                 }`
                 : ''
@@ -158,7 +168,9 @@ function ContactInfoSave({
                   }--lg > *:not(style) + * {
                 ${'margin: ' + gap.large.value + gap.large.unit + ' 0 0;'}
               }
-              .${defaultClassName}.block-align-h-${alignmentHorizontal.large}--lg {
+              .${defaultClassName}.block-align-h-${
+                    alignmentHorizontal.large
+                  }--lg {
                 align-items: ${
                   alignmentHorizontal.large === 'start'
                     ? 'flex-start'

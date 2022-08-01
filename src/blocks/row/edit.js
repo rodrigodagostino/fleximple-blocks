@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -142,7 +142,7 @@ function RowEdit({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`block-align-h-${alignmentHorizontal.small}--sm`]:
       alignmentHorizontal.small,
     [`block-align-h-${alignmentHorizontal.medium}--md`]:
@@ -300,7 +300,7 @@ function RowEdit({
     className: classes,
   })
 
-  const overlayClasses = classnames(`${defaultClassName}__overlay`, {
+  const overlayClasses = classNames(`${defaultClassName}__overlay`, {
     'has-background': overlayColor.color && overlayOpacity,
     [overlayColor.class]: overlayColor.class && overlayOpacity,
     [`opacity-${overlayOpacity}`]: overlayOpacity,

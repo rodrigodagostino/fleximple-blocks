@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -72,7 +72,7 @@ class TestimonialEdit extends Component {
 
     const defaultClassName = getBlockDefaultClassName(name)
 
-    const classes = classnames(className, {
+    const classes = classNames(className, {
       [`text-align-${textAlignment.small}--sm`]: textAlignment.small,
       [`text-align-${textAlignment.medium}--md`]: textAlignment.medium,
       [`text-align-${textAlignment.large}--lg`]: textAlignment.large,
@@ -99,7 +99,7 @@ class TestimonialEdit extends Component {
       }--lg`]: mediaHeight.large.value,
     })
 
-    const iconClasses = classnames(`${defaultClassName}__icon`, iconId, {
+    const iconClasses = classNames(`${defaultClassName}__icon`, iconId, {
       'has-text-color': iconColor.color,
       [iconColor.class]: iconColor.class,
     })

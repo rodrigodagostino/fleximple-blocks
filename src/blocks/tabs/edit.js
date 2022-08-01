@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 import memoize from 'memize'
 import times from 'lodash/times'
 
@@ -156,7 +156,7 @@ const TabsEdit = ({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const tabListClasses = classnames(`${defaultClassName}__tab-list`, {
+  const tabListClasses = classNames(`${defaultClassName}__tab-list`, {
     [`block-align-${tabsAlignment}`]: tabsAlignment,
   })
 

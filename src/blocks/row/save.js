@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -49,7 +49,7 @@ function RowSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`block-align-h-${alignmentHorizontal.small}--sm`]:
       alignmentHorizontal.small,
     [`block-align-h-${alignmentHorizontal.medium}--md`]:
@@ -204,7 +204,7 @@ function RowSave({
 
   const overlayColorClass = getColorClassName('background-color', overlayColor)
 
-  const overlayClasses = classnames(`${defaultClassName}__overlay`, {
+  const overlayClasses = classNames(`${defaultClassName}__overlay`, {
     'has-background': (overlayColor || customOverlayColor) && overlayOpacity,
     [overlayColorClass]: overlayColorClass && overlayOpacity,
     [`opacity-${overlayOpacity}`]: overlayOpacity,

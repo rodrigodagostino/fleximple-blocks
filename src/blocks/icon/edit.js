@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -46,7 +46,7 @@ function IconEdit({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(defaultClassName, {
+  const classes = classNames(defaultClassName, {
     [`${defaultClassName}--custom`]: hasCustomIcon,
     'has-text-color': iconColor.color,
     [`text-align-${alignmentHorizontal}`]: alignmentHorizontal,
@@ -56,7 +56,7 @@ function IconEdit({
     className: classes,
   })
 
-  const iconClasses = classnames(iconData.value, {
+  const iconClasses = classNames(iconData.value, {
     [iconColor.class]: iconColor.class,
   })
 

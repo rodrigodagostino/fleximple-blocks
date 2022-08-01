@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -36,7 +36,7 @@ function ProfileSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`block-align-${contentAlignment.small}--sm`]: contentAlignment.small,
     [`block-align-${contentAlignment.medium}--md`]: contentAlignment.medium,
     [`block-align-${contentAlignment.large}--lg`]: contentAlignment.large,

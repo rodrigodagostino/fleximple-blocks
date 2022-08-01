@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -96,7 +96,7 @@ function ProfileEdit({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`block-align-${contentAlignment.small}--sm`]: contentAlignment.small,
     [`block-align-${contentAlignment.medium}--md`]: contentAlignment.medium,
     [`block-align-${contentAlignment.large}--lg`]: contentAlignment.large,
@@ -164,7 +164,7 @@ function ProfileEdit({
     className: classes,
   })
 
-  const mediaClasses = classnames('fleximple-components__media-placeholder', {
+  const mediaClasses = classNames('fleximple-components__media-placeholder', {
     [`${defaultClassName}__media`]: mediaId,
     'is-active': mediaId,
   })

@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 import memoize from 'memize'
 import times from 'lodash/times'
 
@@ -53,7 +53,7 @@ function ContactInfoEdit({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(defaultClassName, {
+  const classes = classNames(defaultClassName, {
     [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
     [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
       direction.medium && direction.medium !== direction.small,

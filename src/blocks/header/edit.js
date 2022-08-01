@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -56,7 +56,7 @@ function HeaderEdit({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`text-align-${textAlignment}`]: textAlignment,
     [`gap-${
       gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)

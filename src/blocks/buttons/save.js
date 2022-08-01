@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -23,7 +23,7 @@ function ButtonGroupSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
     [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
       direction.medium,

@@ -7,7 +7,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -61,7 +61,7 @@ const RecentPostsPreview = ({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames({
+  const classes = classNames({
     [`${defaultClassName}--${layout}`]: layout,
     [`col-${columns.small}--sm`]: layout === 'grid',
     [`col-${columns.medium}--md`]:
@@ -98,7 +98,7 @@ const RecentPostsPreview = ({
     className: classes,
   })
 
-  const pictureClasses = classnames(`${defaultClassName}__entry-picture`, {
+  const pictureClasses = classNames(`${defaultClassName}__entry-picture`, {
     [`aspect-ratio-${aspectRatio.small}--sm`]: aspectRatio.small !== 'none',
     [`aspect-ratio-${aspectRatio.medium}--md`]:
       aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,

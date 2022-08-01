@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -32,7 +32,7 @@ class TabsSave extends Component {
 
     const defaultClassName = getBlockDefaultClassName(name)
 
-    const tabListClasses = classnames(`${defaultClassName}__tab-list`, {
+    const tabListClasses = classNames(`${defaultClassName}__tab-list`, {
       [`block-align-${tabsAlignment}`]: tabsAlignment,
     })
 

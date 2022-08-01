@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -53,7 +53,7 @@ class TestimonialSave extends Component {
 
     const defaultClassName = getBlockDefaultClassName(name)
 
-    const classes = classnames(className, {
+    const classes = classNames(className, {
       [`text-align-${textAlignment.small}--sm`]: textAlignment.small,
       [`text-align-${textAlignment.medium}--md`]: textAlignment.medium,
       [`text-align-${textAlignment.large}--lg`]: textAlignment.large,
@@ -82,7 +82,7 @@ class TestimonialSave extends Component {
 
     const iconColorClass = getColorClassName('color', iconColor)
 
-    const iconClasses = classnames(`${defaultClassName}__icon`, iconId, {
+    const iconClasses = classNames(`${defaultClassName}__icon`, iconId, {
       'has-text-color': iconColor || customIconColor,
       [iconColorClass]: iconColorClass,
     })

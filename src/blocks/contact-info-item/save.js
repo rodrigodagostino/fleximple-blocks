@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -21,7 +21,7 @@ const { name } = metadata
 function ContactInfoSave({ attributes: { direction, gap } }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classnames(defaultClassName, {
+  const classes = classNames(defaultClassName, {
     [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
     [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
       direction.medium && direction.medium !== direction.small,

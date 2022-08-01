@@ -7,7 +7,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -54,13 +54,13 @@ const PostCarouselPreviewArticle = ({
 }) => {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const contentClasses = classnames(`${defaultClassName}__entry-content`, {
+  const contentClasses = classNames(`${defaultClassName}__entry-content`, {
     [`block-align-${contentAlignment}`]: contentAlignment,
   })
 
   const TagName = 'h' + headingLevel
 
-  const pictureClasses = classnames(`${defaultClassName}__entry-picture`, {
+  const pictureClasses = classNames(`${defaultClassName}__entry-picture`, {
     [`aspect-ratio-${aspectRatio.small}--sm`]: aspectRatio.small !== 'none',
     [`aspect-ratio-${aspectRatio.medium}--md`]:
       aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,
