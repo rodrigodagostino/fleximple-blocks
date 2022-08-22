@@ -97,6 +97,7 @@ function ButtonSave({
         title={title}
         style={buttonStyles}
         rel={relAttribute ? relAttribute : null}
+        tabIndex="0"
       >
         {!!iconId && iconPosition === 'left' && (
           <i className={iconClasses} style={{ fontSize: iconSize }} />
