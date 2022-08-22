@@ -3,7 +3,7 @@
  *
  * CSS for both frontend + backend.
  */
-@use 'sass:math';
+@use "sass:math";
 
 $default-class-name: "fleximple-block-row";
 
@@ -39,36 +39,6 @@ $default-class-name: "fleximple-block-row";
       &.opacity-#{ $step } {
         opacity: math.div($step, 100);
       }
-    }
-  }
-
-  &.alignwide,
-  &.alignfull {
-    padding-left: var(--site-main__padding, 16px);
-    padding-right: var(--site-main__padding, 16px);
-  }
-
-  @media only screen and (min-width: var(--bp-small)) {
-    &.alignwide,
-    &.alignfull {
-      padding-left: var(--site-main__padding--small, 16px);
-      padding-right: var(--site-main__padding--small, 16px);
-    }
-  }
-
-  @media only screen and (min-width: var(--bp-medium)) {
-    &.alignwide,
-    &.alignfull {
-      padding-left: var(--site-main__padding--medium, 20px);
-      padding-right: var(--site-main__padding--medium, 20px);
-    }
-  }
-
-  @media only screen and (min-width: var(--bp-large)) {
-    &.alignwide,
-    &.alignfull {
-      padding-left: var(--site-main__padding--large, 24px);
-      padding-right: var(--site-main__padding--large, 24px);
     }
   }
 }
