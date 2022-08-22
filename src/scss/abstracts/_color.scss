@@ -5,29 +5,30 @@
  ----------------------------------------------*/
 
 :root {
-  // Main colors
-  // --color-primary: #0080ff;
-  // --color-primary--lightest: color-mod(var(--color-primary) tint(60%)); // #99ccff
-  // --color-primary--lighter: color-mod(var(--color-primary) tint(40%)); // #66b3ff
-  // --color-primary--light: color-mod(var(--color-primary) tint(20%)); // #3399ff
-  // --color-primary--dark: color-mod(var(--color-primary) shade(20%)); // #0066cc
-  // --color-primary--darker: color-mod(var(--color-primary) shade(40%)); // #004d99
-  // --color-primary--darkest: color-mod(var(--color-primary) shade(60%)); // #003366
+  /* Primary colors */
+  // --color-primary: #5468ff;
+  // --color-primary--lightest: color-mod(var(--color-primary) tint(45%));
+  // --color-primary--lighter: color-mod(var(--color-primary) tint(30%));
+  // --color-primary--light: color-mod(var(--color-primary) tint(15%));
+  // --color-primary--dark: color-mod(var(--color-primary) shade(15%));
+  // --color-primary--darker: color-mod(var(--color-primary) shade(30%));
+  // --color-primary--darkest: color-mod(var(--color-primary) shade(45%));
 
-  // --color-accent: #ff2800;
-  // --color-accent--lightest: color-mod(var(--color-accent) tint(60%)); // #ffa999
-  // --color-accent--lighter: color-mod(var(--color-accent) tint(40%)); // #ff7e66
-  // --color-accent--light: color-mod(var(--color-accent) tint(20%)); // #ff5333
-  // --color-accent--dark: color-mod(var(--color-accent) shade(20%)); // #cc2000
-  // --color-accent--darker: color-mod(var(--color-accent) shade(40%)); // #991800
-  // --color-accent--darkest: color-mod(var(--color-accent) shade(60%)); // #661000
+  /* Accent colors */
+  // --color-accent: #f4495d;
+  // --color-accent--lightest: color-mod(var(--color-accent) tint(45%));
+  // --color-accent--lighter: color-mod(var(--color-accent) tint(30%));
+  // --color-accent--light: color-mod(var(--color-accent) tint(15%));
+  // --color-accent--dark: color-mod(var(--color-accent) shade(15%));
+  // --color-accent--darker: color-mod(var(--color-accent) shade(30%));
+  // --color-accent--darkest: color-mod(var(--color-accent) shade(45%));
 
   // Feedback
   --color-success: var(--color-green);
   --color-error: var(--color-orange);
   --color-warning: var(--color-yellow);
 
-  // Gray palette
+  /* Gray palette */
   --gray-base: #686a84;
 
   --white-rich: #fff;
@@ -40,6 +41,7 @@
   --gray-300: color-mod(var(--gray-base) tint(40%));
   --gray-400: color-mod(var(--gray-base) tint(20%));
   --gray-500: var(--gray-base);
+  --gray-550: color-mod(var(--gray-base) shade(7.5%));
   --gray-600: color-mod(var(--gray-base) shade(15%));
   --gray-650: color-mod(var(--gray-base) shade(22.5%));
   --gray-700: color-mod(var(--gray-base) shade(30%));
@@ -147,7 +149,7 @@
 $colors: (
   "primary-lighter": #4da6ff,
   "primary-light": #2693ff,
-  "primary": #0080ff,
+  "primary": #5468ff,
   "primary-dark": #006dd9,
   "primary-darker": #005ab3,
   "accent-lighter": #ff694d,

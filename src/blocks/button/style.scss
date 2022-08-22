@@ -26,8 +26,7 @@
     line-height: 1;
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease,
-      border-color 0.2s ease, border-radius 0.2s ease,
-      box-shadow 0.2s ease;
+      border-color 0.2s ease, border-radius 0.2s ease, box-shadow 0.2s ease;
     -webkit-appearance: none;
     cursor: pointer;
     vertical-align: middle; // Remove blank space under custom icon
@@ -91,38 +90,12 @@
       padding: 16px 20px;
 
       &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 160, 210, 0.5),
-          0 3px 8px 0 rgba(0, 0, 0, 0.2) inset,
-          0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+        box-shadow: 0 0 0 0.2rem
+          var(--color-primary--dark--alpha-50, rgba(71, 88, 217, 0.5));
       }
 
       &:active {
         @include box-shadow(2, inset);
-      }
-
-      &:not(.has-text-color) {
-        color: var(--white-rich);
-
-        svg {
-          fill: var(--white-rich);
-        }
-
-        &:hover {
-          color: var(--white-rich);
-
-          svg {
-            fill: var(--white-rich);
-          }
-        }
-
-        &:active,
-        &:focus {
-          color: var(--white-rich);
-
-          svg {
-            fill: var(--white-rich);
-          }
-        }
       }
 
       &:not(.has-background) {
@@ -130,14 +103,14 @@
         border-color: var(--gray-800);
 
         &:hover {
-          background-color: var(--color-primary, #0080ff);
-          border-color: var(--color-primary, #0080ff);
+          background-color: var(--color-primary);
+          border-color: var(--color-primary);
         }
 
         &:active,
         &:focus {
-          background-color: var(--color-primary--dark, #0066cc);
-          border-color: var(--color-primary--dark, #0066cc);
+          background-color: var(--color-primary--darker);
+          border-color: var(--color-primary--darker);
         }
       }
     }
@@ -145,14 +118,9 @@
 
   &.is-style-outline {
     .fleximple-block-button__link {
-      border-width: 1px;
-      border-style: solid;
-      padding: 16px 20px;
-
       &:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 160, 210, 0.5),
-          0 3px 8px 0 rgba(0, 0, 0, 0.2) inset,
-          0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+        box-shadow: 0 0 0 0.2rem
+          var(--color-primary--dark--alpha-50, rgba(71, 88, 217, 0.5));
       }
 
       &:active {
@@ -212,20 +180,20 @@
         }
 
         &:hover {
-          color: var(--color-primary, #0080ff);
+          color: var(--color-primary, #5468ff);
 
           svg {
-            fill: var(--color-primary, #0080ff);
+            fill: var(--color-primary, #5468ff);
           }
         }
 
         &:active,
         &:focus {
-          color: var(--color-primary--dark, #0066cc);
+          color: var(--color-primary--dark, #4758d9);
           box-shadow: none;
 
           svg {
-            fill: var(--color-primary--dark, #0066cc);
+            fill: var(--color-primary--dark, #4758d9);
           }
         }
       }
