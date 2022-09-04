@@ -12,6 +12,12 @@
       "options": {
         "singleQuote": false
       }
+    },
+    {
+      "files": ["src/blocks/**/inline-styles.js"],
+      "options": {
+        "printWidth": 200
+      }
     }
   ]
 }

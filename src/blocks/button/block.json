@@ -1,156 +1,156 @@
 {
-	"apiVersion": 2,
-	"name": "fleximple-blocks/button",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"text": {
-			"type": "string",
-			"source": "html",
-			"selector": "span"
-		},
-		"url": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "href"
-		},
-		"linkTarget": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "target"
-		},
-		"borderRadius": {
-			"type": "object",
-			"default": {
-				"value": 4,
-				"unit": "px"
-			}
-		},
-		"width": {
-			"type": "string",
-			"default": "auto"
-		},
-		"title": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "a",
-			"attribute": "title"
-		},
-		"noFollow": {
-			"type": "boolean",
-			"default": false
-		},
-		"noReferrer": {
-			"type": "boolean",
-			"default": false
-		},
-		"alignmentHorizontal": {
-			"type": "string",
-			"default": "center"
-		},
-		"iconId": {
-			"type": "string",
-			"default": ""
-		},
-		"iconSize": {
-			"type": "number",
-			"default": 18
-		},
-		"iconPosition": {
-			"type": "string",
-			"default": "right"
-		},
-		"isIconOnly": {
-			"type": "boolean",
-			"default": false
-		},
-		"hasCustomIcon": {
-			"type": "boolean",
-			"default": false
-		},
-		"customIcon": {
-			"type": "string"
-		},
-		"paddingTop": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 16,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"paddingLeft": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 20,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"paddingRight": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 20,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"paddingBottom": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 16,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		},
-		"backgroundColor": {
-			"type": "string"
-		},
-		"textColor": {
-			"type": "string"
-		},
-		"customBackgroundColor": {
-			"type": "string"
-		},
-		"customTextColor": {
-			"type": "string"
-		}
-	}
+  "apiVersion": 2,
+  "name": "fleximple-blocks/button",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "text": {
+      "type": "string",
+      "source": "html",
+      "selector": "span"
+    },
+    "url": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "a",
+      "attribute": "href"
+    },
+    "linkTarget": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "a",
+      "attribute": "target"
+    },
+    "borderRadius": {
+      "type": "object",
+      "default": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "width": {
+      "type": "string",
+      "default": "auto"
+    },
+    "title": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "a",
+      "attribute": "title"
+    },
+    "noFollow": {
+      "type": "boolean",
+      "default": false
+    },
+    "noReferrer": {
+      "type": "boolean",
+      "default": false
+    },
+    "alignmentHorizontal": {
+      "type": "string",
+      "default": "center"
+    },
+    "iconId": {
+      "type": "string",
+      "default": ""
+    },
+    "iconSize": {
+      "type": "number",
+      "default": 18
+    },
+    "iconPosition": {
+      "type": "string",
+      "default": "right"
+    },
+    "isIconOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasCustomIcon": {
+      "type": "boolean",
+      "default": false
+    },
+    "customIcon": {
+      "type": "string"
+    },
+    "paddingTop": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 16,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "paddingLeft": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 20,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "paddingRight": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 20,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "paddingBottom": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 16,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "customBackgroundColor": {
+      "type": "string"
+    },
+    "customTextColor": {
+      "type": "string"
+    }
+  }
 }

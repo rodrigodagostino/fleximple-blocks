@@ -43,6 +43,7 @@ import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/blo
 import IconPicker from 'fleximple-components/components/icon-picker'
 import SpacingControls from 'fleximple-components/components/spacing-controls'
 import SpacingPanel from 'fleximple-components/components/spacing-panel'
+import InlineStyles from './inline-styles'
 
 const { name } = metadata
 
@@ -191,60 +192,25 @@ function ButtonEdit({
     title: title,
   })
 
+  // prettier-ignore
   const buttonClasses = classNames(`${defaultClassName}__link`, {
     [`width-${width}`]: width,
+    [`padding-top-${paddingTop.small.value + (paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit)}--sm`]: paddingTop.small.value,
+    [`padding-top-${paddingTop.medium.value + (paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit)}--md`]: paddingTop.medium.value,
+    [`padding-top-${paddingTop.large.value + (paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit)}--lg`]: paddingTop.large.value,
+    [`padding-left-${paddingLeft.small.value + (paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit)}--sm`]: paddingLeft.small.value,
+    [`padding-left-${paddingLeft.medium.value + (paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit)}--md`]: paddingLeft.medium.value,
+    [`padding-left-${paddingLeft.large.value + (paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit)}--lg`]: paddingLeft.large.value,
+    [`padding-right-${paddingRight.small.value + (paddingRight.small.unit === '%' ? 'pct' : paddingRight.small.unit)}--sm`]: paddingRight.small.value,
+    [`padding-right-${paddingRight.medium.value + (paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit)}--md`]: paddingRight.medium.value,
+    [`padding-right-${paddingRight.large.value + (paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit)}--lg`]: paddingRight.large.value,
+    [`padding-bottom-${paddingBottom.small.value + (paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit)}--sm`]: paddingBottom.small.value,
+    [`padding-bottom-${paddingBottom.medium.value + (paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit)}--md`]: paddingBottom.medium.value,
+    [`padding-bottom-${paddingBottom.large.value + (paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit)}--lg`]: paddingBottom.large.value,
     'has-background': backgroundColor.color,
     [backgroundColor.class]: backgroundColor.class,
     'has-text-color': textColor.color,
     [textColor.class]: textColor.class,
-    [`padding-top-${
-      paddingTop.small.value +
-      (paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit)
-    }--sm`]: paddingTop.small.value,
-    [`padding-top-${
-      paddingTop.medium.value +
-      (paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit)
-    }--md`]: paddingTop.medium.value,
-    [`padding-top-${
-      paddingTop.large.value +
-      (paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit)
-    }--lg`]: paddingTop.large.value,
-    [`padding-left-${
-      paddingLeft.small.value +
-      (paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit)
-    }--sm`]: paddingLeft.small.value,
-    [`padding-left-${
-      paddingLeft.medium.value +
-      (paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit)
-    }--md`]: paddingLeft.medium.value,
-    [`padding-left-${
-      paddingLeft.large.value +
-      (paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit)
-    }--lg`]: paddingLeft.large.value,
-    [`padding-right-${
-      paddingRight.small.value +
-      (paddingRight.small.unit === '%' ? 'pct' : paddingRight.small.unit)
-    }--sm`]: paddingRight.small.value,
-    [`padding-right-${
-      paddingRight.medium.value +
-      (paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit)
-    }--md`]: paddingRight.medium.value,
-    [`padding-right-${
-      paddingRight.large.value +
-      (paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit)
-    }--lg`]: paddingRight.large.value,
-    [`padding-bottom-${
-      paddingBottom.small.value +
-      (paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit)
-    }--sm`]: paddingBottom.small.value,
-    [`padding-bottom-${
-      paddingBottom.medium.value +
-      (paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit)
-    }--md`]: paddingBottom.medium.value,
-    [`padding-bottom-${
-      paddingBottom.large.value +
-      (paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit)
-    }--lg`]: paddingBottom.large.value,
   })
 
   const buttonStyles = {
@@ -512,6 +478,8 @@ function ButtonEdit({
               </span>
             )}
         </div>
+
+        <InlineStyles {...{ attributes }} />
       </div>
     </>
   )
