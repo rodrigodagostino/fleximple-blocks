@@ -48,7 +48,7 @@
       "type": "object",
       "default": {
         "small": {
-          "value": "100",
+          "value": 100,
           "unit": "%"
         },
         "medium": {
@@ -58,6 +58,23 @@
         "large": {
           "value": "",
           "unit": "%"
+        }
+      }
+    },
+    "contentGap": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 0,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
         }
       }
     },

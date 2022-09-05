@@ -30,6 +30,7 @@ function RowSave({
     alignmentVertical,
     minHeight,
     contentWidth,
+    contentGap,
     marginTop,
     marginBottom,
     paddingTop,
@@ -49,157 +50,54 @@ function RowSave({
 }) {
   const defaultClassName = getBlockDefaultClassName(name)
 
+  // prettier-ignore
   const classes = classNames({
-    [`block-align-h-${alignmentHorizontal.small}--sm`]:
-      alignmentHorizontal.small,
-    [`block-align-h-${alignmentHorizontal.medium}--md`]:
-      alignmentHorizontal.medium,
-    [`block-align-h-${alignmentHorizontal.large}--lg`]:
-      alignmentHorizontal.large,
+    [`block-align-h-${alignmentHorizontal.small}--sm`]: alignmentHorizontal.small,
+    [`block-align-h-${alignmentHorizontal.medium}--md`]: alignmentHorizontal.medium,
+    [`block-align-h-${alignmentHorizontal.large}--lg`]: alignmentHorizontal.large,
     [`block-align-v-${alignmentVertical.small}--sm`]: alignmentVertical.small,
     [`block-align-v-${alignmentVertical.medium}--md`]: alignmentVertical.medium,
     [`block-align-v-${alignmentVertical.large}--lg`]: alignmentVertical.large,
-    [`min-height-${
-      minHeight.small.value +
-      (minHeight.small.unit === '%' ? 'pct' : minHeight.small.unit)
-    }--sm`]: minHeight.small.value,
-    [`min-height-${
-      minHeight.medium.value +
-      (minHeight.medium.unit === '%' ? 'pct' : minHeight.medium.unit)
-    }--md`]: minHeight.medium.value,
-    [`min-height-${
-      minHeight.large.value +
-      (minHeight.large.unit === '%' ? 'pct' : minHeight.large.unit)
-    }--lg`]: minHeight.large.value,
-    [`content-width-${
-      contentWidth.small.value +
-      (contentWidth.small.unit === '%' ? 'pct' : contentWidth.small.unit)
-    }--sm`]: contentWidth.small.value,
-    [`content-width-${
-      contentWidth.medium.value +
-      (contentWidth.medium.unit === '%' ? 'pct' : contentWidth.medium.unit)
-    }--md`]: contentWidth.medium.value,
-    [`content-width-${
-      contentWidth.large.value +
-      (contentWidth.large.unit === '%' ? 'pct' : contentWidth.large.unit)
-    }--lg`]: contentWidth.large.value,
-    [`margin-top-${
-      marginTop.small.value +
-      (marginTop.small.unit === '%' ? 'pct' : marginTop.small.unit)
-    }--sm`]: marginTop.small.value,
-    [`margin-top-${
-      marginTop.medium.value +
-      (marginTop.medium.unit === '%' ? 'pct' : marginTop.medium.unit)
-    }--md`]: marginTop.medium.value,
-    [`margin-top-${
-      marginTop.large.value +
-      (marginTop.large.unit === '%' ? 'pct' : marginTop.large.unit)
-    }--lg`]: marginTop.large.value,
-    [`margin-bottom-${
-      marginBottom.small.value +
-      (marginBottom.small.unit === '%' ? 'pct' : marginBottom.small.unit)
-    }--sm`]: marginBottom.small.value,
-    [`margin-bottom-${
-      marginBottom.medium.value +
-      (marginBottom.medium.unit === '%' ? 'pct' : marginBottom.medium.unit)
-    }--md`]: marginBottom.medium.value,
-    [`margin-bottom-${
-      marginBottom.large.value +
-      (marginBottom.large.unit === '%' ? 'pct' : marginBottom.large.unit)
-    }--lg`]: marginBottom.large.value,
-    [`padding-top-${
-      paddingTop.small.value +
-      (paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit)
-    }--sm`]: paddingTop.small.value,
-    [`padding-top-${
-      paddingTop.medium.value +
-      (paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit)
-    }--md`]: paddingTop.medium.value,
-    [`padding-top-${
-      paddingTop.large.value +
-      (paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit)
-    }--lg`]: paddingTop.large.value,
-    [`padding-left-${
-      paddingLeft.small.value +
-      (paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit)
-    }--sm`]: paddingLeft.small.value,
-    [`padding-left-${
-      paddingLeft.medium.value +
-      (paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit)
-    }--md`]: paddingLeft.medium.value,
-    [`padding-left-${
-      paddingLeft.large.value +
-      (paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit)
-    }--lg`]: paddingLeft.large.value,
-    [`padding-right-${
-      paddingRight.small.value +
-      (paddingRight.small.unit === '%' ? 'pct' : paddingRight.small.unit)
-    }--sm`]: paddingRight.small.value,
-    [`padding-right-${
-      paddingRight.medium.value +
-      (paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit)
-    }--md`]: paddingRight.medium.value,
-    [`padding-right-${
-      paddingRight.large.value +
-      (paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit)
-    }--lg`]: paddingRight.large.value,
-    [`padding-bottom-${
-      paddingBottom.small.value +
-      (paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit)
-    }--sm`]: paddingBottom.small.value,
-    [`padding-bottom-${
-      paddingBottom.medium.value +
-      (paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit)
-    }--md`]: paddingBottom.medium.value,
-    [`padding-bottom-${
-      paddingBottom.large.value +
-      (paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit)
-    }--lg`]: paddingBottom.large.value,
-    [`background-image-id-${mediaId.small}--sm`]:
-      mediaId.small && mediaUrl.small,
-    [`background-image-id-${mediaId.medium}--md`]:
-      mediaId.medium && mediaUrl.medium,
-    [`background-image-id-${mediaId.large}--lg`]:
-      mediaId.large && mediaUrl.large,
-    [`background-position-${focalPoint.small.x * 100}-${
-      focalPoint.small.y * 100
-    }--sm`]: mediaId.small && (focalPoint.small.x || focalPoint.small.y),
-    [`background-position-${focalPoint.medium.x * 100}-${
-      focalPoint.medium.y * 100
-    }--md`]:
-      mediaId.medium &&
-      (focalPoint.medium.x || focalPoint.medium.y) &&
-      (focalPoint.medium.x !== focalPoint.small.x ||
-        focalPoint.medium.y !== focalPoint.small.y),
-    [`background-position-${focalPoint.large.x * 100}-${
-      focalPoint.large.y * 100
-    }--lg`]:
-      mediaId.large &&
-      (focalPoint.large.x || focalPoint.large.y) &&
-      (focalPoint.large.x !== focalPoint.medium.x ||
-        focalPoint.large.y !== focalPoint.medium.y),
-    [`background-size-${backgroundSize.small}--sm`]:
-      mediaId.small && backgroundSize.small,
-    [`background-size-${backgroundSize.medium}--md`]:
-      mediaId.medium &&
-      backgroundSize.medium &&
-      backgroundSize.medium !== backgroundSize.small,
-    [`background-size-${backgroundSize.large}--lg`]:
-      mediaId.large &&
-      backgroundSize.large &&
-      backgroundSize.large !== backgroundSize.medium,
-    [`background-repeat-${backgroundRepeat.small}--sm`]:
-      mediaId.small && backgroundRepeat.small,
-    [`background-repeat-${backgroundRepeat.medium}--md`]:
-      mediaId.medium &&
-      backgroundRepeat.medium &&
-      backgroundRepeat.medium !== backgroundRepeat.small,
-    [`background-repeat-${backgroundRepeat.large}--lg`]:
-      mediaId.large &&
-      backgroundRepeat.large &&
-      backgroundRepeat.large !== backgroundRepeat.medium,
-    'background-attachment-fixed':
-      (mediaId.small || mediaId.medium || mediaId.large) && backgroundFixed,
+    [`min-height-${minHeight.small.value + (minHeight.small.unit === '%' ? 'pct' : minHeight.small.unit)}--sm`]: minHeight.small.value,
+    [`min-height-${minHeight.medium.value + (minHeight.medium.unit === '%' ? 'pct' : minHeight.medium.unit)}--md`]: minHeight.medium.value,
+    [`min-height-${minHeight.large.value + (minHeight.large.unit === '%' ? 'pct' : minHeight.large.unit)}--lg`]: minHeight.large.value,
+    [`content-width-${contentWidth.small.value + (contentWidth.small.unit === '%' ? 'pct' : contentWidth.small.unit)}--sm`]: contentWidth.small.value,
+    [`content-width-${contentWidth.medium.value + (contentWidth.medium.unit === '%' ? 'pct' : contentWidth.medium.unit)}--md`]: contentWidth.medium.value,
+    [`content-width-${contentWidth.large.value + (contentWidth.large.unit === '%' ? 'pct' : contentWidth.large.unit)}--lg`]: contentWidth.large.value,
+    [`content-gap-${contentGap.small.value + (contentGap.small.unit === '%' ? 'pct' : contentGap.small.unit)}--sm`]: contentGap.small.value,
+    [`content-gap-${contentGap.medium.value + (contentGap.medium.unit === '%' ? 'pct' : contentGap.medium.unit)}--md`]: contentGap.medium.value,
+    [`content-gap-${contentGap.large.value + (contentGap.large.unit === '%' ? 'pct' : contentGap.large.unit)}--lg`]: contentGap.large.value,
+    [`margin-top-${marginTop.small.value + (marginTop.small.unit === '%' ? 'pct' : marginTop.small.unit)}--sm`]: marginTop.small.value,
+    [`margin-top-${marginTop.medium.value + (marginTop.medium.unit === '%' ? 'pct' : marginTop.medium.unit)}--md`]: marginTop.medium.value,
+    [`margin-top-${marginTop.large.value + (marginTop.large.unit === '%' ? 'pct' : marginTop.large.unit)}--lg`]: marginTop.large.value,
+    [`margin-bottom-${marginBottom.small.value + (marginBottom.small.unit === '%' ? 'pct' : marginBottom.small.unit)}--sm`]: marginBottom.small.value,
+    [`margin-bottom-${marginBottom.medium.value + (marginBottom.medium.unit === '%' ? 'pct' : marginBottom.medium.unit)}--md`]: marginBottom.medium.value,
+    [`margin-bottom-${marginBottom.large.value + (marginBottom.large.unit === '%' ? 'pct' : marginBottom.large.unit)}--lg`]: marginBottom.large.value,
+    [`padding-top-${paddingTop.small.value + (paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit)}--sm`]: paddingTop.small.value,
+    [`padding-top-${paddingTop.medium.value + (paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit)}--md`]: paddingTop.medium.value,
+    [`padding-top-${paddingTop.large.value + (paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit)}--lg`]: paddingTop.large.value,
+    [`padding-left-${paddingLeft.small.value + (paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit)}--sm`]: paddingLeft.small.value,
+    [`padding-left-${paddingLeft.medium.value + (paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit)}--md`]: paddingLeft.medium.value,
+    [`padding-left-${paddingLeft.large.value + (paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit)}--lg`]: paddingLeft.large.value,
+    [`padding-right-${paddingRight.small.value + (paddingRight.small.unit === '%' ? 'pct' : paddingRight.small.unit)}--sm`]: paddingRight.small.value,
+    [`padding-right-${paddingRight.medium.value + (paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit)}--md`]: paddingRight.medium.value,
+    [`padding-right-${paddingRight.large.value + (paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit)}--lg`]: paddingRight.large.value,
+    [`padding-bottom-${paddingBottom.small.value + (paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit)}--sm`]: paddingBottom.small.value,
+    [`padding-bottom-${paddingBottom.medium.value + (paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit)}--md`]: paddingBottom.medium.value,
+    [`padding-bottom-${paddingBottom.large.value + (paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit)}--lg`]: paddingBottom.large.value,
+    [`background-image-id-${mediaId.small}--sm`]: mediaId.small && mediaUrl.small,
+    [`background-image-id-${mediaId.medium}--md`]: mediaId.medium && mediaUrl.medium,
+    [`background-image-id-${mediaId.large}--lg`]: mediaId.large && mediaUrl.large,
+    [`background-position-${focalPoint.small.x * 100}-${focalPoint.small.y * 100}--sm`]: mediaId.small && (focalPoint.small.x || focalPoint.small.y),
+    [`background-position-${focalPoint.medium.x * 100}-${focalPoint.medium.y * 100}--md`]: mediaId.medium && (focalPoint.medium.x || focalPoint.medium.y) && (focalPoint.medium.x !== focalPoint.small.x || focalPoint.medium.y !== focalPoint.small.y),
+    [`background-position-${focalPoint.large.x * 100}-${focalPoint.large.y * 100}--lg`]: mediaId.large && (focalPoint.large.x || focalPoint.large.y) && (focalPoint.large.x !== focalPoint.medium.x || focalPoint.large.y !== focalPoint.medium.y),
+    [`background-size-${backgroundSize.small}--sm`]: mediaId.small && backgroundSize.small,
+    [`background-size-${backgroundSize.medium}--md`]: mediaId.medium && backgroundSize.medium && backgroundSize.medium !== backgroundSize.small,
+    [`background-size-${backgroundSize.large}--lg`]: mediaId.large && backgroundSize.large && backgroundSize.large !== backgroundSize.medium,
+    [`background-repeat-${backgroundRepeat.small}--sm`]: mediaId.small && backgroundRepeat.small,
+    [`background-repeat-${backgroundRepeat.medium}--md`]: mediaId.medium && backgroundRepeat.medium && backgroundRepeat.medium !== backgroundRepeat.small,
+    [`background-repeat-${backgroundRepeat.large}--lg`]: mediaId.large && backgroundRepeat.large && backgroundRepeat.large !== backgroundRepeat.medium,
+    'background-attachment-fixed': (mediaId.small || mediaId.medium || mediaId.large) && backgroundFixed,
   })
 
   const overlayColorClass = getColorClassName('background-color', overlayColor)
@@ -241,6 +139,13 @@ function RowSave({
             (contentWidth.small.unit === '%' ? 'pct' : contentWidth.small.unit)
           }--sm .${defaultClassName}__content {
             width: ${contentWidth.small.value + contentWidth.small.unit};
+          }`}
+        {!!contentGap.small.value &&
+          `.${defaultClassName}.content-gap-${
+            contentGap.small.value +
+            (contentGap.small.unit === '%' ? 'pct' : contentGap.small.unit)
+          }--sm .${defaultClassName}__content {
+            gap: ${contentGap.small.value + contentGap.small.unit};
           }`}
         {!!marginTop.small.value &&
           `.${defaultClassName}.margin-top-${
@@ -333,6 +238,7 @@ function RowSave({
 
         {(!!minHeight.medium.value ||
           !!contentWidth.medium.value ||
+          !!contentGap.medium.value ||
           !!marginTop.medium.value ||
           !!marginBottom.medium.value ||
           !!paddingTop.medium.value ||
@@ -382,6 +288,19 @@ function RowSave({
                       : contentWidth.medium.unit)
                   }--md .${defaultClassName}__content {
                 width: ${contentWidth.medium.value + contentWidth.medium.unit};
+              }`
+                : ''
+            }
+            ${
+              contentGap.medium.value
+                ? `
+              .${defaultClassName}.content-gap-${
+                    contentGap.medium.value +
+                    (contentGap.medium.unit === '%'
+                      ? 'pct'
+                      : contentGap.medium.unit)
+                  }--md .${defaultClassName}__content {
+                gap: ${contentGap.medium.value + contentGap.medium.unit};
               }`
                 : ''
             }
@@ -524,6 +443,7 @@ function RowSave({
           !!alignmentVertical.large ||
           !!minHeight.large.value ||
           !!contentWidth.large.value ||
+          !!contentGap.large.value ||
           !!marginTop.large.value ||
           !!marginBottom.large.value ||
           !!paddingTop.large.value ||
@@ -573,6 +493,19 @@ function RowSave({
                       : contentWidth.large.unit)
                   }--lg .${defaultClassName}__content {
                 width: ${contentWidth.large.value + contentWidth.large.unit};
+              }`
+                : ''
+            }
+            ${
+              contentGap.large.value
+                ? `
+              .${defaultClassName}.content-gap-${
+                    contentGap.large.value +
+                    (contentGap.large.unit === '%'
+                      ? 'pct'
+                      : contentGap.large.unit)
+                  }--lg .${defaultClassName}__content {
+                gap: ${contentGap.large.value + contentGap.large.unit};
               }`
                 : ''
             }
