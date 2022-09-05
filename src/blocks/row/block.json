@@ -11,6 +11,10 @@
       "type": "string",
       "default": "div"
     },
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
     "alignmentHorizontal": {
       "type": "object",
       "default": {
