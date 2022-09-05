@@ -11,7 +11,7 @@ import { useEffect, useState } from '@wordpress/element'
 /**
  * Internal dependencies
  */
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 
 function IframeEdit({
   attributes: { url, width, height, hasAutoHeight, title },
@@ -61,7 +61,7 @@ function IframeEdit({
             onChange={(value) => setAttributes({ url: value })}
           />
 
-          <SpacingControls
+          <SpacingControl
             valueLabel={__('Width', 'fleximpleblocks')}
             unitLabel={__('Width unit', 'fleximpleblocks')}
             initialPosition={100}
@@ -73,7 +73,7 @@ function IframeEdit({
           />
 
           {!hasAutoHeight && (
-            <SpacingControls
+            <SpacingControl
               valueLabel={__('Height', 'fleximpleblocks')}
               unitLabel={__('Height unit', 'fleximpleblocks')}
               initialPosition={400}

@@ -24,7 +24,7 @@ import { compose } from '@wordpress/compose'
  */
 import metadata from './block.json'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import { setResponsiveAttribute } from '../../js/utils'
 
 const { name } = metadata
@@ -105,7 +105,7 @@ function ContactInfoEdit({
                   }}
                 />
 
-                <SpacingControls
+                <SpacingControl
                   valueLabel={__('Gap size', 'fleximpleblocks')}
                   unitLabel={__('Gap size unit', 'fleximpleblocks')}
                   initialPosition={0}

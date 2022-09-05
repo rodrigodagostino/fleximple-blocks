@@ -28,7 +28,7 @@ import { Component } from '@wordpress/element'
  */
 import metadata from './block.json'
 import IconPicker from 'fleximple-components/components/icon-picker'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import TestimonialSortableControl from './components/testimonial-sortable-control'
 import { setResponsiveAttribute } from './../../js/utils'
@@ -137,7 +137,7 @@ class TestimonialEdit extends Component {
                     />
                   </BaseControl>
 
-                  <SpacingControls
+                  <SpacingControl
                     valueLabel={__('Gap size', 'fleximpleblocks')}
                     unitLabel={__('Gap size unit', 'fleximpleblocks')}
                     initialPosition={0}
@@ -160,7 +160,7 @@ class TestimonialEdit extends Component {
               <ResponsiveSettingsTabPanel initialTabName="small">
                 {(tab) => (
                   <>
-                    <SpacingControls
+                    <SpacingControl
                       valueLabel={__('Media height', 'fleximpleblocks')}
                       unitLabel={__('Media height unit', 'fleximpleblocks')}
                       initialPosition={200}
@@ -173,7 +173,7 @@ class TestimonialEdit extends Component {
                       }
                     />
 
-                    <SpacingControls
+                    <SpacingControl
                       valueLabel={__('Border radius', 'fleximpleblocks')}
                       unitLabel={__('Border radius unit', 'fleximpleblocks')}
                       initialPosition={100}

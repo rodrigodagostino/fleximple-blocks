@@ -35,7 +35,7 @@ import RecentPostsSelectControl from './components/recent-posts-select-control'
 import QueryControls from 'fleximple-components/components/query-controls'
 import HeadingLevelDropdown from 'fleximple-components/components/heading-level-dropdown'
 import HeadingLevelToolbar from 'fleximple-components/components/heading-level-toolbar'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import Spinner from 'fleximple-components/components/spinner'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import { setResponsiveAttribute } from './../../js/utils'
@@ -183,7 +183,7 @@ function RecentPostsEdit({
                 />
               )}
 
-              <SpacingControls
+              <SpacingControl
                 valueLabel={__('Row gap', 'fleximpleblocks')}
                 unitLabel={__('Row gap unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -196,7 +196,7 @@ function RecentPostsEdit({
               />
 
               {layout === 'grid' && (
-                <SpacingControls
+                <SpacingControl
                   valueLabel={__('Column gap', 'fleximpleblocks')}
                   unitLabel={__('Column gap unit', 'fleximpleblocks')}
                   initialPosition={0}

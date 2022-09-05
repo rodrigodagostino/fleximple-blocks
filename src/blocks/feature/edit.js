@@ -39,7 +39,7 @@ import { link } from '@wordpress/icons'
  */
 import metadata from './block.json'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import { setResponsiveAttribute } from './../../js/utils'
 
 const { name } = metadata
@@ -210,7 +210,7 @@ class FeatureEdit extends Component {
                     />
                   </BaseControl>
 
-                  <SpacingControls
+                  <SpacingControl
                     valueLabel={__('Content gap size', 'fleximpleblocks')}
                     unitLabel={__('Content gap size unit', 'fleximpleblocks')}
                     initialPosition={0}

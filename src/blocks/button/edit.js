@@ -41,7 +41,7 @@ import { link, linkOff } from '@wordpress/icons'
 import metadata from './block.json'
 import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/block-alignment-horizontal-toolbar'
 import IconPicker from 'fleximple-components/components/icon-picker'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import SpacingPanel from 'fleximple-components/components/spacing-panel'
 import InlineStyles from './inline-styles'
 
@@ -258,7 +258,7 @@ function ButtonEdit({
             />
           </BaseControl>
 
-          <SpacingControls
+          <SpacingControl
             valueLabel={__('Border radius', 'fleximpleblocks')}
             unitLabel={__('Border radius unit', 'fleximpleblocks')}
             initialPosition={4}

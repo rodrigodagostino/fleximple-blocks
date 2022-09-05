@@ -32,7 +32,7 @@ import { withInstanceId } from '@wordpress/compose'
  */
 import metadata from './block.json'
 import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/block-alignment-horizontal-toolbar'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import { setResponsiveAttribute } from './../../js/utils'
 
@@ -220,7 +220,7 @@ function ProfileEdit({
                   />
                 </BaseControl>
 
-                <SpacingControls
+                <SpacingControl
                   valueLabel={__('Media gap size', 'fleximpleblocks')}
                   unitLabel={__('Media gap size unit', 'fleximpleblocks')}
                   initialPosition={0}
@@ -231,7 +231,7 @@ function ProfileEdit({
                   onChange={(value) => setAttributes({ mediaGap: value })}
                 />
 
-                <SpacingControls
+                <SpacingControl
                   valueLabel={__('Content gap size', 'fleximpleblocks')}
                   unitLabel={__('Content gap size unit', 'fleximpleblocks')}
                   initialPosition={0}
@@ -375,7 +375,7 @@ function ProfileEdit({
             <ResponsiveSettingsTabPanel initialTabName="small">
               {(tab) => (
                 <>
-                  <SpacingControls
+                  <SpacingControl
                     valueLabel={__('Media width', 'fleximpleblocks')}
                     unitLabel={__('Media width unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -387,7 +387,7 @@ function ProfileEdit({
                     onChange={(value) => setAttributes({ mediaWidth: value })}
                   />
 
-                  <SpacingControls
+                  <SpacingControl
                     valueLabel={__('Media height', 'fleximpleblocks')}
                     unitLabel={__('Media height unit', 'fleximpleblocks')}
                     initialPosition={200}
@@ -398,7 +398,7 @@ function ProfileEdit({
                     onChange={(value) => setAttributes({ mediaHeight: value })}
                   />
 
-                  <SpacingControls
+                  <SpacingControl
                     valueLabel={__('Border radius', 'fleximpleblocks')}
                     unitLabel={__('Border radius unit', 'fleximpleblocks')}
                     initialPosition={100}

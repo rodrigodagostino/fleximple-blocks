@@ -12,7 +12,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
  */
 import metadata from './block.json'
 import LocationSelectControl from './components/location-select-control'
-import SpacingControls from 'fleximple-components/components/spacing-controls'
+import SpacingControl from 'fleximple-components/components/spacing-control'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 
 /**
@@ -122,7 +122,7 @@ function MapEdit({
 
           <ResponsiveSettingsTabPanel initialTabName="small">
             {(tab) => (
-              <SpacingControls
+              <SpacingControl
                 valueLabel={__('Height', 'fleximpleblocks')}
                 unitLabel={__('Height unit', 'fleximpleblocks')}
                 initialPosition={0}
