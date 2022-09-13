@@ -24,6 +24,7 @@ import {
   ToggleControl,
 } from '@wordpress/components'
 import { withInstanceId } from '@wordpress/compose'
+import { useEffect } from '@wordpress/element'
 
 /**
  * Internal dependencies
@@ -77,6 +78,7 @@ const TEMPLATE = [
 function ProfileEdit({
   attributes,
   attributes: {
+    blockId,
     contentAlignment,
     textAlignment,
     mediaGap,
@@ -91,40 +93,17 @@ function ProfileEdit({
     mediaBorderRadius,
   },
   setAttributes,
+  clientId,
   instanceId,
 }) {
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
   const defaultClassName = getBlockDefaultClassName(name)
 
-  // prettier-ignore
-  const classes = classNames(defaultClassName, {
-    [`block-align-${contentAlignment.small}--sm`]: contentAlignment.small,
-    [`block-align-${contentAlignment.medium}--md`]: contentAlignment.medium,
-    [`block-align-${contentAlignment.large}--lg`]: contentAlignment.large,
-    [`text-align-${textAlignment.small}--sm`]: textAlignment.small,
-    [`text-align-${textAlignment.medium}--md`]: textAlignment.medium,
-    [`text-align-${textAlignment.large}--lg`]: textAlignment.large,
-    [`media-gap-${mediaGap.small.value + (mediaGap.small.unit === '%' ? 'pct' : mediaGap.small.unit)}--sm`]: mediaGap.small.value,
-    [`media-gap-${mediaGap.medium.value + (mediaGap.medium.unit === '%' ? 'pct' : mediaGap.medium.unit)}--md`]: mediaGap.medium.value,
-    [`media-gap-${mediaGap.large.value + (mediaGap.large.unit === '%' ? 'pct' : mediaGap.large.unit)}--lg`]: mediaGap.large.value,
-    [`content-gap-${contentGap.small.value + (contentGap.small.unit === '%' ? 'pct' : contentGap.small.unit)}--sm`]: contentGap.small.value >= 0,
-    [`content-gap-${contentGap.medium.value + (contentGap.medium.unit === '%' ? 'pct' : contentGap.medium.unit)}--md`]: contentGap.medium.value >= 0,
-    [`content-gap-${contentGap.large.value + (contentGap.large.unit === '%' ? 'pct' : contentGap.large.unit)}--lg`]: contentGap.large.value >= 0,
-    [`direction-${direction.small}--sm`]: direction.small,
-    [`direction-${direction.medium}--md`]: direction.medium,
-    [`direction-${direction.large}--lg`]: direction.large,
-    'direction-is-reversed--sm': isReversed.small,
-    'direction-is-reversed--md': isReversed.medium,
-    'direction-is-reversed--lg': isReversed.large,
-    [`media-width-${mediaWidth.small.value + (mediaWidth.small.unit === '%' ? 'pct' : mediaWidth.small.unit)}--sm`]: mediaWidth.small.value,
-    [`media-width-${mediaWidth.medium.value + (mediaWidth.medium.unit === '%' ? 'pct' : mediaWidth.medium.unit)}--md`]: mediaWidth.medium.value,
-    [`media-width-${mediaWidth.large.value + (mediaWidth.large.unit === '%' ? 'pct' : mediaWidth.large.unit)}--lg`]: mediaWidth.large.value,
-    [`media-height-${mediaHeight.small.value + (mediaHeight.small.unit === '%' ? 'pct' : mediaHeight.small.unit)}--sm`]: mediaHeight.small.value,
-    [`media-height-${mediaHeight.medium.value + (mediaHeight.medium.unit === '%' ? 'pct' : mediaHeight.medium.unit)}--md`]: mediaHeight.medium.value,
-    [`media-height-${mediaHeight.large.value + (mediaHeight.large.unit === '%' ? 'pct' : mediaHeight.large.unit)}--lg`]: mediaHeight.large.value,
-  })
-
   const blockProps = useBlockProps({
-    className: classes,
+    className: defaultClassName,
   })
 
   const mediaClasses = classNames('fleximple-components__media-placeholder', {
@@ -380,7 +359,7 @@ function ProfileEdit({
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
+      <div {...blockProps} data-block-id={blockId}>
         <div className={`${defaultClassName}__inner`}>
           <figure className={mediaClasses} style={mediaStyles}>
             <MediaUploadCheck>
