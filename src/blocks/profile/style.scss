@@ -4,23 +4,29 @@
  * CSS for both frontend + backend.
  */
 
+$default-class-name: "fleximple-block-profile";
+
 .fleximple-block-profile {
+  display: flex;
+
   &__inner {
+    display: flex;
   }
 
-  &__content > * {
-    margin: 0;
-  }
+  &__content {
+    & > *:first-child {
+      margin-top: 0;
+    }
 
-  &__content > *:last-child {
-    margin-bottom: 0 !important;
+    & > *:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 
   &__media {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    @include box-shadow(4);
   }
 
   &__image {
@@ -29,18 +35,8 @@
     opacity: 0;
   }
 
-  &__name {
-  }
-
-  &__title,
-  &__description {
-  }
-
   &__title {
     font-size: 18px;
     font-weight: 600;
-  }
-
-  &__description {
   }
 }

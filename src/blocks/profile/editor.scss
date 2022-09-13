@@ -6,6 +6,20 @@
  */
 
 .fleximple-block-profile {
+  &__content > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__media {
+    margin: 0;
+  }
+
   .block-library-button__inline-link {
     max-width: 100%;
     margin-left: auto;
