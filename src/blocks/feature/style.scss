@@ -4,15 +4,19 @@
  * CSS for both frontend + backend.
  */
 
+$default-class-name: "fleximple-block-feature";
+
 .fleximple-block-feature {
   position: relative;
 
-  &__inner > *:nth-child(2) {
-    margin-top: 0 !important;
-  }
+  &__inner {
+    & > *:first-child {
+      margin-top: 0 !important;
+    }
 
-  &__inner > *:last-child {
-    margin-bottom: 0 !important;
+    & > *:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 
   .fleximple-block-button__link {
