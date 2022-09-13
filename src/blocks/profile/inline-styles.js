@@ -1,6 +1,6 @@
 /* global fleximpleblocksPluginData */
 
-const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignment, mediaGap, contentGap, direction, isReversed, mediaWidth, mediaHeight, mediaBorderRadius }, isEditor = false }) => {
+const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignment, textAlignment, mediaGap, contentGap, direction, isReversed, mediaWidth, mediaHeight, mediaBorderRadius }, isEditor = false }) => {
   const blockSelector = `.${defaultClassName}[data-block-id="${blockId}"]`
   const editorSelector = isEditor ? '> .block-editor-inner-blocks > .block-editor-block-list__layout' : ''
 
@@ -8,6 +8,7 @@ const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignmen
     <style>
       {`${blockSelector} {
         justify-content: ${contentAlignment.small};
+        text-align: ${textAlignment.small};
       }
       ${blockSelector} .${defaultClassName}__inner {
         flex-direction: ${direction.small}${isReversed.small ? '-reverse' : ''};
@@ -30,6 +31,7 @@ const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignmen
       {`@media only screen and (min-width: ${fleximpleblocksPluginData.settings.mediumBreakpointValue}px) {
         ${`${blockSelector} {
           ${contentAlignment.medium ? `justify-content: ${contentAlignment.medium};` : ''}
+          ${textAlignment.medium ? `text-align: ${textAlignment.medium};` : ''}
         }
         ${blockSelector} .${defaultClassName}__inner {
           ${direction.medium ? `flex-direction: ${direction.medium}${isReversed.medium ? '-reverse' : ''};` : ''}
@@ -52,6 +54,7 @@ const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignmen
       {`@media only screen and (min-width: ${fleximpleblocksPluginData.settings.largeBreakpointValue}px) {
         ${`${blockSelector} {
           ${contentAlignment.large ? `justify-content: ${contentAlignment.large};` : ''}
+          ${textAlignment.large ? `text-align: ${textAlignment.large};` : ''}
         }
         ${blockSelector} .${defaultClassName}__inner {
           ${direction.large ? `flex-direction: ${direction.large}${isReversed.large ? '-reverse' : ''};` : ''}

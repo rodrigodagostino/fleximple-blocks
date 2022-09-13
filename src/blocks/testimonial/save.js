@@ -96,13 +96,18 @@ class TestimonialSave extends Component {
     return (
       <div className={classes}>
         <style>
+          {textAlignment.small
+            ? `.${defaultClassName}.text-align-${textAlignment.small}--sm {
+              text-align: ${textAlignment.small};
+            }`
+            : ''}
           {gap.small.value
             ? `.${defaultClassName}.gap-${
                 gap.small.value +
                 (gap.small.unit === '%' ? 'pct' : gap.small.unit)
               }--sm > * {
-							margin-bottom: ${gap.small.value + gap.small.unit};
-						}`
+              margin-bottom: ${gap.small.value + gap.small.unit};
+            }`
             : ''}
           {mediaHeight.small.value
             ? `.${defaultClassName}.media-height-${
@@ -111,32 +116,42 @@ class TestimonialSave extends Component {
                   ? 'pct'
                   : mediaHeight.small.unit)
               }--sm .${defaultClassName}__media .${defaultClassName}__image {
-							height: ${mediaHeight.small.value + mediaHeight.small.unit};
-						}`
+              height: ${mediaHeight.small.value + mediaHeight.small.unit};
+            }`
             : ''}
           {mediaBorderRadius.small.value
             ? `.${defaultClassName} .${defaultClassName}__image {
-							border-radius: ${mediaBorderRadius.small.value + mediaBorderRadius.small.unit};
-						}`
+              border-radius: ${
+                mediaBorderRadius.small.value + mediaBorderRadius.small.unit
+              };
+            }`
             : ''}
 
-          {(!!gap.medium.value ||
+          {(!!textAlignment.medium ||
+            !!gap.medium.value ||
             !!mediaHeight.medium.value ||
             !!mediaBorderRadius.medium.value) &&
             `@media only screen and (min-width: ${
               fleximpleblocksPluginData.settings.mediumBreakpointValue
             }px) {
-						${
+            ${
+              textAlignment.medium
+                ? `.${defaultClassName}.text-align-${textAlignment.medium}--md {
+                text-align: ${textAlignment.medium};
+              }`
+                : ''
+            }
+            ${
               gap.medium.value
                 ? `.${defaultClassName}.gap-${
                     gap.medium.value +
                     (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
                   }--md > * {
-								margin-bottom: ${gap.medium.value + gap.medium.unit};
-							}`
+                margin-bottom: ${gap.medium.value + gap.medium.unit};
+              }`
                 : ''
             }
-						${
+            ${
               mediaHeight.medium.value
                 ? `.${defaultClassName}.media-height-${
                     mediaHeight.medium.value +
@@ -144,38 +159,46 @@ class TestimonialSave extends Component {
                       ? 'pct'
                       : mediaHeight.medium.unit)
                   }--md .${defaultClassName}__media .${defaultClassName}__image {
-								height: ${mediaHeight.medium.value + mediaHeight.medium.unit};
-							}`
+                height: ${mediaHeight.medium.value + mediaHeight.medium.unit};
+              }`
                 : ''
             }
-						${
+            ${
               mediaBorderRadius.medium.value
                 ? `.${defaultClassName} .${defaultClassName}__image {
-								border-radius: ${
+                border-radius: ${
                   mediaBorderRadius.medium.value + mediaBorderRadius.medium.unit
                 };
-							}`
+              }`
                 : ''
             }
-						}`}
+            }`}
 
-          {(!!gap.large.value ||
+          {(!!textAlignment.large ||
+            !!gap.large.value ||
             !!mediaHeight.large.value ||
             !!mediaBorderRadius.large.value) &&
             `@media only screen and (min-width: ${
               fleximpleblocksPluginData.settings.largeBreakpointValue
             }px) {
-						${
+            ${
+              textAlignment.large.value
+                ? `.${defaultClassName}.text-align-${textAlignment.large}--lg {
+                text-align: ${textAlignment.large};
+              }`
+                : ''
+            }
+            ${
               gap.large.value
                 ? `.${defaultClassName}.gap-${
                     gap.large.value +
                     (gap.large.unit === '%' ? 'pct' : gap.large.unit)
                   }--lg > * {
-								margin-bottom: ${gap.large.value + gap.large.unit};
-							}`
+                margin-bottom: ${gap.large.value + gap.large.unit};
+              }`
                 : ''
             }
-						${
+            ${
               mediaHeight.large.value
                 ? `.${defaultClassName}.media-height-${
                     mediaHeight.large.value +
@@ -183,18 +206,20 @@ class TestimonialSave extends Component {
                       ? 'pct'
                       : mediaHeight.large.unit)
                   }--lg .${defaultClassName}__media .${defaultClassName}__image {
-								height: ${mediaHeight.large.value + mediaHeight.large.unit};
-							}`
+                height: ${mediaHeight.large.value + mediaHeight.large.unit};
+              }`
                 : ''
             }
-						${
+            ${
               mediaBorderRadius.large.value
                 ? `.${defaultClassName} .${defaultClassName}__image {
-								border-radius: ${mediaBorderRadius.large.value + mediaBorderRadius.large.unit};
-							}`
+                border-radius: ${
+                  mediaBorderRadius.large.value + mediaBorderRadius.large.unit
+                };
+              }`
                 : ''
             }
-						}`}
+            }`}
         </style>
 
         {

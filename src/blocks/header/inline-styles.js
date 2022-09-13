@@ -1,9 +1,12 @@
 /* global fleximpleblocksPluginData */
 
-const InlineStyles = ({ defaultClassName, attributes: { gap, marginTop, marginBottom, paddingTop, paddingLeft, paddingRight, paddingBottom } }) => {
+const InlineStyles = ({ defaultClassName, attributes: { textAlignment, gap, marginTop, marginBottom, paddingTop, paddingLeft, paddingRight, paddingBottom } }) => {
   return (
     <style>
-      {gap.small.value &&
+      {`.${defaultClassName}.text-align-${textAlignment} > * {
+          text-align: ${textAlignment};
+      }`}
+      {!!gap.small.value &&
         `.${defaultClassName}.gap-${gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)}--sm > * {
           margin-bottom: ${gap.small.value + gap.small.unit} !important;
         }`}
@@ -36,8 +39,8 @@ const InlineStyles = ({ defaultClassName, attributes: { gap, marginTop, marginBo
         `@media only screen and (min-width: ${fleximpleblocksPluginData.settings.mediumBreakpointValue}px) {
           ${
             gap.medium.value &&
-            `.${defaultClassName}.gap-${gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)}--md > * {
-              margin-bottom: ${gap.large.value + gap.large.unit} !important;
+            `.${defaultClassName}.gap-${gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)}--md > * {
+              margin-bottom: ${gap.medium.value + gap.medium.unit} !important;
             }`
           }
           ${
