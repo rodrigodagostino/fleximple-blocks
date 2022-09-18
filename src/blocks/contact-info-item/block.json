@@ -1,32 +1,36 @@
 {
-	"apiVersion": 2,
-	"name": "fleximple-blocks/contact-info-item",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"direction": {
-			"type": "object",
-			"default": {
-				"small": "row",
-				"medium": "",
-				"large": ""
-			}
-		},
-		"gap": {
-			"type": "object",
-			"default": {
-				"small": {
-					"value": 12,
-					"unit": "px"
-				},
-				"medium": {
-					"value": 0,
-					"unit": "px"
-				},
-				"large": {
-					"value": 0,
-					"unit": "px"
-				}
-			}
-		}
-	}
+  "apiVersion": 2,
+  "name": "fleximple-blocks/contact-info-item",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
+    "direction": {
+      "type": "object",
+      "default": {
+        "small": "row",
+        "medium": "",
+        "large": ""
+      }
+    },
+    "gap": {
+      "type": "object",
+      "default": {
+        "small": {
+          "value": 12,
+          "unit": "px"
+        },
+        "medium": {
+          "value": 0,
+          "unit": "px"
+        },
+        "large": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  }
 }

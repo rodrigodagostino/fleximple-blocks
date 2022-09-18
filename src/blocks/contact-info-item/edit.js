@@ -1,10 +1,3 @@
-/* global fleximpleblocksPluginData */
-
-/**
- * External dependencies
- */
-import classNames from 'classnames'
-
 /**
  * WordPress dependencies
  */
@@ -18,11 +11,13 @@ import {
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { PanelBody, RadioControl } from '@wordpress/components'
 import { compose } from '@wordpress/compose'
+import { useEffect } from '@wordpress/element'
 
 /**
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import SpacingControl from 'fleximple-components/components/spacing-control'
 import { setResponsiveAttribute } from '../../js/utils'
@@ -39,39 +34,18 @@ const TEMPLATE = [
 
 function ContactInfoEdit({
   attributes,
-  attributes: { direction, gap },
+  attributes: { blockId, direction, gap },
   setAttributes,
+  clientId,
 }) {
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classNames({
-    [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
-    [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
-      direction.medium && direction.medium !== direction.small,
-    [`direction-${direction.large === 'row' ? 'h' : 'v'}--lg`]:
-      direction.large && direction.large !== direction.medium,
-    [`gap-h-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'row',
-    [`gap-h-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'row',
-    [`gap-h-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'row',
-    [`gap-v-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'column',
-    [`gap-v-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'column',
-    [`gap-v-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'column',
-  })
-
   const blockProps = useBlockProps({
-    className: classes,
+    className: defaultClassName,
   })
 
   return (
@@ -121,103 +95,14 @@ function ContactInfoEdit({
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
-        <style>
-          {direction.small &&
-            `.${defaultClassName}.direction-${
-              direction.small === 'row' ? 'h' : 'v'
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-							flex-direction: ${direction.small};
-						}`}
-          {direction.small === 'row' &&
-            `.${defaultClassName}.gap-h-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-							${'margin-left: ' + gap.small.value + gap.small.unit + ';'}
-						}`}
-          {direction.small === 'column' &&
-            `.${defaultClassName}.gap-v-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-							${'margin-top: ' + gap.small.value + gap.small.unit + ';'}
-						}`}
-
-          {!!direction.medium &&
-            direction.medium !== direction.small &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.mediumBreakpointValue
-            }px) {
-							.${defaultClassName}.direction-${
-              direction.medium === 'row' ? 'h' : 'v'
-            }--md > .block-editor-inner-blocks > .block-editor-block-list__layout {
-								flex-direction: ${direction.medium};
-							}
-							${
-                direction.medium === 'row'
-                  ? `
-								.${defaultClassName}.gap-h-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-									${'margin-left: ' + gap.medium.value + gap.medium.unit + ';'}
-								}`
-                  : ''
-              }
-							${
-                direction.medium === 'column'
-                  ? `
-								.${defaultClassName}.gap-v-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-									${'margin-top: ' + gap.medium.value + gap.medium.unit + ';'}
-								}`
-                  : ''
-              }
-						}`}
-
-          {!!direction.large &&
-            direction.large !== direction.medium &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.largeBreakpointValue
-            }px) {
-							.${defaultClassName}.direction-${
-              direction.large === 'row' ? 'h' : 'v'
-            }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout {
-								flex-direction: ${direction.large};
-							}
-							${
-                direction.large === 'row'
-                  ? `
-								.${defaultClassName}.gap-h-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-									${'margin-left: ' + gap.large.value + gap.large.unit + ';'}
-								}`
-                  : ''
-              }
-							${
-                direction.large === 'column'
-                  ? `
-								.${defaultClassName}.gap-v-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-									${'margin-top: ' + gap.large.value + gap.large.unit + ';'}
-								}`
-                  : ''
-              }
-						}`}
-        </style>
-
+      <div {...blockProps} data-block-id={blockId}>
         <InnerBlocks
           template={TEMPLATE}
           templateLock={false}
           orientation="horizontal"
         />
+
+        <InlineStyles {...{ defaultClassName, attributes, isEditor: true }} />
       </div>
     </>
   )

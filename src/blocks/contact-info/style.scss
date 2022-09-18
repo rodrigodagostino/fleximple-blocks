@@ -6,12 +6,5 @@
 
 .fleximple-block-contact-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-
-  &[class*="direction-v"] > * {
-    margin-left: 0;
-    margin-right: 0;
-  }
 }

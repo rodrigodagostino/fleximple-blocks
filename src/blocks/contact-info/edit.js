@@ -1,9 +1,6 @@
-/* global fleximpleblocksPluginData */
-
 /**
  * External dependencies
  */
-import classNames from 'classnames'
 import memoize from 'memize'
 import times from 'lodash/times'
 
@@ -25,11 +22,13 @@ import {
   RadioControl,
 } from '@wordpress/components'
 import { compose } from '@wordpress/compose'
+import { useEffect } from '@wordpress/element'
 
 /**
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/block-alignment-horizontal-toolbar'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import SpacingControl from 'fleximple-components/components/spacing-control'
@@ -47,48 +46,19 @@ const getContactInfoTemplate = memoize((items) => {
 
 function ContactInfoEdit({
   attributes,
-  attributes: { items, direction, alignmentHorizontal, gap },
+  attributes: { blockId, items, direction, alignmentHorizontal, gap },
   setAttributes,
+  clientId,
   instanceId,
 }) {
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classNames(defaultClassName, {
-    [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
-    [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
-      direction.medium && direction.medium !== direction.small,
-    [`direction-${direction.large === 'row' ? 'h' : 'v'}--lg`]:
-      direction.large && direction.large !== direction.medium,
-    [`block-align-h-${alignmentHorizontal.small}--sm`]:
-      alignmentHorizontal.small,
-    [`block-align-h-${alignmentHorizontal.medium}--md`]:
-      alignmentHorizontal.medium &&
-      alignmentHorizontal.medium !== alignmentHorizontal.small,
-    [`block-align-h-${alignmentHorizontal.large}--lg`]:
-      alignmentHorizontal.large &&
-      alignmentHorizontal.large !== alignmentHorizontal.medium,
-    [`gap-h-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'row',
-    [`gap-h-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'row',
-    [`gap-h-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'row',
-    [`gap-v-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'column',
-    [`gap-v-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'column',
-    [`gap-v-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'column',
-  })
-
   const blockProps = useBlockProps({
-    className: classes,
+    className: defaultClassName,
   })
 
   return (
@@ -168,140 +138,15 @@ function ContactInfoEdit({
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
-        <style>
-          {direction.small &&
-            `.${defaultClassName}.direction-${
-              direction.small === 'row' ? 'h' : 'v'
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-              flex-direction: ${direction.small};
-            }`}
-          {direction.small === 'row' &&
-            `.${defaultClassName}.gap-h-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-              ${'margin: 0 0 0 ' + gap.small.value + gap.small.unit + ';'}
-            }
-            .${defaultClassName}.block-align-h-${
-              alignmentHorizontal.small
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-              justify-content: ${alignmentHorizontal.small};
-            }`}
-          {direction.small === 'column' &&
-            `.${defaultClassName}.gap-v-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-              ${'margin: ' + gap.small.value + gap.small.unit + ' 0 0;'}
-            }
-            .${defaultClassName}.block-align-h-${
-              alignmentHorizontal.small
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-              align-items: ${alignmentHorizontal.small};
-            }`}
-
-          {!!direction.medium &&
-            direction.medium !== direction.small &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.mediumBreakpointValue
-            }px) {
-              .${defaultClassName}.direction-${
-              direction.medium === 'row' ? 'h' : 'v'
-            }--md > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                flex-direction: ${direction.medium};
-              }
-              ${
-                direction.medium === 'row'
-                  ? `
-                .${defaultClassName}.gap-h-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-                  ${'margin: 0 0 0 ' + gap.medium.value + gap.medium.unit + ';'}
-                }
-                .${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.medium
-                    }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                  justify-content: ${alignmentHorizontal.medium};
-                }`
-                  : ''
-              }
-              ${
-                direction.medium === 'column'
-                  ? `
-                .${defaultClassName}.gap-v-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-                  ${'margin: ' + gap.medium.value + gap.medium.unit + ' 0 0;'}
-                }
-                .${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.medium
-                    }--md > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                  align-items: ${alignmentHorizontal.medium};
-                }`
-                  : ''
-              }
-            }`}
-
-          {!!direction.large &&
-            direction.large !== direction.medium &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.largeBreakpointValue
-            }px) {
-              .${defaultClassName}.direction-${
-              direction.large === 'row' ? 'h' : 'v'
-            }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                flex-direction: ${direction.large};
-              }
-              ${
-                direction.large === 'row'
-                  ? `
-                .${defaultClassName}.gap-h-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-                  ${'margin: 0 0 0 ' + gap.large.value + gap.large.unit + ';'}
-                  }
-                  .${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.large
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                    justify-content: ${alignmentHorizontal.large};
-                  }`
-                  : ''
-              }
-              ${
-                direction.large === 'column'
-                  ? `
-                .${defaultClassName}.gap-v-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > *:not(style) + * {
-                  ${'margin: ' + gap.large.value + gap.large.unit + ' 0 0;'}
-                }
-                .${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.large
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout {
-                  align-items: ${
-                    alignmentHorizontal.large === 'start'
-                      ? 'flex-start'
-                      : alignmentHorizontal.large === 'end'
-                      ? 'flex-end'
-                      : alignmentHorizontal.large
-                  };
-                }`
-                  : ''
-              }
-            }`}
-        </style>
-
+      <div {...blockProps} data-block-id={blockId}>
         <InnerBlocks
           template={getContactInfoTemplate(items)}
           templateLock="insert"
           allowedBlocks={ALLOWED_BLOCKS}
           orientation="horizontal"
         />
+
+        <InlineStyles {...{ defaultClassName, attributes, isEditor: true }} />
       </div>
     </>
   )
