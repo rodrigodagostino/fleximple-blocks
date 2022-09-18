@@ -5,41 +5,8 @@
  * which makes it higher in priority.
  */
 
-.wp-block[data-type="fleximple-blocks/feature"] {
-  // Allows for the block to be selected
-  &:not(.is-selected)::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10;
-  }
-}
-
 .fleximple-block-feature {
-  &
-    &__inner
-    > .block-editor-inner-blocks
-    > .block-editor-block-list__layout
-    > *:first-child {
-    margin-top: 0 !important;
-  }
-
-  &
-    &__inner
-    > .block-editor-inner-blocks
-    > .block-editor-block-list__layout
-    > *:last-child {
-    margin-bottom: 0 !important;
-  }
-
   .fleximple-block-icon {
     line-height: 1;
-  }
-
-  &__link {
-    display: none;
   }
 }

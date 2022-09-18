@@ -9,27 +9,8 @@ $default-class-name: "fleximple-block-feature";
 .fleximple-block-feature {
   position: relative;
 
-  &__inner {
-    & > *:first-child {
-      margin-top: 0 !important;
-    }
-
-    & > *:last-child {
-      margin-bottom: 0 !important;
-    }
-  }
-
   .fleximple-block-button__link {
     position: relative;
     z-index: 1;
-  }
-
-  &__link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-indent: -9999px;
   }
 }

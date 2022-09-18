@@ -1,37 +1,28 @@
 /* global fleximpleblocksPluginData */
 
-const InlineStyles = ({ defaultClassName, attributes: { textAlignment, contentGap }, isEditor = false }) => {
-  const editorSelector = isEditor ? '> .block-editor-inner-blocks > .block-editor-block-list__layout' : ''
+const InlineStyles = ({ defaultClassName, attributes: { blockId, textAlignment, contentGap } }) => {
+  const blockSelector = `.${defaultClassName}[data-block-id="${blockId}"]`
 
   return (
     <style>
-      {`.${defaultClassName}.text-align-${textAlignment.small}--sm {
+      {`${blockSelector} {
         text-align: ${textAlignment.small};
-      }`}
-      {`.${defaultClassName}.content-gap-${contentGap.small.value + (contentGap.small.unit === '%' ? 'pct' : contentGap.small.unit)}--sm .${defaultClassName}__inner ${editorSelector} > * {
-        margin-top: ${contentGap.small.value}${contentGap.small.unit === 'pct' ? '%' : contentGap.small.unit};
-        margin-bottom: ${contentGap.small.value}${contentGap.small.unit === 'pct' ? '%' : contentGap.small.unit};
+        gap: ${contentGap.small.value + contentGap.small.unit};
       }`}
 
       {(!!textAlignment.medium || !!contentGap.medium.value) &&
         `@media only screen and (min-width: ${fleximpleblocksPluginData.settings.mediumBreakpointValue}px) {
-          .${defaultClassName}.text-align-${textAlignment.medium}--md {
-            text-align: ${textAlignment.medium};
-          }
-          .${defaultClassName}.content-gap-${contentGap.medium.value + (contentGap.medium.unit === '%' ? 'pct' : contentGap.medium.unit)}--md .${defaultClassName}__inner ${editorSelector} > * {
-            margin-top: ${contentGap.medium.value}${contentGap.medium.unit === 'pct' ? '%' : contentGap.medium.unit};
-            margin-bottom: ${contentGap.medium.value}${contentGap.medium.unit === 'pct' ? '%' : contentGap.medium.unit};
+          ${blockSelector} {
+            ${textAlignment.medium ? `text-align: ${textAlignment.medium}` : ''};
+            ${contentGap.medium.value > 0 ? `gap: ${contentGap.medium.value + contentGap.medium.unit}` : ''};
           }
         }`}
 
       {!!contentGap.large.value &&
         `@media only screen and (min-width: ${fleximpleblocksPluginData.settings.largeBreakpointValue}px) {
-          .${defaultClassName}.text-align-${textAlignment.large}--lg {
-            text-align: ${textAlignment.large};
-          }
-          .${defaultClassName}.content-gap-${contentGap.large.value + (contentGap.large.unit === '%' ? 'pct' : contentGap.large.unit)}--md .${defaultClassName}__inner ${editorSelector} > * {
-            margin-top: ${contentGap.large.value}${contentGap.large.unit === 'pct' ? '%' : contentGap.large.unit};
-            margin-bottom: ${contentGap.large.value}${contentGap.large.unit === 'pct' ? '%' : contentGap.large.unit};
+          ${blockSelector} {
+            ${textAlignment.large ? `text-align: ${textAlignment.large}` : ''};
+            ${contentGap.large.value > 0 ? `gap: ${contentGap.large.value + contentGap.large.unit}` : ''};
           }
         }`}
     </style>
