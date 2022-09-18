@@ -42,6 +42,17 @@ const InlineStyles = ({
       ${blockSelector} > .${defaultClassName}__inner {
         justify-content: ${alignmentHorizontal.small};
       }
+      ${
+        isEditor
+          ? `${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content {
+            width: ${contentWidth.small.value + contentWidth.small.unit};
+          }
+          ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content > .block-editor-inner-blocks {
+            display: flex;
+            justify-content: ${alignmentHorizontal.small};
+          }`
+          : ''
+      }
       ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content ${editorSelector} {
         width: ${contentWidth.small.value + contentWidth.small.unit};
         min-height: ${minHeight.small.value + minHeight.small.unit};
@@ -64,6 +75,16 @@ const InlineStyles = ({
         }
         ${blockSelector} > .${defaultClassName}__inner {
           ${alignmentHorizontal.medium ? `justify-content: ${alignmentHorizontal.medium};` : ''}
+        }
+        ${
+          isEditor && contentWidth.medium.value > 0
+            ? `${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content {
+              width: ${contentWidth.medium.value + contentWidth.medium.unit};
+            }
+            ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content > .block-editor-inner-blocks {
+              justify-content: ${alignmentHorizontal.medium};
+            }`
+            : ''
         }
         ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content ${editorSelector} {
           ${contentWidth.medium.value > 0 ? `width: ${contentWidth.medium.value + contentWidth.medium.unit};` : ''}
@@ -88,6 +109,16 @@ const InlineStyles = ({
         }
         ${blockSelector} > .${defaultClassName}__inner {
           ${alignmentHorizontal.large ? `justify-content: ${alignmentHorizontal.large};` : ''}
+        }
+        ${
+          isEditor && contentWidth.large.value > 0
+            ? `${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content {
+              width: ${contentWidth.large.value + contentWidth.large.unit};
+            }
+            ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content > .block-editor-inner-blocks {
+              justify-content: ${alignmentHorizontal.large};
+            }`
+            : ''
         }
         ${blockSelector} > .${defaultClassName}__inner > .${defaultClassName}__content ${editorSelector} {
           ${contentWidth.large.value > 0 ? `width: ${contentWidth.large.value + contentWidth.large.unit};` : ''}
