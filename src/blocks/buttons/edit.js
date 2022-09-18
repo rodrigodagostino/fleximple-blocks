@@ -1,10 +1,3 @@
-/* global fleximpleblocksPluginData */
-
-/**
- * External dependencies
- */
-import classNames from 'classnames'
-
 /**
  * WordPress dependencies
  */
@@ -17,11 +10,13 @@ import {
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { BaseControl, PanelBody, RadioControl } from '@wordpress/components'
 import { withInstanceId } from '@wordpress/compose'
+import { useEffect } from '@wordpress/element'
 
 /**
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/block-alignment-horizontal-toolbar'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import SpacingControl from 'fleximple-components/components/spacing-control'
@@ -34,45 +29,19 @@ const TEMPLATE = [['fleximple-blocks/button'], ['fleximple-blocks/button']]
 
 function ButtonsEdit({
   attributes,
-  attributes: { direction, alignmentHorizontal, gap },
+  attributes: { blockId, direction, alignmentHorizontal, gap },
   setAttributes,
+  clientId,
   instanceId,
 }) {
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classNames({
-    [`direction-${direction.small === 'row' ? 'h' : 'v'}--sm`]: direction.small,
-    [`direction-${direction.medium === 'row' ? 'h' : 'v'}--md`]:
-      direction.medium,
-    [`direction-${direction.large === 'row' ? 'h' : 'v'}--lg`]: direction.large,
-    [`block-align-h-${alignmentHorizontal.small}--sm`]:
-      alignmentHorizontal.small && direction.small === 'row',
-    [`block-align-h-${alignmentHorizontal.medium}--md`]:
-      alignmentHorizontal.medium && direction.medium === 'row',
-    [`block-align-h-${alignmentHorizontal.large}--lg`]:
-      alignmentHorizontal.large && direction.large === 'row',
-    [`gap-h-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'row',
-    [`gap-h-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'row',
-    [`gap-h-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'row',
-    [`gap-v-${
-      gap.small.value + (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-    }--sm`]: direction.small === 'column',
-    [`gap-v-${
-      gap.medium.value + (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-    }--md`]: direction.medium === 'column',
-    [`gap-v-${
-      gap.large.value + (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-    }--lg`]: direction.large === 'column',
-  })
-
   const blockProps = useBlockProps({
-    className: classes,
+    className: defaultClassName,
   })
 
   return (
@@ -144,115 +113,14 @@ function ButtonsEdit({
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
-        <style>
-          {direction.small === 'row' &&
-            `.${defaultClassName}.gap-h-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-							${'margin-left: ' + gap.small.value + gap.small.unit + ';'}
-						}
-						.${defaultClassName}.block-align-h-${
-              alignmentHorizontal.small
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-							justify-content: ${alignmentHorizontal.small};
-						}`}
-          {direction.small === 'column' &&
-            `.${defaultClassName}.gap-v-${
-              gap.small.value +
-              (gap.small.unit === '%' ? 'pct' : gap.small.unit)
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-							${'margin-top: ' + gap.small.value + gap.small.unit + ';'}
-						}
-						.${defaultClassName}.block-align-h-${
-              alignmentHorizontal.small
-            }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-							align-items: ${alignmentHorizontal.small};
-						}`}
-
-          {!!direction.medium &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.mediumBreakpointValue
-            }px) {
-							${
-                direction.medium === 'row'
-                  ? `
-								.${defaultClassName}.gap-h-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-									${'margin-left: ' + gap.medium.value + gap.medium.unit + ';'}
-								}
-								.${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.medium
-                    }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-									justify-content: ${alignmentHorizontal.medium};
-								}`
-                  : ''
-              }
-							${
-                direction.medium === 'column'
-                  ? `
-								.${defaultClassName}.gap-v-${
-                      gap.medium.value +
-                      (gap.medium.unit === '%' ? 'pct' : gap.medium.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-									${'margin-top: ' + gap.medium.value + gap.medium.unit + ';'}
-								}
-								.${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.medium
-                    }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-									align-items: ${alignmentHorizontal.medium};
-								}`
-                  : ''
-              }
-						}`}
-
-          {!!direction.large &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.largeBreakpointValue
-            }px) {
-							${
-                direction.large === 'row'
-                  ? `
-								.${defaultClassName}.gap-h-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-									${'margin-left: ' + gap.large.value + gap.large.unit + ';'}
-									}
-									.${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.large
-                    }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-										justify-content: ${alignmentHorizontal.large};
-									}`
-                  : ''
-              }
-							${
-                direction.large === 'column'
-                  ? `
-								.${defaultClassName}.gap-v-${
-                      gap.large.value +
-                      (gap.large.unit === '%' ? 'pct' : gap.large.unit)
-                    }--lg > .block-editor-inner-blocks > .block-editor-block-list__layout > .fleximple-block-button + .fleximple-block-button {
-									${'margin-top: ' + gap.large.value + gap.large.unit + ';'}
-								}
-								.${defaultClassName}.block-align-h-${
-                      alignmentHorizontal.large
-                    }--sm > .block-editor-inner-blocks > .block-editor-block-list__layout {
-									align-items: ${alignmentHorizontal.large};
-								}`
-                  : ''
-              }
-						}`}
-        </style>
-
+      <div {...blockProps} data-block-id={blockId}>
         <InnerBlocks
           template={TEMPLATE}
           templateLock={false}
           allowedBlocks={ALLOWED_BLOCKS}
         />
+
+        <InlineStyles {...{ defaultClassName, attributes, isEditor: true }} />
       </div>
     </>
   )
