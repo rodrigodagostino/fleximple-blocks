@@ -1,9 +1,8 @@
-/* global fleximpleblocksPluginData */
-
 /**
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 
 /**
  * WordPress dependencies
@@ -14,10 +13,11 @@ import { useBlockProps } from '@wordpress/block-editor'
 const { name } = metadata
 
 function MapSave({
+  attributes,
   attributes: {
+    blockId,
     position,
     zoom,
-    height,
     layer,
     popup,
     displayPopup,
@@ -51,44 +51,7 @@ function MapSave({
   }
 
   return (
-    <div {...useBlockProps.save()}>
-      <style>
-        {!!height.small.value &&
-          `.${defaultClassName} {
-						${
-              height.small.value
-                ? 'height:' + height.small.value + height.small.unit + ';'
-                : ''
-            }
-					}`}
-
-        {!!height.medium.value &&
-          `@media only screen and (min-width: ${
-            fleximpleblocksPluginData.settings.mediumBreakpointValue
-          }px) {
-						.${defaultClassName} {
-							${
-                height.medium.value
-                  ? 'height:' + height.medium.value + height.medium.unit + ';'
-                  : ''
-              }
-						}
-					}`}
-
-        {!!height.large.value &&
-          `@media only screen and (min-width: ${
-            fleximpleblocksPluginData.settings.largeBreakpointValue
-          }px) {
-						.${defaultClassName} {
-							${
-                height.large.value
-                  ? 'height:' + height.large.value + height.large.unit + ';'
-                  : ''
-              }
-						}
-					}`}
-      </style>
-
+    <div {...useBlockProps.save()} data-block-id={blockId}>
       <div
         className="leaflet-container"
         data-latitude={position.lat}
@@ -100,6 +63,8 @@ function MapSave({
         data-zoom-control={displayZoomControl ? true : ''}
         data-attribution-control={displayAttributionControl ? true : ''}
       />
+
+      <InlineStyles {...{ defaultClassName, attributes }} />
     </div>
   )
 }

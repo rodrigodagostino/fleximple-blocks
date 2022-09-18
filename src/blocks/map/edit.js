@@ -1,5 +1,3 @@
-/* global fleximpleblocksPluginData */
-
 /**
  * External dependencies
  */
@@ -11,6 +9,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 import LocationSelectControl from './components/location-select-control'
 import SpacingControl from 'fleximple-components/components/spacing-control'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
@@ -28,7 +27,7 @@ import {
   TextareaControl,
   ToggleControl,
 } from '@wordpress/components'
-import { useRef } from '@wordpress/element'
+import { useEffect, useRef } from '@wordpress/element'
 
 const { name } = metadata
 
@@ -36,6 +35,7 @@ function MapEdit({
   className,
   attributes,
   attributes: {
+    blockId,
     position,
     zoom,
     height,
@@ -47,10 +47,15 @@ function MapEdit({
   },
   setAttributes,
   isSelected,
+  clientId,
 }) {
   const mapRef = useRef()
   const markerRef = useRef()
   const popupRef = useRef()
+
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
 
   const updatePosition = () => {
     const currentMap = markerRef.current
@@ -126,7 +131,7 @@ function MapEdit({
                 valueLabel={__('Height', 'fleximpleblocks')}
                 unitLabel={__('Height unit', 'fleximpleblocks')}
                 initialPosition={0}
-                min={40}
+                min={0}
                 max={1200}
                 attribute={height}
                 target={tab.name}
@@ -197,44 +202,7 @@ function MapEdit({
         </PanelBody>
       </InspectorControls>
 
-      <div {...blockProps}>
-        <style>
-          {!!height.small.value &&
-            `.${defaultClassName} {
-							${
-                height.small.value
-                  ? 'height:' + height.small.value + height.small.unit + ';'
-                  : ''
-              }
-						}`}
-
-          {!!height.medium.value &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.mediumBreakpointValue
-            }px) {
-							.${defaultClassName} {
-								${
-                  height.medium.value
-                    ? 'height:' + height.medium.value + height.medium.unit + ';'
-                    : ''
-                }
-							}
-						}`}
-
-          {!!height.large.value &&
-            `@media only screen and (min-width: ${
-              fleximpleblocksPluginData.settings.largeBreakpointValue
-            }px) {
-							.${defaultClassName} {
-								${
-                  height.large.value
-                    ? 'height:' + height.large.value + height.large.unit + ';'
-                    : ''
-                }
-							}
-						}`}
-        </style>
-
+      <div {...blockProps} data-block-id={blockId}>
         <MapContainer
           center={position}
           zoom={zoom}
@@ -258,6 +226,8 @@ function MapEdit({
             {!!displayPopup && <Popup ref={popupRef}>{popup}</Popup>}
           </Marker>
         </MapContainer>
+
+        <InlineStyles {...{ defaultClassName, attributes }} />
       </div>
     </>
   )
