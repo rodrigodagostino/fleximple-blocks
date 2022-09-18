@@ -1,6 +1,21 @@
 /* global fleximpleblocksPluginData */
 
-const InlineStyles = ({ defaultClassName, attributes: { blockId, contentAlignment, textAlignment, mediaGap, contentGap, direction, isReversed, mediaWidth, mediaHeight, mediaBorderRadius }, isEditor = false }) => {
+const InlineStyles = ({
+  defaultClassName,
+  attributes: {
+    blockId,
+    contentAlignment,
+    textAlignment,
+    mediaGap,
+    contentGap,
+    direction,
+    isReversed,
+    mediaWidth,
+    mediaHeight,
+    mediaBorderRadius,
+  },
+  isEditor = false,
+}) => {
   const blockSelector = `.${defaultClassName}[data-block-id="${blockId}"]`
   const editorSelector = isEditor ? '> .block-editor-inner-blocks > .block-editor-block-list__layout' : ''
 

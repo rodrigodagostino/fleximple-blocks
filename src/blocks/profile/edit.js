@@ -42,7 +42,11 @@ const { name } = metadata
  * Block constants
  */
 const ALLOWED_MEDIA_TYPES = ['image', 'video']
-const ALLOWED_BLOCKS = []
+const ALLOWED_BLOCKS = [
+  'core/heading',
+  'core/paragraph',
+  'fleximple-blocks/buttons',
+]
 const TEMPLATE = [
   [
     'core/heading',
@@ -68,9 +72,9 @@ const TEMPLATE = [
     'fleximple-blocks/buttons',
     {},
     [
-      ['fleximple-blocks/button'],
-      ['fleximple-blocks/button'],
-      ['fleximple-blocks/button'],
+      ['fleximple-blocks/button', { hasIcon: true, isIconOnly: true }],
+      ['fleximple-blocks/button', { hasIcon: true, isIconOnly: true }],
+      ['fleximple-blocks/button', { hasIcon: true, isIconOnly: true }],
     ],
   ],
 ]
