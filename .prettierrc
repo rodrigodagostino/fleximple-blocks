@@ -16,7 +16,7 @@
     {
       "files": ["src/blocks/**/inline-styles.js"],
       "options": {
-        "printWidth": 200
+        "printWidth": 140
       }
     }
   ]
