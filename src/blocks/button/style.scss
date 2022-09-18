@@ -7,20 +7,9 @@
 .fleximple-block-button {
   display: flex;
 
-  &.block-align-h-left {
-    justify-content: flex-start;
-  }
-
-  &.block-align-h-center {
-    justify-content: center;
-  }
-
-  &.block-align-h-right {
-    justify-content: flex-end;
-  }
-
   &__link {
     display: inline-flex;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
     line-height: 1;

@@ -74,6 +74,7 @@ function IconEdit({
           onChange={(value) => setAttributes({ alignmentHorizontal: value })}
         />
       </BlockControls>
+
       <InspectorControls>
         <PanelBody title={__('Main', 'fleximpleblocks')}>
           <IconPicker

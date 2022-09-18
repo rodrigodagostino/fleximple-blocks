@@ -1,14 +1,10 @@
 /**
- * External dependencies
- */
-import classNames from 'classnames'
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
 import {
   BlockControls,
+  InnerBlocks,
   InspectorControls,
   __experimentalLinkControl as LinkControl,
   RichText,
@@ -25,13 +21,12 @@ import {
   PanelBody,
   Popover,
   SelectControl,
-  TextareaControl,
   TextControl,
   ToggleControl,
   ToolbarButton,
 } from '@wordpress/components'
 import { compose, withInstanceId } from '@wordpress/compose'
-import { RawHTML, useCallback, useEffect, useState } from '@wordpress/element'
+import { useCallback, useEffect, useState } from '@wordpress/element'
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes'
 import { link, linkOff } from '@wordpress/icons'
 
@@ -40,12 +35,17 @@ import { link, linkOff } from '@wordpress/icons'
  */
 import metadata from './block.json'
 import BlockAlignmentHorizontalToolbar from 'fleximple-components/components/block-alignment-horizontal-toolbar'
-import IconPicker from 'fleximple-components/components/icon-picker'
 import SpacingControl from 'fleximple-components/components/spacing-control'
 import SpacingPanel from 'fleximple-components/components/spacing-panel'
 import InlineStyles from './inline-styles'
 
 const { name } = metadata
+
+/**
+ * Block constants
+ */
+const ALLOWED_BLOCKS = ['fleximple-blocks/icon']
+const TEMPLATE = [['fleximple-blocks/icon', { iconSize: 20 }]]
 
 function URLPicker({
   isSelected,
@@ -136,25 +136,19 @@ function ButtonEdit({
   className,
   attributes,
   attributes: {
+    blockId,
     text,
     url,
     linkTarget,
+    alignmentHorizontal,
     borderRadius,
     width,
     title,
     noFollow,
     noReferrer,
-    iconId,
-    iconSize,
+    hasIcon,
     iconPosition,
     isIconOnly,
-    hasCustomIcon,
-    customIcon,
-    paddingTop,
-    paddingLeft,
-    paddingRight,
-    paddingBottom,
-    alignmentHorizontal,
   },
   backgroundColor,
   textColor,
@@ -162,13 +156,17 @@ function ButtonEdit({
   setTextColor,
   setAttributes,
   isSelected,
+  clientId,
 }) {
-  // componentWillMount equivalent
   useEffect(() => {
     if (!className || !className.includes('is-style-')) {
       setAttributes({ className: 'is-style-fill' })
     }
   }, [])
+
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
 
   const onToggleOpenInNewTab = useCallback(
     (value) => {
@@ -183,34 +181,9 @@ function ButtonEdit({
 
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const classes = classNames({
-    [`block-align-h-${alignmentHorizontal}`]: alignmentHorizontal,
-  })
-
   const blockProps = useBlockProps({
-    className: classes,
+    className: defaultClassName,
     title: title,
-  })
-
-  // prettier-ignore
-  const buttonClasses = classNames(`${defaultClassName}__link`, {
-    [`width-${width}`]: width,
-    [`padding-top-${paddingTop.small.value + (paddingTop.small.unit === '%' ? 'pct' : paddingTop.small.unit)}--sm`]: paddingTop.small.value,
-    [`padding-top-${paddingTop.medium.value + (paddingTop.medium.unit === '%' ? 'pct' : paddingTop.medium.unit)}--md`]: paddingTop.medium.value,
-    [`padding-top-${paddingTop.large.value + (paddingTop.large.unit === '%' ? 'pct' : paddingTop.large.unit)}--lg`]: paddingTop.large.value,
-    [`padding-left-${paddingLeft.small.value + (paddingLeft.small.unit === '%' ? 'pct' : paddingLeft.small.unit)}--sm`]: paddingLeft.small.value,
-    [`padding-left-${paddingLeft.medium.value + (paddingLeft.medium.unit === '%' ? 'pct' : paddingLeft.medium.unit)}--md`]: paddingLeft.medium.value,
-    [`padding-left-${paddingLeft.large.value + (paddingLeft.large.unit === '%' ? 'pct' : paddingLeft.large.unit)}--lg`]: paddingLeft.large.value,
-    [`padding-right-${paddingRight.small.value + (paddingRight.small.unit === '%' ? 'pct' : paddingRight.small.unit)}--sm`]: paddingRight.small.value,
-    [`padding-right-${paddingRight.medium.value + (paddingRight.medium.unit === '%' ? 'pct' : paddingRight.medium.unit)}--md`]: paddingRight.medium.value,
-    [`padding-right-${paddingRight.large.value + (paddingRight.large.unit === '%' ? 'pct' : paddingRight.large.unit)}--lg`]: paddingRight.large.value,
-    [`padding-bottom-${paddingBottom.small.value + (paddingBottom.small.unit === '%' ? 'pct' : paddingBottom.small.unit)}--sm`]: paddingBottom.small.value,
-    [`padding-bottom-${paddingBottom.medium.value + (paddingBottom.medium.unit === '%' ? 'pct' : paddingBottom.medium.unit)}--md`]: paddingBottom.medium.value,
-    [`padding-bottom-${paddingBottom.large.value + (paddingBottom.large.unit === '%' ? 'pct' : paddingBottom.large.unit)}--lg`]: paddingBottom.large.value,
-    'has-background': backgroundColor.color,
-    [backgroundColor.class]: backgroundColor.class,
-    'has-text-color': textColor.color,
-    [textColor.class]: textColor.class,
   })
 
   const buttonStyles = {
@@ -224,15 +197,6 @@ function ButtonEdit({
   const relAttribute = `${noFollow ? 'nofollow' : ''} ${
     noReferrer ? 'noreferrer' : ''
   }`.trim()
-
-  const iconClasses = classNames(`${defaultClassName}__icon`, {
-    [iconId]: iconId,
-    [`position-${iconPosition}`]: iconPosition && !isIconOnly,
-  })
-
-  const customIconClasses = classNames(`${defaultClassName}__custom-icon`, {
-    [`position-${iconPosition}`]: iconPosition && !isIconOnly,
-  })
 
   return (
     <>
@@ -326,24 +290,12 @@ function ButtonEdit({
         </PanelBody>
 
         <PanelBody title={__('Icon', 'fleximpleblocks')} initialOpen={false}>
-          <IconPicker
-            icons={[
-              {
-                label: __('Icon', 'fleximpleblocks'),
-                value: iconId,
-                onChange: (value) => setAttributes({ iconId: value }),
-              },
-            ]}
-            sizes={[
-              {
-                label: __('Icon size', 'fleximpleblocks'),
-                value: iconSize,
-                initialPosition: 18,
-                min: 10,
-                max: 120,
-                onChange: (value) => setAttributes({ iconSize: value }),
-              },
-            ]}
+          <ToggleControl
+            label={__('Display icon', 'fleximpleblocks')}
+            checked={hasIcon}
+            onChange={() => {
+              setAttributes({ hasIcon: !hasIcon })
+            }}
           />
 
           {!isIconOnly && (
@@ -375,32 +327,8 @@ function ButtonEdit({
             checked={isIconOnly}
             onChange={() => {
               setAttributes({ isIconOnly: !isIconOnly })
-              if (isIconOnly) {
-                setAttributes({ iconSize: 18 })
-              } else {
-                setAttributes({ iconSize: 40 })
-              }
             }}
           />
-
-          <ToggleControl
-            label={__('Use custom icon', 'fleximpleblocks')}
-            checked={hasCustomIcon}
-            onChange={() => setAttributes({ hasCustomIcon: !hasCustomIcon })}
-          />
-
-          {!!hasCustomIcon && (
-            <TextareaControl
-              label={__('Custom icon', 'fleximpleblocks')}
-              style={{ fontFamily: 'monospace' }}
-              help={__(
-                'Insert the HTML code for your custom icon.',
-                'fleximpleblocks'
-              )}
-              value={customIcon}
-              onChange={(value) => setAttributes({ customIcon: value })}
-            />
-          )}
         </PanelBody>
 
         <PanelColorSettings
@@ -433,20 +361,14 @@ function ButtonEdit({
         />
       </InspectorControls>
 
-      <div {...blockProps}>
+      <div {...blockProps} data-block-id={blockId}>
         <div
-          className={buttonClasses}
+          className={`${defaultClassName}__link`}
           style={buttonStyles}
           rel={relAttribute ? relAttribute : null}
         >
-          {!!iconId && iconPosition === 'left' && !hasCustomIcon && (
-            <i className={iconClasses} style={{ fontSize: iconSize }} />
-          )}
-
-          {!!hasCustomIcon && !!customIcon && iconPosition === 'left' && (
-            <RawHTML className={customIconClasses} style={{ height: iconSize }}>
-              {customIcon}
-            </RawHTML>
+          {hasIcon && iconPosition === 'left' && (
+            <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
           )}
 
           {!isIconOnly && (
@@ -460,26 +382,12 @@ function ButtonEdit({
             />
           )}
 
-          {!!hasCustomIcon &&
-            (iconPosition === 'right' || iconPosition === undefined) && (
-              <RawHTML
-                className={customIconClasses}
-                style={{ height: iconSize }}
-              >
-                {customIcon}
-              </RawHTML>
-            )}
-
-          {!!iconId &&
-            (iconPosition === 'right' || iconPosition === undefined) &&
-            !hasCustomIcon && (
-              <span>
-                <i className={iconClasses} style={{ fontSize: iconSize }} />
-              </span>
-            )}
+          {hasIcon && iconPosition === 'right' && (
+            <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
+          )}
         </div>
 
-        <InlineStyles {...{ attributes }} />
+        <InlineStyles {...{ defaultClassName, attributes }} />
       </div>
     </>
   )

@@ -3,6 +3,10 @@
   "name": "fleximple-blocks/button",
   "category": "fleximple-blocks",
   "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
     "text": {
       "type": "string",
       "source": "html",
@@ -49,13 +53,9 @@
       "type": "string",
       "default": "center"
     },
-    "iconId": {
-      "type": "string",
-      "default": ""
-    },
-    "iconSize": {
-      "type": "number",
-      "default": 18
+    "hasIcon": {
+      "type": "boolean",
+      "default": false
     },
     "iconPosition": {
       "type": "string",
@@ -64,13 +64,6 @@
     "isIconOnly": {
       "type": "boolean",
       "default": false
-    },
-    "hasCustomIcon": {
-      "type": "boolean",
-      "default": false
-    },
-    "customIcon": {
-      "type": "string"
     },
     "paddingTop": {
       "type": "object",
