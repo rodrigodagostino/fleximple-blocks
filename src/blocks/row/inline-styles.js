@@ -19,6 +19,7 @@ const InlineStyles = ({
     focalPoint,
     backgroundSize,
     backgroundRepeat,
+    backgroundFixed,
   },
   isEditor = false,
 }) => {
@@ -38,6 +39,7 @@ const InlineStyles = ({
         ${mediaUrl.small ? `background-position: ${focalPoint.small.x * 100}% ${focalPoint.small.y * 100}%;` : ''}
         ${mediaUrl.small ? `background-size: ${backgroundSize.small};` : ''}
         ${mediaUrl.small ? `background-repeat: ${backgroundRepeat.small};` : ''}
+        ${backgroundFixed ? `background-attachment: fixed;` : ''}
       }
       ${blockSelector} > .${defaultClassName}__inner {
         justify-content: ${alignmentHorizontal.small};

@@ -14,14 +14,10 @@ $default-class-name: "fleximple-block-row";
     display: flex;
   }
 
-  &[class*="block-align-v-"] .#{$default-class-name}__content {
+  .#{$default-class-name}__content {
     position: relative;
     display: flex;
     flex-direction: column;
-  }
-
-  &.background-attachment-fixed {
-    background-attachment: fixed;
   }
 
   &__overlay {

@@ -6,8 +6,7 @@
  */
 
 .fleximple-block-row {
-  &[class*="block-align-v-"]
-    > [class$="__inner"]
+  > [class$="__inner"]
     > [class$="__content"]
     > .block-editor-inner-blocks
     > .block-editor-block-list__layout {
