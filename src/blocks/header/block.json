@@ -3,6 +3,10 @@
   "name": "fleximple-blocks/header",
   "category": "fleximple-blocks",
   "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
     "heading": {
       "type": "string",
       "source": "html",
