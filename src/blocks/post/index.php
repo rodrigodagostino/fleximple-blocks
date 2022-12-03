@@ -326,7 +326,7 @@ function fleximpleblocks_render_post_block($attributes, $content)
   }
   if ($attributes['focalPoint']['small']['x'] !== 0.5 && $attributes['focalPoint']['small']['y'] !== 0.5) {
     $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['small']['x'] * 100 . '-' . $attributes['focalPoint']['small']['y'] * 100 . '--sm .' . $default_class_name . '__image {
-      object-position: ' . $attributes['focalPoint']['small']['x'] * 100 . '% ' . ['focalPoint']['small']['y'] * 100 . '%;
+      object-position: ' . $attributes['focalPoint']['small']['x'] * 100 . '% ' . $attributes['focalPoint']['small']['y'] * 100 . '%;
     }';
   }
   if ((isset($attributes['aspectRatio']) && $attributes['aspectRatio']['medium'] !== 'none') || (isset($attributes['focalPoint']) && $attributes['focalPoint']['medium'] !== 'none')) {
@@ -339,7 +339,7 @@ function fleximpleblocks_render_post_block($attributes, $content)
     }
     if ($attributes['focalPoint']['medium']['x'] !== 0.5 && $attributes['focalPoint']['medium']['y'] !== 0.5 && $attributes['focalPoint']['medium']['x'] !== $attributes['focalPoint']['small']['x'] && $attributes['focalPoint']['medium']['y'] !== $attributes['focalPoint']['small']['y']) {
       $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['medium']['x'] * 100 . '-' . $attributes['focalPoint']['medium']['y'] * 100 . '--md .' . $default_class_name . '__image {
-        object-position: ' . $attributes['focalPoint']['medium']['x'] * 100 . '% ' . ['focalPoint']['medium']['y'] * 100 . '%;
+        object-position: ' . $attributes['focalPoint']['medium']['x'] * 100 . '% ' . $attributes['focalPoint']['medium']['y'] * 100 . '%;
       }';
     }
     $internal_styles .= '}';
@@ -353,8 +353,8 @@ function fleximpleblocks_render_post_block($attributes, $content)
       }';
     }
     if ($attributes['focalPoint']['large']['x'] !== 0.5 && $attributes['focalPoint']['large']['y'] !== 0.5 && $attributes['focalPoint']['large']['x'] !== $attributes['focalPoint']['medium']['x'] && $attributes['focalPoint']['large']['y'] !== $attributes['focalPoint']['medium']['y']) {
-      $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focusPoint']['large']['x'] * 100 . '-' . $attributes['focusPoint']['large']['y'] * 100 . '--lg .' . $default_class_name . '__image {
-        object-position: ' . $attributes['focalPoint']['large']['x'] * 100 . '% ' . ['focalPoint']['large']['y'] * 100 . '%;
+      $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['large']['x'] * 100 . '-' . $attributes['focalPoint']['large']['y'] * 100 . '--lg .' . $default_class_name . '__image {
+        object-position: ' . $attributes['focalPoint']['large']['x'] * 100 . '% ' . $attributes['focalPoint']['large']['y'] * 100 . '%;
       }';
     }
     $internal_styles .= '}';
