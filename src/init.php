@@ -229,17 +229,17 @@ function fleximpleblocks_enqueue_styles()
     // Swiper Styles.
     wp_enqueue_style(
       'fleximpleblocks-swiper-styles',
-      'https://cdn.jsdelivr.net/npm/swiper@7.0.3/swiper-bundle.min.css',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
       false,
-      '7.0.3',
+      '11.0.3',
       'all'
     );
     // Swiper Scripts
     wp_enqueue_script(
       'fleximpleblocks-swiper-scripts',
-      'https://cdn.jsdelivr.net/npm/swiper@7.0.3/swiper-bundle.js',
+      'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
       array(),
-      '7.0.3',
+      '11.0.3',
       true
     );
   }
