@@ -14,7 +14,7 @@ import classNames from 'classnames'
  */
 import { __ } from '@wordpress/i18n'
 import { getBlockDefaultClassName } from '@wordpress/blocks'
-import { dateI18n, format, __experimentalGetSettings } from '@wordpress/date'
+import { dateI18n, format, getSettings } from '@wordpress/date'
 import { RawHTML } from '@wordpress/element'
 
 /**
@@ -54,13 +54,13 @@ const PostCarouselPreviewArticle = ({
 }) => {
   const defaultClassName = getBlockDefaultClassName(name)
 
-  const contentClasses = classNames(`${defaultClassName}__entry-content`, {
+  const contentClasses = classNames(`${defaultClassName}__content`, {
     [`block-align-${contentAlignment}`]: contentAlignment,
   })
 
   const TagName = 'h' + headingLevel
 
-  const pictureClasses = classNames(`${defaultClassName}__entry-picture`, {
+  const pictureClasses = classNames(`${defaultClassName}__picture`, {
     [`aspect-ratio-${aspectRatio.small}--sm`]: aspectRatio.small !== 'none',
     [`aspect-ratio-${aspectRatio.medium}--md`]:
       aspectRatio.medium !== 'none' && aspectRatio.medium !== aspectRatio.small,
@@ -68,7 +68,7 @@ const PostCarouselPreviewArticle = ({
       aspectRatio.large !== 'none' && aspectRatio.large !== aspectRatio.medium,
   })
 
-  const dateFormat = __experimentalGetSettings().formats.date
+  const dateFormat = getSettings().formats.date
 
   const relAttribute = `${noFollow ? 'nofollow' : ''} ${
     noReferrer ? 'noreferrer' : ''
@@ -81,9 +81,7 @@ const PostCarouselPreviewArticle = ({
           `${
             aspectRatio.small
               ? `
-          .${defaultClassName}__entry-picture.aspect-ratio-${
-                  aspectRatio.small
-                }--sm {
+          .${defaultClassName}__picture.aspect-ratio-${aspectRatio.small}--sm {
             padding-bottom: ${
               (aspectRatio.small.split('-')[1] * 100) /
               aspectRatio.small.split('-')[0]
@@ -99,9 +97,9 @@ const PostCarouselPreviewArticle = ({
           ${
             aspectRatio.medium
               ? `
-            .${defaultClassName}__entry-picture.aspect-ratio-${
-                  aspectRatio.medium
-                }--md {
+            .${defaultClassName}__picture.aspect-ratio-${
+              aspectRatio.medium
+            }--md {
               padding-bottom: ${
                 (aspectRatio.medium.split('-')[1] * 100) /
                 aspectRatio.medium.split('-')[0]
@@ -118,9 +116,9 @@ const PostCarouselPreviewArticle = ({
           ${
             aspectRatio.large
               ? `
-            .${defaultClassName}__entry-picture.aspect-ratio-${
-                  aspectRatio.large
-                }--lg {
+            .${defaultClassName}__picture.aspect-ratio-${
+              aspectRatio.large
+            }--lg {
               padding-bottom: ${
                 (aspectRatio.large.split('-')[1] * 100) /
                 aspectRatio.large.split('-')[0]
@@ -132,11 +130,11 @@ const PostCarouselPreviewArticle = ({
       </style>
 
       <article id={`post-${post.id}`} className={`${defaultClassName}__entry`}>
-        {orderArticle.map((fragment) => {
+        {orderArticle.map((fragment, i) => {
           if (fragment === 'media' && displayMedia && displayFeaturedImage) {
             return (
-              <div className={`${defaultClassName}__entry-media`}>
-                {orderMedia.map((mediaFragment) => {
+              <div className={`${defaultClassName}__media`} key={i}>
+                {orderMedia.map((mediaFragment, j) => {
                   if (
                     mediaFragment === 'featuredImage' &&
                     displayFeaturedImage
@@ -150,7 +148,7 @@ const PostCarouselPreviewArticle = ({
                           if (value && value !== 'none') {
                             pictureSources.push(
                               <source
-                                className={`${defaultClassName}__entry-image`}
+                                className={`${defaultClassName}__image`}
                                 // Assign the closest lower breakpoint (“small” shouldn’t have a media attribute).
                                 media={
                                   key !== 'small'
@@ -174,10 +172,10 @@ const PostCarouselPreviewArticle = ({
                       ? post.featured_media_data.full.url
                       : `${fleximpleblocksPluginData.pluginUrl}assets/images/placeholder-image.svg`
                     return (
-                      <picture className={pictureClasses}>
+                      <picture className={pictureClasses} key={j}>
                         {!!post.featured_media && pictureSources}
                         <img
-                          className={`${defaultClassName}__entry-image`}
+                          className={`${defaultClassName}__image`}
                           src={imageSource}
                           alt={post.title.rendered}
                         />
@@ -191,20 +189,23 @@ const PostCarouselPreviewArticle = ({
 
           if ('content' === fragment && displayContent) {
             return (
-              <div className={contentClasses}>
-                {orderContent.map((contentFragment) => {
+              <div className={contentClasses} key={i}>
+                {orderContent.map((contentFragment, j) => {
                   if (
                     'categories' === contentFragment &&
                     displayCategories &&
                     !!post.categories_data
                   ) {
                     return (
-                      <div className={`${defaultClassName}__entry-categories`}>
+                      <div
+                        className={`${defaultClassName}__categories`}
+                        key={j}
+                      >
                         {post.categories_data.map((category, index) => {
                           return (
                             <a
                               key={index}
-                              className={`${defaultClassName}__entry-category`}
+                              className={`${defaultClassName}__category`}
                               href={category.url}
                               rel="category"
                               data-category-slug={category.slug}
@@ -227,7 +228,7 @@ const PostCarouselPreviewArticle = ({
                     !!post.title.rendered
                   ) {
                     return (
-                      <TagName className={`${defaultClassName}__entry-title`}>
+                      <TagName className={`${defaultClassName}__title`} key={j}>
                         {/* <a
                                   href={ post.link }
                                   target="_blank"
@@ -260,10 +261,10 @@ const PostCarouselPreviewArticle = ({
                       !!post.comments_number)
                   ) {
                     return (
-                      <div className={`${defaultClassName}__entry-meta`}>
+                      <div className={`${defaultClassName}__meta`} key={j}>
                         {
                           // eslint-disable-next-line array-callback-return
-                          orderMeta.map((metaFragment) => {
+                          orderMeta.map((metaFragment, k) => {
                             if (
                               metaFragment === 'author' &&
                               displayAuthor &&
@@ -280,6 +281,7 @@ const PostCarouselPreviewArticle = ({
                                       'fleximpleblocks'
                                     )}</span> ${post.author_data.name}`,
                                   }}
+                                  key={k}
                                 />
                               )
                             }
@@ -298,6 +300,7 @@ const PostCarouselPreviewArticle = ({
                                       post.date_gmt
                                     )}`,
                                   }}
+                                  key={k}
                                 />
                               )
                             }
@@ -307,6 +310,7 @@ const PostCarouselPreviewArticle = ({
                                 return (
                                   <span
                                     className={`${defaultClassName}__entry-comments`}
+                                    key={k}
                                   >
                                     {post.comments_number}
                                   </span>
@@ -348,6 +352,7 @@ const PostCarouselPreviewArticle = ({
                         rel={relAttribute}
                         data-link-name="article"
                         dangerouslySetInnerHTML={{ __html: readMore }}
+                        key={j}
                       />
                     )
                   }

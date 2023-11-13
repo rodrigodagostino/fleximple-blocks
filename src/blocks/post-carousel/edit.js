@@ -59,8 +59,8 @@ function PostCarouselEdit({
     loop,
     speed,
     delay,
-    hasNavigation,
-    hasPagination,
+    navigation,
+    pagination,
     paginationType,
     spaceBetween,
     effect,
@@ -96,15 +96,11 @@ function PostCarouselEdit({
 }) {
   const [categoriesList, setCategoriesList] = useState([])
   const [selectedPostsData, setSelectedPostsData] = useState([])
-  const [isStillMounted, setIsStillMounted] = useState(false)
 
-  // componentWillMount equivalent
   useEffect(() => {
     if (!className || !className.includes('is-style-')) {
       setAttributes({ className: 'is-style-standard' })
     }
-
-    setIsStillMounted(true)
 
     apiFetch({
       path: addQueryArgs('/wp/v2/categories', {
@@ -112,19 +108,15 @@ function PostCarouselEdit({
       }),
     })
       .then((results) => {
-        if (isStillMounted) setCategoriesList(results)
+        setCategoriesList(results)
       })
-      .catch(() => {
-        if (isStillMounted) setCategoriesList([])
+      .catch((error) => {
+        console.error(error)
+        setCategoriesList([])
       })
 
     if (selectedPosts) {
       fetchSelectedPostsData()
-    }
-
-    // componentWillUnmount equivalent
-    return () => {
-      setIsStillMounted(false)
     }
   }, [])
 
@@ -235,14 +227,14 @@ function PostCarouselEdit({
 
         <ToggleControl
           label={__('Navigation', 'fleximpleblocks')}
-          checked={hasNavigation}
-          onChange={() => setAttributes({ hasNavigation: !hasNavigation })}
+          checked={navigation}
+          onChange={() => setAttributes({ navigation: !navigation })}
         />
 
         <ToggleControl
           label={__('Pagination', 'fleximpleblocks')}
-          checked={hasPagination}
-          onChange={() => setAttributes({ hasPagination: !hasPagination })}
+          checked={pagination}
+          onChange={() => setAttributes({ pagination: !pagination })}
         />
 
         <SelectControl

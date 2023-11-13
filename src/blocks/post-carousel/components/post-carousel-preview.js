@@ -5,18 +5,11 @@
 /**
  * External dependencies
  */
+import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import {
-  Autoplay,
-  Navigation,
-  Pagination,
-  EffectFade,
-  EffectFlip,
-  EffectCoverflow,
-  EffectCube,
-  EffectCards,
-} from 'swiper'
+import { register } from 'swiper/element/bundle'
+
+register()
 
 /**
  * WordPress dependencies
@@ -37,8 +30,8 @@ const PostCarouselPreview = ({
     loop,
     speed,
     delay,
-    hasNavigation,
-    hasPagination,
+    navigation,
+    pagination,
     paginationType,
     spaceBetween,
     effect,
@@ -50,38 +43,7 @@ const PostCarouselPreview = ({
   },
   postsData,
 }) => {
-  const swiperParams = {
-    slidesPerView,
-    loop,
-    ...(autoplay
-      ? {
-          autoplay: {
-            delay,
-            disableOnInteraction: false,
-          },
-        }
-      : null),
-    speed,
-    ...(hasNavigation
-      ? {
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        }
-      : null),
-    ...(hasPagination
-      ? {
-          pagination: {
-            el: '.swiper-pagination',
-            type: paginationType,
-            clickable: true,
-          },
-        }
-      : null),
-    spaceBetween,
-    ...(effect !== 'slide' ? effect : null),
-  }
+  const carouselRef = useRef(null)
 
   const blockProps = useBlockProps()
 
@@ -113,46 +75,47 @@ const PostCarouselPreview = ({
 
   return (
     <div {...blockProps}>
-      <Swiper
-        modules={[
-          Autoplay,
-          Navigation,
-          Pagination,
-          EffectFade,
-          EffectFlip,
-          EffectCoverflow,
-          EffectCube,
-          EffectCards,
-        ]}
-        {...swiperParams}
+      <swiper-container
+        ref={carouselRef}
+        slides-per-view={slidesPerView}
+        loop={loop ? loop : null}
+        autoplay={autoplay ? autoplay : null}
+        autoplay-delay={autoplay ? delay : null}
+        autoplay-disabled-on-interaction={autoplay ? false : null}
+        speed={speed}
+        pagination={pagination ? pagination : null}
+        pagination-type={pagination ? paginationType : null}
+        pagination-clickable={pagination ? true : null}
+        space-between={spaceBetween}
+        effect={effect}
       >
-        {hasNavigation && (
-          <>
-            <button className={buttonPrevClasses} style={buttonPrevStyles}>
-              <span className="screen-reader-only">
-                {__('Previous slide', 'fleximpleblocks')}
-              </span>
-              <i className={buttonPrevIconClasses} aria-hidden="true" />
-            </button>
-            <button className={buttonNextClasses} style={buttonNextStyles}>
-              <span className="screen-reader-only">
-                {__('Next slide', 'fleximpleblocks')}
-              </span>
-              <i className={buttonNextIconClasses} aria-hidden="true" />
-            </button>
-          </>
-        )}
-
-        {hasPagination && <div className="swiper-pagination" />}
-
         {postsData.map((post, i) => {
           return (
-            <SwiperSlide key={i}>
+            <swiper-slide key={i}>
               <PostCarouselPreviewArticle post={post} {...{ attributes }} />
-            </SwiperSlide>
+            </swiper-slide>
           )
         })}
-      </Swiper>
+
+        <div slot="container-end">
+          {navigation && (
+            <>
+              <button className={buttonPrevClasses} style={buttonPrevStyles}>
+                <span className="screen-reader-only">
+                  {__('Previous slide', 'fleximpleblocks')}
+                </span>
+                <i className={buttonPrevIconClasses} aria-hidden="true" />
+              </button>
+              <button className={buttonNextClasses} style={buttonNextStyles}>
+                <span className="screen-reader-only">
+                  {__('Next slide', 'fleximpleblocks')}
+                </span>
+                <i className={buttonNextIconClasses} aria-hidden="true" />
+              </button>
+            </>
+          )}
+        </div>
+      </swiper-container>
     </div>
   )
 }

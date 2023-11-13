@@ -23,11 +23,11 @@
       "type": "number",
       "default": 3000
     },
-    "hasNavigation": {
+    "navigation": {
       "type": "boolean",
       "default": true
     },
-    "hasPagination": {
+    "pagination": {
       "type": "boolean",
       "default": true
     },

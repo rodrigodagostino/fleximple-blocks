@@ -8,7 +8,7 @@ $default-class-name: "fleximple-block-post-carousel";
 
 .fleximple-block-post-carousel {
   &__entry {
-    background-color: var(--white);
+    background-color: var(--white-rich);
     position: relative;
     z-index: 1;
 
@@ -17,24 +17,24 @@ $default-class-name: "fleximple-block-post-carousel";
     }
   }
 
-  &__entry-media + &__entry-content,
-  &__entry-content + &__entry-media {
+  &__media + &__content,
+  &__content + &__media {
     margin-top: 16px;
   }
 
-  &__entry-media {
+  &__media {
     position: relative;
     z-index: -1;
   }
 
-  &__entry-picture {
+  &__picture {
     height: 0;
     margin: 0 !important;
     overflow: hidden;
     display: block;
   }
 
-  &__entry-image {
+  &__image {
     position: absolute;
     top: 0;
     left: 0;
@@ -45,7 +45,7 @@ $default-class-name: "fleximple-block-post-carousel";
     margin-bottom: 0;
   }
 
-  &__entry-content {
+  &__content {
     display: flex;
     flex-direction: column;
 
@@ -75,11 +75,11 @@ $default-class-name: "fleximple-block-post-carousel";
     }
   }
 
-  &__entry-categories {
+  &__categories {
     font-size: 13px;
   }
 
-  &__entry-category {
+  &__category {
     margin-right: 8px;
     position: relative;
     z-index: 1;
@@ -89,7 +89,7 @@ $default-class-name: "fleximple-block-post-carousel";
     }
   }
 
-  &__entry-title {
+  &__title {
     line-height: 1.25;
 
     .#{$default-class-name}__entry-kicker {
@@ -108,7 +108,7 @@ $default-class-name: "fleximple-block-post-carousel";
     }
   }
 
-  &__entry-meta {
+  &__meta {
     font-size: 13px;
     z-index: 1;
 
@@ -155,7 +155,7 @@ $default-class-name: "fleximple-block-post-carousel";
       overflow: hidden;
     }
 
-    .#{$default-class-name}__entry-content {
+    .#{$default-class-name}__content {
       max-width: var(--site-main__width, 910px);
       margin: 0 auto;
       padding: 32px 32px 60px;
@@ -175,7 +175,7 @@ $default-class-name: "fleximple-block-post-carousel";
         bottom: 0;
       }
 
-      .#{$default-class-name}__entry-title a,
+      .#{$default-class-name}__title a,
       a {
         color: var(--gray-100);
 

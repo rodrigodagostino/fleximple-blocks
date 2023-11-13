@@ -55,8 +55,8 @@ function fleximpleblocks_render_post_carousel_block($attributes)
   $swiper_params .= $attributes['autoplay'] ? '\'autoplay\': true,' : '\'autoplay\': false,';
   $swiper_params .= $attributes['delay'] ? '\'delay\': ' . $attributes['delay'] . ',' : '';
   $swiper_params .= $attributes['speed'] ? '\'speed\': ' . $attributes['speed'] . ',' : '';
-  $swiper_params .= $attributes['hasNavigation'] ? '\'navigation\': true,' : '\'navigation\': false,';
-  $swiper_params .= $attributes['hasPagination'] ? '\'pagination\': true,' : '\'pagination\': false,';
+  $swiper_params .= $attributes['navigation'] ? '\'navigation\': true,' : '\'navigation\': false,';
+  $swiper_params .= $attributes['pagination'] ? '\'pagination\': true,' : '\'pagination\': false,';
   $swiper_params .= $attributes['paginationType'] ? '\'paginationType\': \'' . $attributes['paginationType'] . '\',' : '';
   $swiper_params .= $attributes['spaceBetween'] ? '\'spaceBetween\': ' . $attributes['spaceBetween'] . ',' : '';
   $swiper_params .= $attributes['effect'] ? '\'effect\': \'' . $attributes['effect'] . '\'' : '';
@@ -80,7 +80,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
       $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post), 'full', false);
 
       $picture_classes = array();
-      $picture_classes[] = $default_class_name . '__entry-picture';
+      $picture_classes[] = $default_class_name . '__picture';
 
       if ($attributes['aspectRatio']['small'] !== 'none') {
         $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm';
@@ -101,10 +101,10 @@ function fleximpleblocks_render_post_carousel_block($attributes)
             $picture_data = wp_get_attachment_image_src(get_post_thumbnail_id($post), $image_size[$size], false);
             if ($picture_sources && $size !== 'small') {
               $picture_sources[] =
-                '<source class="' . $default_class_name . '__entry-image" media="(min-width: ' . get_option('fleximpleblocks_' . $image_sizes[$i + 1] . '_breakpoint_value') . 'px)" srcset="' . $picture_data[0] . '">';
+                '<source class="' . $default_class_name . '__image" media="(min-width: ' . get_option('fleximpleblocks_' . $image_sizes[$i + 1] . '_breakpoint_value') . 'px)" srcset="' . $picture_data[0] . '">';
             } else if ($picture_sources) {
               $picture_sources[] =
-                '<source class="' . $default_class_name . '__entry-image" srcset="' . $picture_data[0] . '">';
+                '<source class="' . $default_class_name . '__image" srcset="' . $picture_data[0] . '">';
             }
           }
           $i++;
@@ -116,7 +116,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
       $post_featured_image = sprintf(
         '<picture class="%s">
           %s
-          <img class="%s__entry-image" src="%s" alt="%s"/>
+          <img class="%s__image" src="%s" alt="%s"/>
         </picture>',
         esc_attr(implode(' ', $picture_classes)),
         implode('', $picture_sources),
@@ -133,11 +133,11 @@ function fleximpleblocks_render_post_carousel_block($attributes)
       $categories_links = '';
 
       foreach ($categories as $category) {
-        $categories_links .= '<a class="' . $default_class_name . '__entry-category" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category" data-category-slug="' . esc_html($category->slug) . '"><span class="screen-reader-only">' . __('Category:', 'fleximpleblocks') . '</span>' . esc_html($category->name) . '</a>';
+        $categories_links .= '<a class="' . $default_class_name . '__category" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category" data-category-slug="' . esc_html($category->slug) . '"><span class="screen-reader-only">' . __('Category:', 'fleximpleblocks') . '</span>' . esc_html($category->name) . '</a>';
       }
 
       $post_categories = sprintf(
-        '<div class="%s__entry-categories">%s</div>',
+        '<div class="%s__categories">%s</div>',
         $default_class_name,
         $categories_links
       );
@@ -153,7 +153,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
         $post_title = __('(no title)', 'fleximpleblocks');
       }
       $post_title = sprintf(
-        '<%s class="%s__entry-title">
+        '<%s class="%s__title">
           <a href="%s"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article">
             %s<span class="%s__entry-headline">%s</span>
           </a>
@@ -241,7 +241,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
     foreach ($attributes['orderArticle'] as $article_fragment) {
       /* Post Media */
       if ('media' === $article_fragment && isset($attributes['displayMedia']) && $attributes['displayMedia']) {
-        $post_carousel_markup .= '<div class="' . $default_class_name . '__entry-media">';
+        $post_carousel_markup .= '<div class="' . $default_class_name . '__media">';
         foreach ($attributes['orderMedia'] as $media_fragment) {
           if ('featuredImage' === $media_fragment && $post_featured_image) {
             $post_carousel_markup .= $post_featured_image;
@@ -251,7 +251,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
       }
 
       /* Post Content*/
-      $content_classes = $default_class_name . '__entry-content';
+      $content_classes = $default_class_name . '__content';
       $content_classes .= $attributes['contentAlignment'] ? ' block-align-' . $attributes['contentAlignment'] : '';
       if ('content' === $article_fragment && isset($attributes['displayContent']) && $attributes['displayContent']) {
         $post_carousel_markup .= '<div class="' . $content_classes . '">';
@@ -263,7 +263,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
             $post_carousel_markup .= $post_title;
           }
           if ('meta' === $content_fragment && isset($attributes['displayMeta']) && $attributes['displayMeta']) {
-            $post_carousel_markup .= '<div class="' . $default_class_name . '__entry-meta">';
+            $post_carousel_markup .= '<div class="' . $default_class_name . '__meta">';
             foreach ($attributes['orderMeta'] as $meta_fragment) {
               if ('author' === $meta_fragment && $post_author) {
                 $post_carousel_markup .= $post_author;
@@ -284,7 +284,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
             $post_carousel_markup .= $post_read_more;
           }
         }
-        $post_carousel_markup .= '</div>'; // .fleximple-block-post-carousel__entry-content
+        $post_carousel_markup .= '</div>'; // .fleximple-block-post-carousel__content
       }
     }
     $post_carousel_markup .= '<a class="' . $default_class_name . '__entry-link-overlay" href="' . esc_url(get_permalink($post)) . '"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article" tabindex="-1" aria-hidden="true">' . get_the_title($post) . '</a>';
@@ -322,7 +322,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
   if (isset($attributes['aspectRatio'])) {
     if ($attributes['aspectRatio']['small'] !== 'none') {
       $aspect_ratio_small_array = preg_split("/-/", $attributes['aspectRatio']['small']);
-      $internal_styles .= '.' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm {
+      $internal_styles .= '.' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm {
         padding-bottom: ' . $aspect_ratio_small_array[1] * 100 / $aspect_ratio_small_array[0] . '%;
       }';
     }
@@ -332,7 +332,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
     if ($attributes['aspectRatio']['medium'] !== 'none') {
       $aspect_ratio_medium_array = preg_split("/-/", $attributes['aspectRatio']['medium']);
       $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_small_breakpoint_value') . 'px) {
-        .' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md {
+        .' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md {
           padding-bottom: ' . $aspect_ratio_medium_array[1] * 100 / $aspect_ratio_medium_array[0] . '%;
         }
       }';
@@ -344,7 +344,7 @@ function fleximpleblocks_render_post_carousel_block($attributes)
     if ($attributes['aspectRatio']['large'] !== 'none') {
       $aspect_ratio_large_array = preg_split("/-/", $attributes['aspectRatio']['large']);
       $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) {
-        .' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg {
+        .' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg {
           padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%;
         }
       }';
