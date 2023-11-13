@@ -8,7 +8,7 @@
   /* Spacing Scale */
   // REM units have been chosen over EM in order to maintain
   // absolute spacing references across the whole site.
-  --space-unit: rem(16px);
+  --space-unit: 1rem;
 
   --space-025: calc(var(--space-unit) * 0.25);
   --space-050: calc(var(--space-unit) * 0.5);

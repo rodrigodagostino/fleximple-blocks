@@ -45,7 +45,6 @@
     "postcss-color-mod-function": "3.0.3",
     "postcss-loader": "7.3.3",
     "postcss-preset-env": "9.3.0",
-    "postcss-rem": "2.0.4",
     "prettier": "3.0.3",
     "react-leaflet": "3.2.5",
     "react-select": "5.7.7",
