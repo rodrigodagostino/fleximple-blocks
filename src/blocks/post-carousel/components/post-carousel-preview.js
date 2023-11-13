@@ -5,7 +5,7 @@
 /**
  * External dependencies
  */
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import classNames from 'classnames'
 import { register } from 'swiper/element/bundle'
 

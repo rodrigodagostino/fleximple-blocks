@@ -2,7 +2,7 @@
  * External dependencies
  */
 import memoize from 'memize'
-import times from 'lodash/times'
+import times from 'lodash.times'
 
 /**
  * WordPress dependencies

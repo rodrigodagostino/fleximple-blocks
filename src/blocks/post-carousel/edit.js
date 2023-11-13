@@ -1,11 +1,6 @@
 /* global fleximpleblocksPluginData */
 
 /**
- * External dependencies
- */
-import { isUndefined, pickBy } from 'lodash'
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
@@ -564,16 +559,15 @@ export default compose([
       excludedCategories && excludedCategories.length > 0
         ? excludedCategories.map((cat) => cat.value)
         : []
-    const recentPostsQuery = pickBy(
-      {
+    const recentPostsQuery = Object.fromEntries(
+      Object.entries({
         categories: categoriesIds,
         order,
         orderby: orderBy,
         per_page: postsToShow,
         categories_exclude: excludedCategoriesIds,
         offset,
-      },
-      (value) => !isUndefined(value)
+      }).filter(([, value]) => typeof value !== 'undefined')
     )
 
     const posts = getEntityRecords('postType', 'post', recentPostsQuery)
