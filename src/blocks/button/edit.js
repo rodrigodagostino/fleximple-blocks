@@ -6,7 +6,7 @@ import {
   BlockControls,
   InnerBlocks,
   InspectorControls,
-  __experimentalLinkControl as LinkControl,
+  LinkControl,
   RichText,
   PanelColorSettings,
   useBlockProps,
