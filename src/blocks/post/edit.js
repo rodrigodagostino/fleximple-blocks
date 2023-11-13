@@ -55,6 +55,7 @@ function PostEdit({
     readMore,
   },
   setAttributes,
+  clientId,
   instanceId,
 }) {
   const [postData, setPostData] = useState(null)
@@ -67,13 +68,17 @@ function PostEdit({
     }
 
     if (!postId) {
-      fetchRandomPostId()
+      fetchRandomPost()
       return
     }
-    fetchPostData()
+    fetchPost()
   }, [])
 
-  const fetchRandomPostId = () => {
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
+  const fetchRandomPost = () => {
     if (isFetching) return
 
     apiFetch({
@@ -90,7 +95,7 @@ function PostEdit({
       .catch((error) => console.error(error))
   }
 
-  const fetchPostData = () => {
+  const fetchPost = () => {
     if (isFetching || !postId || !postType) return
     setIsFetching(true)
 
@@ -108,7 +113,7 @@ function PostEdit({
       .finally(() => setIsFetching(false))
   }
 
-  useMemo(() => fetchPostData(), [postId])
+  useMemo(() => fetchPost(), [postId])
 
   const filterImageSizeOptions = (data) => {
     if (data && data.featured_media_data) {

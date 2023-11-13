@@ -39,46 +39,7 @@ function fleximpleblocks_render_post_block($attributes, $content)
     $image_size = $attributes['imageSize'];
     $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post), 'full', false);
 
-    $picture_classes = array();
-    $picture_classes[] = $default_class_name . '__picture';
-    if ($attributes['aspectRatio']['small'] !== 'none') {
-      $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm';
-    }
-    if (
-      $attributes['aspectRatio']['medium'] !== 'none' &&
-      $attributes['aspectRatio']['medium'] !== $attributes['aspectRatio']['small']
-    ) {
-      $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md';
-    }
-    if (
-      $attributes['aspectRatio']['large'] !== 'none' &&
-      $attributes['aspectRatio']['large'] !== $attributes['aspectRatio']['medium']
-    ) {
-      $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg';
-    }
-    if (
-      $attributes['imageSize']['small'] !== 'none' &&
-      (!empty($attributes['focalPoint']['small']['x']) || !empty($attributes['focalPoint']['small']['y'])) &&
-      $attributes['focalPoint']['small']['x'] !== 0.5 && $attributes['focalPoint']['small']['y'] !== 0.5
-    ) {
-      $picture_classes[] = 'object-position-' . $attributes['focalPoint']['small']['x'] * 100 . '-' . $attributes['focalPoint']['small']['y'] * 100 . '--sm';
-    }
-    if (
-      $attributes['imageSize']['medium'] !== 'none' &&
-      (!empty($attributes['focalPoint']['medium']['x']) || !empty($attributes['focalPoint']['medium']['y'])) &&
-      $attributes['focalPoint']['medium']['x'] !== 0.5 && $attributes['focalPoint']['medium']['y'] !== 0.5 &&
-      ($attributes['focalPoint']['medium']['x'] !== $attributes['focalPoint']['small']['x'] || $attributes['focalPoint']['medium']['y'] !== $attributes['focalPoint']['small']['y'])
-    ) {
-      $picture_classes[] = 'object-position-' . $attributes['focalPoint']['medium']['x'] * 100 . '-' . $attributes['focalPoint']['medium']['y'] * 100 . '--md';
-    }
-    if (
-      $attributes['imageSize']['large'] !== 'none' &&
-      (!empty($attributes['focalPoint']['large']['x']) || !empty($attributes['focalPoint']['large']['y'])) &&
-      $attributes['focalPoint']['large']['x'] !== 0.5 && $attributes['focalPoint']['large']['y'] !== 0.5 &&
-      ($attributes['focalPoint']['large']['x'] !== $attributes['focalPoint']['medium']['x'] || $attributes['focalPoint']['large']['y'] !== $attributes['focalPoint']['medium']['y'])
-    ) {
-      $picture_classes[] = 'object-position-' . $attributes['focalPoint']['large']['x'] * 100 . '-' . $attributes['focalPoint']['large']['y'] * 100 . '--lg';
-    }
+    $picture_classes = $default_class_name . '__picture';
 
     $picture_sources = array();
     if ($post_id) {
@@ -106,7 +67,7 @@ function fleximpleblocks_render_post_block($attributes, $content)
         %s
         <img class="%s__image" src="%s" alt="%s"/>
       </picture>',
-      esc_attr(implode(' ', $picture_classes)),
+      $picture_classes,
       implode('', $picture_sources),
       $default_class_name,
       $image_source,
@@ -249,10 +210,7 @@ function fleximpleblocks_render_post_block($attributes, $content)
     $post_extra_articles = $content;
   }
 
-
-  /**
-   * Post Markup
-   */
+  /* Block Markup */
   $post_markup = ''; // It is important to initiate it here so nothing will be overridden inside the following loop.
 
   foreach ($attributes['orderArticle'] as $article_fragment) {
@@ -312,65 +270,61 @@ function fleximpleblocks_render_post_block($attributes, $content)
 
   $post_markup .= '<a class="' . $default_class_name . '__link-overlay" href="' . esc_url(get_permalink($post_id)) . '"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article" tabindex="-1" aria-hidden="true">' . get_the_title($post_id) . '</a>';
 
+  /* Block Classes */
   if (isset($attributes['align']) && $attributes['align']) {
     $classes .= ' align-' . $attributes['align'];
   }
 
+  /* Block Styles */
   $internal_styles = '';
   $internal_styles .= '<style>';
   if (isset($attributes['aspectRatio']) && $attributes['aspectRatio']['small'] !== 'none') {
     $aspect_ratio_small_array = preg_split("/-/", $attributes['aspectRatio']['small']);
-    $internal_styles .= '.' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm {
-      padding-bottom: ' . $aspect_ratio_small_array[1] * 100 / $aspect_ratio_small_array[0] . '%;
-    }';
+    $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture { padding-bottom: ' . $aspect_ratio_small_array[1] * 100 / $aspect_ratio_small_array[0] . '%; }';
   }
   if ($attributes['focalPoint']['small']['x'] !== 0.5 && $attributes['focalPoint']['small']['y'] !== 0.5) {
-    $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['small']['x'] * 100 . '-' . $attributes['focalPoint']['small']['y'] * 100 . '--sm .' . $default_class_name . '__image {
-      object-position: ' . $attributes['focalPoint']['small']['x'] * 100 . '% ' . $attributes['focalPoint']['small']['y'] * 100 . '%;
-    }';
+    $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture .' . $default_class_name . '__image { object-position: ' . $attributes['focalPoint']['small']['x'] * 100 . '% ' . $attributes['focalPoint']['small']['y'] * 100 . '%; }';
   }
+
   if ((isset($attributes['aspectRatio']) && $attributes['aspectRatio']['medium'] !== 'none') || (isset($attributes['focalPoint']) && $attributes['focalPoint']['medium'] !== 'none')) {
     $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_small_breakpoint_value') . 'px) {';
     if ($attributes['aspectRatio']['medium'] !== 'none' && $attributes['aspectRatio']['medium'] !== $attributes['aspectRatio']['small']) {
       $aspect_ratio_medium_array = preg_split("/-/", $attributes['aspectRatio']['medium']);
-      $internal_styles .= '.' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md {
-        padding-bottom: ' . $aspect_ratio_medium_array[1] * 100 / $aspect_ratio_medium_array[0] . '%;
-      }';
+      $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture { padding-bottom: ' . $aspect_ratio_medium_array[1] * 100 / $aspect_ratio_medium_array[0] . '%; }';
     }
     if ($attributes['focalPoint']['medium']['x'] !== 0.5 && $attributes['focalPoint']['medium']['y'] !== 0.5 && $attributes['focalPoint']['medium']['x'] !== $attributes['focalPoint']['small']['x'] && $attributes['focalPoint']['medium']['y'] !== $attributes['focalPoint']['small']['y']) {
-      $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['medium']['x'] * 100 . '-' . $attributes['focalPoint']['medium']['y'] * 100 . '--md .' . $default_class_name . '__image {
-        object-position: ' . $attributes['focalPoint']['medium']['x'] * 100 . '% ' . $attributes['focalPoint']['medium']['y'] * 100 . '%;
-      }';
+      $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture .' . $default_class_name . '__image { object-position: ' . $attributes['focalPoint']['medium']['x'] * 100 . '% ' . $attributes['focalPoint']['medium']['y'] * 100 . '%; }';
     }
     $internal_styles .= '}';
   }
+
   if ((isset($attributes['aspectRatio']) && $attributes['aspectRatio']['large'] !== 'none') || (isset($attributes['focalPoint']) && $attributes['focalPoint']['large'] !== 'none')) {
     $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) {';
+    $internal_styles .= '.fleximple-block-post__footer { flex-direction: row; justify-content: space-between; }';
+    $internal_styles .= '.fleximple-block-post__footer > * { flex: 1; }';
+    $internal_styles .= '.fleximple-block-post__footer > * + * { margin-left: var(--space-125, 1.25rem); }';
     if ($attributes['aspectRatio']['large'] !== 'none' && $attributes['aspectRatio']['large'] !== $attributes['aspectRatio']['medium']) {
       $aspect_ratio_large_array = preg_split("/-/", $attributes['aspectRatio']['large']);
-      $internal_styles .= '.' . $default_class_name . '__picture.aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg {
-        padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%;
-      }';
+      $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture { padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%; }';
     }
     if ($attributes['focalPoint']['large']['x'] !== 0.5 && $attributes['focalPoint']['large']['y'] !== 0.5 && $attributes['focalPoint']['large']['x'] !== $attributes['focalPoint']['medium']['x'] && $attributes['focalPoint']['large']['y'] !== $attributes['focalPoint']['medium']['y']) {
-      $internal_styles .= '.' . $default_class_name . '__picture.object-position-' . $attributes['focalPoint']['large']['x'] * 100 . '-' . $attributes['focalPoint']['large']['y'] * 100 . '--lg .' . $default_class_name . '__image {
-        object-position: ' . $attributes['focalPoint']['large']['x'] * 100 . '% ' . $attributes['focalPoint']['large']['y'] * 100 . '%;
-      }';
+      $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture .' . $default_class_name . '__image { object-position: ' . $attributes['focalPoint']['large']['x'] * 100 . '% ' . $attributes['focalPoint']['large']['y'] * 100 . '%; }';
     }
     $internal_styles .= '}';
   }
   $internal_styles .= '</style>';
 
   $block_content = sprintf(
-    '<article class="%s%s" data-post-id="%s">
+    '<article class="%s%s" data-post-id="%s" data-block-id="%s">
       %s
       %s
     </article>',
     esc_attr($default_class_name),
     !empty($class_name) ? ' ' . esc_attr($class_name) : '',
     esc_attr($post_id),
+    $attributes['blockId'],
+    $post_markup,
     !empty($internal_styles) ? $internal_styles : '',
-    $post_markup
   );
 
   return $block_content;

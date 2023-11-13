@@ -3,6 +3,10 @@
   "name": "fleximple-blocks/post",
   "category": "fleximple-blocks",
   "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
     "postId": {
       "type": "number",
       "default": null

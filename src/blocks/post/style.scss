@@ -13,7 +13,7 @@ $default-class-name: "fleximple-block-post";
 
   &__media + &__content,
   &__content + &__media {
-    margin-top: 16px;
+    margin-top: 1rem;
   }
 
   &__media {
@@ -50,19 +50,7 @@ $default-class-name: "fleximple-block-post";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    & > * {
-      margin-top: 2px !important;
-      margin-bottom: 2px !important;
-
-      &:first-child {
-        margin-top: 0 !important;
-      }
-
-      &:last-child {
-        margin-bottom: 0 !important;
-      }
-    }
+    gap: var(--space-025, 0.5rem);
   }
 
   &__categories {
@@ -70,7 +58,7 @@ $default-class-name: "fleximple-block-post";
   }
 
   &__category {
-    margin-right: 8px;
+    margin-right: var(--space-025, 0.5rem);
     position: relative;
     z-index: 1;
 
@@ -80,6 +68,7 @@ $default-class-name: "fleximple-block-post";
   }
 
   &__title {
+    margin: 0;
     line-height: 1.25;
 
     .#{$default-class-name}__kicker {
@@ -114,7 +103,7 @@ $default-class-name: "fleximple-block-post";
   }
 
   &__excerpt {
-    font-size: 15px;
+    font-size: var(--text-100, 1rem);
     line-height: 1.5;
 
     p {
@@ -123,7 +112,7 @@ $default-class-name: "fleximple-block-post";
   }
 
   &__read-more {
-    font-size: 15px;
+    font-size: var(--text-100, 1rem);
     display: inline-block;
     z-index: 1;
   }
@@ -132,10 +121,10 @@ $default-class-name: "fleximple-block-post";
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    margin-top: 8px;
+    margin-top: var(--space-050);
 
     .#{$default-class-name}__title {
-      font-size: 15px;
+      font-size: var(--text-100, 1rem);
     }
   }
 
@@ -162,29 +151,12 @@ $default-class-name: "fleximple-block-post";
 
     & .fleximple-block-post__content {
       flex: 0 0 40%;
-      padding: var(--space-125, 20px);
+      padding: var(--space-125, 1.25rem);
       margin-top: -5rem;
-      margin-left: var(--space-125, 20px);
-      margin-right: var(--space-125, 20px);
+      margin-left: var(--space-125, 1.25rem);
+      margin-right: var(--space-125, 1.25rem);
       position: relative;
       background-color: var(--white-rich);
-    }
-  }
-}
-
-@media only screen and (min-width: 46.25em) {
-  .fleximple-block-post {
-    &__footer {
-      flex-direction: row;
-      justify-content: space-between;
-
-      & > * {
-        flex: 1;
-      }
-
-      & > * + * {
-        margin-left: var(--space-125, 20px);
-      }
     }
   }
 }
