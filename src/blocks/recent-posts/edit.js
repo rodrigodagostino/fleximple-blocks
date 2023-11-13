@@ -51,8 +51,8 @@ function RecentPostsEdit({
   attributes: {
     layout,
     columns,
-    gapRow,
     gapColumn,
+    gapRow,
     headingLevel,
     excerptLength,
     noFollow,
@@ -76,16 +76,13 @@ function RecentPostsEdit({
   },
   setAttributes,
   recentPosts,
+  clientId,
   instanceId,
 }) {
   const [categoriesList, setCategoriesList] = useState([])
-  const [selectedPostsData, setSelectedPostsData] = useState([])
-  const [isStillMounted, setIsStillMounted] = useState(false)
+  const [selectedPostsData, setSelectedPosts] = useState([])
 
-  // componentWillMount equivalent
   useEffect(() => {
-    setIsStillMounted(true)
-
     if (!attributes.className) {
       setAttributes({ className: 'is-style-standard' })
     }
@@ -96,29 +93,29 @@ function RecentPostsEdit({
       }),
     })
       .then((results) => {
-        if (isStillMounted) setCategoriesList(results)
+        setCategoriesList(results)
       })
-      .catch(() => {
-        if (isStillMounted) setCategoriesList([])
+      .catch((error) => {
+        console.error(error)
+        setCategoriesList([])
       })
 
     if (selectedPosts) {
-      fetchSelectedPostsData()
-    }
-
-    // componentWillUnmount equivalent
-    return () => {
-      setIsStillMounted(false)
+      fetchSelectedPosts()
     }
   }, [])
 
   useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
+
+  useEffect(() => {
     if (selectedPosts && selectedPosts.length > 0) {
-      fetchSelectedPostsData()
+      fetchSelectedPosts()
     }
   }, [selectedPosts])
 
-  const fetchSelectedPostsData = async () => {
+  const fetchSelectedPosts = async () => {
     const map = new Map()
     await Promise.all(
       selectedPosts.map(async (selectedPost) => {
@@ -136,7 +133,7 @@ function RecentPostsEdit({
       arrangedSelectedPosts.push(map.get(selectedPost))
     })
 
-    setSelectedPostsData(arrangedSelectedPosts)
+    setSelectedPosts(arrangedSelectedPosts)
   }
 
   const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map((size) => {
@@ -183,22 +180,11 @@ function RecentPostsEdit({
                 />
               )}
 
-              <SpacingControl
-                valueLabel={__('Row gap', 'fleximpleblocks')}
-                unitLabel={__('Row gap unit', 'fleximpleblocks')}
-                className="gap-v-small"
-                initialPosition={0}
-                min={0}
-                max={200}
-                attribute={gapRow}
-                target={tab.name}
-                onChange={(value) => setAttributes({ gapRow: value })}
-              />
-
               {layout === 'grid' && (
                 <SpacingControl
                   valueLabel={__('Column gap', 'fleximpleblocks')}
                   unitLabel={__('Column gap unit', 'fleximpleblocks')}
+                  className="gap-v-small"
                   initialPosition={0}
                   min={0}
                   max={200}
@@ -207,6 +193,17 @@ function RecentPostsEdit({
                   onChange={(value) => setAttributes({ gapColumn: value })}
                 />
               )}
+
+              <SpacingControl
+                valueLabel={__('Row gap', 'fleximpleblocks')}
+                unitLabel={__('Row gap unit', 'fleximpleblocks')}
+                initialPosition={0}
+                min={0}
+                max={200}
+                attribute={gapRow}
+                target={tab.name}
+                onChange={(value) => setAttributes({ gapRow: value })}
+              />
             </>
           )}
         </ResponsiveSettingsTabPanel>

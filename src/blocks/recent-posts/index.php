@@ -66,19 +66,6 @@ function fleximpleblocks_render_recent_posts_block($attributes)
       $image_size = $attributes['imageSize'];
       $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post), 'full', false);
 
-      $picture_classes = array();
-      $picture_classes[] = $default_class_name . '__entry-picture';
-
-      if ($attributes['aspectRatio']['small'] !== 'none') {
-        $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm';
-      }
-      if ($attributes['aspectRatio']['medium'] !== 'none' && $attributes['aspectRatio']['medium'] !== $attributes['aspectRatio']['small']) {
-        $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md';
-      }
-      if ($attributes['aspectRatio']['large'] !== 'none' && $attributes['aspectRatio']['large'] !== $attributes['aspectRatio']['medium']) {
-        $picture_classes[] = 'aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg';
-      }
-
       $picture_sources = array();
       if ($post->ID) {
         $image_sizes = array_reverse(array_keys($image_size));
@@ -105,7 +92,7 @@ function fleximpleblocks_render_recent_posts_block($attributes)
           %s
           <img class="%s__entry-image" src="%s" alt="%s"/>
         </picture>',
-        esc_attr(implode(' ', $picture_classes)),
+        $default_class_name . '__entry-picture',
         implode('', $picture_sources),
         $default_class_name,
         $image_source,
@@ -209,7 +196,7 @@ function fleximpleblocks_render_recent_posts_block($attributes)
       );
     }
 
-    /* Post Read more */
+    /* Post Read More */
     $post_read_more = '';
     if (isset($attributes['displayReadMore']) && $attributes['displayReadMore']) {
       $post_read_more = $attributes['readMore'];
@@ -221,11 +208,11 @@ function fleximpleblocks_render_recent_posts_block($attributes)
       );
     }
 
-
+    /* Block Markup */
     $recent_posts_markup .= '<article id="post-' . $post->ID . '"class="' . $default_class_name . '__entry">';
     foreach ($attributes['orderArticle'] as $article_fragment) {
       if ('media' === $article_fragment && isset($attributes['displayMedia']) && $attributes['displayMedia']) {
-        $recent_posts_markup .= '<div class="' . $default_class_name . '__entry-media"' . ($attributes['layout'] === 'list' && $attributes['imageWidth'] ? ' style="width:' . $attributes['imageWidth'] . '%"' : '') . '>';
+        $recent_posts_markup .= '<div class="' . $default_class_name . '__entry-media">';
         foreach ($attributes['orderMedia'] as $media_fragment) {
           if ('featuredImage' === $media_fragment && $post_featured_image) {
             $recent_posts_markup .= $post_featured_image;
@@ -272,106 +259,87 @@ function fleximpleblocks_render_recent_posts_block($attributes)
     $recent_posts_markup .= '</article>';
   }
 
+  /* Block Classes */
   if (isset($attributes['layout'])) {
     $classes .= ' ' . $default_class_name . '--' . $attributes['layout'];
   }
-  if (isset($attributes['columns']['small'])) {
-    $classes .= ' col-' . $attributes['columns']['small'] . '--sm';
-  }
-  if (isset($attributes['columns']['medium'])) {
-    $classes .= ' col-' . $attributes['columns']['medium'] . '--md';
-  }
-  if (isset($attributes['columns']['large'])) {
-    $classes .= ' col-' . $attributes['columns']['large'] . '--lg';
-  }
-  if (isset($attributes['gapRow']['small']['value'])) {
-    $classes .= ' gap-row-' . $attributes['gapRow']['small']['value'] . ($attributes['gapRow']['small']['unit'] === '%' ? 'pct' : $attributes['gapRow']['small']['unit']) . '--sm';
-  }
-  if (isset($attributes['gapRow']['medium']['value'])) {
-    $classes .= ' gap-row-' . $attributes['gapRow']['medium']['value'] . ($attributes['gapRow']['medium']['unit'] === '%' ? 'pct' : $attributes['gapRow']['medium']['unit']) . '--md';
-  }
-  if (isset($attributes['gapRow']['large']['value'])) {
-    $classes .= ' gap-row-' . $attributes['gapRow']['large']['value'] . ($attributes['gapRow']['large']['unit'] === '%' ? 'pct' : $attributes['gapRow']['large']['unit']) . '--lg';
-  }
-  if (isset($attributes['gapColumn']['small']['value'])) {
-    $classes .= ' gap-column-' . $attributes['gapColumn']['small']['value'] . ($attributes['gapColumn']['small']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['small']['unit']) . '--sm';
-  }
-  if (isset($attributes['gapColumn']['medium']['value'])) {
-    $classes .= ' gap-column-' . $attributes['gapColumn']['medium']['value'] . ($attributes['gapColumn']['medium']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['medium']['unit']) . '--md';
-  }
-  if (isset($attributes['gapColumn']['large']['value'])) {
-    $classes .= ' gap-column-' . $attributes['gapColumn']['large']['value'] . ($attributes['gapColumn']['large']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['large']['unit']) . '--lg';
-  }
 
-  if (isset($attributes['align']) && $attributes['align']) {
-    $classes .= ' align' . $attributes['align'];
-  }
-
+  /* Block Styles */
   $internal_styles = '<style>';
-  if (isset($attributes['columns']['small']) || isset($attributes['aspectRatio'])) {
-    if (isset($attributes['layout']) && 'list' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['small']['value'] . ($attributes['gapRow']['small']['unit'] === '%' ? 'pct' : $attributes['gapRow']['small']['unit']) . '--sm .' . $default_class_name . '__entry { margin-bottom:' . $attributes['gapRow']['small']['value'] . $attributes['gapRow']['small']['unit'] . '; }';
+  $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] { ';
+  if (isset($attributes['layout']) && $attributes['layout'] === 'list') {
+    $internal_styles .= 'gap: ' . $attributes['gapRow']['small']['value'] . $attributes['gapRow']['small']['unit'] . ';';
+  }
+  if (isset($attributes['layout']) && $attributes['layout'] === 'grid') {
+    $internal_styles .= 'grid-template-columns: repeat(' . $attributes['columns']['small'] . ', 1fr);';
+    $internal_styles .= 'grid-column-gap: ' . $attributes['gapColumn']['small']['value'] . $attributes['gapColumn']['small']['unit'] . ';';
+    $internal_styles .= 'grid-row-gap: ' . $attributes['gapRow']['small']['value'] . $attributes['gapRow']['small']['unit'] . ';';
+  }
+  $internal_styles .= ' } ';
+  $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__entry-picture { ';
+  if (isset($attributes['aspectRatio']['small']) && $attributes['aspectRatio']['small'] !== 'none') {
+    $aspect_ratio_small_array = preg_split("/-/", $attributes['aspectRatio']['small']);
+    $internal_styles .= 'padding-bottom: ' . $aspect_ratio_small_array[1] * 100 / $aspect_ratio_small_array[0] . '%;';
+  }
+  $internal_styles .= ' } ';
+
+  $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) { ';
+  $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] { ';
+  if (isset($attributes['layout']) && $attributes['layout'] === 'list') {
+    $internal_styles .= 'gap: ' . $attributes['gapRow']['medium']['value'] . $attributes['gapRow']['medium']['unit'] . ';';
+  }
+  if (isset($attributes['layout']) && $attributes['layout'] === 'grid') {
+    if (isset($attributes['columns']['medium']) && 'grid' === $attributes['layout']) {
+      $internal_styles .= 'grid-template-columns: repeat(' . $attributes['columns']['medium'] . ', 1fr);';
     }
-    if (isset($attributes['layout']) && 'grid' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['small']['value'] . ($attributes['gapRow']['small']['unit'] === '%' ? 'pct' : $attributes['gapRow']['small']['unit']) . '--sm { grid-row-gap:' . $attributes['gapRow']['small']['value'] . $attributes['gapRow']['small']['unit'] . '; }';
-      $internal_styles .= '.' . $default_class_name . '.gap-column-' . $attributes['gapColumn']['small']['value'] . ($attributes['gapColumn']['small']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['small']['unit']) . '--sm { grid-column-gap:' . $attributes['gapColumn']['small']['value'] . $attributes['gapRow']['small']['unit'] . '; }';
+    if (isset($attributes['gapRow']['medium']['value']) && $attributes['gapRow']['medium']['value'] !== $attributes['gapRow']['small']['value']) {
+      $internal_styles .= 'grid-row-gap: ' . $attributes['gapRow']['medium']['value'] . $attributes['gapRow']['medium']['unit'] . ';';
     }
-    if ($attributes['aspectRatio']['small'] !== 'none') {
-      $aspect_ratio_small_array = preg_split("/-/", $attributes['aspectRatio']['small']);
-      $internal_styles .= '.' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['small'] . '--sm {
-        padding-bottom: ' . $aspect_ratio_small_array[1] * 100 / $aspect_ratio_small_array[0] . '%;
-      }';
+    if (isset($attributes['gapColumn']['medium']['value']) && $attributes['gapColumn']['medium']['value'] !== $attributes['gapColumn']['small']['value']) {
+      $internal_styles .= 'grid-column-gap: ' . $attributes['gapColumn']['medium']['value'] . $attributes['gapColumn']['medium']['unit'] . ';';
     }
   }
-  if (isset($attributes['columns']['medium']) || isset($attributes['aspectRatio'])) {
-    $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) { ';
-    if (isset($attributes['layout']) && 'list' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['medium']['value'] . ($attributes['gapRow']['medium']['unit'] === '%' ? 'pct' : $attributes['gapRow']['medium']['unit']) . '--md .' . $default_class_name . '__entry { margin-bottom:' . $attributes['gapRow']['medium']['value'] . $attributes['gapRow']['medium']['unit'] . '; }';
-    }
-    if (isset($attributes['layout']) && 'grid' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['medium']['value'] . ($attributes['gapRow']['medium']['unit'] === '%' ? 'pct' : $attributes['gapRow']['medium']['unit']) . '--md { grid-row-gap:' . $attributes['gapRow']['medium']['value'] . $attributes['gapRow']['medium']['unit'] . '; }';
-      $internal_styles .= '.' . $default_class_name . '.gap-column-' . $attributes['gapColumn']['medium']['value'] . ($attributes['gapColumn']['medium']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['medium']['unit']) . '--md { grid-column-gap:' . $attributes['gapColumn']['medium']['value'] . $attributes['gapColumn']['medium']['unit'] . '; }';
-    }
-    if ($attributes['aspectRatio']['medium'] !== 'none') {
-      $aspect_ratio_medium_array = preg_split("/-/", $attributes['aspectRatio']['medium']);
-      $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_small_breakpoint_value') . 'px) {
-        .' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['medium'] . '--md {
-          padding-bottom: ' . $aspect_ratio_medium_array[1] * 100 / $aspect_ratio_medium_array[0] . '%;
-        }
-      }';
-    }
-    $internal_styles .= ' }';
+  $internal_styles .= ' }';
+  if ($attributes['aspectRatio']['medium'] !== 'none' && $attributes['aspectRatio']['medium'] !== $attributes['aspectRatio']['small']) {
+    $aspect_ratio_medium_array = preg_split("/-/", $attributes['aspectRatio']['medium']);
+    $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__entry-picture { padding-bottom: ' . $aspect_ratio_medium_array[1] * 100 / $aspect_ratio_medium_array[0] . '%; }';
   }
-  if (isset($attributes['columns']['large']) && isset($attributes['aspectRatio'])) {
-    $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_large_breakpoint_value') . 'px) { ';
-    if (isset($attributes['layout']) && 'list' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['large']['value'] . ($attributes['gapRow']['large']['unit'] === '%' ? 'pct' : $attributes['gapRow']['large']['unit']) . '--lg .' . $default_class_name . '__entry { margin-bottom:' . $attributes['gapRow']['large']['value'] . $attributes['gapRow']['large']['unit'] . '; }';
-    }
-    if (isset($attributes['layout']) && 'grid' === $attributes['layout']) {
-      $internal_styles .= '.' . $default_class_name . '.gap-row-' . $attributes['gapRow']['large']['value'] . ($attributes['gapRow']['large']['unit'] === '%' ? 'pct' : $attributes['gapRow']['large']['unit']) . '--lg { grid-row-gap:' . $attributes['gapRow']['large']['value'] . $attributes['gapRow']['large']['unit'] . '; }';
-      $internal_styles .= '.' . $default_class_name . '.gap-column-' . $attributes['gapColumn']['large']['value'] . ($attributes['gapColumn']['large']['unit'] === '%' ? 'pct' : $attributes['gapColumn']['large']['unit']) . '--lg { grid-column-gap:' . $attributes['gapColumn']['large']['value'] . $attributes['gapColumn']['large']['unit'] . '; }';
-    }
-    if ($attributes['aspectRatio']['large'] !== 'none') {
-      $aspect_ratio_large_array = preg_split("/-/", $attributes['aspectRatio']['large']);
-      $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) {
-        .' . $default_class_name . '__entry-picture.aspect-ratio-' . $attributes['aspectRatio']['large'] . '--lg {
-          padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%;
-        }
-      }';
-    }
-    $internal_styles .= ' }';
+  $internal_styles .= ' }';
+
+  $internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_large_breakpoint_value') . 'px) { ';
+  $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] { ';
+  if (isset($attributes['layout']) && $attributes['layout'] === 'list') {
+    $internal_styles .= 'gap: ' . $attributes['gapRow']['large']['value'] . $attributes['gapRow']['large']['unit'] . ';';
   }
+  if (isset($attributes['layout']) && $attributes['layout'] === 'grid') {
+    if (isset($attributes['columns']['large']) && 'grid' === $attributes['layout']) {
+      $internal_styles .= 'grid-template-columns: repeat(' . $attributes['columns']['large'] . ', 1fr);';
+    }
+    if (isset($attributes['gapRow']['large']['value']) && $attributes['gapRow']['large']['value'] !== $attributes['gapRow']['medium']['value']) {
+      $internal_styles .= 'grid-row-gap: ' . $attributes['gapRow']['large']['value'] . $attributes['gapRow']['large']['unit'] . ';';
+    }
+    if (isset($attributes['gapColumn']['large']['value']) && $attributes['gapColumn']['large']['value'] !== $attributes['gapColumn']['medium']['value']) {
+      $internal_styles .= 'grid-column-gap: ' . $attributes['gapColumn']['large']['value'] . $attributes['gapColumn']['large']['unit'] . ';';
+    }
+  }
+  $internal_styles .= ' }';
+  if ($attributes['aspectRatio']['large'] !== 'none' && $attributes['aspectRatio']['large'] !== $attributes['aspectRatio']['medium']) {
+    $aspect_ratio_large_array = preg_split("/-/", $attributes['aspectRatio']['large']);
+    $internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__entry-picture { padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%; }';
+  }
+  $internal_styles .= ' }';
   $internal_styles .= '</style>';
 
   $block_content = sprintf(
-    '<div class="%s%s">
+    '<div class="%s%s" data-block-id="%s">
       %s
       %s
     </div>',
-    !empty($class_name) ? esc_attr($class_name) : '',
-    !empty($classes) ? ' ' . esc_attr($classes) : '',
+    !empty($classes) ? esc_attr($classes) : '',
+    !empty($class_name) ? ' ' . esc_attr($class_name) : '',
+    $attributes['blockId'],
+    $recent_posts_markup,
     !empty($internal_styles) ? $internal_styles : '',
-    $recent_posts_markup
   );
 
   return $block_content;

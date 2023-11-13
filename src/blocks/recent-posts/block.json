@@ -3,6 +3,10 @@
   "name": "fleximple-blocks/recent-posts",
   "category": "fleximple-blocks",
   "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": null
+    },
     "layout": {
       "type": "string",
       "default": "grid"
@@ -15,7 +19,7 @@
         "large": 2
       }
     },
-    "gapRow": {
+    "gapColumn": {
       "type": "object",
       "default": {
         "small": {
@@ -32,7 +36,7 @@
         }
       }
     },
-    "gapColumn": {
+    "gapRow": {
       "type": "object",
       "default": {
         "small": {
