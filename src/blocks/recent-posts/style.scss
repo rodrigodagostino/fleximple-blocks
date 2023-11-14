@@ -89,6 +89,7 @@ $default-class-name: "fleximple-block-recent-posts";
     margin-right: 8px;
     position: relative;
     z-index: 1;
+    text-decoration: none;
 
     &:last-child {
       margin-right: 0;
@@ -111,6 +112,7 @@ $default-class-name: "fleximple-block-recent-posts";
     a {
       position: relative;
       z-index: 1;
+      text-decoration: none;
     }
   }
 
