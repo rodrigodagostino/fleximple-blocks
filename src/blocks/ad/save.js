@@ -10,10 +10,14 @@ import { getBlockDefaultClassName } from '@wordpress/blocks'
  * Internal dependencies
  */
 import metadata from './block.json'
+import InlineStyles from './inline-styles'
 
 const { name } = metadata
 
-function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
+function AdSave({
+  attributes,
+  attributes: { blockId, id, url, alt, linkUrl, linkTarget },
+}) {
   const defaultClassName = getBlockDefaultClassName(name)
 
   const pictureSources = []
@@ -25,7 +29,7 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
       if (value) {
         pictureSources.push(
           <source
-            className={`${defaultClassName}__image`}
+            className={`${defaultClassName}__source`}
             // Assign the closest lower breakpoint
             // (“small” shouldn’t have a media attribute).
             media={
@@ -46,7 +50,7 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
   const imageSource = url.small ? url.small : null
 
   return (
-    <picture {...useBlockProps.save()}>
+    <picture {...useBlockProps.save()} data-block-id={blockId}>
       {(!!id.small || !!id.medium || !!id.large) && (
         <>
           {pictureSources}
@@ -67,6 +71,8 @@ function AdSave({ attributes: { id, url, alt, linkUrl, linkTarget } }) {
           )}
         </>
       )}
+
+      <InlineStyles {...{ defaultClassName, attributes }} />
     </picture>
   )
 }

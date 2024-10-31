@@ -29,6 +29,7 @@ import metadata from './block.json'
 import icon from './icon'
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel'
 import { setResponsiveAttribute } from './../../js/utils'
+import InlineStyles from './inline-styles'
 
 const { name } = metadata
 
@@ -39,9 +40,10 @@ const ALLOWED_MEDIA_TYPES = ['image', 'video']
 
 function AdEdit({
   attributes,
-  attributes: { id, url, size, alt, linkUrl, linkTarget },
+  attributes: { blockId, id, url, size, width, alt, linkUrl, linkTarget },
   setAttributes,
   instanceId,
+  clientId,
 }) {
   const [mediaData, setMediaData] = useState()
 
@@ -50,6 +52,10 @@ function AdEdit({
       fetchMediaData()
     }
   }, [])
+
+  useEffect(() => {
+    setAttributes({ blockId: clientId })
+  }, [clientId])
 
   const fetchMediaData = async () => {
     const mediaIds = Object.entries(id)
@@ -93,7 +99,7 @@ function AdEdit({
         if (value) {
           pictureSources.push(
             <source
-              className={`${defaultClassName}__image`}
+              className={`${defaultClassName}__source`}
               // Assign the closest lower breakpoint
               // (“small” shouldn’t have a media attribute).
               media={
@@ -214,6 +220,26 @@ function AdEdit({
 
                   {!!id[tab.name] && mediaData && (
                     <SelectControl
+                      label={__('Width', 'fleximpleblocks')}
+                      value={width[tab.name]}
+                      options={[
+                        { label: __('Auto', 'fleximpleblocks'), value: 'auto' },
+                        { label: __('Full', 'fleximpleblocks'), value: 'full' },
+                      ]}
+                      onChange={(value) => {
+                        setResponsiveAttribute(
+                          attributes,
+                          setAttributes,
+                          'width',
+                          tab.name,
+                          value
+                        )
+                      }}
+                    />
+                  )}
+
+                  {!!id[tab.name] && mediaData && (
+                    <SelectControl
                       label={__('Size', 'fleximpleblocks')}
                       value={size[tab.name]}
                       options={[
@@ -282,7 +308,7 @@ function AdEdit({
         </PanelBody>
       </InspectorControls>
 
-      <picture {...blockProps}>
+      <picture {...blockProps} data-block-id={blockId}>
         {!id.small && !id.medium && !id.large && (
           <Placeholder
             icon={icon}
@@ -341,6 +367,8 @@ function AdEdit({
             />
           </>
         )}
+
+        <InlineStyles {...{ defaultClassName, attributes }} />
       </picture>
     </>
   )
