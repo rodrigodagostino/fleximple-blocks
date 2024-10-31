@@ -10,12 +10,19 @@ $default-class-name: "fleximple-block-ad";
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  &:empty {
+    display: none;
+  }
 
   &__image {
     max-width: 100%;
   }
 
-  &:empty {
-    display: none;
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 }
