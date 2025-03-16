@@ -168,7 +168,7 @@ function fleximpleblocks_render_recent_posts_block($attributes)
     }
 
     /* Post Comments */
-    $post_excerpt = '';
+    $post_comments = '';
     if (!empty($attributes['displayComments'])) {
       $comments_number = get_comments_number($post);
       $comments_number = sprintf(_n('%d comment', '%d comments', $comments_number, 'fleximpleblocks'), $comments_number);
