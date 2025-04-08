@@ -15,8 +15,8 @@
 function fleximpleblocks_render_date_and_time_block( $attributes ) {
 
   $default_class_name = 'fleximple-block-date-and-time';
-  $class_name = $attributes['className'];
-  $classes = 'fleximple-block-date-and-time';
+  // $class_name = $attributes['className'];
+  // $classes = 'fleximple-block-date-and-time';
 
 
   /**
