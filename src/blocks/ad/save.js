@@ -66,7 +66,7 @@ function AdSave({
               target={linkTarget}
               rel="noopener"
             >
-              <span>{alt}</span>
+              <span className="screen-reader-only">{alt}</span>
             </a>
           )}
         </>

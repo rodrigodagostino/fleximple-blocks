@@ -25,7 +25,7 @@ import {
   ToggleControl,
   ToolbarButton,
 } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { useCallback, useEffect, useState } from '@wordpress/element'
 import { rawShortcut, displayShortcut } from '@wordpress/keycodes'
 import { link, linkOff } from '@wordpress/icons'
@@ -393,7 +393,6 @@ function ButtonEdit({
   )
 }
 
-export default compose([
-  withColors('backgroundColor', { textColor: 'color' }),
-  withInstanceId,
-])(ButtonEdit)
+export default compose([withColors('backgroundColor', { textColor: 'color' })])(
+  ButtonEdit
+)

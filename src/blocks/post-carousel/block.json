@@ -1,6 +1,8 @@
 {
-  "apiVersion": 2,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "fleximple-blocks/post-carousel",
+  "title": "Post Carousel",
   "category": "fleximple-blocks",
   "attributes": {
     "slidesPerView": {

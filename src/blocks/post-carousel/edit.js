@@ -20,7 +20,7 @@ import {
   TextControl,
   ToggleControl,
 } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { withSelect } from '@wordpress/data'
 import { useEffect, useState } from '@wordpress/element'
 import { addQueryArgs } from '@wordpress/url'
@@ -85,10 +85,11 @@ function PostCarouselEdit({
   },
   setAttributes,
   recentPosts,
-  instanceId,
   buttonIconColor,
   setButtonIconColor,
 }) {
+  const instanceId = useInstanceId(PostCarouselEdit)
+
   const [categoriesList, setCategoriesList] = useState([])
   const [selectedPostsData, setSelectedPostsData] = useState([])
 
@@ -301,7 +302,10 @@ function PostCarouselEdit({
         />
 
         {!!selectManually && (
-          <PostCarouselSelectControl {...{ attributes, setAttributes }} />
+          <PostCarouselSelectControl
+            {...{ attributes, setAttributes }}
+            instanceId={instanceId}
+          />
         )}
       </PanelBody>
 
@@ -580,6 +584,5 @@ export default compose([
           }),
     }
   }),
-  withInstanceId,
   withColors({ buttonIconColor: 'color' }),
 ])(PostCarouselEdit)

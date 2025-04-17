@@ -17,7 +17,7 @@ import {
   RichText,
 } from '@wordpress/block-editor'
 import { BaseControl, Icon, PanelBody, Tooltip } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { dispatch, withSelect } from '@wordpress/data'
 import { useEffect, useMemo, useState } from '@wordpress/element'
 import { ENTER, SPACE } from '@wordpress/keycodes'
@@ -45,9 +45,10 @@ const TabsEdit = ({
   attributes: { count, tabsData, tabsAlignment },
   setAttributes,
   clientId,
-  instanceId,
   block,
 }) => {
+  const instanceId = useInstanceId(TabsEdit)
+
   const [currentTab, setCurrentTab] = useState(1)
 
   useEffect(() => {
@@ -266,5 +267,4 @@ export default compose([
       block: getBlock(clientId),
     }
   }),
-  withInstanceId,
 ])(TabsEdit)

@@ -23,7 +23,7 @@ import {
   RadioControl,
   ToggleControl,
 } from '@wordpress/components'
-import { withInstanceId } from '@wordpress/compose'
+import { useInstanceId } from '@wordpress/compose'
 import { useEffect } from '@wordpress/element'
 
 /**
@@ -79,7 +79,7 @@ const TEMPLATE = [
   ],
 ]
 
-function ProfileEdit({
+export default function ProfileEdit({
   attributes,
   attributes: {
     blockId,
@@ -98,8 +98,9 @@ function ProfileEdit({
   },
   setAttributes,
   clientId,
-  instanceId,
 }) {
+  const instanceId = useInstanceId(ProfileEdit)
+
   useEffect(() => {
     setAttributes({ blockId: clientId })
   }, [clientId])
@@ -412,5 +413,3 @@ function ProfileEdit({
     </>
   )
 }
-
-export default withInstanceId(ProfileEdit)

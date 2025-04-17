@@ -9,7 +9,7 @@ import {
 } from '@wordpress/block-editor'
 import { getBlockDefaultClassName } from '@wordpress/blocks'
 import { BaseControl, PanelBody, RadioControl } from '@wordpress/components'
-import { withInstanceId } from '@wordpress/compose'
+import { useInstanceId } from '@wordpress/compose'
 import { useEffect } from '@wordpress/element'
 
 /**
@@ -27,13 +27,14 @@ const { name } = metadata
 const ALLOWED_BLOCKS = ['fleximple-blocks/button']
 const TEMPLATE = [['fleximple-blocks/button'], ['fleximple-blocks/button']]
 
-function ButtonsEdit({
+export default function ButtonsEdit({
   attributes,
   attributes: { blockId, direction, alignmentHorizontal, gap },
   setAttributes,
   clientId,
-  instanceId,
 }) {
+  const instanceId = useInstanceId(ButtonsEdit)
+
   useEffect(() => {
     setAttributes({ blockId: clientId })
   }, [clientId])
@@ -125,5 +126,3 @@ function ButtonsEdit({
     </>
   )
 }
-
-export default withInstanceId(ButtonsEdit)

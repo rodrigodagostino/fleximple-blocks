@@ -10,7 +10,7 @@ import {
   withColors,
 } from '@wordpress/block-editor'
 import { BaseControl, PanelBody } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { withSelect } from '@wordpress/data'
 import { useEffect } from '@wordpress/element'
 
@@ -41,8 +41,9 @@ const FeatureEdit = ({
   attributes: { blockId, textAlignment, contentGap },
   setAttributes,
   clientId,
-  instanceId,
 }) => {
+  const instanceId = useInstanceId(FeatureEdit)
+
   useEffect(() => {
     setAttributes({ blockId: clientId })
   }, [clientId])
@@ -116,5 +117,4 @@ export default compose([
       block: getBlock(clientId),
     }
   }),
-  withInstanceId,
 ])(FeatureEdit)

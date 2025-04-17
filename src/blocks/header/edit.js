@@ -12,7 +12,7 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor'
 import { BaseControl, PanelBody } from '@wordpress/components'
-import { withInstanceId } from '@wordpress/compose'
+import { useInstanceId } from '@wordpress/compose'
 import { useEffect } from '@wordpress/element'
 
 /**
@@ -27,7 +27,7 @@ import SpacingPanel from 'fleximple-components/components/spacing-panel'
 
 const { name } = metadata
 
-function HeaderEdit({
+export default function HeaderEdit({
   attributes,
   attributes: {
     blockId,
@@ -42,8 +42,9 @@ function HeaderEdit({
   },
   setAttributes,
   clientId,
-  instanceId,
 }) {
+  const instanceId = useInstanceId(HeaderEdit)
+
   useEffect(() => {
     setAttributes({ blockId: clientId })
   }, [clientId])
@@ -119,59 +120,54 @@ function HeaderEdit({
       </InspectorControls>
 
       <header {...blockProps} data-block-id={blockId}>
-        {
-          // eslint-disable-next-line array-callback-return
-          order.map((fragment, index) => {
-            if ('heading' === fragment) {
-              if (displayHeading) {
-                return (
-                  <RichText
-                    key={index}
-                    tagName={tagName}
-                    className={`${defaultClassName}__heading`}
-                    value={heading}
-                    onChange={(value) => setAttributes({ heading: value })}
-                    placeholder={__('Write heading…', 'fleximpleblocks')}
-                    keepPlaceholderOnFocus
-                  />
-                )
-              }
+        {order.map((fragment, index) => {
+          if ('heading' === fragment) {
+            if (displayHeading) {
+              return (
+                <RichText
+                  key={index}
+                  tagName={tagName}
+                  className={`${defaultClassName}__heading`}
+                  value={heading}
+                  onChange={(value) => setAttributes({ heading: value })}
+                  placeholder={__('Write heading…', 'fleximpleblocks')}
+                  keepPlaceholderOnFocus
+                />
+              )
             }
+          }
 
-            if ('subhead' === fragment) {
-              if (displaySubhead) {
-                return (
-                  <RichText
-                    key={index}
-                    className={`${defaultClassName}__subhead`}
-                    value={subhead}
-                    onChange={(value) => setAttributes({ subhead: value })}
-                    placeholder={__('Write subhead…', 'fleximpleblocks')}
-                    keepPlaceholderOnFocus
-                  />
-                )
-              }
+          if ('subhead' === fragment) {
+            if (displaySubhead) {
+              return (
+                <RichText
+                  key={index}
+                  className={`${defaultClassName}__subhead`}
+                  value={subhead}
+                  onChange={(value) => setAttributes({ subhead: value })}
+                  placeholder={__('Write subhead…', 'fleximpleblocks')}
+                  keepPlaceholderOnFocus
+                />
+              )
             }
+          }
 
-            if ('additional' === fragment) {
-              if (displayAdditional) {
-                return (
-                  <div
-                    key={index}
-                    className={`${defaultClassName}__additional-content`}
-                  >
-                    <InnerBlocks />
-                  </div>
-                )
-              }
+          if ('additional' === fragment) {
+            if (displayAdditional) {
+              return (
+                <div
+                  key={index}
+                  className={`${defaultClassName}__additional-content`}
+                >
+                  <InnerBlocks />
+                </div>
+              )
             }
-          })
-        }
+          }
+        })}
 
         <InlineStyles {...{ defaultClassName, attributes, isEditor: true }} />
       </header>
     </>
   )
 }
-
-export default withInstanceId(HeaderEdit)

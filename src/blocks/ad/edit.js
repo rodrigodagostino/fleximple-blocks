@@ -20,6 +20,7 @@ import {
   SelectControl,
   TextControl,
 } from '@wordpress/components'
+import { useInstanceId } from '@wordpress/compose'
 import { useEffect, useState } from '@wordpress/element'
 
 /**
@@ -38,13 +39,14 @@ const { name } = metadata
  */
 const ALLOWED_MEDIA_TYPES = ['image', 'video']
 
-function AdEdit({
+export default function AdEdit({
   attributes,
   attributes: { blockId, id, url, size, width, alt, linkUrl, linkTarget },
   setAttributes,
-  instanceId,
   clientId,
 }) {
+  const instanceId = useInstanceId(AdEdit)
+
   const [mediaData, setMediaData] = useState()
 
   useEffect(() => {
@@ -373,5 +375,3 @@ function AdEdit({
     </>
   )
 }
-
-export default AdEdit

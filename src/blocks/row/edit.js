@@ -27,7 +27,7 @@ import {
   SelectControl,
   ToggleControl,
 } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { useEffect, useState } from '@wordpress/element'
 
 /**
@@ -89,8 +89,9 @@ function RowEdit({
   setOverlayColor,
   setAttributes,
   clientId,
-  instanceId,
 }) {
+  const instanceId = useInstanceId(RowEdit)
+
   const [mediaData, setMediaData] = useState()
 
   useEffect(() => {
@@ -516,7 +517,6 @@ function RowEdit({
   )
 }
 
-export default compose([
-  withColors({ overlayColor: 'background-color' }),
-  withInstanceId,
-])(RowEdit)
+export default compose([withColors({ overlayColor: 'background-color' })])(
+  RowEdit
+)

@@ -27,6 +27,7 @@ import {
   TextareaControl,
   ToggleControl,
 } from '@wordpress/components'
+import { useInstanceId } from '@wordpress/compose'
 import { useEffect, useRef } from '@wordpress/element'
 
 const { name } = metadata
@@ -49,6 +50,8 @@ function MapEdit({
   isSelected,
   clientId,
 }) {
+  const instanceId = useInstanceId(MapEdit)
+
   const mapRef = useRef()
   const markerRef = useRef()
   const popupRef = useRef()
@@ -114,7 +117,10 @@ function MapEdit({
     <>
       <InspectorControls>
         <PanelBody title={__('Main', 'fleximpleblocks')}>
-          <LocationSelectControl {...{ attributes, setAttributes }} />
+          <LocationSelectControl
+            {...{ attributes, setAttributes }}
+            instanceId={instanceId}
+          />
 
           <RangeControl
             label={__('Zoom', 'fleximpleblocks')}

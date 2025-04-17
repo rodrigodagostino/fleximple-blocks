@@ -21,7 +21,7 @@ import {
   RangeControl,
   RadioControl,
 } from '@wordpress/components'
-import { compose } from '@wordpress/compose'
+import { compose, useInstanceId } from '@wordpress/compose'
 import { useEffect } from '@wordpress/element'
 
 /**
@@ -49,11 +49,12 @@ function ContactInfoEdit({
   attributes: { blockId, items, direction, alignmentHorizontal, gap },
   setAttributes,
   clientId,
-  instanceId,
 }) {
+  const instanceId = useInstanceId(ContactInfoEdit)
+
   useEffect(() => {
     setAttributes({ blockId: clientId })
-  }, [clientId])
+  }, [])
 
   const defaultClassName = getBlockDefaultClassName(name)
 

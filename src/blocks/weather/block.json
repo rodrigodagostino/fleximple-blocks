@@ -1,26 +1,28 @@
 {
-	"apiVersion": 2,
-	"name": "fleximple-blocks/weather",
-	"category": "fleximple-blocks",
-	"attributes": {
-		"cityName": {
-			"type": "string",
-			"default": "Río Grande,AR"
-		},
-		"shortName": {
-			"type": "string",
-			"default": "RG"
-		},
-		"displayUnits": {
-			"type": "boolean",
-			"default": true
-		},
-		"units": {
-			"type": "string",
-			"default": "metric"
-		},
-		"language": {
-			"type": "string"
-		}
-	}
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fleximple-blocks/weather",
+  "title": "Weather",
+  "category": "fleximple-blocks",
+  "attributes": {
+    "cityName": {
+      "type": "string",
+      "default": "Río Grande,AR"
+    },
+    "shortName": {
+      "type": "string",
+      "default": "RG"
+    },
+    "displayUnits": {
+      "type": "boolean",
+      "default": true
+    },
+    "units": {
+      "type": "string",
+      "default": "metric"
+    },
+    "language": {
+      "type": "string"
+    }
+  }
 }
