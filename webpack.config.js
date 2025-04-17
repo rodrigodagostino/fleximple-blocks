@@ -54,7 +54,6 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules\/(?!(fleximple-components)\/).*/,
         use: [
           require.resolve('thread-loader'),
           {
@@ -70,6 +69,7 @@ const config = {
       },
       {
         test: /\.(sc|sa|c)ss$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
