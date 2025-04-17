@@ -1,8 +1,11 @@
 # Fleximple Blocks
+
 This project is a collection of custom blocks meant to be used with WordPress and its new editor “Gutenberg”. They provide additional elements and functionality that are not found within the WP core blocks.
 
 ## The Blocks
+
 These are the currently present blocks in this pack:
+
 - Ad
 - Button
 - Buttons
@@ -23,8 +26,11 @@ These are the currently present blocks in this pack:
 - Weather
 
 ## Installation
+
 Install the Fleximple Blocks by uploading the files to your server at wp-content/plugins.
 
 ## Changelog
+
 ### 1.0.0
+
 - Initial release
