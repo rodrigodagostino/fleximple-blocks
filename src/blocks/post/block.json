@@ -41,7 +41,7 @@
       "type": "object",
       "default": {
         "small": "medium",
-        "medium": "medium_large",
+        "medium": "none",
         "large": "none"
       }
     },

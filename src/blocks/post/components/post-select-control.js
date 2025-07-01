@@ -16,13 +16,31 @@ import { BaseControl, SelectControl } from '@wordpress/components'
 import { useEffect, useState } from '@wordpress/element'
 import { addQueryArgs } from '@wordpress/url'
 
-function PostSelectControl({
-  attributes: { postType },
-  setAttributes,
-  hideLabelFromVision,
-  help,
-  instanceId,
-}) {
+function parsePostTypes(types) {
+  const typesObjectToArray = Object.keys(types).map((type) => {
+    return types[type]
+  })
+  return typesObjectToArray.map((type) => {
+    const typeObject = {}
+    typeObject.label = type.name
+    typeObject.value = type.rest_base
+    return typeObject
+  })
+}
+
+function parseSearchResults(results) {
+  if (results.length === 0) return []
+
+  return results.map((result) => ({
+    label: result.title.rendered,
+    value: result.id,
+  }))
+}
+
+function PostSelectControl(
+  { attributes: { postType }, setAttributes, hideLabelFromVision, help },
+  instanceId
+) {
   const [postTypes, setPostTypes] = useState(null)
   const [defaultOptions, setDefaultOptions] = useState([])
 
@@ -38,25 +56,9 @@ function PostSelectControl({
   const fetchPostTypes = () => {
     apiFetch({ path: '/wp/v2/types/' })
       .then((types) => {
-        const typesObjectToArray = Object.keys(types).map((type) => {
-          return types[type]
-        })
-        const typesArray = typesObjectToArray.map((type) => {
-          const typeObject = {}
-          typeObject.label = type.name
-          typeObject.value = type.rest_base
-          return typeObject
-        })
-        setPostTypes(typesArray)
+        setPostTypes(parsePostTypes(types))
       })
       .catch((error) => console.error(error))
-  }
-
-  const filterResults = (searchResults) => {
-    return searchResults.map((searchResult) => ({
-      label: searchResult.title.rendered,
-      value: searchResult.id,
-    }))
   }
 
   const fetchDefaultOptions = async () => {
@@ -65,22 +67,17 @@ function PostSelectControl({
         per_page: 20,
       }),
     })
-    const filteredResults = await filterResults(searchResults)
-    setDefaultOptions(filteredResults)
+    setDefaultOptions(parseSearchResults(searchResults))
   }
 
   const fetchPromiseOptions = async (inputValue) => {
-    if (!inputValue || inputValue.length < 3) {
-      return []
-    }
     const searchResults = await apiFetch({
       path: addQueryArgs(`/wp/v2/${postType}`, {
         search: inputValue,
         per_page: 20,
       }),
     })
-    const filteredResults = await filterResults(searchResults)
-    return filteredResults
+    return parseSearchResults(searchResults)
   }
 
   const id = `fleximple-components-post-select-control-${instanceId}`
@@ -108,7 +105,6 @@ function PostSelectControl({
           noOptionsMessage={() => __('No posts found.', 'fleximpleblocks')}
         />
       </BaseControl>
-
       <SelectControl
         label={__('Post type', 'fleximpleblocks')}
         labelPosition="top"

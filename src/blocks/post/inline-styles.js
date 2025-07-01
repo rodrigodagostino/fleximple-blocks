@@ -6,16 +6,11 @@ const InlineStyles = ({ defaultClassName, attributes: { blockId, imageSize, aspe
   return (
     <style>
       {`${blockSelector} .${defaultClassName}__picture {
-        ${aspectRatio.small ? `padding-bottom: ${(aspectRatio.small.split('-')[1] * 100) / aspectRatio.small.split('-')[0]}%;` : ''}
-      }`}
-      {imageSize.small !== 'none' &&
-      (!!focalPoint.small.x || !!focalPoint.small.y) &&
-      focalPoint.small.x !== 0.5 &&
-      focalPoint.small.y !== 0.5
-        ? `.${defaultClassName}__picture .${defaultClassName}__image { object-position: ${focalPoint.small.x * 100}% ${
-            focalPoint.small.y * 100
-          }%; }`
-        : ''}
+        padding-bottom: ${(aspectRatio.small.split('-')[1] * 100) / aspectRatio.small.split('-')[0]}%;
+			}
+      .${blockSelector} ${defaultClassName}__picture .${defaultClassName}__image {
+				object-position: ${focalPoint.small.x * 100}% ${focalPoint.small.y * 100}%;
+			}`}
 
       {(!!aspectRatio.medium || !!focalPoint.medium.x || !!focalPoint.medium.y) &&
         `@media only screen and (min-width: ${fleximpleblocksPluginData.settings.smallBreakpointValue}px) {
