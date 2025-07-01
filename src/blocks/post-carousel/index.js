@@ -65,11 +65,11 @@ export const settings = {
 
 // Provide a custom block class
 function setBlockCustomClassName(className, blockName) {
-  return blockName === name ? 'fleximple-block-post-carousel' : className
+  return blockName === name ? 'fleximple-blocks-post-carousel' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
-  'fleximple-blocks/fleximple-block-post-carousel',
+  'fleximple-blocks/fleximple-blocks-post-carousel',
   setBlockCustomClassName
 )

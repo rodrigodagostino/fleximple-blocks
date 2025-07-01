@@ -46,11 +46,11 @@ export const settings = {
 
 // Provide a custom block class
 function setBlockCustomClassName(className, blockName) {
-  return blockName === name ? 'fleximple-block-header' : className
+  return blockName === name ? 'fleximple-blocks-header' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
-  'fleximple-blocks/fleximple-block-header',
+  'fleximple-blocks/fleximple-blocks-header',
   setBlockCustomClassName
 )

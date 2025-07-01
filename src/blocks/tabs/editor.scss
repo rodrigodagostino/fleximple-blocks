@@ -5,15 +5,15 @@
  * which makes it higher in priority.
  */
 
-.fleximple-block-tabs {
+.fleximple-blocks-tabs {
   &__tab {
     &.is-active {
-      .fleximple-block-tabs__icon {
+      .fleximple-blocks-tabs__icon {
         display: flex;
       }
     }
   }
-  
+
   &__icon {
     display: flex;
 

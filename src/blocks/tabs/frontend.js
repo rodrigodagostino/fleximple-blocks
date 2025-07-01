@@ -2,17 +2,17 @@
  * Fleximple Tabs Block Front-end Scripts
  */
 
-const tabsBlockInstances = document.querySelectorAll('.fleximple-block-tabs')
+const tabsBlockInstances = document.querySelectorAll('.fleximple-blocks-tabs')
 tabsBlockInstances.forEach((instance) => {
   instance
     .querySelector(
-      '.fleximple-block-tabs__panel-list .fleximple-block-tab-panel'
+      '.fleximple-blocks-tabs__panel-list .fleximple-blocks-tab-panel'
     )
     .classList.add('is-active')
 })
 
 const tabs = document.querySelectorAll(
-  '.fleximple-block-tabs .fleximple-block-tabs__tab'
+  '.fleximple-blocks-tabs .fleximple-blocks-tabs__tab'
 )
 tabs.forEach((tab, index) => {
   tab.setAttribute('data-tab-index', index + 1)
@@ -22,8 +22,8 @@ tabs.forEach((tab, index) => {
     tab.classList.add('is-active')
 
     const tabPanels = tab
-      .closest('.fleximple-block-tabs')
-      .querySelectorAll('.fleximple-block-tab-panel')
+      .closest('.fleximple-blocks-tabs')
+      .querySelectorAll('.fleximple-blocks-tab-panel')
     tabPanels.forEach((item) => item.classList.remove('is-active'))
     tabPanels[index].classList.add('is-active')
   })

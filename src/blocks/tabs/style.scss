@@ -4,9 +4,9 @@
  * CSS for both frontend + backend.
  */
 
-$default-class-name: "fleximple-block-tabs";
+$default-class-name: "fleximple-blocks-tabs";
 
-.fleximple-block-tabs {
+.fleximple-blocks-tabs {
   &__tab-list {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +52,9 @@ $default-class-name: "fleximple-block-tabs";
     align-items: center;
     position: relative;
     cursor: pointer;
-    transition: color 0.2s ease, background-color 0.2s ease,
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
       border-color 0.2s ease;
 
     &:focus,

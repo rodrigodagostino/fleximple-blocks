@@ -41,11 +41,11 @@ export const settings = {
 
 // Provide a custom block class
 function setBlockCustomClassName(className, blockName) {
-  return blockName === name ? 'fleximple-block-contact-info-item' : className
+  return blockName === name ? 'fleximple-blocks-contact-info-item' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
-  'fleximple-blocks/fleximple-block-contact-info-item',
+  'fleximple-blocks/fleximple-blocks-contact-info-item',
   setBlockCustomClassName
 )

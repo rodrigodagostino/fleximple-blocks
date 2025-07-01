@@ -4,7 +4,7 @@
  * CSS for both frontend + backend.
  */
 
-.fleximple-block-button {
+.fleximple-blocks-button {
   display: flex;
 
   &__link {
@@ -14,8 +14,12 @@
     justify-content: center;
     line-height: 1;
     text-decoration: none;
-    transition: color 0.2s ease, background-color 0.2s ease,
-      border-color 0.2s ease, border-radius 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      border-radius 0.2s ease,
+      box-shadow 0.2s ease;
     -webkit-appearance: none;
     cursor: pointer;
     vertical-align: middle; // Remove blank space under custom icon
@@ -73,7 +77,7 @@
   }
 
   &.is-style-fill {
-    .fleximple-block-button__link {
+    .fleximple-blocks-button__link {
       border-width: 1px;
       border-style: solid;
 
@@ -105,7 +109,7 @@
   }
 
   &.is-style-outline {
-    .fleximple-block-button__link {
+    .fleximple-blocks-button__link {
       &:focus {
         box-shadow: 0 0 0 0.2rem
           var(--color-primary--dark--alpha-50, rgba(71, 88, 217, 0.5));
@@ -159,7 +163,7 @@
   }
 
   &.is-style-clear {
-    .fleximple-block-button__link {
+    .fleximple-blocks-button__link {
       &:not(.has-text-color) {
         color: var(--gray-800);
 

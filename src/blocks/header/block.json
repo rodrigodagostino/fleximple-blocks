@@ -12,7 +12,7 @@
     "heading": {
       "type": "string",
       "source": "html",
-      "selector": ".fleximple-block-header__heading",
+      "selector": ".fleximple-blocks-header__heading",
       "default": ""
     },
     "headingLevel": {
@@ -22,7 +22,7 @@
     "subhead": {
       "type": "string",
       "source": "html",
-      "selector": ".fleximple-block-header__subhead",
+      "selector": ".fleximple-blocks-header__subhead",
       "default": ""
     },
     "textAlignment": {

@@ -59,7 +59,7 @@ const TabsEdit = ({
   const deactivateTabPanels = () => {
     block.innerBlocks.forEach((item) => {
       const tabPanelSelector = document.querySelector(
-        `#block-${item.clientId} .fleximple-block-tab-panel`
+        `#block-${item.clientId} .fleximple-blocks-tab-panel`
       )
       tabPanelSelector && tabPanelSelector.classList.remove('is-active')
     })
@@ -68,7 +68,7 @@ const TabsEdit = ({
   const activateCurrentTabPanel = (index) => {
     const currentInnerBlockId = block.innerBlocks[index].clientId
     const tabPanelSelector = document.querySelector(
-      `#block-${currentInnerBlockId} .fleximple-block-tab-panel`
+      `#block-${currentInnerBlockId} .fleximple-blocks-tab-panel`
     )
     tabPanelSelector && tabPanelSelector.classList.add('is-active')
   }

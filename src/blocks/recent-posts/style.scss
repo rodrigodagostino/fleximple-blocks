@@ -4,9 +4,9 @@
  * CSS for both frontend + backend.
  */
 
-$default-class-name: "fleximple-block-recent-posts";
+$default-class-name: "fleximple-blocks-recent-posts";
 
-.fleximple-block-recent-posts {
+.fleximple-blocks-recent-posts {
   &--list {
     display: flex;
     flex-direction: column;
@@ -159,12 +159,12 @@ $default-class-name: "fleximple-block-recent-posts";
     flex-direction: column;
     justify-content: center;
 
-    & .fleximple-block-recent-posts__entry-media {
+    & .fleximple-blocks-recent-posts__entry-media {
       flex: 0 0 70%;
       margin-bottom: 0;
     }
 
-    & .fleximple-block-recent-posts__entry-content {
+    & .fleximple-blocks-recent-posts__entry-content {
       flex: 0 0 40%;
       padding: var(--space-125, 20px);
       margin-top: -5rem;

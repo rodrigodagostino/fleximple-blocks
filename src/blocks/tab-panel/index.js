@@ -76,11 +76,11 @@ export const settings = {
 
 // Provide a custom block class
 function setBlockCustomClassName(className, blockName) {
-  return blockName === name ? 'fleximple-block-tab-panel' : className
+  return blockName === name ? 'fleximple-blocks-tab-panel' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
-  'fleximple-blocks/fleximple-block-tab-panel',
+  'fleximple-blocks/fleximple-blocks-tab-panel',
   setBlockCustomClassName
 )

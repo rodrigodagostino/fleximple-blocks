@@ -5,14 +5,14 @@
  * which makes it higher in priority.
  */
 
-.fleximple-block-buttons {
+.fleximple-blocks-buttons {
   display: block !important;
 
   & > .block-editor-inner-blocks > .block-editor-block-list__layout {
     display: flex;
   }
 
-  .fleximple-block-button {
+  .fleximple-blocks-button {
     margin: 0;
   }
 

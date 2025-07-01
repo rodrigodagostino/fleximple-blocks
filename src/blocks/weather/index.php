@@ -15,9 +15,9 @@
  */
 function fleximpleblocks_render_weather_block($attributes)
 {
-	$default_class_name = 'fleximple-block-weather';
+	$default_class_name = 'fleximple-blocks-weather';
 	// $class_name = $attributes['className'];
-	// $classes = 'fleximple-block-weather';
+	// $classes = 'fleximple-blocks-weather';
 
 	/**
 	 * Weather Markup

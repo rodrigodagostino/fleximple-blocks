@@ -4,12 +4,12 @@
  * CSS for both frontend + backend.
  */
 
-$default-class-name: "fleximple-block-feature";
+$default-class-name: "fleximple-blocks-feature";
 
-.fleximple-block-feature {
+.fleximple-blocks-feature {
   position: relative;
 
-  .fleximple-block-button__link {
+  .fleximple-blocks-button__link {
     position: relative;
     z-index: 1;
   }

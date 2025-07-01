@@ -20,12 +20,12 @@ function fleximpleblocks_render_post_block($attributes, $content)
 		$args['category'] = $attributes['categories'];
 	}
 
-	$default_class_name = 'fleximple-block-post';
+	$default_class_name = 'fleximple-blocks-post';
 	$class_name = '';
 	if (isset($attributes['className'])) {
 		$class_name = $attributes['className'];
 	}
-	$classes = 'fleximple-block-post';
+	$classes = 'fleximple-blocks-post';
 
 	$post_id = $attributes['postId'];
 	$categories = get_the_category($post_id);
@@ -300,9 +300,9 @@ function fleximpleblocks_render_post_block($attributes, $content)
 
 	if ((isset($attributes['aspectRatio']) && $attributes['aspectRatio']['large'] !== 'none') || (isset($attributes['focalPoint']) && $attributes['focalPoint']['large'] !== 'none')) {
 		$internal_styles .= '@media only screen and (min-width: ' . get_option('fleximpleblocks_medium_breakpoint_value') . 'px) {';
-		$internal_styles .= '.fleximple-block-post__footer { flex-direction: row; justify-content: space-between; }';
-		$internal_styles .= '.fleximple-block-post__footer > * { flex: 1; }';
-		$internal_styles .= '.fleximple-block-post__footer > * + * { margin-left: var(--space-125, 1.25rem); }';
+		$internal_styles .= '.fleximple-blocks-post__footer { flex-direction: row; justify-content: space-between; }';
+		$internal_styles .= '.fleximple-blocks-post__footer > * { flex: 1; }';
+		$internal_styles .= '.fleximple-blocks-post__footer > * + * { margin-left: var(--space-125, 1.25rem); }';
 		if ($attributes['aspectRatio']['large'] !== 'none' && $attributes['aspectRatio']['large'] !== $attributes['aspectRatio']['medium']) {
 			$aspect_ratio_large_array = preg_split("/-/", $attributes['aspectRatio']['large']);
 			$internal_styles .= '.' . $default_class_name . '[data-block-id="' . $attributes['blockId'] . '"] .' . $default_class_name . '__picture { padding-bottom: ' . $aspect_ratio_large_array[1] * 100 / $aspect_ratio_large_array[0] . '%; }';

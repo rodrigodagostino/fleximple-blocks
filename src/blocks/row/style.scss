@@ -5,9 +5,9 @@
  */
 @use "sass:math";
 
-$default-class-name: "fleximple-block-row";
+$default-class-name: "fleximple-blocks-row";
 
-.fleximple-block-row {
+.fleximple-blocks-row {
   position: relative;
 
   &__inner {
@@ -28,8 +28,9 @@ $default-class-name: "fleximple-block-row";
     bottom: 0;
     z-index: 0;
 
-    $steps: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85,
-      90, 95, 100;
+    $steps:
+      5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+      100;
 
     @each $step in $steps {
       &.opacity-#{ $step } {

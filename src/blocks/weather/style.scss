@@ -4,9 +4,9 @@
  * CSS for both frontend + backend.
  */
 
-$default-class-name: "fleximple-block-weather";
+$default-class-name: "fleximple-blocks-weather";
 
-.fleximple-block-weather {
+.fleximple-blocks-weather {
   font-size: 1.125rem;
   display: grid;
   grid-template: auto auto / min-content auto;

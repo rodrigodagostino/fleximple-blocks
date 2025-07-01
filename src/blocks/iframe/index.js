@@ -41,11 +41,11 @@ export const settings = {
 
 // Provide a custom block class
 function setBlockCustomClassName(className, blockName) {
-  return blockName === name ? 'fleximple-block-iframe' : className
+  return blockName === name ? 'fleximple-blocks-iframe' : className
 }
 
 wp.hooks.addFilter(
   'blocks.getBlockDefaultClassName',
-  'fleximple-blocks/fleximple-block-iframe',
+  'fleximple-blocks/fleximple-blocks-iframe',
   setBlockCustomClassName
 )

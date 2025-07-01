@@ -32,12 +32,12 @@ function fleximpleblocks_render_recent_posts_block($attributes)
 		$args['category__not_in'] = array_column($attributes['excludedCategories'], 'value');
 	}
 
-	$default_class_name = 'fleximple-block-recent-posts';
+	$default_class_name = 'fleximple-blocks-recent-posts';
 	$class_name = '';
 	if (isset($attributes['className'])) {
 		$class_name = $attributes['className'];
 	}
-	$classes = 'fleximple-block-recent-posts';
+	$classes = 'fleximple-blocks-recent-posts';
 
 	$recent_posts = get_posts($args);
 	$rel_attribute = trim(($attributes['noFollow'] ? 'nofollow' : null) . ' ' . ($attributes['noReferrer'] ? 'noreferrer' : null));

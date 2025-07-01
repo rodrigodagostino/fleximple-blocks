@@ -4,9 +4,9 @@
  * CSS for both frontend + backend.
  */
 
-$default-class-name: "fleximple-block-post";
+$default-class-name: "fleximple-blocks-post";
 
-.fleximple-block-post {
+.fleximple-blocks-post {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -146,12 +146,12 @@ $default-class-name: "fleximple-block-post";
     flex-direction: column;
     justify-content: center;
 
-    & .fleximple-block-post__media {
+    & .fleximple-blocks-post__media {
       flex: 0 0 70%;
       margin-bottom: 0;
     }
 
-    & .fleximple-block-post__content {
+    & .fleximple-blocks-post__content {
       flex: 0 0 40%;
       padding: var(--space-125, 1.25rem);
       margin-top: -5rem;
