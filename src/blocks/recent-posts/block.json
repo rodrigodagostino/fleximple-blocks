@@ -93,13 +93,6 @@
       "type": "string",
       "default": "date"
     },
-    "selectManually": {
-      "type": "boolean",
-      "default": false
-    },
-    "selectedPosts": {
-      "type": "array"
-    },
     "imageWidth": {
       "type": "number",
       "default": 40

@@ -26,7 +26,7 @@ import InlineStyles from '../inline-styles'
 
 const { name } = metadata
 
-const RecentPostsPreview = ({
+export default function RecentPostsPreview({
   attributes,
   attributes: {
     blockId,
@@ -53,8 +53,9 @@ const RecentPostsPreview = ({
     displayReadMore,
     readMore,
   },
-  postsData,
-}) => {
+  posts,
+  mediaItems,
+}) {
   const TagName = 'h' + headingLevel
 
   const defaultClassName = getBlockDefaultClassName(name)
@@ -67,7 +68,21 @@ const RecentPostsPreview = ({
     className: classes,
   })
 
-  const dateFormat = getSettings().formats.date // eslint-disable-line no-restricted-syntax
+  const featMediaItems = mediaItems
+    ? mediaItems.map((media) => {
+        const smallMedia = media.media_details.sizes[imageSize?.small]
+        const mediumMedia = media.media_details.sizes[imageSize?.medium]
+        const largeMedia = media.media_details.sizes[imageSize?.large]
+
+        return {
+          small: smallMedia ? { ...smallMedia } : null,
+          medium: mediumMedia ? { ...mediumMedia } : null,
+          large: largeMedia ? { ...largeMedia } : null,
+        }
+      })
+    : null
+
+  const dateFormat = getSettings().formats.date
 
   const relAttribute = `${noFollow ? 'nofollow' : ''} ${
     noReferrer ? 'noreferrer' : ''
@@ -75,22 +90,22 @@ const RecentPostsPreview = ({
 
   return (
     <div {...blockProps} data-block-id={blockId}>
-      {postsData.map((post, i) => {
+      {posts.map((post, i) => {
         return (
           <article
             key={i}
             id={`post-${post.id}`}
             className={`${defaultClassName}__entry`}
           >
-            {orderArticle.map((fragment, i) => {
+            {orderArticle.map((fragment, j) => {
               if (
                 'media' === fragment &&
                 displayMedia &&
                 displayFeaturedImage
               ) {
                 return (
-                  <div key={i} className={`${defaultClassName}__entry-media`}>
-                    {orderMedia.map((mediaFragment, j) => {
+                  <div key={j} className={`${defaultClassName}__entry-media`}>
+                    {orderMedia.map((mediaFragment, k) => {
                       if (
                         mediaFragment === 'featuredImage' &&
                         displayFeaturedImage
@@ -100,7 +115,7 @@ const RecentPostsPreview = ({
                           // The generated array needs to be reversed in order for <source> to work properly (from largest to smallest).
                           Object.entries(imageSize)
                             .reverse()
-                            .forEach(([key, value], index, array) => {
+                            .forEach(([key, value], x, array) => {
                               if (value && value !== 'none') {
                                 pictureSources.push(
                                   <source
@@ -110,27 +125,26 @@ const RecentPostsPreview = ({
                                       key !== 'small'
                                         ? `(min-width: ${
                                             fleximpleblocksPluginData.settings[
-                                              array[index + 1][0] +
+                                              array[x + 1][0] +
                                                 'BreakpointValue'
                                             ]
                                           }px)`
                                         : null
                                     }
                                     srcSet={
-                                      post.featured_media_data[imageSize[key]]
-                                        .url
+                                      featMediaItems[i]?.[key]?.source_url
                                     }
                                   />
                                 )
                               }
                             })
                         }
-                        const imageSource = post.featured_media
-                          ? post.featured_media_data.full.url
+                        const imageSource = mediaItems[i]?.media_details
+                          ? mediaItems[i].media_details.sizes.full.source_url
                           : `${fleximpleblocksPluginData.pluginUrl}assets/images/placeholder-image.svg`
                         return (
                           <picture
-                            key={j}
+                            key={k}
                             className={`${defaultClassName}__entry-picture`}
                           >
                             {!!post.featured_media && pictureSources}
@@ -146,11 +160,10 @@ const RecentPostsPreview = ({
                   </div>
                 )
               }
-
               if ('content' === fragment && displayContent) {
                 return (
-                  <div key={i} className={`${defaultClassName}__entry-content`}>
-                    {orderContent.map((contentFragment, j) => {
+                  <div key={j} className={`${defaultClassName}__entry-content`}>
+                    {orderContent.map((contentFragment, k) => {
                       if (
                         contentFragment === 'categories' &&
                         displayCategories &&
@@ -158,7 +171,7 @@ const RecentPostsPreview = ({
                       ) {
                         return (
                           <div
-                            key={j}
+                            key={k}
                             className={`${defaultClassName}__entry-categories`}
                           >
                             {post.categories_data.map((category, index) => {
@@ -181,7 +194,6 @@ const RecentPostsPreview = ({
                           </div>
                         )
                       }
-
                       if (
                         contentFragment === 'title' &&
                         displayTitle &&
@@ -189,7 +201,7 @@ const RecentPostsPreview = ({
                       ) {
                         return (
                           <TagName
-                            key={j}
+                            key={k}
                             className={`${defaultClassName}__entry-title`}
                           >
                             {/* <a
@@ -215,7 +227,6 @@ const RecentPostsPreview = ({
                           </TagName>
                         )
                       }
-
                       if (
                         contentFragment === 'meta' &&
                         displayMeta &&
@@ -225,73 +236,64 @@ const RecentPostsPreview = ({
                       ) {
                         return (
                           <div
-                            key={i}
+                            key={k}
                             className={`${defaultClassName}__entry-meta`}
                           >
-                            {
-                              // eslint-disable-next-line array-callback-return
-                              orderMeta.map((metaFragment, j) => {
-                                if (
-                                  metaFragment === 'author' &&
-                                  displayAuthor &&
-                                  !!post.author_data
-                                ) {
+                            {orderMeta.map((metaFragment, l) => {
+                              if (
+                                metaFragment === 'author' &&
+                                displayAuthor &&
+                                !!post.author_data
+                              ) {
+                                return (
+                                  <a
+                                    key={l}
+                                    href={post.author_data.url}
+                                    className={`${defaultClassName}__entry-byline`}
+                                    rel="author"
+                                    dangerouslySetInnerHTML={{
+                                      __html: `<span class="screen-reader-only">${__(
+                                        'Published by:',
+                                        'fleximpleblocks'
+                                      )}</span> ${post.author_data.name}`,
+                                    }}
+                                  />
+                                )
+                              }
+                              if (metaFragment === 'date' && displayDate) {
+                                return (
+                                  <time
+                                    key={l}
+                                    dateTime={format('c', post.date_gmt)}
+                                    className={`${defaultClassName}__entry-date`}
+                                    dangerouslySetInnerHTML={{
+                                      __html: `<span class="screen-reader-only">${__(
+                                        'Published on:',
+                                        'fleximpleblocks'
+                                      )}</span> ${dateI18n(
+                                        dateFormat,
+                                        post.date_gmt
+                                      )}`,
+                                    }}
+                                  />
+                                )
+                              }
+                              if (metaFragment === 'comments') {
+                                if (displayComments && !!post.comments_number) {
                                   return (
-                                    <a
-                                      key={j}
-                                      href={post.author_data.url}
-                                      className={`${defaultClassName}__entry-byline`}
-                                      rel="author"
-                                      dangerouslySetInnerHTML={{
-                                        __html: `<span class="screen-reader-only">${__(
-                                          'Published by:',
-                                          'fleximpleblocks'
-                                        )}</span> ${post.author_data.name}`,
-                                      }}
-                                    />
+                                    <span
+                                      key={l}
+                                      className={`${defaultClassName}__entry-comments`}
+                                    >
+                                      {post.comments_number}
+                                    </span>
                                   )
                                 }
-
-                                if (metaFragment === 'date' && displayDate) {
-                                  return (
-                                    <time
-                                      key={j}
-                                      dateTime={format('c', post.date_gmt)}
-                                      className={`${defaultClassName}__entry-date`}
-                                      dangerouslySetInnerHTML={{
-                                        __html: `<span class="screen-reader-only">${__(
-                                          'Published on:',
-                                          'fleximpleblocks'
-                                        )}</span> ${dateI18n(
-                                          dateFormat,
-                                          post.date_gmt
-                                        )}`,
-                                      }}
-                                    />
-                                  )
-                                }
-
-                                if (metaFragment === 'comments') {
-                                  if (
-                                    displayComments &&
-                                    !!post.comments_number
-                                  ) {
-                                    return (
-                                      <span
-                                        key={j}
-                                        className={`${defaultClassName}__entry-comments`}
-                                      >
-                                        {post.comments_number}
-                                      </span>
-                                    )
-                                  }
-                                }
-                              })
-                            }
+                              }
+                            })}
                           </div>
                         )
                       }
-
                       if (contentFragment === 'excerpt' && displayExcerpt) {
                         return (
                           <RawHTML
@@ -311,15 +313,13 @@ const RecentPostsPreview = ({
                           </RawHTML>
                         )
                       }
-
                       if (contentFragment === 'readMore' && displayReadMore) {
                         return (
                           // eslint-disable-next-line react/jsx-no-target-blank
                           <a
-                            key={i}
+                            key={k}
                             href={post.link}
                             className={`${defaultClassName}__entry-read-more`}
-                            // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
                             rel={relAttribute}
                             data-link-name="article"
@@ -332,12 +332,10 @@ const RecentPostsPreview = ({
                 )
               }
             })}
-
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a
               href={`${fleximpleblocksPluginData.homeUrl}/wp-admin/post.php?post=${post.id}&action=edit`}
               className={`${defaultClassName}__entry-link-overlay`}
-              // eslint-disable-next-line react/jsx-no-target-blank
               target="_blank"
               rel={relAttribute ? relAttribute : null}
               data-link-name="article"
@@ -353,10 +351,7 @@ const RecentPostsPreview = ({
           </article>
         )
       })}
-
       <InlineStyles {...{ defaultClassName, attributes }} />
     </div>
   )
 }
-
-export default RecentPostsPreview

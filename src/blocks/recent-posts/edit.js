@@ -1,11 +1,12 @@
-/* global fleximpleblocksPluginData */
-
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
-import apiFetch from '@wordpress/api-fetch'
-import { BlockControls, InspectorControls } from '@wordpress/block-editor'
+import {
+  BlockControls,
+  InspectorControls,
+  store as blockEditorStore,
+} from '@wordpress/block-editor'
 import {
   BaseControl,
   PanelBody,
@@ -16,17 +17,17 @@ import {
   ToggleControl,
   Toolbar,
 } from '@wordpress/components'
-import { compose, withInstanceId } from '@wordpress/compose'
-import { withSelect } from '@wordpress/data'
-import { useEffect, useState } from '@wordpress/element'
-import { addQueryArgs } from '@wordpress/url'
+import { useInstanceId } from '@wordpress/compose'
+import { store as coreStore } from '@wordpress/core-data'
+import { useSelect } from '@wordpress/data'
+import { useEffect } from '@wordpress/element'
 
 /**
  * Internal dependencies
  */
 import PostSortableControl from './../post/components/post-sortable-control'
 import RecentPostsPreview from './components/recent-posts-preview'
-import RecentPostsSelectControl from './components/recent-posts-select-control'
+// import RecentPostsSelectControl from './components/recent-posts-select-control'
 import QueryControls from 'fleximple-components/components/query-controls'
 import HeadingLevelDropdown from 'fleximple-components/components/heading-level-dropdown'
 import HeadingLevelToolbar from 'fleximple-components/components/heading-level-toolbar'
@@ -38,6 +39,11 @@ import { setResponsiveAttribute } from './../../js/utils'
 /**
  * Block constants
  */
+const CATEGORIES_LIST_QUERY = {
+  per_page: -1,
+  _fields: 'id,name',
+  context: 'view',
+}
 const MAX_POSTS_COLUMNS = 6
 
 function RecentPostsEdit({
@@ -58,8 +64,8 @@ function RecentPostsEdit({
     excludedCategories,
     order,
     orderBy,
-    selectManually,
-    selectedPosts,
+    // selectManually,
+    // selectedPostsIds,
     imageWidth,
     imageSize,
     aspectRatio,
@@ -70,33 +76,84 @@ function RecentPostsEdit({
     readMore,
   },
   setAttributes,
-  recentPosts,
   clientId,
-  instanceId,
 }) {
-  const [categoriesList, setCategoriesList] = useState([])
-  const [selectedPostsData, setSelectedPosts] = useState([])
+  const instanceId = useInstanceId(RecentPostsEdit)
+
+  const { imageSizes, categoriesList } = useSelect(
+    (select) => {
+      const { getEntityRecords } = select(coreStore)
+      const settings = select(blockEditorStore).getSettings()
+
+      return {
+        imageSizes: settings.imageSizes,
+        categoriesList: getEntityRecords(
+          'taxonomy',
+          'category',
+          CATEGORIES_LIST_QUERY
+        ),
+      }
+    },
+    [imageSize]
+  )
+
+  const { recentPosts, hasResolved } = useSelect(
+    (select) => {
+      const { getEntityRecords, hasFinishedResolution } = select(coreStore)
+      const catIds =
+        categories && categories.length > 0
+          ? categories.map((cat) => cat.value)
+          : []
+      const excludedCatIds =
+        excludedCategories && excludedCategories.length > 0
+          ? excludedCategories.map((cat) => cat.value)
+          : []
+      const recentPostsQuery = Object.fromEntries(
+        Object.entries({
+          categories: catIds,
+          categories_exclude: excludedCatIds,
+          order,
+          orderby: orderBy,
+          per_page: postsToShow,
+          offset,
+          _embed: 'author,wp:featuredmedia',
+          ignore_sticky: true,
+        }).filter(([, value]) => typeof value !== 'undefined')
+      )
+
+      return {
+        recentPosts: getEntityRecords('postType', 'post', recentPostsQuery),
+        hasResolved: hasFinishedResolution('getEntityRecords', [
+          'postType',
+          'post',
+          recentPostsQuery,
+        ]),
+      }
+    },
+    [postsToShow, order, orderBy, categories]
+  )
+
+  const { mediaItems } = useSelect(
+    (select) => {
+      const { getMediaItems } = select(coreStore)
+      const mediaItemsIds = recentPosts?.map((post) => post.featured_media)
+
+      return {
+        mediaItems:
+          mediaItemsIds &&
+          getMediaItems({
+            include: mediaItemsIds,
+            per_page: postsToShow,
+            context: 'view',
+          }),
+      }
+    },
+    [recentPosts]
+  )
 
   useEffect(() => {
     if (!attributes.className) {
       setAttributes({ className: 'is-style-standard' })
-    }
-
-    apiFetch({
-      path: addQueryArgs('/wp/v2/categories', {
-        per_page: -1,
-      }),
-    })
-      .then((results) => {
-        setCategoriesList(results)
-      })
-      .catch((error) => {
-        console.error(error)
-        setCategoriesList([])
-      })
-
-    if (selectedPosts) {
-      fetchSelectedPosts()
     }
   }, [])
 
@@ -104,38 +161,7 @@ function RecentPostsEdit({
     setAttributes({ blockId: clientId })
   }, [clientId])
 
-  useEffect(() => {
-    if (selectedPosts && selectedPosts.length > 0) {
-      fetchSelectedPosts()
-    }
-  }, [selectedPosts])
-
-  const fetchSelectedPosts = async () => {
-    const map = new Map()
-    await Promise.all(
-      selectedPosts.map(async (selectedPost) => {
-        await apiFetch({
-          path: `/wp/v2/posts/${selectedPost.value}`,
-        }).then((results) => {
-          map.set(selectedPost, results)
-        })
-      })
-    )
-
-    // Display responses in 'selectedPosts' array order.
-    const arrangedSelectedPosts = new Array()
-    await selectedPosts.forEach((selectedPost) => {
-      arrangedSelectedPosts.push(map.get(selectedPost))
-    })
-
-    setSelectedPosts(arrangedSelectedPosts)
-  }
-
-  const imageSizeOptions = fleximpleblocksPluginData.imageSizes.map((size) => {
-    const label = size.replace(/^\w/, (c) => c.toUpperCase()).replace(/_/g, ' ')
-    return { label: label, value: size }
-  })
-
+  const hasPosts = Array.isArray(recentPosts) && recentPosts.length
   const inspectorControls = (
     <InspectorControls>
       <PanelBody title={__('Main', 'fleximpleblocks')}>
@@ -147,7 +173,6 @@ function RecentPostsEdit({
           onChange={(value) => setAttributes({ postsToShow: value })}
           required
         />
-
         <ResponsiveSettingsTabPanel initialTabName="large">
           {(tab) => (
             <>
@@ -174,7 +199,6 @@ function RecentPostsEdit({
                   required
                 />
               )}
-
               {layout === 'grid' && (
                 <SpacingControl
                   valueLabel={__('Column gap', 'fleximpleblocks')}
@@ -188,7 +212,6 @@ function RecentPostsEdit({
                   onChange={(value) => setAttributes({ gapColumn: value })}
                 />
               )}
-
               <SpacingControl
                 valueLabel={__('Row gap', 'fleximpleblocks')}
                 unitLabel={__('Row gap unit', 'fleximpleblocks')}
@@ -202,7 +225,6 @@ function RecentPostsEdit({
             </>
           )}
         </ResponsiveSettingsTabPanel>
-
         <BaseControl
           label={__('Heading level', 'fleximpleblocks')}
           id={`fleximple-blocks-recent-posts-heading-control-${instanceId}`}
@@ -216,7 +238,6 @@ function RecentPostsEdit({
             isCollapsed={false}
           />
         </BaseControl>
-
         {displayExcerpt && (
           <RangeControl
             label={__('Max number of words in excerpt', 'fleximpleblocks')}
@@ -226,7 +247,6 @@ function RecentPostsEdit({
             max={100}
           />
         )}
-
         <ToggleControl
           label={__('“nofollow” attribute', 'fleximpleblocks')}
           checked={!!noFollow}
@@ -243,7 +263,6 @@ function RecentPostsEdit({
                 )
           }
         />
-
         <ToggleControl
           label={__('“noreferrer” attribute', 'fleximpleblocks')}
           checked={!!noReferrer}
@@ -261,7 +280,6 @@ function RecentPostsEdit({
           }
         />
       </PanelBody>
-
       <PanelBody
         title={__('Sorting and filtering', 'fleximpleblocks')}
         initialOpen={false}
@@ -285,18 +303,15 @@ function RecentPostsEdit({
           onOrderChange={(value) => setAttributes({ order: value })}
           onOrderByChange={(value) => setAttributes({ orderBy: value })}
         />
-
-        <ToggleControl
+        {/* <ToggleControl
           label={__('Manually select posts', 'fleximpleblocks')}
           checked={selectManually}
           onChange={() => setAttributes({ selectManually: !selectManually })}
         />
-
         {!!selectManually && (
           <RecentPostsSelectControl {...{ attributes, setAttributes }} />
-        )}
+        )} */}
       </PanelBody>
-
       {!!displayMedia && !!displayFeaturedImage && (
         <PanelBody title={__('Media', 'fleximpleblocks')} initialOpen={false}>
           {'list' === layout && (
@@ -309,7 +324,6 @@ function RecentPostsEdit({
               max={90}
             />
           )}
-
           <ResponsiveSettingsTabPanel initialTabName="medium">
             {(tab) => (
               <>
@@ -321,11 +335,10 @@ function RecentPostsEdit({
                       label: __('None', 'fleximpleblocks'),
                       value: 'none',
                     },
-                    ...imageSizeOptions,
-                    {
-                      label: __('Full', 'fleximpleblocks'),
-                      value: 'full',
-                    },
+                    ...imageSizes.map((size) => ({
+                      label: size.name,
+                      value: size.slug,
+                    })),
                   ]}
                   onChange={(value) => {
                     setResponsiveAttribute(
@@ -337,7 +350,6 @@ function RecentPostsEdit({
                     )
                   }}
                 />
-
                 <SelectControl
                   label={__('Aspect ratio', 'fleximpleblocks')}
                   value={aspectRatio[tab.name]}
@@ -367,10 +379,8 @@ function RecentPostsEdit({
           </ResponsiveSettingsTabPanel>
         </PanelBody>
       )}
-
       <PanelBody title={__('Display', 'fleximpleblocks')} initialOpen={false}>
         <PostSortableControl {...{ attributes, setAttributes }} />
-
         {!!displayReadMore && (
           <TextControl
             label={__('Read more text', 'fleximpleblocks')}
@@ -382,40 +392,43 @@ function RecentPostsEdit({
     </InspectorControls>
   )
 
-  const hasPosts = Array.isArray(recentPosts) && recentPosts.length
+  if (!hasResolved || !mediaItems) {
+    return (
+      <>
+        <Placeholder
+          className={`fleximple-components-placeholder ${!Array.isArray(recentPosts) ? 'is-loading' : ''}`}
+        >
+          <Spinner />
+          <p>{__('Loading…', 'fleximpleblocks')}</p>
+        </Placeholder>
+      </>
+    )
+  }
+
   if (!hasPosts) {
     return (
       <>
         {inspectorControls}
         <Placeholder
-          className={`fleximple-components-placeholder ${
-            !Array.isArray(recentPosts) ? 'is-loading' : ''
-          }`}
+          className={`fleximple-components-placeholder ${!Array.isArray(recentPosts) ? 'is-loading' : ''}`}
         >
-          {!Array.isArray(recentPosts) ? (
-            <>
-              <Spinner />
-              <p>{__('Loading…', 'fleximpleblocks')}</p>
-            </>
-          ) : (
-            __('No posts found.', 'fleximpleblocks')
-          )}
+          {__('No posts found.', 'fleximpleblocks')}
         </Placeholder>
       </>
     )
   }
 
   // Removing posts from display should be instant.
-  let postsData =
+  let posts =
     recentPosts.length > postsToShow
       ? recentPosts.slice(0, postsToShow)
       : recentPosts
-  if (selectManually && selectedPosts) {
-    postsData =
-      selectedPostsData.length > postsToShow
-        ? selectedPostsData.slice(0, postsToShow)
-        : selectedPostsData
-  }
+  // if (selectManually && selectedPostsIds.length > 0) {
+  //   postsData =
+  //     recentPosts.length > postsToShow
+  //       ? recentPosts.slice(0, postsToShow)
+  //       : recentPosts
+  // }
 
   const layoutControls = [
     {
@@ -443,54 +456,13 @@ function RecentPostsEdit({
 
         <Toolbar controls={layoutControls} />
       </BlockControls>
-
       <RecentPostsPreview
-        postsData={postsData}
+        posts={posts}
+        mediaItems={mediaItems}
         {...{ className, attributes }}
       />
     </>
   )
 }
 
-export default compose([
-  withSelect((select, props) => {
-    const {
-      postsToShow,
-      order,
-      orderBy,
-      categories,
-      excludedCategories,
-      offset,
-    } = props.attributes
-    const { getEntityRecords } = select('core')
-    const categoriesIds =
-      categories && categories.length > 0
-        ? categories.map((cat) => cat.value)
-        : []
-    const excludedCategoriesIds =
-      excludedCategories && excludedCategories.length > 0
-        ? excludedCategories.map((cat) => cat.value)
-        : []
-    const recentPostsQuery = Object.fromEntries(
-      Object.entries({
-        categories: categoriesIds,
-        order,
-        orderby: orderBy,
-        per_page: postsToShow,
-        categories_exclude: excludedCategoriesIds,
-        offset,
-      }).filter(([, value]) => typeof value !== 'undefined')
-    )
-
-    const posts = getEntityRecords('postType', 'post', recentPostsQuery)
-
-    return {
-      recentPosts: !Array.isArray(posts)
-        ? posts
-        : posts.map((post) => {
-            return post
-          }),
-    }
-  }),
-  withInstanceId,
-])(RecentPostsEdit)
+export default RecentPostsEdit

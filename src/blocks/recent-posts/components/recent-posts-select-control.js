@@ -16,25 +16,27 @@ import { BaseControl } from '@wordpress/components'
 import { useEffect, useState } from '@wordpress/element'
 import { addQueryArgs } from '@wordpress/url'
 
-const RecentPostsSelectControl = ({
+function parseSearchResults(results) {
+  if (results.length === 0) return []
+
+  return results.map((searchResult) => ({
+    label: searchResult.title.rendered,
+    value: searchResult.id,
+  }))
+}
+
+export default function RecentPostsSelectControl({
   attributes: { selectedPosts },
   setAttributes,
   hideLabelFromVision,
   help,
   instanceId,
-}) => {
+}) {
   useEffect(() => {
     fetchDefaultOptions()
   }, [])
 
   const [defaultOptions, setDefaultOptions] = useState()
-
-  const filterResults = (searchResults) => {
-    return searchResults.map((searchResult) => ({
-      label: searchResult.title.rendered,
-      value: searchResult.id,
-    }))
-  }
 
   const fetchDefaultOptions = async () => {
     const searchResults = await apiFetch({
@@ -42,22 +44,17 @@ const RecentPostsSelectControl = ({
         per_page: 20,
       }),
     })
-    const filteredResults = await filterResults(searchResults)
-    setDefaultOptions(filteredResults)
+    setDefaultOptions(parseSearchResults(searchResults))
   }
 
   const fetchPromiseOptions = async (inputValue) => {
-    if (!inputValue || inputValue.length < 3) {
-      return []
-    }
     const searchResults = await apiFetch({
       path: addQueryArgs('/wp/v2/posts', {
         search: inputValue,
         per_page: 20,
       }),
     })
-    const filteredResults = await this.filterResults(searchResults)
-    return filteredResults
+    return parseSearchResults(searchResults)
   }
 
   const id = `fleximple-components-recent-posts-select-control-${instanceId}`
@@ -92,5 +89,3 @@ const RecentPostsSelectControl = ({
     </>
   )
 }
-
-export default RecentPostsSelectControl

@@ -25,11 +25,11 @@ import {
   toggleAttribute,
 } from '../../../js/sortable-control'
 
-const RecentPostsSortableControl = ({
+export default function RecentPostsSortableControl({
   attributes,
   attributes: { orderArticle, orderContent, orderMedia, orderMeta },
   setAttributes,
-}) => {
+}) {
   const SortableItem = SortableElement(({ value }) => {
     const label = getLabel(value)
     let icon = 'hidden'
@@ -164,5 +164,3 @@ const RecentPostsSortableControl = ({
     </div>
   )
 }
-
-export default RecentPostsSortableControl
