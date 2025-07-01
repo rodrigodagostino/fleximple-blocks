@@ -17,8 +17,8 @@ import * as header from './blocks/header'
 import * as icon from './blocks/icon'
 import * as iframe from './blocks/iframe'
 import * as map from './blocks/map'
-import * as post from './blocks/post'
-import * as postCarousel from './blocks/post-carousel'
+// import * as post from './blocks/post'
+// import * as postCarousel from './blocks/post-carousel'
 import * as profile from './blocks/profile'
 import * as recentPosts from './blocks/recent-posts'
 import * as row from './blocks/row'
@@ -40,8 +40,8 @@ export const registerFleximpleBlocks = () => {
     icon,
     iframe,
     map,
-    post,
-    postCarousel,
+    // post,
+    // postCarousel,
     profile,
     recentPosts,
     row,
