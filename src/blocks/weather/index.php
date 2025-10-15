@@ -38,6 +38,8 @@ function fleximpleblocks_render_weather_block($attributes)
 		$weather_data = null;
 		if (!is_wp_error($response) && $response['response'] && $response['response']['code'] === 200) {
 			$weather_data = json_decode($response['body']);
+		} else {
+			return;
 		}
 
 		$time_stamp = $weather_data->dt;
@@ -77,16 +79,13 @@ function fleximpleblocks_render_weather_block($attributes)
 		$weather_markup .= '<span class="' . $default_class_name . '__city-name">' . $weather_data->name . '</span>';
 	}
 
-	$internal_styles = '';
-	if (isset($attributes['shortName']) && $attributes['shortName']) {
-		$internal_styles .= '<style>';
-		$internal_styles .= '.' . $default_class_name . '__city-name { display: none; }
+	$internal_styles = '<style>';
+	$internal_styles .= '.' . $default_class_name . '__city-name { display: none; }
     @media only screen and (min-width: ' . get_option('fleximpleblocks_xlarge_breakpoint_value') . 'px) {
       .' . $default_class_name . '__short-name { display: none; }
       .' . $default_class_name . '__city-name { display: inline-block; }
     }';
-		$internal_styles .= '</style>';
-	}
+	$internal_styles .= '</style>';
 
 	$block_content = sprintf(
 		'<div class="%s">%s%s</div>',
