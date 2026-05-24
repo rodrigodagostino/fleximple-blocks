@@ -6,7 +6,7 @@ import { registerBlockType } from '@wordpress/blocks'
 /**
  * Internal dependencies
  */
-import * as ad from './blocks/ad'
+// import * as ad from './blocks/ad'
 import * as button from './blocks/button'
 import * as buttons from './blocks/buttons'
 import * as contactInfo from './blocks/contact-info'
@@ -29,7 +29,7 @@ import * as weather from './blocks/weather'
 
 export const registerFleximpleBlocks = () => {
   ;[
-    ad,
+    // ad,
     button,
     buttons,
     contactInfo,
