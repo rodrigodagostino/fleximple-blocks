@@ -28,24 +28,6 @@ const config = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        'admin-style': {
-          name: 'admin-style',
-          test: /admin\.(sc|sa|c)ss$/,
-          chunks: 'all',
-          enforce: true,
-        },
-        'editor-style': {
-          name: 'editor-style',
-          test: /editor\.(sc|sa|c)ss$/,
-          chunks: 'all',
-          enforce: true,
-        },
-        style: {
-          name: 'style',
-          test: /style\.(sc|sa|c)ss$/,
-          chunks: 'all',
-          enforce: true,
-        },
         default: false,
       },
     },
@@ -69,7 +51,10 @@ const config = {
       },
       {
         test: /\.(sc|sa|c)ss$/,
-        exclude: /node_modules/,
+        exclude: (filepath) => {
+          if (filepath.includes('fleximple-components')) return false
+          return filepath.includes('node_modules')
+        },
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
