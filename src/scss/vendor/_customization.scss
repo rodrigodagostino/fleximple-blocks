@@ -12,17 +12,17 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot");
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2")
-      format("woff2"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff")
-      format("woff"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf")
-      format("truetype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome")
-      format("svg");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix")
+  //     format("embedded-opentype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2")
+  //     format("woff2"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff")
+  //     format("woff"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf")
+  //     format("truetype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome")
+  //     format("svg");
 }
 
 .fa,
@@ -36,17 +36,17 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot");
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2")
-      format("woff2"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff")
-      format("woff"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf")
-      format("truetype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome")
-      format("svg");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix")
+  //     format("embedded-opentype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2")
+  //     format("woff2"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff")
+  //     format("woff"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf")
+  //     format("truetype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome")
+  //     format("svg");
 }
 
 .far {
@@ -59,17 +59,17 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot");
-  src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2")
-      format("woff2"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff")
-      format("woff"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf")
-      format("truetype"),
-    url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg#fontawesome")
-      format("svg");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot");
+  // src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?#iefix")
+  //     format("embedded-opentype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2")
+  //     format("woff2"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff")
+  //     format("woff"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf")
+  //     format("truetype"),
+  //   url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg#fontawesome")
+  //     format("svg");
 }
 
 .fab {
@@ -194,7 +194,9 @@
   .react-select__menu {
     margin-top: 0;
     border-radius: 0 0 2px 2px;
-    box-shadow: 0 0 0 1px var(--wp-gray-20), 0 4px 11px hsla(0, 0%, 0%, 0.1);
+    box-shadow:
+      0 0 0 1px var(--wp-gray-20),
+      0 4px 11px hsla(0, 0%, 0%, 0.1);
     z-index: 100;
 
     .react-select__option {
