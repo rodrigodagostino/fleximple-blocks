@@ -20,7 +20,7 @@ import * as map from './blocks/map'
 // import * as post from './blocks/post'
 // import * as postCarousel from './blocks/post-carousel'
 import * as profile from './blocks/profile'
-import * as recentPosts from './blocks/recent-posts'
+// import * as recentPosts from './blocks/recent-posts'
 import * as row from './blocks/row'
 import * as tabPanel from './blocks/tab-panel'
 import * as tabs from './blocks/tabs'
@@ -43,7 +43,7 @@ export const registerFleximpleBlocks = () => {
     // post,
     // postCarousel,
     profile,
-    recentPosts,
+    // recentPosts,
     row,
     tabPanel,
     tabs,
